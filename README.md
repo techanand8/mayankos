@@ -273,16 +273,7 @@ sh <(curl -L https://gitlab.com/Zaney/mayankos/-/raw/main/install-mayankos.sh)
 nix-shell -p git vim
 ```
 
-2. Clone this repo & enter it:
 
-```
-cd && git clone https://gitlab.com/zaney/mayankos.git -b main --depth=1 ~/mayankos
-cd mayankos
-
-You can still run the `install.sh` script if you want to.
-```
-
-- _You should stay in this folder for the rest of the install_
 
 3. Create the host folder for your machine(s) like so:
 
@@ -321,3 +312,7 @@ Thank you for all your assistance
 
 ## Hope you enjoy!
 ```
+
+---
+Clone from above path in readme path is not correct, it will resolved soon.
+---
