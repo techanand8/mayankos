@@ -255,10 +255,6 @@ in {
         XDG_SESSION_TYPE = "wayland";
         XDG_CURRENT_DESKTOP = "niri";
       };
-
-      debug = {
-        honor-xdg-activation-with-invalid-serial = true;
-      };
     };
   };
 }
