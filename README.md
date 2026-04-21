@@ -234,33 +234,17 @@ and then fiddle to your hearts content!
 
 Simply copy this and run it:
 
-![MayankOS First Install Command](img/first-install-cmd.jpg)
-
-```
+```bash
 nix-shell -p git curl pciutils
 ```
 
 Then:
 
-![MayankOS Install Script Command](img/install-script.jpg)
-
-```
-sh <(curl -L https://gitlab.com/Zaney/mayankos/-/raw/main/install-mayankos.sh)
+```bash
+sh <(curl -L https://raw.githubusercontent.com/techanand8/mayankos/main/install-mayankos.sh)
 ```
 
-#### The install process will look something like this:
-
-![First Part Of Install](img/1.jpg)
-
-![Second Part Of Install](img/2.jpg)
-
-#### After the install completes your environment will probably look broken. Just reboot and you will see this as your login:
-
-![Display Manager](img/3.jpg)
-
-#### Then after login you should see a screen like this:
-
-![Desktop Example](img/4.jpg)
+#### After the install completes your environment will probably look broken. Just reboot and you will see the login screen.
 
 </details>
 
@@ -269,46 +253,40 @@ sh <(curl -L https://gitlab.com/Zaney/mayankos/-/raw/main/install-mayankos.sh)
 
 1. Run this command to ensure Git & Vim are installed:
 
-```
+```bash
 nix-shell -p git vim
 ```
 
 2. Clone this repo & enter it:
 
+```bash
+cd && git clone https://github.com/techanand8/mayankos.git ~/mayankos
+cd ~/mayankos
 ```
-cd && git clone https://gitlab.com/zaney/mayankos.git -b main --depth=1 ~/mayankos
-cd mayankos
-
-You can still run the `install.sh` script if you want to.
-```
-
-- _You should stay in this folder for the rest of the install_
 
 3. Create the host folder for your machine(s) like so:
 
-```
+```bash
 cp -r hosts/default hosts/<your-desired-hostname>
-git add .
 ```
 
-4. Edit `hosts/<your-desired-hostname>/variables.nix`
-   ```nixos-generate-config --show-hardware-config > hosts/<your-desired-hostname>/hardware.nix```
+4. Generate your hardware configuration:
 
+```bash
+nixos-generate-config --show-hardware-config > hosts/<your-desired-hostname>/hardware.nix
 ```
 
-7. Run this to enable flakes and install the flake replacing hostname with
-   profile. I.e. `intel`, `nvidia`, `nvidia-laptop`, `amd-hybrid`, or `vm`
+5. Edit `hosts/<your-desired-hostname>/variables.nix` and `flake.nix` to match your hostname and profile.
 
-```
+6. Install the flake (replace `profile` with `intel`, `nvidia`, `nvidia-laptop`, `amd`, `amd-nvidia-hybrid`, or `vm`):
 
-NIX_CONFIG="experimental-features = nix-command flakes"
+```bash
 sudo nixos-rebuild switch --flake .#profile
-
 ```
 
-Now when you want to rebuild the configuration you have access to an alias
-called `fr` that will rebuild the flake and you do not have to be in the
-`mayankos` folder for it to work.
+Now when you want to rebuild the configuration you can use the `mcli rebuild` command or the `fr` alias.
+
+</details>
 
 ### Special Recognitions:
 

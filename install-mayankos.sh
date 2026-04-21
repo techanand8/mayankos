@@ -262,7 +262,7 @@ else
 fi
 
 print_header "Cloning MayankOS Repository"
-git clone https://gitlab.com/zaney/mayankos.git -b main --depth=1 ~/mayankos
+git clone https://github.com/techanand8/mayankos.git ~/mayankos
 cd ~/mayankos || exit 1
 
 print_header "Git Configuration"
