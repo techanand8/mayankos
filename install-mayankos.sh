@@ -15,7 +15,7 @@ CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
 # Define log file
-LOG_DIR="$(dirname "$0")"
+LOG_DIR="/tmp/mayankos-logs"
 LOG_FILE="${LOG_DIR}/install_$(date +"%Y-%m-%d_%H-%M-%S").log"
 
 mkdir -p "$LOG_DIR"
