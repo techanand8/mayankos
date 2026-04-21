@@ -18,7 +18,7 @@ in {
     settings = {
       # --- ENVIRONMENT & AUTOSTART ---
       spawn-at-startup = [
-        # XWayland support (niri starts this if it's in PATH, but explicit is safer for some older versions)
+        # XWayland support
         { command = [ "${pkgs.xwayland-satellite}/bin/xwayland-satellite" ]; }
         
         # Authentication Agent
@@ -32,6 +32,9 @@ in {
         
         # Clipboard Manager
         { command = [ "wl-paste" "--watch" "cliphist" "store" ]; }
+
+        # DBus activation environment
+        { command = [ "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" "QT_QPA_PLATFORMTHEME" ]; }
       ];
 
       input = {
@@ -49,24 +52,21 @@ in {
           accel-profile = "flat";
         };
         focus-follows-mouse.enable = true;
+        workspace-auto-back-and-forth = true;
       };
 
       # --- OUTPUTS ---
-      # Match any output and use its preferred mode
       outputs."eDP-1" = {
         scale = 1.0;
       };
 
       outputs."^.*$" = {
-        # Use the preferred resolution and refresh rate automatically
-        # You can also manually set this to e.g. "1920x1080@60.0"
-        # mode = "1920x1080@60.0";
         scale = 1.0;
       };
 
       # --- LAYOUT & VISUALS ---
       layout = {
-        gaps = 12;
+        gaps = 5;
         center-focused-column = "never";
         
         preset-column-widths = [
@@ -79,7 +79,7 @@ in {
         
         focus-ring = {
           enable = true;
-          width = 3;
+          width = 2;
           active.color = "#${config.lib.stylix.colors.base08}";
           inactive.color = "#${config.lib.stylix.colors.base01}";
         };
@@ -92,7 +92,20 @@ in {
         };
       };
 
-      # --- WINDOW RULES (CachyOS / Modern Style) ---
+      # --- ANIMATIONS ---
+      animations = {
+        workspace-switch.spring = { damping-ratio = 1.0; stiffness = 1000; epsilon = 0.0001; };
+        window-open = { duration-ms = 200; curve = "ease-out-quad"; };
+        window-close = { duration-ms = 200; curve = "ease-out-cubic"; };
+        horizontal-view-movement.spring = { damping-ratio = 1.0; stiffness = 900; epsilon = 0.0001; };
+        window-movement.spring = { damping-ratio = 1.0; stiffness = 800; epsilon = 0.0001; };
+        window-resize.spring = { damping-ratio = 1.0; stiffness = 1000; epsilon = 0.0001; };
+        config-notification-open-close.spring = { damping-ratio = 0.6; stiffness = 1200; epsilon = 0.001; };
+        screenshot-ui-open = { duration-ms = 300; curve = "ease-out-quad"; };
+        overview-open-close.spring = { damping-ratio = 1.0; stiffness = 900; epsilon = 0.0001; };
+      };
+
+      # --- WINDOW RULES ---
       window-rules = [
         # Global rounded corners
         {
@@ -106,7 +119,7 @@ in {
         }
         # Floating rules for dialogs
         {
-          matches = [{ is-active = true; }]; # Placeholder for general rules
+          matches = [{ is-active = true; }];
         }
         # Specific app rules
         {
@@ -119,43 +132,49 @@ in {
         }
       ];
 
-      # --- KEYBINDINGS (Noctalia + Niri Actions) ---
+      # Layer rules for Noctalia
+      layer-rules = [
+        {
+          match-namespace = "^noctalia-wallpaper*";
+          place-within-backdrop = true;
+        }
+      ];
+
+      # --- KEYBINDINGS (Integrated & Improved) ---
       binds = {
-        # --- Terminal & Browser ---
-        "Mod+Return".action.spawn = [ "${terminal}" ];
-        "Mod+W".action.spawn = [ "${browser}" ];
-        
-        # --- Noctalia Shell IPC Calls ---
+        # --- Core & System ---
+        "Mod+Space".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "toggle" ];
         "Mod+D".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "toggle" ];
-        "Mod+M".action.spawn = [ "noctalia-shell" "ipc" "call" "notifications" "toggleHistory" ];
+        "Mod+S".action.spawn = [ "noctalia-shell" "ipc" "call" "controlCenter" "toggle" ];
+        "Mod+Comma".action.spawn = [ "noctalia-shell" "ipc" "call" "settings" "toggle" ];
+        "Mod+Shift+Q".action.spawn = [ "noctalia-shell" "ipc" "call" "sessionMenu" "toggle" ];
+        "Mod+Alt+L".action.spawn = [ "noctalia-shell" "ipc" "call" "lockScreen" "lock" ];
+        "Mod+Shift+C".action.spawn = [ "noctalia-shell" "ipc" "call" "calendar" "toggle" ];
         "Mod+V".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "clipboard" ];
-        "Mod+Alt+P".action.spawn = [ "noctalia-shell" "ipc" "call" "settings" "toggle" ];
-        "Mod+X".action.spawn = [ "noctalia-shell" "ipc" "call" "sessionMenu" "toggle" ];
-        "Mod+C".action.spawn = [ "noctalia-shell" "ipc" "call" "controlCenter" "toggle" ];
+        "Mod+Period".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "emoji" ];
+        "Mod+Y".action.spawn = [ "noctalia-shell" "ipc" "call" "wallpaper" "toggle" ];
+        "Mod+Shift+Y".action.spawn = [ "noctalia-shell" "ipc" "call" "wallpaper" "random" ];
+        "Mod+M".action.spawn = [ "noctalia-shell" "ipc" "call" "notifications" "toggleHistory" ];
         "Mod+Ctrl+R".action.spawn = [ "noctalia-shell" "ipc" "call" "screenRecorder" "toggle" ];
         
-        # --- System Tools ---
-        "Mod+S".action.spawn = [ "screenshootin" ];
-        "Mod+Y".action.spawn = [ "${terminal}" "-e" "yazi" ];
+        # --- Applications ---
+        "Mod+Return".action.spawn = [ "${terminal}" ];
+        "Mod+B".action.spawn = [ "${browser}" ];
+        "Mod+W".action.spawn = [ "${browser}" ];
+        "Mod+E".action.spawn = [ "thunar" ];
         "Mod+T".action.spawn = [ "thunar" ];
+        "Mod+Shift+T".action.spawn = [ "${terminal}" "-e" "yazi" ];
         "Mod+Alt+K".action.spawn = [ "qs-keybinds" ];
         "Mod+Ctrl+C".action.spawn = [ "qs-cheatsheets" ];
-        "Mod+Shift+W".action.spawn = [ "qs-wallpapers-apply" ];
-        "Mod+E".action.spawn = [ "emopicker9000" ];
-        "Mod+period".action.spawn = [ "emopicker9000" ];
-        "Print".action.spawn = [ "hyprshot" "-m" "output" "-o" "$HOME/Pictures/Screenshots" ];
-        "Mod+Print".action.spawn = [ "hyprshot" "-m" "region" "-o" "$HOME/Pictures/Screenshots" ];
 
-        # --- Niri Window Management ---
+        # --- Window Management ---
         "Mod+Q".action.close-window = { };
         "Mod+F".action.maximize-column = { };
         "Mod+Shift+F".action.fullscreen-window = { };
+        "Mod+O".action.toggle-overview = { };
         "Mod+Tab".action.toggle-overview = { };
-        
-        # Column resizing & presets
-        "Mod+R".action.switch-preset-column-width = { };
-        "Mod+Shift+Comma".action.consume-window-into-column = { };
-        "Mod+Shift+Period".action.expel-window-from-column = { };
+        "Mod+Shift+T".action.toggle-window-floating = { };
+        "Mod+Shift+W".action.toggle-column-tabbed-display = { };
 
         # Focus Movement
         "Mod+H".action.focus-column-left = { };
@@ -167,15 +186,23 @@ in {
         "Mod+Up".action.focus-window-up = { };
         "Mod+Down".action.focus-window-down = { };
 
-        # Column Movement
-        "Mod+Shift+H".action.move-column-left = { };
-        "Mod+Shift+L".action.move-column-right = { };
-        "Mod+Shift+K".action.move-window-up = { };
-        "Mod+Shift+J".action.move-window-down = { };
-        "Mod+Shift+Left".action.move-column-left = { };
-        "Mod+Shift+Right".action.move-column-right = { };
-        "Mod+Shift+Up".action.move-window-up = { };
-        "Mod+Shift+Down".action.move-window-down = { };
+        # Move Actions
+        "Mod+Ctrl+H".action.move-column-left = { };
+        "Mod+Ctrl+L".action.move-column-right = { };
+        "Mod+Ctrl+K".action.move-window-up = { };
+        "Mod+Ctrl+J".action.move-window-down = { };
+        "Mod+Ctrl+Left".action.move-column-left = { };
+        "Mod+Ctrl+Right".action.move-column-right = { };
+        "Mod+Ctrl+Up".action.move-window-up = { };
+        "Mod+Ctrl+Down".action.move-window-down = { };
+
+        # Resizing & Presets
+        "Mod+Minus".action.set-column-width = "-10%";
+        "Mod+Equal".action.set-column-width = "+10%";
+        "Mod+Shift+Minus".action.set-window-height = "-10%";
+        "Mod+Shift+Equal".action.set-window-height = "+10%";
+        "Mod+C".action.center-column = { };
+        "Mod+R".action.switch-preset-column-width = { };
 
         # Workspaces
         "Mod+1".action.focus-workspace = 1;
@@ -188,30 +215,44 @@ in {
         "Mod+8".action.focus-workspace = 8;
         "Mod+9".action.focus-workspace = 9;
 
-        "Mod+Shift+1".action.move-column-to-workspace = 1;
-        "Mod+Shift+2".action.move-column-to-workspace = 2;
-        "Mod+Shift+3".action.move-column-to-workspace = 3;
-        "Mod+Shift+4".action.move-column-to-workspace = 4;
-        "Mod+Shift+5".action.move-column-to-workspace = 5;
-        "Mod+Shift+6".action.move-column-to-workspace = 6;
-        "Mod+Shift+7".action.move-column-to-workspace = 7;
-        "Mod+Shift+8".action.move-column-to-workspace = 8;
-        "Mod+Shift+9".action.move-column-to-workspace = 9;
+        "Mod+Ctrl+1".action.move-column-to-workspace = 1;
+        "Mod+Ctrl+2".action.move-column-to-workspace = 2;
+        "Mod+Ctrl+3".action.move-column-to-workspace = 3;
+        "Mod+Ctrl+4".action.move-column-to-workspace = 4;
+        "Mod+Ctrl+5".action.move-column-to-workspace = 5;
+        "Mod+Ctrl+6".action.move-column-to-workspace = 6;
+        "Mod+Ctrl+7".action.move-column-to-workspace = 7;
+        "Mod+Ctrl+8".action.move-column-to-workspace = 8;
+        "Mod+Ctrl+9".action.move-column-to-workspace = 9;
 
-        # Layout cycling
-        "Mod+Page_Up".action.focus-workspace-up = { };
-        "Mod+Page_Down".action.focus-workspace-down = { };
+        # Hardware Controls (Noctalia IPC)
+        "XF86AudioRaiseVolume" = { action.spawn = [ "noctalia-shell" "ipc" "call" "volume" "increase" ]; allow-when-locked = true; };
+        "XF86AudioLowerVolume" = { action.spawn = [ "noctalia-shell" "ipc" "call" "volume" "decrease" ]; allow-when-locked = true; };
+        "XF86AudioMute" = { action.spawn = [ "noctalia-shell" "ipc" "call" "volume" "muteOutput" ]; allow-when-locked = true; };
+        "XF86AudioMicMute" = { action.spawn = [ "noctalia-shell" "ipc" "call" "volume" "muteInput" ]; allow-when-locked = true; };
+        
+        "XF86MonBrightnessUp" = { action.spawn = [ "noctalia-shell" "ipc" "call" "brightness" "increase" ]; allow-when-locked = true; };
+        "XF86MonBrightnessDown" = { action.spawn = [ "noctalia-shell" "ipc" "call" "brightness" "decrease" ]; allow-when-locked = true; };
 
-        # --- Quit / Session ---
-        "Mod+Shift+E".action.quit = { };
-        "Mod+Shift+C".action.quit = { };
+        # Screenshots
+        "Print".action.spawn = [ "hyprshot" "-m" "output" "-o" "$HOME/Pictures/Screenshots" ];
+        "Mod+Print".action.spawn = [ "hyprshot" "-m" "region" "-o" "$HOME/Pictures/Screenshots" ];
+        "Ctrl+Print".action.spawn = [ "hyprshot" "-m" "window" "-o" "$HOME/Pictures/Screenshots" ];
 
-        # --- Hardware Controls ---
-        "XF86AudioRaiseVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+" ];
-        "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-" ];
-        "XF86AudioMute".action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ];
-        "XF86MonBrightnessUp".action.spawn = [ "brightnessctl" "set" "+5%" ];
-        "XF86MonBrightnessDown".action.spawn = [ "brightnessctl" "set" "5%-" ];
+        # Emergency & Misc
+        "Mod+Shift+Escape".action.show-hotkey-overlay = { };
+        "Ctrl+Alt+Delete".action.quit = { };
+      };
+
+      environment = {
+        ELECTRON_OZONE_PLATFORM_HINT = "auto";
+        QT_QPA_PLATFORM = "wayland";
+        XDG_SESSION_TYPE = "wayland";
+        XDG_CURRENT_DESKTOP = "niri";
+      };
+
+      debug = {
+        honor-xdg-activation-with-invalid-serial = true;
       };
     };
   };
