@@ -162,7 +162,7 @@ in {
         "Mod+W".action.spawn = [ "${browser}" ];
         "Mod+E".action.spawn = [ "thunar" ];
         "Mod+T".action.spawn = [ "thunar" ];
-        "Mod+Shift+T".action.spawn = [ "${terminal}" "-e" "yazi" ];
+        "Mod+Alt+Y".action.spawn = [ "${terminal}" "-e" "yazi" ];
         "Mod+Alt+K".action.spawn = [ "qs-keybinds" ];
         "Mod+Ctrl+C".action.spawn = [ "qs-cheatsheets" ];
 
