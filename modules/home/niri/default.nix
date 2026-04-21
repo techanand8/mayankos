@@ -143,35 +143,35 @@ in {
         "Mod+Print".action.spawn = [ "hyprshot" "-m" "region" "-o" "$HOME/Pictures/Screenshots" ];
 
         # --- Niri Window Management ---
-        "Mod+Q".action.close-window = null;
-        "Mod+F".action.maximize-column = null;
-        "Mod+Shift+F".action.fullscreen-window = null;
-        "Mod+Tab".action.toggle-overview = null;
+        "Mod+Q".action.close-window = { };
+        "Mod+F".action.maximize-column = { };
+        "Mod+Shift+F".action.fullscreen-window = { };
+        "Mod+Tab".action.toggle-overview = { };
         
         # Column resizing & presets
-        "Mod+R".action.switch-preset-column-width = null;
-        "Mod+Comma".action.consume-window-into-column = null;
-        "Mod+Period".action.expel-window-from-column = null;
+        "Mod+R".action.switch-preset-column-width = { };
+        "Mod+Shift+Comma".action.consume-window-into-column = { };
+        "Mod+Shift+Period".action.expel-window-from-column = { };
 
         # Focus Movement
-        "Mod+H".action.focus-column-left = null;
-        "Mod+L".action.focus-column-right = null;
-        "Mod+K".action.focus-window-up = null;
-        "Mod+J".action.focus-window-down = null;
-        "Mod+Left".action.focus-column-left = null;
-        "Mod+Right".action.focus-column-right = null;
-        "Mod+Up".action.focus-window-up = null;
-        "Mod+Down".action.focus-window-down = null;
+        "Mod+H".action.focus-column-left = { };
+        "Mod+L".action.focus-column-right = { };
+        "Mod+K".action.focus-window-up = { };
+        "Mod+J".action.focus-window-down = { };
+        "Mod+Left".action.focus-column-left = { };
+        "Mod+Right".action.focus-column-right = { };
+        "Mod+Up".action.focus-window-up = { };
+        "Mod+Down".action.focus-window-down = { };
 
         # Column Movement
-        "Mod+Shift+H".action.move-column-left = null;
-        "Mod+Shift+L".action.move-column-right = null;
-        "Mod+Shift+K".action.move-window-up = null;
-        "Mod+Shift+J".action.move-window-down = null;
-        "Mod+Shift+Left".action.move-column-left = null;
-        "Mod+Shift+Right".action.move-column-right = null;
-        "Mod+Shift+Up".action.move-window-up = null;
-        "Mod+Shift+Down".action.move-window-down = null;
+        "Mod+Shift+H".action.move-column-left = { };
+        "Mod+Shift+L".action.move-column-right = { };
+        "Mod+Shift+K".action.move-window-up = { };
+        "Mod+Shift+J".action.move-window-down = { };
+        "Mod+Shift+Left".action.move-column-left = { };
+        "Mod+Shift+Right".action.move-column-right = { };
+        "Mod+Shift+Up".action.move-window-up = { };
+        "Mod+Shift+Down".action.move-window-down = { };
 
         # Workspaces
         "Mod+1".action.focus-workspace = 1;
@@ -195,12 +195,12 @@ in {
         "Mod+Shift+9".action.move-column-to-workspace = 9;
 
         # Layout cycling
-        "Mod+Page_Up".action.focus-workspace-up = null;
-        "Mod+Page_Down".action.focus-workspace-down = null;
+        "Mod+Page_Up".action.focus-workspace-up = { };
+        "Mod+Page_Down".action.focus-workspace-down = { };
 
         # --- Quit / Session ---
-        "Mod+Shift+E".action.quit = null;
-        "Mod+Shift+C".action.quit = null;
+        "Mod+Shift+E".action.quit = { };
+        "Mod+Shift+C".action.quit = { };
 
         # --- Hardware Controls ---
         "XF86AudioRaiseVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+" ];
