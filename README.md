@@ -73,9 +73,11 @@ This includes the wallpaper, scripts, applications, config files, and more.
   you will have media and volume controls in the notification center available
   in the top bar.
 
-#### 🏇 Optimized Workflow & Simple Yet Elegant Neovim
+#### 🏇 Optimized Workflow & Advanced Window Management
 
-- Using Hyprland for increased elegance, functionality, and efficiency.
+- **Hyprland Support**: Default tiling window manager for increased elegance and efficiency.
+- **Niri Support**: Now includes full support for Niri, a scrollable-tiling Wayland compositor. Toggle it via `niriEnable` in your `variables.nix`.
+- **KDE Plasma (Optional)**: Support for KDE Plasma 6 is available but disabled by default.
 - No massive NeoVIM project here, using `nixvim` for an
   incredible NeoVIM setup. With language support already added in.
 
@@ -103,6 +105,13 @@ This includes the wallpaper, scripts, applications, config files, and more.
 - To add a package there are the sections for it in `modules/core/packages.nix`
   and `modules/core/user.nix`. One is for programs available system wide and the
   other for your users environment only.
+
+#### 🐧 Switching Desktop Environments
+
+MayankOS supports multiple environments:
+- **Hyprland**: Enabled by default.
+- **Niri**: Enable it by setting `niriEnable = true;` in your host's `variables.nix`.
+- **KDE Plasma**: To enable KDE Plasma, go to `modules/core/xserver.nix` and uncomment the `services.desktopManager.plasma6.enable = true;` line and the associated `environment.systemPackages` block.
 
 #### 🙋 Having Issues / Questions?
 
