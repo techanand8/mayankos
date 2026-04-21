@@ -247,6 +247,9 @@ Then:
 ```
 sh <(curl -L https://gitlab.com/Zaney/mayankos/-/raw/main/install-mayankos.sh)
 ```
+---
+Dont clone from here it give error , it will resolved soon
+---
 
 #### The install process will look something like this:
 
