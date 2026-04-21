@@ -53,6 +53,10 @@ in {
 
       # --- OUTPUTS ---
       # Match any output and use its preferred mode
+      outputs."eDP-1" = {
+        scale = 1.0;
+      };
+
       outputs."^.*$" = {
         # Use the preferred resolution and refresh rate automatically
         # You can also manually set this to e.g. "1920x1080@60.0"

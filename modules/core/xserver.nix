@@ -23,7 +23,7 @@ in {
   };
 
   # Enable the KDE Plasma Desktop Environment
-  # services.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Enable SDDM for the Login Screen
 #  services.displayManager.sddm = {
@@ -32,9 +32,9 @@ in {
   #};
 
   # Essential packages for a smooth KDE experience
-  # environment.systemPackages = with pkgs; [
-  #   kdePackages.plasma-nm       # Network Manager applet
-  #   kdePackages.spectacle       # Screenshot tool (Great for VLSI reports)
-  #   kdePackages.kate            # Advanced text editor
-  # ];
+  environment.systemPackages = with pkgs; [
+    kdePackages.plasma-nm       # Network Manager applet
+    kdePackages.spectacle       # Screenshot tool (Great for VLSI reports)
+    kdePackages.kate            # Advanced text editor
+  ];
 }
