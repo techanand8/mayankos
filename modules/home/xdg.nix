@@ -46,10 +46,5 @@ in {
         mimeType = ["application/x-vmware-vm" "application/x-vmware-team"];
       };
     };
-    portal = {
-      enable = true;
-      extraPortals = [pkgs.xdg-desktop-portal-hyprland];
-      configPackages = [pkgs.hyprland];
-    };
   };
 }
