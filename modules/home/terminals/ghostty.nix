@@ -59,8 +59,8 @@ in {
       mouse-hide-while-typing = "true";
       wait-after-command = "false";
       shell-integration = "detect";
-      window-save-state = "always";
-      gtk-single-instance = "true";
+      window-save-state = "never";
+      gtk-single-instance = "false";
       unfocused-split-opacity = "0.5";
       quick-terminal-position = "center";
       shell-integration-features = "cursor,sudo";

@@ -13,6 +13,10 @@ in {
     caelestiaPkg
     pkgs.caelestia-cli
     pkgs.quickshell # Ensure quickshell is available for the service
+    pkgs.kdePackages.kirigami
+    pkgs.kdePackages.kirigami-addons
+    pkgs.kdePackages.qqc2-desktop-style
+    pkgs.kdePackages.breeze
   ];
 
   # Seed the configuration

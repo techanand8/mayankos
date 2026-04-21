@@ -27,15 +27,19 @@ in {
         # Desktop Components
         { command = [ "waypaper" "--restore" ]; }
         
-        # Shell / Bar Integration
-        { command = [ "noctalia-shell" ]; }
-        
         # Clipboard Manager
         { command = [ "wl-paste" "--watch" "cliphist" "store" ]; }
 
         # DBus activation environment
         { command = [ "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" "QT_QPA_PLATFORMTHEME" ]; }
-      ];
+      ] ++ (if barChoice == "noctalia" then [
+        { command = [ "noctalia-shell" ]; }
+      ] else [
+        { command = [ "waybar" ]; }
+        { command = [ "swaync" ]; }
+        { command = [ "awww-daemon" ]; }
+        { command = [ "nm-applet" "--indicator" ]; }
+      ]);
 
       input = {
         keyboard.xkb.layout = vars.keyboardLayout or "us";
@@ -90,6 +94,9 @@ in {
           top = 0;
           bottom = 0;
         };
+
+        # Try transparency inside layout if styling is unsupported
+        # styling.workspace-background.color = "rgba(0, 0, 0, 0)";
       };
 
       # --- ANIMATIONS ---
@@ -135,27 +142,54 @@ in {
       layer-rules = [
         {
           matches = [{ namespace = "^noctalia-wallpaper*"; }];
-          place-within-backdrop = true;
+          # Removed place-within-backdrop to fix grey screen issue
+          # place-within-backdrop = true;
         }
       ];
 
       # --- KEYBINDINGS (Integrated & Improved) ---
-      binds = {
-        # --- Core & System ---
-        "Mod+Space".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "toggle" ];
-        "Mod+D".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "toggle" ];
-        "Mod+S".action.spawn = [ "noctalia-shell" "ipc" "call" "controlCenter" "toggle" ];
-        "Mod+Comma".action.spawn = [ "noctalia-shell" "ipc" "call" "settings" "toggle" ];
-        "Mod+Shift+Q".action.spawn = [ "noctalia-shell" "ipc" "call" "sessionMenu" "toggle" ];
-        "Mod+Alt+L".action.spawn = [ "noctalia-shell" "ipc" "call" "lockScreen" "lock" ];
-        "Mod+Shift+C".action.spawn = [ "noctalia-shell" "ipc" "call" "calendar" "toggle" ];
-        "Mod+V".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "clipboard" ];
-        "Mod+Period".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "emoji" ];
-        "Mod+Y".action.spawn = [ "noctalia-shell" "ipc" "call" "wallpaper" "toggle" ];
-        "Mod+Shift+Y".action.spawn = [ "noctalia-shell" "ipc" "call" "wallpaper" "random" ];
-        "Mod+M".action.spawn = [ "noctalia-shell" "ipc" "call" "notifications" "toggleHistory" ];
-        "Mod+Ctrl+R".action.spawn = [ "noctalia-shell" "ipc" "call" "screenRecorder" "toggle" ];
-        
+      binds = let
+        noctaliaBinds = if barChoice == "noctalia" then {
+          "Mod+Space".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "toggle" ];
+          "Mod+D".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "toggle" ];
+          "Mod+S".action.spawn = [ "noctalia-shell" "ipc" "call" "controlCenter" "toggle" ];
+          "Mod+Comma".action.spawn = [ "noctalia-shell" "ipc" "call" "settings" "toggle" ];
+          "Mod+Shift+Q".action.spawn = [ "noctalia-shell" "ipc" "call" "sessionMenu" "toggle" ];
+          "Mod+Alt+L".action.spawn = [ "noctalia-shell" "ipc" "call" "lockScreen" "lock" ];
+          "Mod+Shift+C".action.spawn = [ "noctalia-shell" "ipc" "call" "calendar" "toggle" ];
+          "Mod+V".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "clipboard" ];
+          "Mod+Period".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "emoji" ];
+          "Mod+Y".action.spawn = [ "noctalia-shell" "ipc" "call" "wallpaper" "toggle" ];
+          "Mod+Shift+Y".action.spawn = [ "noctalia-shell" "ipc" "call" "wallpaper" "random" ];
+          "Mod+M".action.spawn = [ "noctalia-shell" "ipc" "call" "notifications" "toggleHistory" ];
+          "Mod+Ctrl+R".action.spawn = [ "noctalia-shell" "ipc" "call" "screenRecorder" "toggle" ];
+
+          "XF86AudioRaiseVolume" = { action.spawn = [ "noctalia-shell" "ipc" "call" "volume" "increase" ]; allow-when-locked = true; };
+          "XF86AudioLowerVolume" = { action.spawn = [ "noctalia-shell" "ipc" "call" "volume" "decrease" ]; allow-when-locked = true; };
+          "XF86AudioMute" = { action.spawn = [ "noctalia-shell" "ipc" "call" "volume" "muteOutput" ]; allow-when-locked = true; };
+          "XF86AudioMicMute" = { action.spawn = [ "noctalia-shell" "ipc" "call" "volume" "muteInput" ]; allow-when-locked = true; };
+          
+          "XF86MonBrightnessUp" = { action.spawn = [ "noctalia-shell" "ipc" "call" "brightness" "increase" ]; allow-when-locked = true; };
+          "XF86MonBrightnessDown" = { action.spawn = [ "noctalia-shell" "ipc" "call" "brightness" "decrease" ]; allow-when-locked = true; };
+        } else {
+          "Mod+Space".action.spawn = [ "rofi-launcher" ];
+          "Mod+D".action.spawn = [ "rofi-launcher" ];
+          "Mod+Shift+Q".action.spawn = [ "qs-wlogout" ];
+          "Mod+Alt+L".action.spawn = [ "hyprlock" ];
+          "Mod+V".action.spawn = [ "sh" "-c" "cliphist list | rofi -dmenu | cliphist decode | wl-copy" ];
+          "Mod+Y".action.spawn = [ "qs-wallpapers-apply" ];
+          "Mod+Shift+Y".action.spawn = [ "qs-wallpapers-apply" ];
+          "Mod+M".action.spawn = [ "swaync-client" "-t" "-sw" ];
+
+          "XF86AudioRaiseVolume" = { action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+" ]; allow-when-locked = true; };
+          "XF86AudioLowerVolume" = { action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-" ]; allow-when-locked = true; };
+          "XF86AudioMute" = { action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ]; allow-when-locked = true; };
+          "XF86AudioMicMute" = { action.spawn = [ "wpctl" "set-source-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle" ]; allow-when-locked = true; };
+          
+          "XF86MonBrightnessUp" = { action.spawn = [ "brightnessctl" "set" "+5%" ]; allow-when-locked = true; };
+          "XF86MonBrightnessDown" = { action.spawn = [ "brightnessctl" "set" "5%-" ]; allow-when-locked = true; };
+        };
+      in noctaliaBinds // {
         # --- Applications ---
         "Mod+Return".action.spawn = [ "${terminal}" ];
         "Mod+B".action.spawn = [ "${browser}" ];
@@ -224,14 +258,8 @@ in {
         "Mod+Ctrl+8".action.move-column-to-workspace = 8;
         "Mod+Ctrl+9".action.move-column-to-workspace = 9;
 
-        # Hardware Controls (Noctalia IPC)
-        "XF86AudioRaiseVolume" = { action.spawn = [ "noctalia-shell" "ipc" "call" "volume" "increase" ]; allow-when-locked = true; };
-        "XF86AudioLowerVolume" = { action.spawn = [ "noctalia-shell" "ipc" "call" "volume" "decrease" ]; allow-when-locked = true; };
-        "XF86AudioMute" = { action.spawn = [ "noctalia-shell" "ipc" "call" "volume" "muteOutput" ]; allow-when-locked = true; };
-        "XF86AudioMicMute" = { action.spawn = [ "noctalia-shell" "ipc" "call" "volume" "muteInput" ]; allow-when-locked = true; };
-        
-        "XF86MonBrightnessUp" = { action.spawn = [ "noctalia-shell" "ipc" "call" "brightness" "increase" ]; allow-when-locked = true; };
-        "XF86MonBrightnessDown" = { action.spawn = [ "noctalia-shell" "ipc" "call" "brightness" "decrease" ]; allow-when-locked = true; };
+        # Hardware Controls
+        # (These are now handled dynamically via noctaliaBinds or waybar fallbacks)
 
         # Screenshots (Hyprshot - Saves to Pictures)
         "Print".action.spawn = [ "hyprshot" "-m" "output" "-o" "$HOME/Pictures/Screenshots" ];
@@ -254,6 +282,13 @@ in {
         QT_QPA_PLATFORM = "wayland";
         XDG_SESSION_TYPE = "wayland";
         XDG_CURRENT_DESKTOP = "niri";
+        # Performance fixes for Ghostty and other GPU apps
+        WLR_RENDERER = "vulkan";
+        NIXOS_OZONE_WL = "1";
+        # Browser gestures and Wayland support
+        MOZ_ENABLE_WAYLAND = "1";
+        MOZ_USE_XINPUT2 = "1";
+        GDK_BACKEND = "wayland";
       };
     };
   };
