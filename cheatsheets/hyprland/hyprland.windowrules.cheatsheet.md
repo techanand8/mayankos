@@ -1,6 +1,6 @@
 English | [Español](./hyprland.windowrules.cheatsheet.es.md)
 
-# Hyprland Window Rules — ZaneyOS
+# Hyprland Window Rules — mayankos
 ## 🧩 Tags and Classification
 - file-manager — Thunar, Nautilus, PCManFM-Qt
 - terminal — Ghostty, WezTerm, Alacritty, Kitty, kitty-dropterm

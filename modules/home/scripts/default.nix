@@ -43,7 +43,7 @@
     (import ./launch-nwg-menu.nix {inherit pkgs;})
     (import ./hyprland-dock.nix {inherit pkgs;})
     (import ./restart.noctalia.nix {inherit pkgs;})
-    (import ./zcli.nix {
+    (import ./mcli.nix {
       inherit pkgs profile;
       backupFiles = [
         ".config/mimeapps.list.backup"

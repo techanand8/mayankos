@@ -4,7 +4,7 @@ pkgs.writeShellScriptBin "docs-parser" ''
     set -euo pipefail
 
     # Default paths
-    DOCS_DIR="$HOME/ddubsos/docs"
+    DOCS_DIR="$HOME/mayankos/docs"
 
     # Handle arguments
     MODE="''${1:-files}"
@@ -16,7 +16,7 @@ pkgs.writeShellScriptBin "docs-parser" ''
   Usage: docs-parser [MODE] [CATEGORY] [LANGUAGE]
 
   MODE: files|content
-  CATEGORY: AI|Zed|ddubsos|etc.
+  CATEGORY: AI|Zed|mayankos|etc.
   LANGUAGE: en|es
 
   Examples:

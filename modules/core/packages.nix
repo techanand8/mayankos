@@ -6,14 +6,26 @@
 }: let
   vars = import ../../hosts/${host}/variables.nix;
   inherit (vars) barChoice;
-  # Noctalia-specific packages
-  noctaliaPkgs =
+  # Bar-specific packages
+  barPkgs =
     if barChoice == "noctalia"
     then
       with pkgs; [
         matugen # color palette generator needed for noctalia-shell
         app2unit # launcher for noctalia-shell
-        gpu-screen-recorder # needed for nnoctalia-shell
+        gpu-screen-recorder # needed for noctalia-shell
+      ]
+    else if barChoice == "caelestia"
+    then
+      with pkgs; [
+        matugen
+        gpu-screen-recorder
+      ]
+    else if barChoice == "dms"
+    then
+      with pkgs; [
+        matugen
+        cava
       ]
     else [];
 in {
@@ -35,6 +47,10 @@ in {
     fuse.userAllowOther = true;
     mtr.enable = true;
     hyprlock.enable = true;
+    localsend = {
+      enable = true;
+      openFirewall = true;
+    };
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
@@ -70,7 +86,7 @@ in {
       inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
       inputs.yt-x.packages.${pkgs.stdenv.hostPlatform.system}.default
     ]
-    ++ noctaliaPkgs
+    ++ barPkgs
     ++ [
       # Development Tools
       alejandra # nix formatter
@@ -225,7 +241,6 @@ in {
       gnome-software
       gnome-tweaks
       google-chrome
-      localsend
       microsoft-edge
       nwg-displays # configure monitor configs via GUI
       nwg-drawer # Application launcher for wayland
@@ -242,12 +257,15 @@ in {
       ani-cli
       cava # Console Audio Visualizer
       chafa
+      cheese # Classic GNOME camera app
+      gnome-video-effects # Effects for cheese
       evtest
       ffmpeg # Terminal Video / Audio Editing
       kdePackages.kdenlive
       mpv # Incredible Video Player
       obs-studio
       python311Packages.pipx
+      snapshot # Modern GNOME camera app (best for Wayland)
       spotify
       telegram-desktop
       vlc
@@ -274,5 +292,26 @@ in {
       ghostty
       kitty
       pywalfox-native
+
+      # Legacy libraries Vivado often looks for on the host
+      ncurses5
+      zlib
+      glibc
+
+      # Core graphics support (The container uses these from the host)
+      libGL
+      libGLU
+
+      # Individual X11 libraries (Correct naming convention)
+      libX11
+      libXext
+      libXrender
+      libXi
+      libXtst
+      libXft
+
+      # Tools for debugging hardware/connection
+      usbutils
+      pciutils
     ];
 }

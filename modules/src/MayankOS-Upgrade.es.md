@@ -1,6 +1,6 @@
-[English](ZaneyOS-Upgrade.md) | [Español](ZaneyOS-Upgrade.es.md)
+[English](MayankOS-Upgrade.md) | [Español](MayankOS-Upgrade.es.md)
 
-# 🚀 Procedimiento de Actualización de ZaneyOS
+# 🚀 Procedimiento de Actualización de MayankOS
 
 ## ⚠️ DEPRECADO - Usa el nuevo sistema de actualización automatizado
 
@@ -28,8 +28,8 @@ Proporciona:
 ### Inicio Rápido
 ```bash
 # Obtén el script sin modificar tu repo
-git -C ~/zaneyos fetch origin && \
-  git -C ~/zaneyos show origin/main:upgrade-2.3-to-2.4.sh > ~/upgrade-2.3-to-2.4.sh && \
+git -C ~/mayankos fetch origin && \
+  git -C ~/mayankos show origin/main:upgrade-2.3-to-2.4.sh > ~/upgrade-2.3-to-2.4.sh && \
   chmod +x ~/upgrade-2.3-to-2.4.sh
 
 # Ejecuta el script (crea respaldo completo antes de cambiar ramas)
@@ -38,7 +38,7 @@ git -C ~/zaneyos fetch origin && \
 
 Alternativa (curl):
 ```bash
-curl -fsSL https://gitlab.com/zaney/zaneyos/-/raw/main/upgrade-2.3-to-2.4.sh -o ~/upgrade-2.3-to-2.4.sh
+curl -fsSL https://gitlab.com/zaney/mayankos/-/raw/main/upgrade-2.3-to-2.4.sh -o ~/upgrade-2.3-to-2.4.sh
 chmod +x ~/upgrade-2.3-to-2.4.sh
 ~/upgrade-2.3-to-2.4.sh
 ```
@@ -58,7 +58,7 @@ El proceso manual es **incompleto y riesgoso** porque:
 - ❌ No maneja dependencias de terminal
 - ❌ No hay opción de revertir si falla
 - ❌ Faltan variables críticas como `doomEmacsEnable`, monitores, tema
-- ❌ Referencias desactualizadas (`fr`, `fu` en vez de `zcli`)
+- ❌ Referencias desactualizadas (`fr`, `fu` en vez de `mcli`)
 
 ---
 
@@ -71,10 +71,10 @@ El proceso manual es **incompleto y riesgoso** porque:
 
 ### 1. 📝 Preparación
 
-1. **Asegura que tu ZaneyOS actual esté al día:**
-   - Ve a tu carpeta ZaneyOS:
+1. **Asegura que tu MayankOS actual esté al día:**
+   - Ve a tu carpeta MayankOS:
      ```bash
-     cd ~/zaneyos
+     cd ~/mayankos
      ```
    - Si tienes cambios sin commit, súbelos primero.
    - Trae los últimos cambios:
@@ -83,18 +83,18 @@ El proceso manual es **incompleto y riesgoso** porque:
      ```
    - Verifica que host y GPU en `flake.nix` coincidan con tu sistema.
      - Puedes editarlos manualmente.
-     - Dependiendo de tu build actual, quizá puedas ejecutar `zcli update-host`.
-   - Si hay cambios, reconstruye y reinicia (`zcli rebuild`).
+     - Dependiendo de tu build actual, quizá puedas ejecutar `mcli update-host`.
+   - Si hay cambios, reconstruye y reinicia (`mcli rebuild`).
 
 2. **Respalda tu directorio actual:**
    ```bash
-   mv ~/zaneyos ~/zaneyos-backup
+   mv ~/mayankos ~/mayankos-backup
    ```
 
 3. **Clona la rama v2.4:**
    ```bash
-   git clone https://gitlab.com/zaney/zaneyos.git -b Stable-2.4 --depth=1
-   cd ~/zaneyos
+   git clone https://gitlab.com/zaney/mayankos.git -b Stable-2.4 --depth=1
+   cd ~/mayankos
    ```
 
 ---
@@ -122,7 +122,7 @@ El proceso manual es **incompleto y riesgoso** porque:
 
 ### 3. ✅ Probar la Configuración
 
-1. Verifica `flake.nix` (hostname y GPU). Si tienes `zcli update-host`, úsalo.
+1. Verifica `flake.nix` (hostname y GPU). Si tienes `mcli update-host`, úsalo.
 2. Ejecuta:
    ```bash
    nix flake check
@@ -133,10 +133,10 @@ El proceso manual es **incompleto y riesgoso** porque:
 ### 4. ⬆️ Ejecutar la Actualización
 
 > ⚠️ **CRÍTICO:**
-> - No uses `fr`, `fu` ni `zcli` para este paso final.
+> - No uses `fr`, `fu` ni `mcli` para este paso final.
 > - Podría provocar un crash de Hyprland al reiniciar el display manager.
 
-1. Ejecuta desde `~/zaneyos`:
+1. Ejecuta desde `~/mayankos`:
    ```bash
    sudo nixos-rebuild boot --flake .#PROFILE
    ```
@@ -144,4 +144,4 @@ El proceso manual es **incompleto y riesgoso** porque:
 
 ---
 
-### 🎉 ¡Bienvenido a ZaneyOS v2.4!
+### 🎉 ¡Bienvenido a MayankOS v2.4!

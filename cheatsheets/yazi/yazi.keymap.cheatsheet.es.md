@@ -1,6 +1,6 @@
 [English](./yazi.keymap.cheatsheet.md) | Español
 
-# Mapa de Teclas de Yazi — ZaneyOS (Amigable para Humanos)
+# Mapa de Teclas de Yazi — MayankOS (Amigable para Humanos)
 ## 🧭 Navegación
 - k / Arriba — Mover hacia arriba
 - j / Abajo — Mover hacia abajo

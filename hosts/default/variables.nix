@@ -18,7 +18,7 @@
   antigravityEnable = false; # Google port of vscodium
   # Note: This is evil-helix with VIM keybindings by default
   helixEnable = false;
-  #To install: Enable here, zcli rebuild, then run zcli doom install
+  #To install: Enable here, mcli rebuild, then run mcli doom install
   doomEmacsEnable = false;
 
   # Python development tools are included by default
@@ -34,7 +34,7 @@
     ";
 
   # Bar/Shell Settings
-  # Choose between noctalia or waybar
+  # Choose between noctalia, caelestia, dms or waybar
   barChoice = "noctalia";
 
   # Waybar Settings (used when barChoice = "waybar")
@@ -94,12 +94,12 @@
   # Set Stylix Image
   # This will set your color palette
   # Default background
-  # Add new images to ~/zaneyos/wallpapers
+  # Add new images to ~/mayankos/wallpapers
   #stylixImage = ../../wallpapers/mountainscapedark.jpg;
   #stylixImage = ../../wallpapers/AnimeGirlNightSky.jpg;
   #stylixImage = ../../wallpapers/Anime-Purple-eyes.png;
   stylixImage = ../../wallpapers/Rainnight.jpg;
-  #stylixImage = ../../wallpapers/zaney-wallpaper.jpg;
+  #stylixImage = ../../wallpapers/mayankos-wallpaper.jpg;
   #stylixImage = ../../wallpapers/nix-wallpaper-stripes-logo.png;
   #stylixImage = ../../wallpapers/beautifulmountainscape.jpg;
 

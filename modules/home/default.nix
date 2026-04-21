@@ -17,6 +17,10 @@
   barModule =
     if barChoice == "noctalia"
     then ./noctalia.nix
+    else if barChoice == "caelestia"
+    then ./caelestia.nix
+    else if barChoice == "dms"
+    then ./dms.nix
     else waybarChoice;
 in {
   imports =

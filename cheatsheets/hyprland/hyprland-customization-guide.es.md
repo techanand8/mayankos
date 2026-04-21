@@ -1,6 +1,6 @@
-# Guía para personalizar Hyprland en ZaneyOS
+# Guía para personalizar Hyprland en mayankos
 
-Esta guía ofrece una visión detallada de cómo personalizar tu experiencia con Hyprland en ZaneyOS. Veremos los archivos de configuración más importantes, qué hacen y cómo puedes editarlos.
+Esta guía ofrece una visión detallada de cómo personalizar tu experiencia con Hyprland en mayankos. Veremos los archivos de configuración más importantes, qué hacen y cómo puedes editarlos.
 
 **Aviso:** Los archivos están escritos en el lenguaje Nix. La sintaxis es estricta y cualquier error puede impedir que tu sistema se reconstruya. Edita con cuidado y sigue los ejemplos.
 
@@ -9,7 +9,7 @@ Esta guía ofrece una visión detallada de cómo personalizar tu experiencia con
 Tras editar, aplica los cambios desde una terminal:
 
 ```bash path=null start=null
-zcli rebuild
+mcli rebuild
 ```
 
 Esto reconstruirá el sistema con tu configuración. Si hay errores, el comando fallará.

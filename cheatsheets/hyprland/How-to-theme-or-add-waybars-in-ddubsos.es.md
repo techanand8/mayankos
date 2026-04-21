@@ -1,12 +1,12 @@
-# Cómo tematizar o añadir Waybars en ZaneyOS
+# Cómo tematizar o añadir Waybars en mayankos
 
-Esta guía muestra cómo ZaneyOS selecciona y configura Waybar, cómo añadir tu propio módulo de Waybar y cómo personalizar fuentes, tamaños, colores, iconos, widgets y layout. También indica dónde colocar scripts y una nota crítica sobre git add para evitar fallos de rebuild.
+Esta guía muestra cómo mayankos selecciona y configura Waybar, cómo añadir tu propio módulo de Waybar y cómo personalizar fuentes, tamaños, colores, iconos, widgets y layout. También indica dónde colocar scripts y una nota crítica sobre git add para evitar fallos de rebuild.
 
 ## Módulos Waybar disponibles
 Guardados en modules/home/waybar/:
 - waybar-tony.nix
 - waybar-ddubs.nix
-- waybar-ddubsos-v1.nix
+- waybar-mayankos-v1.nix
 - waybar-dwm.nix
 - waybar-curved.nix
 - waybar-simple.nix
@@ -18,7 +18,7 @@ Guardados en modules/home/waybar/:
 
 ## Dónde seleccionas tu Waybar
 Selecciona el módulo en hosts/default/variables.nix vía waybarChoice. Ejemplo (extracto real):
-```nix path=/home/dwilliams/ZaneyOS/hosts/default/variables.nix start=73
+```nix path=/home/mayank-anand/mayankos/hosts/default/variables.nix start=73
   # Set Waybar
   # Includes alternates such as:
   # Comment out the current choice and uncomment the one you want
@@ -49,7 +49,7 @@ git commit -m "Add my Waybar module and widget script"
 - Copian scripts auxiliares a ~/.config/waybar/scripts desde un directorio compartido scripts.
 
 Ejemplo: waybar-tony.nix copia scripts y define config y CSS de Waybar:
-```nix path=/home/dwilliams/ZaneyOS/modules/home/waybar/waybar-tony.nix start=15
+```nix path=/home/mayank-anand/mayankos/modules/home/waybar/waybar-tony.nix start=15
   # Configure & Theme Waybar (Tony)
   home.file = builtins.listToAttrs (map
     (name: {
@@ -105,7 +105,7 @@ cp modules/home/waybar/waybar-simple.nix modules/home/waybar/my-waybar.nix
 ```
 2) (Opcional) Añade scripts auxiliares en modules/home/waybar/scripts/.
 3) Apunta variables.nix a tu módulo:
-```nix path=/home/dwilliams/ZaneyOS/hosts/default/variables.nix start=81
+```nix path=/home/mayank-anand/mayankos/hosts/default/variables.nix start=81
   #waybarChoice = ../../modules/home/waybar/waybar-ddubs.nix;
   waybarChoice = ../../modules/home/waybar/waybar-tony.nix;
   #waybarChoice = ../../modules/home/waybar/waybar-ddubs-2.nix;
@@ -122,7 +122,7 @@ git add modules/home/waybar/my-waybar.nix modules/home/waybar/scripts/*
 
 ## Ejemplos de personalización
 1) Cambiar tipografía y tamaño (CSS)
-```css path=/home/dwilliams/ZaneyOS/modules/home/waybar/waybar-tony.nix start=207
+```css path=/home/mayank-anand/mayankos/modules/home/waybar/waybar-tony.nix start=207
 * {
     font-family: "JetBrainsMono Nerd Font", monospace;
     font-size: 16px;
@@ -130,13 +130,13 @@ git add modules/home/waybar/my-waybar.nix modules/home/waybar/scripts/*
 }
 ```
 2) Mover widgets izquierda/centro/derecha
-```nix path=/home/dwilliams/ZaneyOS/modules/home/waybar/waybar-simple.nix start=28
+```nix path=/home/mayank-anand/mayankos/modules/home/waybar/waybar-simple.nix start=28
 modules-center = [ "hyprland/workspaces" ];
 modules-left = [ "custom/startmenu" "custom/arrow6" "pulseaudio" "cpu" "memory" "idle_inhibitor" "custom/arrow7" "hyprland/window" ];
 modules-right = [ "custom/arrow4" "custom/hyprbindings" "custom/arrow3" "custom/notification" "custom/arrow3" "custom/power" "battery" "custom/arrow2" "tray" "custom/arrow1" "clock" ];
 ```
 3) Cambiar colores y estilos de botones
-```css path=/home/dwilliams/ZaneyOS/modules/home/waybar/waybar-tony.nix start=218
+```css path=/home/mayank-anand/mayankos/modules/home/waybar/waybar-tony.nix start=218
 #workspaces button {
     padding: 0 6px;
     color: @cyn;
@@ -149,7 +149,7 @@ modules-right = [ "custom/arrow4" "custom/hyprbindings" "custom/arrow3" "custom/
 }
 ```
 4) Añadir iconos o cambiar etiquetas
-```nix path=/home/dwilliams/ZaneyOS/modules/home/waybar/waybar-ddubs.nix start=104
+```nix path=/home/mayank-anand/mayankos/modules/home/waybar/waybar-ddubs.nix start=104
 "pulseaudio" = {
   format = "{icon} {volume}% {format_source}";
   format-icons = {
@@ -188,7 +188,7 @@ window#waybar {
 ```
 
 ## Dónde guardar scripts usados por widgets
-```nix path=/home/dwilliams/ZaneyOS/modules/home/waybar/waybar-ddubs.nix start=14
+```nix path=/home/mayank-anand/mayankos/modules/home/waybar/waybar-ddubs.nix start=14
 home.file = builtins.listToAttrs (map (name: {
   name = ".config/waybar/scripts/" + name;
   value = { source = "${scriptsDir}/${name}"; executable = true; };

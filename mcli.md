@@ -1,8 +1,8 @@
-[English](zcli.md) | [Español](zcli.es.md)
+[English](mcli.md) | [Español](mcli.es.md)
 
-# ZaneyOS Command Line Utility (zcli) - Version 1.0.2
+# MayankOS Command Line Utility (mcli) - Version 1.0.2
 
-zcli is a handy tool for performing common maintenance tasks on your ZaneyOS
+mcli is a handy tool for performing common maintenance tasks on your MayankOS
 system with a single command. Below is a detailed guide to its usage and
 commands.
 
@@ -10,7 +10,7 @@ commands.
 
 Run the utility with a specific command:
 
-`zcli`
+`mcli`
 
 If no command is provided, it displays this help message.
 
@@ -21,20 +21,20 @@ descriptions:
 
 || Command       | Icon | Description                                                                                                                                           | Example Usage                           |
 || ------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-|| cleanup       | 🧹   | Removes old system generations, either all or by specifying a number to keep, helping free up space.                                                  | `zcli cleanup` (prompted for all or #)  |
-|| diag          | 🛠️   | Generates a system diagnostic report and saves it to `diag.txt` in your home directory.                                                               | `zcli diag`                             |
-|| list-gens     | 📋   | Lists user and system generations, showing active and existing ones.                                                                                  | `zcli list-gens`                        |
-|| rebuild       | 🔨   | Rebuilds the NixOS system configuration by checking for files that might prevent Home Manager from rebuilding.                                        | `zcli rebuild [options]`                |
-|| rebuild-boot  | 🔄   | Rebuilds NixOS configuration for next boot (activates on restart) - safer for major changes.                                                         | `zcli rebuild-boot [options]`           |
-|| trim          | ✂️   | Trims filesystems to improve SSD performance and optimize storage.                                                                                    | `zcli trim`                             |
-|| update        | 🔄   | Updates the flake, checks for potential conflicts that might prevent Home Manager from rebuilding, and then rebuilds the system.                      | `zcli update [options]`                 |
-|| update-host   | 🏠   | Automatically sets the host and profile in your `flake.nix` file based on the current system. It detects the GPU type or prompts for input if needed. | `zcli update-host [hostname] [profile]` |
-|| add-host      | ➕   | Creates a new host configuration by copying the default template and setting up hardware detection.                                                   | `zcli add-host [hostname] [profile]`    |
-|| del-host      | ➖   | Removes an existing host configuration directory and files.                                                                                           | `zcli del-host [hostname]`              |
-|| doom install  | 🔥   | Installs Doom Emacs using the automated get-doom script with all required packages.                                                                  | `zcli doom install`                     |
-|| doom status   | ✅   | Checks if Doom Emacs is installed and shows version information.                                                                                     | `zcli doom status`                      |
-|| doom remove   | 🗑️   | Completely removes Doom Emacs installation (with safety confirmation).                                                                               | `zcli doom remove`                      |
-|| doom update   | 🔄   | Updates Doom Emacs packages and configuration via doom sync.                                                                                         | `zcli doom update`                      |
+|| cleanup       | 🧹   | Removes old system generations, either all or by specifying a number to keep, helping free up space.                                                  | `mcli cleanup` (prompted for all or #)  |
+|| diag          | 🛠️   | Generates a system diagnostic report and saves it to `diag.txt` in your home directory.                                                               | `mcli diag`                             |
+|| list-gens     | 📋   | Lists user and system generations, showing active and existing ones.                                                                                  | `mcli list-gens`                        |
+|| rebuild       | 🔨   | Rebuilds the NixOS system configuration by checking for files that might prevent Home Manager from rebuilding.                                        | `mcli rebuild [options]`                |
+|| rebuild-boot  | 🔄   | Rebuilds NixOS configuration for next boot (activates on restart) - safer for major changes.                                                         | `mcli rebuild-boot [options]`           |
+|| trim          | ✂️   | Trims filesystems to improve SSD performance and optimize storage.                                                                                    | `mcli trim`                             |
+|| update        | 🔄   | Updates the flake, checks for potential conflicts that might prevent Home Manager from rebuilding, and then rebuilds the system.                      | `mcli update [options]`                 |
+|| update-host   | 🏠   | Automatically sets the host and profile in your `flake.nix` file based on the current system. It detects the GPU type or prompts for input if needed. | `mcli update-host [hostname] [profile]` |
+|| add-host      | ➕   | Creates a new host configuration by copying the default template and setting up hardware detection.                                                   | `mcli add-host [hostname] [profile]`    |
+|| del-host      | ➖   | Removes an existing host configuration directory and files.                                                                                           | `mcli del-host [hostname]`              |
+|| doom install  | 🔥   | Installs Doom Emacs using the automated get-doom script with all required packages.                                                                  | `mcli doom install`                     |
+|| doom status   | ✅   | Checks if Doom Emacs is installed and shows version information.                                                                                     | `mcli doom status`                      |
+|| doom remove   | 🗑️   | Completely removes Doom Emacs installation (with safety confirmation).                                                                               | `mcli doom remove`                      |
+|| doom update   | 🔄   | Updates Doom Emacs packages and configuration via doom sync.                                                                                         | `mcli doom update`                      |
 
 ## Advanced Build Options
 
@@ -42,26 +42,26 @@ The `rebuild`, `rebuild-boot`, and `update` commands now support advanced option
 
 | Option | Short | Description | Example |
 |--------|-------|-------------|----------|
-| `--dry` | `-n` | Preview mode - shows what would be done without executing | `zcli rebuild --dry` |
-| `--ask` | `-a` | Interactive confirmation prompts for safety | `zcli update --ask` |
-| `--cores N` | | Limit build operations to N CPU cores (useful for VMs) | `zcli rebuild --cores 4` |
-| `--verbose` | `-v` | Enable verbose output for detailed operation logs | `zcli update --verbose` |
-| `--no-nom` | | Disable nix-output-monitor for traditional output | `zcli rebuild --no-nom` |
+| `--dry` | `-n` | Preview mode - shows what would be done without executing | `mcli rebuild --dry` |
+| `--ask` | `-a` | Interactive confirmation prompts for safety | `mcli update --ask` |
+| `--cores N` | | Limit build operations to N CPU cores (useful for VMs) | `mcli rebuild --cores 4` |
+| `--verbose` | `-v` | Enable verbose output for detailed operation logs | `mcli update --verbose` |
+| `--no-nom` | | Disable nix-output-monitor for traditional output | `mcli rebuild --no-nom` |
 
 ### Usage Examples
 
 ```bash
 # Preview what an update would do without actually doing it
-zcli update --dry
+mcli update --dry
 
 # Rebuild with confirmation prompts and verbose output
-zcli rebuild --ask --verbose
+mcli rebuild --ask --verbose
 
 # Limit rebuild to 2 cores (great for VMs or low-power systems)
-zcli rebuild --cores 2
+mcli rebuild --cores 2
 
 # Combine multiple options
-zcli update --dry --verbose --cores 4
+mcli update --dry --verbose --cores 4
 ```
 
 ## Detailed Command Descriptions
@@ -70,7 +70,7 @@ zcli update --dry --verbose --cores 4
 
 - **🧹 cleanup**: This command helps manage system storage by removing old
   generations. You can remove all generations or specify a number to retain
-  (e.g., `zcli cleanup` free's up space and removes the entries from boot menu.
+  (e.g., `mcli cleanup` free's up space and removes the entries from boot menu.
 
 - **🛠️ diag**: Creates a comprehensive diagnostic report by running
   `inxi --full` and saving the output to `diag.txt` in your home directory. This
@@ -100,7 +100,7 @@ zcli update --dry --verbose --cores 4
 ### Host Management
 
 - **🏠 update-host**: Simplifies managing multiple hosts by automatically
-  updating the `hostname` and `profile` in your `~/zaneyos/flake.nix` file. It
+  updating the `hostname` and `profile` in your `~/mayankos/flake.nix` file. It
   attempts to detect your GPU type; if it fails, you'll be prompted to enter the
   details manually.
 
@@ -130,13 +130,13 @@ zcli update --dry --verbose --cores 4
 
 ## Additional Notes
 
-- **Why use zcli?** This utility saves time on routine tasks, reducing the need
+- **Why use mcli?** This utility saves time on routine tasks, reducing the need
   for multiple commands or manual edits. The advanced options provide fine-grained
   control over system operations.
 
 - **Version and Compatibility:** Ensure you're using the latest version (1.0.2
   as per the source). For any issues, generate a diagnostic report with
-  `zcli diag` and consult your system logs.
+  `mcli diag` and consult your system logs.
 
 - **Safety Features:** The new `--dry` option allows you to preview changes before
   applying them, while `--ask` provides interactive confirmation for critical operations.

@@ -1,6 +1,6 @@
 # 📜 License
 
-### ZaneyOS is licensed under the MIT License.
+### MayankOS is licensed under the MIT License.
 
 ## MIT License
 

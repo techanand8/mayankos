@@ -1,6 +1,6 @@
 English | [Español](./yazi.keymap.cheatsheet.es.md)
 
-# Yazi Keymap — ZaneyOS (Human-friendly)
+# Yazi Keymap — MayankOS (Human-friendly)
 ## 🧭 Navigation
 - k / Up — Move up
 - j / Down — Move down

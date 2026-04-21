@@ -1,6 +1,6 @@
 English | [Español](./alacritty.cheatsheet.es.md)
 
-# Alacritty on ZaneyOS — Summary & Cheatsheet
+# Alacritty on MayankOS — Summary & Cheatsheet
 ## 🚀 Summary of modules/home/terminals/alacritty.nix
 
 - Program

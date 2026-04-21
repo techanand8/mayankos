@@ -1,13 +1,13 @@
-# How to theme or add Waybars in ZaneyOS
+# How to theme or add Waybars in mayankos
 
-This guide shows how ZaneyOS selects and configures Waybar, how to add your own Waybar module, and how to customize fonts, sizes, colors, icons, widgets, and layout. It also calls out where to put scripts and a critical note about git add to avoid rebuild failures.
+This guide shows how mayankos selects and configures Waybar, how to add your own Waybar module, and how to customize fonts, sizes, colors, icons, widgets, and layout. It also calls out where to put scripts and a critical note about git add to avoid rebuild failures.
 
 
 ## Current Waybar modules available
 Saved in modules/home/waybar/:
 - waybar-tony.nix
 - waybar-ddubs.nix
-- waybar-ddubsos-v1.nix
+- waybar-mayankos-v1.nix
 - waybar-dwm.nix
 - waybar-curved.nix
 - waybar-simple.nix
@@ -21,7 +21,7 @@ Saved in modules/home/waybar/:
 
 ## Where you select your Waybar
 Select the Waybar module in hosts/default/variables.nix via waybarChoice. Example (actual excerpt):
-```nix path=/home/dwilliams/ZaneyOS/hosts/default/variables.nix start=73
+```nix path=/home/mayank-anand/mayankos/hosts/default/variables.nix start=73
   # Set Waybar
   # Includes alternates such as:
   # Comment out the current choice and uncomment the one you want
@@ -55,7 +55,7 @@ Most Waybar modules follow this pattern:
 - They also copy any helper scripts to ~/.config/waybar/scripts via a shared scripts directory.
 
 Example: waybar-tony.nix copies scripts and sets Waybar config and CSS:
-```nix path=/home/dwilliams/ZaneyOS/modules/home/waybar/waybar-tony.nix start=15
+```nix path=/home/mayank-anand/mayankos/modules/home/waybar/waybar-tony.nix start=15
   # Configure & Theme Waybar (Tony)
   home.file = builtins.listToAttrs (map
     (name: {
@@ -113,7 +113,7 @@ cp modules/home/waybar/waybar-simple.nix modules/home/waybar/my-waybar.nix
 ```
 2) (Optional) Add any helper scripts your widgets will use into modules/home/waybar/scripts/ (they will be installed to ~/.config/waybar/scripts automatically by modules using scriptsDir = ./scripts).
 3) Point variables.nix to your new module:
-```nix path=/home/dwilliams/ZaneyOS/hosts/default/variables.nix start=81
+```nix path=/home/mayank-anand/mayankos/hosts/default/variables.nix start=81
   #waybarChoice = ../../modules/home/waybar/waybar-ddubs.nix;
   waybarChoice = ../../modules/home/waybar/waybar-tony.nix;
   #waybarChoice = ../../modules/home/waybar/waybar-ddubs-2.nix;
@@ -126,7 +126,7 @@ waybarChoice = ../../modules/home/waybar/my-waybar.nix;
 ```bash path=null start=null
 git add modules/home/waybar/my-waybar.nix modules/home/waybar/scripts/*
 ```
-5) Rebuild as you normally do for ZaneyOS.
+5) Rebuild as you normally do for mayankos.
 
 
 ## Customization examples
@@ -134,7 +134,7 @@ Below are quick edits you can make, demonstrated using existing modules.
 
 1) Change font family and size (CSS)
 - In waybar-tony.nix:
-```css path=/home/dwilliams/ZaneyOS/modules/home/waybar/waybar-tony.nix start=207
+```css path=/home/mayank-anand/mayankos/modules/home/waybar/waybar-tony.nix start=207
 * {
     font-family: "JetBrainsMono Nerd Font", monospace;
     font-size: 16px;
@@ -145,7 +145,7 @@ Change font-family and font-size to your preference.
 
 2) Move widgets left/center/right
 - In any module, edit modules-left, modules-center, modules-right arrays. For example in waybar-simple.nix:
-```nix path=/home/dwilliams/ZaneyOS/modules/home/waybar/waybar-simple.nix start=28
+```nix path=/home/mayank-anand/mayankos/modules/home/waybar/waybar-simple.nix start=28
 modules-center = [ "hyprland/workspaces" ];
 modules-left = [ "custom/startmenu" "custom/arrow6" "pulseaudio" "cpu" "memory" "idle_inhibitor" "custom/arrow7" "hyprland/window" ];
 modules-right = [ "custom/arrow4" "custom/hyprbindings" "custom/arrow3" "custom/notification" "custom/arrow3" "custom/power" "battery" "custom/arrow2" "tray" "custom/arrow1" "clock" ];
@@ -154,7 +154,7 @@ Just reorder or move entries between arrays to place widgets where you want.
 
 3) Change colors and button styles
 - In waybar-tony.nix, CSS color variables and workspace button styling:
-```css path=/home/dwilliams/ZaneyOS/modules/home/waybar/waybar-tony.nix start=218
+```css path=/home/mayank-anand/mayankos/modules/home/waybar/waybar-tony.nix start=218
 #workspaces button {
     padding: 0 6px;
     color: @cyn;
@@ -170,7 +170,7 @@ Adjust colors (e.g., @cyn, @mag) or borders as desired. You can also define your
 
 4) Add icons or change labels
 - Many modules set format and format-icons. Example (pulseaudio) in waybar-ddubs.nix:
-```nix path=/home/dwilliams/ZaneyOS/modules/home/waybar/waybar-ddubs.nix start=104
+```nix path=/home/mayank-anand/mayankos/modules/home/waybar/waybar-ddubs.nix start=104
 "pulseaudio" = {
   format = "{icon} {volume}% {format_source}";
   format-icons = {
@@ -215,7 +215,7 @@ window#waybar {
 }
 ```
 
-7) Known Waybar modules you’ll see in ZaneyOS configs
+7) Known Waybar modules you’ll see in mayankos configs
 - Hyprland modules: hyprland/workspaces, hyprland/window, wlr/taskbar (wlroots taskbar)
 - System modules: clock, tray, cpu, memory, network, disk, battery, bluetooth, backlight, idle_inhibitor, mpris, temperature, pulseaudio
 - Custom modules: custom/* (e.g., custom/power, custom/notification, custom/startmenu, etc.)
@@ -224,7 +224,7 @@ window#waybar {
 ## Where to store scripts that widgets call
 - Place scripts under modules/home/waybar/scripts/.
 - Many Waybar modules here include:
-```nix path=/home/dwilliams/ZaneyOS/modules/home/waybar/waybar-ddubs.nix start=14
+```nix path=/home/mayank-anand/mayankos/modules/home/waybar/waybar-ddubs.nix start=14
 home.file = builtins.listToAttrs (map (name: {
   name = ".config/waybar/scripts/" + name;
   value = { source = "${scriptsDir}/${name}"; executable = true; };

@@ -1,6 +1,6 @@
 [English](./kitty.cheatsheet.md) | Español
 
-# Kitty en ZaneyOS — Resumen y Cheatsheet
+# Kitty en MayankOS — Resumen y Cheatsheet
 ## 🚀 Resumen de modules/home/terminals/kitty.nix
 
 - Programa

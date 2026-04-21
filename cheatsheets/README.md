@@ -1,10 +1,10 @@
 English | [Español](./README.es.md)
 
-# Cheatsheets Index (ZaneyOS)
-These documents cover both general usage and the specific configuration as defined in the NixOS configuration "ZaneyOS".
+# Cheatsheets Index (MayankOS)
+These documents cover both general usage and the specific configuration as defined in the NixOS configuration "MayankOS".
 
 - General use: Practical, task-focused tips and top workflows.
-- ZaneyOS specifics: Notes reflecting how tools are configured in this repository (modules/home/*) so behavior matches your system.
+- MayankOS specifics: Notes reflecting how tools are configured in this repository (modules/home/*) so behavior matches your system.
 
 ## 🔗 Quick Links
 - Emacs
@@ -32,7 +32,7 @@ These documents cover both general usage and the specific configuration as defin
 ## 📚 How to use
 - Browse the area you care about (e.g., Emacs, Ghostty).
 - Start with the “getting started” or “top tips” docs for quick wins.
-- Refer to tool-specific cheatsheets for day-to-day commands, then cross-check any ZaneyOS-specific settings.
+- Refer to tool-specific cheatsheets for day-to-day commands, then cross-check any MayankOS-specific settings.
 
 ## 📂 Directory Tree
 
@@ -62,5 +62,5 @@ cheatsheets/
 ```
 
 ## 🛠️ Notes
-- Ghostty cheatsheet reflects bindings from modules/home/terminals/ghostty.nix (ZaneyOS).
+- Ghostty cheatsheet reflects bindings from modules/home/terminals/ghostty.nix (MayankOS).
 - Emacs docs follow the same markdown style for consistency and quick scanning.

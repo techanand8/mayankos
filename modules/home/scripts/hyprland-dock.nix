@@ -1,4 +1,4 @@
-# ~/ddubsos/modules/home/scripts/hyprland-dock.nix
+# ~/mayankos/modules/home/scripts/hyprland-dock.nix
 {pkgs}:
 pkgs.writeShellScriptBin "dock" ''
 

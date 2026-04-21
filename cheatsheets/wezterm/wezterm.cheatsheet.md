@@ -1,6 +1,6 @@
 English | [Español](./wezterm.cheatsheet.es.md)
 
-# WezTerm on ZaneyOS — Summary & Cheatsheet
+# WezTerm on MayankOS — Summary & Cheatsheet
 ## 🚀 Summary of modules/home/terminals/wezterm.nix
 
 - Program

@@ -33,7 +33,7 @@
           type = "command";
           key = " ├  MayankOS ";
           keyColor = "31";
-          text = "echo v$" + "{ZANEYOS_VERSION}";
+          text = "echo v$" + "{MAYANKOS_VERSION}";
         }
         {
           type = "kernel";

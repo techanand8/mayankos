@@ -1,6 +1,6 @@
 [English](./hyprland.binds.cheatsheet.md) | Español
 
-# Atajos de Teclado de Hyprland — ZaneyOS
+# Atajos de Teclado de Hyprland — mayankos
 ## 🗝️ Convenciones
 - SUPERKEY = Tecla Mod (en Hyprland `$modifier`)
 - SHIFT, CTRL, ALT se usan como se muestra

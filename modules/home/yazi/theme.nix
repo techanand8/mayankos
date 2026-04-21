@@ -1149,7 +1149,7 @@
         fg = "#4d5a5e";
       }
       {
-        name = "azcli";
+        name = "amcli";
         text = "";
         fg = "#0078d4";
       }

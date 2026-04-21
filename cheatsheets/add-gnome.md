@@ -1,6 +1,6 @@
 # Add GNOME Desktop (overview)
 
-This guide gives **basic steps** and **which files to edit** to add GNOME to ZaneyOS.
+This guide gives **basic steps** and **which files to edit** to add GNOME to MayankOS.
 
 In NixOS, you enable it through NixOS options in a module (a `.nix` file), then pick a display manager (login screen).  
 This repo already has **SDDM** (graphical) and **LY** (text) login support. You can keep using either — both can start GNOME sessions.
@@ -55,4 +55,4 @@ services.flatpak.packages = [
 
 ## `git add .` and rebuild
 
-Once you have the file created. In the ZaneyOS directory run `git add . ` then `zcli rebuild`
+Once you have the file created. In the MayankOS directory run `git add . ` then `mcli rebuild`

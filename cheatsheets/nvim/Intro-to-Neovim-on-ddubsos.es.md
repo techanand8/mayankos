@@ -1,6 +1,6 @@
-# Introducción a Neovim en ZaneyOS
+# Introducción a Neovim en MayankOS
 
-¡Bienvenido! Esta chuleta introduce Neovim tal y como está configurado en ZaneyOS (modules/home/nvf.nix). Se centra en tareas para principiantes y los plugins/atajos clave de este setup.
+¡Bienvenido! Esta chuleta introduce Neovim tal y como está configurado en MayankOS (modules/home/nvf.nix). Se centra en tareas para principiantes y los plugins/atajos clave de este setup.
 
 Aspectos destacados
 - UI moderna: tema Catppuccin, Lualine, bufferline, iconos

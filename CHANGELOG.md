@@ -1,11 +1,11 @@
-# 📋 ZaneyOS Changelog
+# 📋 MayankOS Changelog
 
 > ** ✨ A comprehensive history of changes, improvements, and updates to
-> ZaneyOS**
+> MayankOS**
 
 ---
 
-# 🚀 **Current Release - ZaneyOS v2.6.1**
+# 🚀 **Current Release - MayankOS v2.6.1**
 
 - Added `awww` as flake input for installs < 25.11
 - Fixed eval warnings:
@@ -13,19 +13,19 @@
   - `git.signing.format` set to `null`
 - `nixvim` lualine theme set to `auto`
 - Changed to NixOS unstable branch
-- Ported `DropTerminal` from `KoolDots` to ZaneyOS
+- Ported `DropTerminal` from `KoolDots` to MayankOS
   - Replaces pyprland and some python dependencies
 - Hyprland updated to v0.54
   - Added support for scrolling and monocle layouts
   - Fixed hyprland float-all bindings
   - Updated Window Rules for new Hyprland format
 - Disabled steam by default
-- Removed `adb.enable` no longer supported and not needed for ZaneyOS
+- Removed `adb.enable` no longer supported and not needed for MayankOS
 - Changed `nixfmt-rfc-style` package for updated `nitfmt`
   - `nixfmt-rfc-style` no longer supported
 - Fixed other evaluation warnings with `Xorg` package changes
 
-# 🚀 **Current Release - ZaneyOS v2.6.0**
+# 🚀 **Current Release - MayankOS v2.6.0**
 
 #### 📅 **Updated: April 3rd, 2026**
 
@@ -35,7 +35,7 @@
 
 #### 📅 **Updated: February 19th, 2026**
 
-- Fixed `zcli` GPU detection for newer AMD GPUs
+- Fixed `mcli` GPU detection for newer AMD GPUs
   - Fixed the fix to properly detect VMs
 - `nixvim.nix` changes
   - Disabled Zig language server
@@ -47,7 +47,7 @@
 - Removed `hyprpanel`
   - No longer maintained
     - Vendor created `wayle` to replace it
-    - Replaced in ZaneyOS with 'noctalia-shell'
+    - Replaced in MayankOS with 'noctalia-shell'
 
 - `webkitgtk` being built from source
   - Removed audacity is called `wxwidgets`
@@ -74,9 +74,9 @@
   - Adjusted `noctalia-shell` bindings to match change
 - Default applications now settable
   - Globally for all hosts
-    - `zaneyos/modules/home/xdg.nix`
+    - `mayankos/modules/home/xdg.nix`
   - Per host
-    - `zaneyos/hosts/HOSTNAME/variables.nix`
+    - `mayankos/hosts/HOSTNAME/variables.nix`
       - Host settings override `xdg.nix` settings
 
 #### 📅 **Updated: January 23rd, 2026**
@@ -427,7 +427,7 @@
   - Removed LUA code related to `nvim-cmp`
 
 - Fixed:
-  - Output of `zcli list-gens` corrected
+  - Output of `mcli list-gens` corrected
     - Thanks `@codingismy11to71`
 
 #### 📅 **Updated: December 14th, 2025**
@@ -474,7 +474,7 @@
 - Added `alejandra` formatter to `flake.nix`
   - ran `nix fmt ./` and updated all files to current format spec
 - Added `alejandra` as default formatter in `nixvim.nix`
-- Hybrid GPU detection fails in `install-zaneyos.sh`
+- Hybrid GPU detection fails in `install-mayankos.sh`
   - Should be `nvidia-laptop` not `hybrid`
     - Thanks to sasek @sasek333 for spotting this
 
@@ -529,7 +529,7 @@
   - Uses IPC for seamless integration with Hyprland
   - QML code managed via Home Manager activation script
 - FIXED: Username wasn't reliably being set in `flake.nix`
-- Set ZaneyOS to NixOS v25.11 stable branch
+- Set MayankOS to NixOS v25.11 stable branch
 - Moved to `nixvim` for NeoVIM configuration
   - Works better
   - Fewer issues vs. `nvf.nix`
@@ -589,12 +589,12 @@
     enabled (required for RTX 50xx open kernel module)
   - New profile: `profiles/amd-hybrid/default.nix` (wires `amdgpuID`/`nvidiaID`
     from `hosts/<host>/variables.nix`)
-  - zcli detection updated to recognize `amd-hybrid`; `install-zaneyos.sh`
+  - mcli detection updated to recognize `amd-hybrid`; `install-mayankos.sh`
     prompts include `amd-hybrid`
   - Added `amdgpuID` to `hosts/*/variables.nix`
   - Docs updated (`README`, `WARP.md`, cheatsheets)
   - Caution: Can't fully test at this time. Please verify your Bus IDs via
-    `lspci` and use `zcli rebuild-boot` for safer activation
+    `lspci` and use `mcli rebuild-boot` for safer activation
 
 #### 📅 **Updated: September 9th, 2025**
 
@@ -628,22 +628,22 @@
   vscodeEnable = false;
   # Note: This is evil-helix with VIM keybindings by default
   helixEnable = false;
-  #To install: Enable here, rebuild, then run zcli doom install
+  #To install: Enable here, rebuild, then run mcli doom install
   doomEmacsEnable = false;
 ```
 
 - As a result of this change, you can't just `git pull` and rebuild
 - The new variables and other changes will cause the build to fail
-- If you are on `zaneyos v2.3` read the upgrade documentation
+- If you are on `mayankos v2.3` read the upgrade documentation
 - Began process to translate documents into Spanish (Machine translated)
 - README.es.md
 - FAQ.es.md
-- ZaneyOS-Upgrade.es.md
+- MayankOS-Upgrade.es.md
 - TESTING-UPGRADE.es.md
 - UPGRADE-2.3-to-2.4.es.md
-- zcli.es.md
-- Added `~/zaneyos/cheatsheets/project-guide.md`
-- This is an overview of how ZaneyOS is laid out
+- mcli.es.md
+- Added `~/mayankos/cheatsheets/project-guide.md`
+- This is an overview of how MayankOS is laid out
 
 #### 📅 **Updated: August 21st, 2025**
 
@@ -682,12 +682,12 @@
 #### 📅 **Updated: August 19th, 2025**
 
 - 🔄 **Upgrade System Enhancement**: Comprehensive upgrade infrastructure for
-  ZaneyOS 2.3 → 2.4 migrations
+  MayankOS 2.3 → 2.4 migrations
   - 🚀 **Automated Upgrade Script**: `upgrade-2.3-to-2.4.sh` with complete
     migration automation
     - 💾 **Complete Backup System**: Timestamped backups with organized storage
-      in `~/.config/zaneyos-backups/`
-    - 🔍 **Version Validation**: Automatic detection of ZaneyOS 2.3 vs 2.4+ to
+      in `~/.config/mayankos-backups/`
+    - 🔍 **Version Validation**: Automatic detection of MayankOS 2.3 vs 2.4+ to
       prevent incorrect upgrades
     - 🧬 **Variable Migration**: Comprehensive migration of 15+ configuration
       variables from 2.3 to 2.4 format
@@ -703,14 +703,14 @@
     `upgrade-2.3-to-2.4.sh --revert` for easy rollback
   - 📚 **Complete Documentation**: `UPGRADE-2.3-to-2.4.md` with detailed
     instructions and troubleshooting
-  - ⚠️ **Legacy Documentation**: Updated `ZaneyOS-Upgrade.md` to deprecate
+  - ⚠️ **Legacy Documentation**: Updated `MayankOS-Upgrade.md` to deprecate
     manual process and redirect to automated system
   - 🔧 **Hardware Preservation**: Automatic migration of hardware.nix and
     host-specific configurations
   - 🎯 **User Experience**: Interactive prompts, colored output, progress
     indicators, and clear error messages
 
-- 🛠️ **ZCLI Enhancement v1.0.2**: Major upgrade to the ZaneyOS CLI utility with
+- 🛠️ **MCLI Enhancement v1.0.2**: Major upgrade to the MayankOS CLI utility with
   comprehensive new features
   - 🔥 **Doom Emacs Management**: Complete lifecycle management for Doom Emacs
     - 🚀 `doom install` - Automated installation using get-doom script with all
@@ -773,7 +773,7 @@
 
 #### 📅 **Updated: August 10th, 2025**
 
-- ⚡ **ZCLI Enhancement**: Added `rebuild-boot` function to `zcli`
+- ⚡ **MCLI Enhancement**: Added `rebuild-boot` function to `mcli`
   - 🔄 Uses `nh os boot` instead of `nh os switch`
   - ⏭️ Configuration activates on next restart instead of immediately
   - 🛡️ Safer for kernel updates, driver changes, and system-critical
@@ -784,8 +784,8 @@
   - 🔧 Corrected `detec0.1ted_profile` to `detected_profile`
   - ✅ GPU auto-detection for hybrid systems now works properly
 
-- 📝 **Documentation**: Improved formatting in `ZaneyOS-Upgrade.md`
-  - 🔧 Fixed incomplete sentence about `zcli rebuild-boot` command availability
+- 📝 **Documentation**: Improved formatting in `MayankOS-Upgrade.md`
+  - 🔧 Fixed incomplete sentence about `mcli rebuild-boot` command availability
   - ✨ Improved bullet point clarity and sub-bullet indentation
   - 🎨 Fixed code block formatting in migration steps
   - 📋 Removed unnecessary quote markers from bash commands
@@ -806,22 +806,22 @@
 
 - 📝 **Documentation**: Added `tealdeer.nix (TLDR)` with autoupdate
 
-- 🔧 **ZCLI Fixes**:
-  - ➕ Added defensive code to `zcli.nix`
+- 🔧 **MCLI Fixes**:
+  - ➕ Added defensive code to `mcli.nix`
   - 🔍 For rebuilds, updates, hostname and flake host mistches are checked
   - ⚙️ If not same, prompted to auto update the flake.nix
   - 💼 Added `$PROJECT` variable to set repo location
-  - 📝 Default is `zaneyos`
-  - 📊 Added info on `zcli` utility
-  - ⬆️ Updated `zcli` now uses `nh` util to select # of generations to keep
-  - ➕ Added `zcli` CLI util. runs rebuild, update, garbage collection and diags
+  - 📝 Default is `mayankos`
+  - 📊 Added info on `mcli` utility
+  - ⬆️ Updated `mcli` now uses `nh` util to select # of generations to keep
+  - ➕ Added `mcli` CLI util. runs rebuild, update, garbage collection and diags
 
   ```text
-  ❯ zcli
+  ❯ mcli
 
-  ZaneyOS CLI Utility -- version 1.0
+  MayankOS CLI Utility -- version 1.0
 
-  Usage: zcli [command]
+  Usage: mcli [command]
 
   Commands:
 
@@ -877,7 +877,7 @@
   - Updated `tmux.nix` adding popups for lazygit, terminal, edit menu
 
 - 📜 **Install Script**:
-  - Improved `install-zaneyos.sh` script Detects GPU and better presentation
+  - Improved `install-mayankos.sh` script Detects GPU and better presentation
 
 - 📝 **Evil Helix**:
   - Added `evil-helix` with language support as option
@@ -1055,7 +1055,7 @@
 ## 📖 **Documentation & Fixes**:
 
 - ❌ **Disk Module**: Disabled the `df` command in the disk module. Doesn't work
-  w/zaneyos
+  w/mayankos
 - 📋 **Monitor Examples**: Added examples for monitor setup in `variables.nix`
 - 🔧 **Yazi Fix**: Merged yazi fix for errors after rebuilds. Thank you Daniel
 - 🔄 **Flake Update**: Updated flake 05/27/2025
@@ -1119,7 +1119,7 @@
 
 <br>
 <details>
-<summary><strong>**ZaneyOS v2.2**</strong> </summary>
+<summary><strong>**MayankOS v2.2**</strong> </summary>
 
 <div style="margin-left: 20px;">
 
@@ -1155,7 +1155,7 @@
 
 <details>
 
-<summary><strong>**ZaneyOS v2.1**</strong></summary>
+<summary><strong>**MayankOS v2.1**</strong></summary>
 
 <div style="margin-left: 20px;">
 
@@ -1175,11 +1175,11 @@ Simple bug fixes.
 
 <details>
 
-<summary><strong>**ZaneyOS v2.0** </strong></summary>
+<summary><strong>**MayankOS v2.0** </strong></summary>
 
 <div style="margin-left: 20px;">
 
-With this new update of ZaneyOS it is a big rewrite of how things are being
+With this new update of MayankOS it is a big rewrite of how things are being
 done. This update fixes many issues that you guys were facing. As well as makes
 things a little easier to understand. You now have a lot being stored inside the
 specific host directory, making use of modules, condensing seperate files down,

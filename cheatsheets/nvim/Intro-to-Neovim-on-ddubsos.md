@@ -1,6 +1,6 @@
-# Intro to Neovim on ZaneyOS
+# Intro to Neovim on MayankOS
 
-Welcome! This cheatsheet introduces Neovim as configured in ZaneyOS (modules/home/nvf.nix). It focuses on beginner tasks and the key plugins and keymaps in this setup.
+Welcome! This cheatsheet introduces Neovim as configured in MayankOS (modules/home/nvf.nix). It focuses on beginner tasks and the key plugins and keymaps in this setup.
 
 Highlights of this configuration
 - Modern UI: Catppuccin theme, Lualine statusline, bufferline, icons

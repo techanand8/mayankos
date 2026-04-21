@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ######################################
-# Install script for zaneyos
+# Install script for mayankos
 # Author:  Don Williams
 # Date: June 27, 2005
 #######################################
@@ -51,7 +51,7 @@ print_error() {
 # Function to print a success banner
 print_success_banner() {
   echo -e "${GREEN}╔═══════════════════════════════════════════════════════════════════════╗${NC}"
-  echo -e "${GREEN}║                 ZaneyOS Installation Successful!                      ║${NC}"
+  echo -e "${GREEN}║                 MayankOS Installation Successful!                      ║${NC}"
   echo -e "${GREEN}║                                                                       ║${NC}"
   echo -e "${GREEN}║   Please reboot your system for changes to take full effect.          ║${NC}"
   echo -e "${GREEN}║                                                                       ║${NC}"
@@ -61,7 +61,7 @@ print_success_banner() {
 # Function to print a failure banner
 print_failure_banner() {
   echo -e "${RED}╔═══════════════════════════════════════════════════════════════════════╗${NC}"
-  echo -e "${RED}║                 ZaneyOS Installation Failed!                          ║${NC}"
+  echo -e "${RED}║                 MayankOS Installation Failed!                          ║${NC}"
   echo -e "${RED}║                                                                       ║${NC}"
   echo -e "${RED}║   Please review the log file for details:                             ║${NC}"
   echo -e "${RED}║   ${LOG_FILE}                                                        ║${NC}"
@@ -222,14 +222,14 @@ Please type out your choice: " profile
   echo -e "${GREEN}Selected GPU profile: $profile${NC}"
 fi
 
-print_header "⚠️  CRITICAL WARNING - Existing ZaneyOS Detected"
+print_header "⚠️  CRITICAL WARNING - Existing MayankOS Detected"
 
 backupname=$(date +"%Y-%m-%d-%H-%M-%S")
-if [ -d "zaneyos" ]; then
+if [ -d "mayankos" ]; then
   echo -e "${RED}╔═══════════════════════════════════════════════════════════════════════╗${NC}"
   echo -e "${RED}║                    ⚠️  IMPORTANT WARNING ⚠️                           ║${NC}"
   echo -e "${RED}║                                                                       ║${NC}"
-  echo -e "${RED}║  An existing ZaneyOS installation was detected at ~/zaneyos           ║${NC}"
+  echo -e "${RED}║  An existing MayankOS installation was detected at ~/mayankos           ║${NC}"
   echo -e "${RED}║                                                                       ║${NC}"
   echo -e "${RED}║  This installer will COMPLETELY REPLACE your existing configuration!  ║${NC}"
   echo -e "${RED}║  All customizations, packages, and settings will be LOST!             ║${NC}"
@@ -245,25 +245,25 @@ if [ -d "zaneyos" ]; then
     echo -e "${GREEN}Installation cancelled. ${NC}"
     exit 0
   fi
-  echo -e "${GREEN}zaneyos exists, backing up to .config/zaneyos-backups folder.${NC}"
-  if [ -d ".config/zaneyos-backups" ]; then
-    echo -e "${GREEN}Moving current version of ZaneyOS to backups folder.${NC}"
-    mv "$HOME"/zaneyos .config/zaneyos-backups/"$backupname"
+  echo -e "${GREEN}mayankos exists, backing up to .config/mayankos-backups folder.${NC}"
+  if [ -d ".config/mayankos-backups" ]; then
+    echo -e "${GREEN}Moving current version of MayankOS to backups folder.${NC}"
+    mv "$HOME"/mayankos .config/mayankos-backups/"$backupname"
     sleep 1
   else
-    echo -e "${GREEN}Creating the backups folder & moving ZaneyOS to it.${NC}"
-    mkdir -p .config/zaneyos-backups
-    mv "$HOME"/zaneyos .config/zaneyos-backups/"$backupname"
+    echo -e "${GREEN}Creating the backups folder & moving MayankOS to it.${NC}"
+    mkdir -p .config/mayankos-backups
+    mv "$HOME"/mayankos .config/mayankos-backups/"$backupname"
     sleep 1
   fi
 else
-  echo -e "${GREEN}Thank you for choosing ZaneyOS.${NC}"
+  echo -e "${GREEN}Thank you for choosing MayankOS.${NC}"
   echo -e "${GREEN}I hope you find your time here enjoyable!${NC}"
 fi
 
-print_header "Cloning ZaneyOS Repository"
-git clone https://gitlab.com/zaney/zaneyos.git -b main --depth=1 ~/zaneyos
-cd ~/zaneyos || exit 1
+print_header "Cloning MayankOS Repository"
+git clone https://gitlab.com/zaney/mayankos.git -b main --depth=1 ~/mayankos
+cd ~/mayankos || exit 1
 
 print_header "Git Configuration"
 echo "👤 Setting up git configuration for version control:"
@@ -458,7 +458,7 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
   exit 1
 fi
 
-sudo nixos-rebuild boot --flake ~/zaneyos/#${profile}
+sudo nixos-rebuild boot --flake ~/mayankos/#${profile}
 
 # Check the exit status of the last command (nixos-rebuild)
 if [ $? -eq 0 ]; then

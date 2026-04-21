@@ -1,13 +1,13 @@
-# Guía de Personalización de Hyprland en ZaneyOS
+# Guía de Personalización de Hyprland en MayankOS
 
-Esta guía ofrece una visión práctica para personalizar tu experiencia con Hyprland en ZaneyOS. Veremos los archivos más relevantes, qué hacen y pequeños cambios seguros que puedes aplicar.
+Esta guía ofrece una visión práctica para personalizar tu experiencia con Hyprland en MayankOS. Veremos los archivos más relevantes, qué hacen y pequeños cambios seguros que puedes aplicar.
 
 Nota: Estos archivos están escritos en Nix. Un pequeño error de sintaxis puede romper las compilaciones. Realiza un cambio a la vez y mantén tus ediciones bajo control de versiones.
 
 ## Aplicar tus cambios
 
-Preferido (específico de ZaneyOS):
-- `zcli rebuild`
+Preferido (específico de MayankOS):
+- `mcli rebuild`
   - Nota: el alias `fr` está obsoleto.
 
 Método manual de respaldo (funciona en cualquier instalación):

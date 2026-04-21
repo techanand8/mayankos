@@ -2,11 +2,11 @@
 
 <div align="center">
 
-## ZaneyOS 🟰 Best ❄️ NixOS Configs
+## MayankOS 🟰 Best ❄️ NixOS Configs
 
 \*\* Updated: January 16th, 2026
 
-ZaneyOS is a simple way of reproducing my configuration on any NixOS system.
+MayankOS is a simple way of reproducing my configuration on any NixOS system.
 This includes the wallpaper, scripts, applications, config files, and more.
 
 ## Important Note on Noctalia
@@ -14,7 +14,7 @@ This includes the wallpaper, scripts, applications, config files, and more.
 > The first time you login, screen will be blank SUPER + SHIFT + C to exit.
 > Login in, noctalia will start from then on
 
-<img align="center" width="80%" src="img/ZaneyOS-Floating.png" />
+<img align="center" width="80%" src="img/MayankOS-Floating.png" />
 
 </div>
 
@@ -29,19 +29,19 @@ This includes the wallpaper, scripts, applications, config files, and more.
 
 ### Noctalia Shell Integration
 
-<img align="center" width="80%" src="img/ZaneyOS-noctalia-panel.png" />
+<img align="center" width="80%" src="img/MayankOS-noctalia-panel.png" />
 
-<img align="center" width="80%" src="img/ZaneyOS-noctalia-app.png" />
+<img align="center" width="80%" src="img/MayankOS-noctalia-app.png" />
 
-<img align="center" width="80%" src="img/ZaneyOS-noctalia-settings.png" />
+<img align="center" width="80%" src="img/MayankOS-noctalia-settings.png" />
 
-<img align="center" width="80%" src="img/ZaneyOS-noctalia-weather.png" />
+<img align="center" width="80%" src="img/MayankOS-noctalia-weather.png" />
 
 ### Additional Features
 
-<img align="center" width="80%" src="img/ZaneyOS-keybind-search.png" />
+<img align="center" width="80%" src="img/MayankOS-keybind-search.png" />
 
-<img align="center" width="80%" src="img/ZaneyOS-nivim-emacs.png" />
+<img align="center" width="80%" src="img/MayankOS-nivim-emacs.png" />
 
 </details>
 
@@ -58,7 +58,7 @@ This includes the wallpaper, scripts, applications, config files, and more.
 #### 🍖 Requirements
 
 - You must be running on NixOS, version 24.05+.
-- The `zaneyos` folder (this repo) is expected to be in your home directory.
+- The `mayankos` folder (this repo) is expected to be in your home directory.
 - You must have installed NIXOS using **GPT** parition with booting with
   **UEFI**.
 - ** 500MB minimum /boot partition required. **
@@ -88,10 +88,10 @@ This includes the wallpaper, scripts, applications, config files, and more.
 
 #### 👼 An Incredible Community Focused On Support
 
-- The entire idea of ZaneyOS is to make NixOS an approachable space.
+- The entire idea of MayankOS is to make NixOS an approachable space.
 - NixOS is actually a great community that you will want to be a part of.
 - Many people who are patient and happy to spend their free time helping you are
-  running ZaneyOS.
+  running MayankOS.
 - Feel free to reach out on the Discord for any help with anything.
 
 #### 📦 How To Install Packages?
@@ -213,8 +213,8 @@ _Available when `barChoice = "waybar"` in `variables.nix`_
 ## Installation:
 
 > **⚠️ IMPORTANT:** These installation methods are for **NEW INSTALLATIONS
-> ONLY**. If you already have ZaneyOS installed and want to upgrade to v2.4, see
-> the [Upgrade Instructions](#upgrading-from-zaneyos-23-to-24) below. Note:
+> ONLY**. If you already have MayankOS installed and want to upgrade to v2.4, see
+> the [Upgrade Instructions](#upgrading-from-mayankos-23-to-24) below. Note:
 > There is an issue with upgrade script. It's been removed until it's fixed.
 
 <details>
@@ -228,13 +228,13 @@ that you can in the flake or help you install extra packages. It is simply here
 so you can get my configuration installed with as little chances of breakages
 and then fiddle to your hearts content!
 
-> **⚠️ WARNING:** This script will completely replace any existing ~/zaneyos
-> directory. Do NOT use this if you already have ZaneyOS installed and
+> **⚠️ WARNING:** This script will completely replace any existing ~/mayankos
+> directory. Do NOT use this if you already have MayankOS installed and
 > configured.
 
 Simply copy this and run it:
 
-![ZaneyOS First Install Command](img/first-install-cmd.jpg)
+![MayankOS First Install Command](img/first-install-cmd.jpg)
 
 ```
 nix-shell -p git curl pciutils
@@ -242,10 +242,10 @@ nix-shell -p git curl pciutils
 
 Then:
 
-![ZaneyOS Install Script Command](img/install-script.jpg)
+![MayankOS Install Script Command](img/install-script.jpg)
 
 ```
-sh <(curl -L https://gitlab.com/Zaney/zaneyos/-/raw/main/install-zaneyos.sh)
+sh <(curl -L https://gitlab.com/Zaney/mayankos/-/raw/main/install-mayankos.sh)
 ```
 
 #### The install process will look something like this:
@@ -276,8 +276,8 @@ nix-shell -p git vim
 2. Clone this repo & enter it:
 
 ```
-cd && git clone https://gitlab.com/zaney/zaneyos.git -b main --depth=1 ~/zaneyos
-cd zaneyos
+cd && git clone https://gitlab.com/zaney/mayankos.git -b main --depth=1 ~/mayankos
+cd mayankos
 
 You can still run the `install.sh` script if you want to.
 ```
@@ -308,7 +308,7 @@ sudo nixos-rebuild switch --flake .#profile
 
 Now when you want to rebuild the configuration you have access to an alias
 called `fr` that will rebuild the flake and you do not have to be in the
-`zaneyos` folder for it to work.
+`mayankos` folder for it to work.
 
 ### Special Recognitions:
 

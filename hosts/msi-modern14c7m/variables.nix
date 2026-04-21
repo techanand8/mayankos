@@ -14,11 +14,11 @@
   alacrittyEnable = true;
   weztermEnable = false;
   ghosttyEnable = true;
-  vscodeEnable = true;
+  vscodeEnable = false;
   antigravityEnable = false; # Google port of vscodium
   # Note: This is evil-helix with VIM keybindings by default
   helixEnable = true;
-  #To install: Enable here, zcli rebuild, then run zcli doom install
+  #To install: Enable here, mcli rebuild, then run mcli doom install
   doomEmacsEnable = false;
 
   # Python development tools are included by default
@@ -30,10 +30,9 @@
   # You can configure multiple monitors.
   # Inside the quotes, create a new line for each monitor.
   extraMonitorSettings = "monitor = eDP-1, 1920x1080@60, 0x0, 1";
-   
 
   # Bar/Shell Settings
-  # Choose between noctalia or waybar
+  # Choose between noctalia, caelestia, dms or waybar
   barChoice = "noctalia";
 
   # Waybar Settings (used when barChoice = "waybar")
@@ -65,16 +64,16 @@
   # Kitty, ghostty, wezterm, aalacrity
   # Note: kitty, wezterm, alacritty have to be enabled in `variables.nix`
   # Setting it here does not enable it. Kitty is installed by default
-  terminal = "kitty"; # Set Default System Terminal
+  terminal = "ghostty"; # Set Default System Terminal
 
   keyboardLayout = "us";
   keyboardVariant = "";
   consoleKeyMap = "us";
 
   # For hybrid support (Intel/NVIDIA Prime or AMD/NVIDIA)
-#  intelID = "PCI:1:0:0";
+  #  intelID = "PCI:1:0:0";
   amdgpuID = "PCI:3:0:0";
- # nvidiaID = "PCI:0:2:0";
+  # nvidiaID = "PCI:0:2:0";
 
   # Enable NFS
   enableNFS = true;
@@ -93,12 +92,12 @@
   # Set Stylix Image
   # This will set your color palette
   # Default background
-  # Add new images to ~/zaneyos/wallpapers
+  # Add new images to ~/mayankos/wallpapers
   #stylixImage = ../../wallpapers/mountainscapedark.jpg;
   #stylixImage = ../../wallpapers/AnimeGirlNightSky.jpg;
   #stylixImage = ../../wallpapers/Anime-Purple-eyes.png;
   stylixImage = ../../wallpapers/Rainnight.jpg;
-  #stylixImage = ../../wallpapers/zaney-wallpaper.jpg;
+  #stylixImage = ../../wallpapers/mayankos-wallpaper.jpg;
   #stylixImage = ../../wallpapers/nix-wallpaper-stripes-logo.png;
   #stylixImage = ../../wallpapers/beautifulmountainscape.jpg;
 

@@ -12,7 +12,7 @@ pkgs.writeShellScriptBin "qs-docs" ''
   Usage: qs-docs [options]
 
   Options:
-    -c CATEGORY   Category to display (AI|Zed|ddubsos) (default: AI)
+    -c CATEGORY   Category to display (AI|Zed|mayankos) (default: AI)
     -l LANGUAGE   Language (en|es) (default: en)
     -h            Show this help
   EOF
@@ -45,11 +45,11 @@ pkgs.writeShellScriptBin "qs-docs" ''
     done
 
     # Validate category (dynamically check if directory exists or is "root")
-    if [[ "$CATEGORY" != "root" && ! -d "$HOME/ddubsos/docs/$CATEGORY" ]]; then
+    if [[ "$CATEGORY" != "root" && ! -d "$HOME/mayankos/docs/$CATEGORY" ]]; then
       echo "Error: Category directory '$CATEGORY' not found in docs/" >&2
       echo "Available categories:" >&2
       echo "  root" >&2
-      ls -1 "$HOME/ddubsos/docs/" | grep -E '^[a-zA-Z]' | head -10 >&2
+      ls -1 "$HOME/mayankos/docs/" | grep -E '^[a-zA-Z]' | head -10 >&2
       exit 1
     fi
 
@@ -126,8 +126,8 @@ pkgs.writeShellScriptBin "qs-docs" ''
     done
 
     # Then dynamically discover all category directories
-    if [ -d "$HOME/ddubsos/docs" ]; then
-      for category_dir in "$HOME/ddubsos/docs"/*/; do
+    if [ -d "$HOME/mayankos/docs" ]; then
+      for category_dir in "$HOME/mayankos/docs"/*/; do
         if [ -d "$category_dir" ]; then
           category=$(basename "$category_dir")
           for lang in en es; do
@@ -263,9 +263,9 @@ pkgs.writeShellScriptBin "qs-docs" ''
       // Handle root directory files
       var filePath;
       if (selectedCategory === "root") {
-        filePath = "/home/dwilliams/ddubsos/docs/" + filename;
+        filePath = "/home/mayank-anand/mayankos/docs/" + filename;
       } else {
-        filePath = "/home/dwilliams/ddubsos/docs/" + selectedCategory + "/" + filename;
+        filePath = "/home/mayank-anand/mayankos/docs/" + selectedCategory + "/" + filename;
       }
 
       const xhr = new XMLHttpRequest();
@@ -316,7 +316,7 @@ pkgs.writeShellScriptBin "qs-docs" ''
               win.availableCategories = result;
             } catch (e) {
               console.error("Failed to parse categories JSON:", e);
-              win.availableCategories = ["AI", "Zed", "ddubsos"];
+              win.availableCategories = ["AI", "Zed", "mayankos"];
             }
           }
         }

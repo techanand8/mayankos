@@ -1,6 +1,6 @@
 [English](./tmux.cheatsheet.md) | Español
 
-# Tmux en ZaneyOS — Resumen y Cheatsheet
+# Tmux en MayankOS — Resumen y Cheatsheet
 ## 🚀 Resumen de modules/home/terminals/tmux.nix
 
 ### ⌨️ ¿Qué es el Prefijo de Tmux?
@@ -69,18 +69,18 @@ Ventanas Emergentes (display-popup)
 - Prefijo C-n — solicitar nombre de sesión; crear y cambiar
 - Prefijo C-j — cambiar de sesión a través de fzf
 - Prefijo C-r — yazi (90%x90% en el directorio actual)
-- Prefijo C-z — nvim ~/ZaneyOS/flake.nix (90%x90%)
+- Prefijo C-z — nvim ~/MayankOS/flake.nix (90%x90%)
 - Prefijo C-t — zsh (75%x75% en el directorio actual)
 
 Menú (display-menu)
 - Prefijo d — Menú de Dotfiles con entradas de apertura rápida:
-  - f: flake.nix (ZaneyOS)
-  - c: paquetes principales (ZaneyOS)
-  - g: paquetes globales (ZaneyOS)
+  - f: flake.nix (MayankOS)
+  - c: paquetes principales (MayankOS)
+  - g: paquetes globales (MayankOS)
   - k: atajos de teclado (Hyprland)
   - w: reglas de ventana (Hyprland)
-  - z: ZaneyOS flake.nix
-  - p: paquetes de ZaneyOS
+  - z: MayankOS flake.nix
+  - p: paquetes de MayankOS
   - q: Salir
 
 Notas

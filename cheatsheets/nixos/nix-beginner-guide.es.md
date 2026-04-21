@@ -1,6 +1,6 @@
-# ¡Bienvenido a ZaneyOS! Guía para principiantes
+# ¡Bienvenido a MayankOS! Guía para principiantes
 
-¡Bienvenido! Esta guía es para usuarios nuevos en Nix que quieren realizar personalizaciones comunes en ZaneyOS. Mantendremos todo simple y al grano.
+¡Bienvenido! Esta guía es para usuarios nuevos en Nix que quieren realizar personalizaciones comunes en MayankOS. Mantendremos todo simple y al grano.
 
 ## Entendiendo la estructura
 
@@ -12,7 +12,7 @@ Para cambios cotidianos, basta con conocer algunos archivos y directorios clave:
     - `variables.nix`: panel principal para activar/desactivar funciones y cambiar opciones.
     - `host-packages.nix`: paquetes solo para ese equipo.
 - `modules/`: configuración modular reutilizable.
-  - `modules/core/global-packages.nix`: paquetes para todos tus equipos ZaneyOS.
+  - `modules/core/global-packages.nix`: paquetes para todos tus equipos MayankOS.
   - `modules/home/hyprland/binds.nix`: personaliza atajos de Hyprland.
 
 ## Cómo añadir paquetes
@@ -55,7 +55,7 @@ Guarda el archivo.
 
 Tras editar:
 ```bash path=null start=null
-zcli rebuild
+mcli rebuild
 ```
 Si termina con éxito, ¡tus cambios están activos! Algunos pueden requerir reinicio.
 

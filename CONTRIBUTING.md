@@ -1,10 +1,10 @@
-# 💖 Contributing to ZaneyOS
+# 💖 Contributing to MayankOS
 
-We're excited that you're interested in contributing to ZaneyOS! Your help is
+We're excited that you're interested in contributing to MayankOS! Your help is
 essential for keeping it great.
 
 This document is a guide to help you through the process of contributing to
-ZaneyOS. We are a welcoming and friendly community, and we are happy to help you
+MayankOS. We are a welcoming and friendly community, and we are happy to help you
 get started.
 
 ## 📜 Code of Conduct
@@ -14,7 +14,7 @@ to adhere to. Please take a moment to read it before you start contributing.
 
 ## 🚀 How to Contribute
 
-There are many ways to contribute to ZaneyOS, from writing code to reporting
+There are many ways to contribute to MayankOS, from writing code to reporting
 bugs and suggesting new features.
 
 ### 🐛 Reporting Bugs
@@ -25,7 +25,7 @@ When you report a bug, please include the following:
 
 - A clear and descriptive title.
 - A detailed description of the bug, including steps to reproduce it.
-- Your environment details (OS, ZaneyOS version, etc.).
+- Your environment details (OS, MayankOS version, etc.).
 - Any relevant logs or screenshots.
 
 ### ✨ Suggesting Enhancements
@@ -37,19 +37,19 @@ When you suggest an enhancement, please include the following:
 
 - A clear and descriptive title.
 - A detailed description of the enhancement, including the problem it solves and
-  why it would be a good addition to ZaneyOS.
+  why it would be a good addition to MayankOS.
 - Any relevant mockups or screenshots.
 
 ### 💻 Code Contributions
 
-If you want to contribute code to ZaneyOS, please follow these steps:
+If you want to contribute code to MayankOS, please follow these steps:
 
 1. **Fork the repository** and clone it to your local machine.
 2. **Create a new branch** for your changes: `git checkout -b your-branch-name`
 3. **Make your changes** and commit them with a clear and descriptive commit
    message.
 4. **Push your changes** to your fork: `git push origin your-branch-name`
-5. **Open a pull request** to the `main` branch of the ZaneyOS repository.
+5. **Open a pull request** to the `main` branch of the MayankOS repository.
 
 When you open a pull request, please include the following:
 
@@ -75,7 +75,7 @@ If you have any questions or want to get in touch with the community, you can
 find us on:
 
 - **Discord:** [Join our Discord server](https://discord.gg/CHZzESXs)
-- **Twitter:** [@ZaneyOS](https://twitter.com/ZaneyOS)
+- **Twitter:** [@MayankOS](https://twitter.com/MayankOS)
 
-We are happy to help you get started with contributing to ZaneyOS. We look
+We are happy to help you get started with contributing to MayankOS. We look
 forward to your contributions!

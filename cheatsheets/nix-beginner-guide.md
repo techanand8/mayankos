@@ -1,6 +1,6 @@
-# ZaneyOS Beginner’s Guide to Customization
+# MayankOS Beginner’s Guide to Customization
 
-Welcome! This guide is for users who are new to Nix and want to make common, safe customizations to their ZaneyOS setup. We’ll keep it simple and focus on essentials.
+Welcome! This guide is for users who are new to Nix and want to make common, safe customizations to their MayankOS setup. We’ll keep it simple and focus on essentials.
 
 ## Repository layout (where to change things)
 
@@ -52,8 +52,8 @@ Edit `modules/home/hyprland/binds.nix`. For example, change terminal from Super+
 
 ## Apply and test your changes
 
-Preferred (ZaneyOS-specific):
-- `zcli rebuild`
+Preferred (MayankOS-specific):
+- `mcli rebuild`
   - Note: The `fr` alias is deprecated.
 
 Manual backup method (works anywhere):

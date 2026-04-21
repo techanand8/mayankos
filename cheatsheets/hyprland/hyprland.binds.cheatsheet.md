@@ -1,6 +1,6 @@
 English | [Español](./hyprland.binds.cheatsheet.es.md)
 
-# Hyprland Keybindings — ZaneyOS
+# Hyprland Keybindings — mayankos
 ## 🗝️ Conventions
 - SUPERKEY = Mod key (Hyprland `$modifier`)
 - SHIFT, CTRL, ALT used as shown

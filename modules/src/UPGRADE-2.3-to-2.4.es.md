@@ -1,8 +1,8 @@
 [English](UPGRADE-2.3-to-2.4.md) | [Español](UPGRADE-2.3-to-2.4.es.md)
 
-# Guía de Actualización ZaneyOS 2.3 → 2.4
+# Guía de Actualización MayankOS 2.3 → 2.4
 
-Esta guía proporciona scripts de actualización seguros para migrar de ZaneyOS 2.3 a 2.4, manejando cambios incompatibles y preservando tu configuración personalizada.
+Esta guía proporciona scripts de actualización seguros para migrar de MayankOS 2.3 a 2.4, manejando cambios incompatibles y preservando tu configuración personalizada.
 
 ## 🔄 Cambios Importantes en 2.4
 
@@ -24,7 +24,7 @@ Esta guía proporciona scripts de actualización seguros para migrar de ZaneyOS 
 
 ## 🛡️ Características de Seguridad
 
-- **Respaldo completo** de ~/zaneyos antes de cambios
+- **Respaldo completo** de ~/mayankos antes de cambios
 - **Boot vs Switch**: usa build de arranque seguro
 - **Revert** sencillo para restaurar 2.3
 - **Validaciones** previas al proceso
@@ -39,16 +39,16 @@ Para evitar sobrescribir tu configuración local antes de crear un respaldo, des
 Opción A — Usando tu remoto git (recomendado):
 ```bash
 # Trae refs sin tocar tu working tree
-git -C ~/zaneyos fetch origin
+git -C ~/mayankos fetch origin
 
 # Escribe el script desde origin/main a tu home
-git -C ~/zaneyos show origin/main:upgrade-2.3-to-2.4.sh > ~/upgrade-2.3-to-2.4.sh
+git -C ~/mayankos show origin/main:upgrade-2.3-to-2.4.sh > ~/upgrade-2.3-to-2.4.sh
 chmod +x ~/upgrade-2.3-to-2.4.sh
 ```
 
 Opción B — Usando curl:
 ```bash
-curl -fsSL https://gitlab.com/zaney/zaneyos/-/raw/main/upgrade-2.3-to-2.4.sh -o ~/upgrade-2.3-to-2.4.sh
+curl -fsSL https://gitlab.com/zaney/mayankos/-/raw/main/upgrade-2.3-to-2.4.sh -o ~/upgrade-2.3-to-2.4.sh
 chmod +x ~/upgrade-2.3-to-2.4.sh
 ```
 
@@ -57,7 +57,7 @@ Ambos métodos mantienen tu repo local intacto. El script creará un respaldo co
 ### Paso 1: Ejecuta el Script
 
 ```bash
-# Puedes ejecutarlo desde cualquier ruta; opera sobre ~/zaneyos
+# Puedes ejecutarlo desde cualquier ruta; opera sobre ~/mayankos
 ~/upgrade-2.3-to-2.4.sh
 ```
 
@@ -69,7 +69,7 @@ El script realizará un análisis completo de tu configuración actual:
 - **Revisa paquetes globales** en modules/core/packages.nix
 - **Detecta personalizaciones de shell** (zsh, bash, eza)
 - **Identifica módulos personalizados** y archivos personales
-- **Genera un informe detallado** en `~/zaneyos-upgrade-analysis-TIMESTAMP.txt`
+- **Genera un informe detallado** en `~/mayankos-upgrade-analysis-TIMESTAMP.txt`
 
 **Verás claramente:**
 - ✅ **Qué se migrará automáticamente** (variables, paquetes, configs)
@@ -132,7 +132,7 @@ Si usabas una terminal específica en 2.3:
 
 ### Ubicación del Respaldo
 ```
-~/.config/zaneyos-backups/zaneyos-2.3-upgrade-backup-TIMESTAMP/
+~/.config/mayankos-backups/mayankos-2.3-upgrade-backup-TIMESTAMP/
 ```
 
 ## 🔄 Cómo Revertir
@@ -141,20 +141,20 @@ Si algo falla, puedes revertir fácilmente:
 
 ### Opción 1: Script de revert
 ```bash
-cd ~/zaneyos
+cd ~/mayankos
 ./revert-to-2.3.sh
 ```
 
 ### Opción 2: Script principal
 ```bash
-cd ~/zaneyos
+cd ~/mayankos
 ./upgrade-2.3-to-2.4.sh --revert
 ```
 
 ### Opción 3: Reversión manual
-1. Elimina `~/zaneyos`: `rm -rf ~/zaneyos`
-2. Restaura desde el respaldo: `cp -r ~/.config/zaneyos-backups/[backup-name]/zaneyos ~/`
-3. Rebuild: `nh os boot ~/zaneyos --hostname [profile]`
+1. Elimina `~/mayankos`: `rm -rf ~/mayankos`
+2. Restaura desde el respaldo: `cp -r ~/.config/mayankos-backups/[backup-name]/mayankos ~/`
+3. Rebuild: `nh os boot ~/mayankos --hostname [profile]`
 4. Reinicia
 
 ## 🔍 Troubleshooting
@@ -170,16 +170,16 @@ cd ~/zaneyos
 - Inicia sesión y ejecuta `systemctl status display-manager`
 
 ### Aplicaciones faltantes
-- Verifica tu terminal preferida en `~/zaneyos/hosts/[hostname]/variables.nix`
+- Verifica tu terminal preferida en `~/mayankos/hosts/[hostname]/variables.nix`
 - Confirma que navegador y otras apps sigan disponibles
 
 ### Log de ejecución
-Cada corrida genera un log en: `~/zaneyos-upgrade-TIMESTAMP.log`
+Cada corrida genera un log en: `~/mayankos-upgrade-TIMESTAMP.log`
 
 ## 📁 Estructura tras la actualización
 
 ```
-~/zaneyos/hosts/[tu-hostname]/
+~/mayankos/hosts/[tu-hostname]/
 ├── hardware.nix          (preservado de 2.3)
 └── variables.nix         (actualizado a 2.4 con tus ajustes)
 ```

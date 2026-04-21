@@ -1,6 +1,6 @@
 [English](FAQ.md) | [Español](FAQ.es.md)
 
-# 💬 Preguntas frecuentes de ZaneyOS
+# 💬 Preguntas frecuentes de MayankOS
 
 - **Fecha:** 14 de deciembre de 2025
 
@@ -10,15 +10,15 @@
 - El icono "keys" en el lado derecho de la waybar también abrirá este menú.
 
 <details>
-<summary>**✨🖥️  ZCLI:  ¿Qué es y cómo lo uso?**</summary>
+<summary>**✨🖥️  MCLI:  ¿Qué es y cómo lo uso?**</summary>
 <div style="margin-left: 20px;">
 
-La utilidad `zcli` es una herramienta de línea de comandos diseñada para
-simplificar la gestión de tu entorno `zaneyos`. Proporciona un conjunto completo
+La utilidad `mcli` es una herramienta de línea de comandos diseñada para
+simplificar la gestión de tu entorno `mayankos`. Proporciona un conjunto completo
 de comandos para realizar tareas comunes como actualizar tu sistema, gestionar
 hosts, limpiar generaciones antiguas y gestionar Doom Emacs.
 
-Para usarlo, abre una terminal y escribe `zcli` seguido de uno de los comandos
+Para usarlo, abre una terminal y escribe `mcli` seguido de uno de los comandos
 listados a continuación:
 
 ## Comandos del Sistema Core:
@@ -46,7 +46,7 @@ listados a continuación:
 - `del-host`: Elimina configuraciones de host de forma segura con prompts de
   confirmación para prevenir eliminación accidental.
 
-**Uso:** `zcli add-host [hostname] [profile]`\
+**Uso:** `mcli add-host [hostname] [profile]`\
 **Perfiles de GPU:** `amd`, `intel`, `nvidia`, `nvidia-hybrid`, y `vm`
 
 ## Opciones Avanzadas de Compilación:
@@ -85,11 +85,11 @@ seguridad:
 completo y gestión automática de dependencias.
 
 ```text
-❯ zcli
+❯ mcli
 Error: No command provided.
-ZaneyOS CLI Utility -- version 1.0.2
+MayankOS CLI Utility -- version 1.0.2
 
-Usage: zcli [command] [options]
+Usage: mcli [command] [options]
 
 Commands:
   cleanup         - Clean up old system generations. Can specify a number to keep.
@@ -101,7 +101,7 @@ Commands:
   trim            - Trim filesystems to improve SSD performance.
   update          - Update the flake and rebuild the system.
   update-host     - Auto set host and profile in flake.nix.
-                    (Opt: zcli update-host [hostname] [profile])
+                    (Opt: mcli update-host [hostname] [profile])
 
 Options for rebuild, rebuild-boot, and update commands:
   --dry, -n       - Show what would be done without doing it
@@ -123,17 +123,17 @@ Doom Emacs:
 
 ```bash
 # Gestión del sistema
-zcli rebuild --dry                # Muestra qué se recompilaría
-zcli update --cores 4             # Actualiza con máximo 4 núcleos de CPU
-zcli rebuild-boot --ask           # Recompila para boot con confirmación
+mcli rebuild --dry                # Muestra qué se recompilaría
+mcli update --cores 4             # Actualiza con máximo 4 núcleos de CPU
+mcli rebuild-boot --ask           # Recompila para boot con confirmación
 
 # Gestión de host
-zcli add-host mihost amd          # Agrega nuevo host con GPU AMD
-zcli update-host                  # Detecta y actualiza info de host automáticamente
+mcli add-host mihost amd          # Agrega nuevo host con GPU AMD
+mcli update-host                  # Detecta y actualiza info de host automáticamente
 
 # Doom Emacs
-zcli doom install                 # Instala Doom Emacs
-zcli doom status                  # Verifica estado de instalación
+mcli doom install                 # Instala Doom Emacs
+mcli doom status                  # Verifica estado de instalación
 ```
 
 </div>
@@ -142,7 +142,7 @@ zcli doom status                  # Verifica estado de instalación
 <details>
 <summary>**¿Cómo configuro aplicaciones predeterminadas (PDF, navegador) por host?**</summary>
 
-- Edita `~/zaneyos/hosts/<HOSTNAME>/variables.nix` y descomenta `mimeDefaultApps`.
+- Edita `~/mayankos/hosts/<HOSTNAME>/variables.nix` y descomenta `mimeDefaultApps`.
 - Home Manager usará esto vía `modules/home/xdg.nix` para escribir tu `~/.config/mimeapps.list`.
 - Usa IDs `.desktop` reales de `/usr/share/applications` o `~/.local/share/applications`.
 
@@ -236,7 +236,7 @@ fácil referencia.
 
 <details>
 
-<summary>**❄ ¿Por qué creaste ZaneyOS? **</summary>
+<summary>**❄ ¿Por qué creaste MayankOS? **</summary>
 
 <div style="margin-left: 20px;">
 
@@ -244,16 +244,16 @@ fácil referencia.
 - Fue para promover NixOS y Hyprland.
 - Proporcionando una configuración estable y funcional.
 - Nunca fue intencionado como una distro completa de NixOS.
-- El nombre `ZaneyOS` es un chiste interno entre amigos.
+- El nombre `MayankOS` es un chiste interno entre amigos.
 - La intención es que esta configuración pueda usarse como daily driver
 - Desarrollar software, jugar juegos vía steam, etc.
 - Mi esperanza es que sea útil, y lo modifiques para que se ajuste a tus
   necesidades.
 - Ese es el punto clave. Hazlo tuyo.
-- Crea un fork de ZaneyOS, luego modifícalo.
+- Crea un fork de MayankOS, luego modifícalo.
 - Si encuentras un issue y lo arreglas, o proporcionas una nueva característica,
   por favor compártelo.
-- ZaneyOS no es una distro. En este momento no hay planes para crear un ISO de
+- MayankOS no es una distro. En este momento no hay planes para crear un ISO de
   instalación.
 
 </div>
@@ -267,7 +267,7 @@ fácil referencia.
 <details>
 <summary>**¿Cómo agrego flatpaks?**</summary>
 
-- Edita `~/zaneyos/modules/core/flatpak.nix`
+- Edita `~/mayankos/modules/core/flatpak.nix`
 - Hay una lista de apps de ejemplo que puedes usar como plantilla
 
 ```nix
@@ -307,7 +307,7 @@ fácil referencia.
 <details>
 <summary>**¿Cómo remuevo flatpaks?**</summary>
 
-- Edita `~/zaneyos/modules/core/flatpak.nix`
+- Edita `~/mayankos/modules/core/flatpak.nix`
 
 ```nix
   services = {
@@ -346,7 +346,7 @@ fácil referencia.
 <details>
 <summary>**¿Cómo cambio la waybar?**</summary>
 
-- Ve al directorio `~/zaneyos/host/HOSTNAME`
+- Ve al directorio `~/mayankos/host/HOSTNAME`
 - Edita el archivo `variables.nix`
 - Encuentra la línea que comienza con `waybarChoice`
 - Cambia el nombre a uno de los archivos disponibles
@@ -366,7 +366,7 @@ waybarChoice = ../../modules/home/waybar/waybar-ddubs.nix;
 <details>
 <summary>** ¿Cómo cambio la zona horaria? **</summary>
 
-1. En el archivo, `~/zaneyos/modules/core/system.nix`
+1. En el archivo, `~/mayankos/modules/core/system.nix`
 2. Edita la línea: time.timeZone = "America/New_York";
 3. Guarda el archivo y rebuild usando el alias `fr`.
 
@@ -376,7 +376,7 @@ waybarChoice = ../../modules/home/waybar/waybar-ddubs.nix;
 <summary>**¿Cómo cambio la configuración del monitor? **</summary>
 
 La configuración del monitor está en el archivo:
-`~/zaneyos/hosts/<HOSTNAME>/variables.nix`
+`~/mayankos/hosts/<HOSTNAME>/variables.nix`
 
 Dentro de las comillas la sintaxis es "monitor=adaptador de
 video,resolución@refresh rate, auto,escala" El monitor debe estar en minúsculas.
@@ -424,7 +424,7 @@ Edita la línea `extraMonitorSettings`. **Ejemplos:**
   la herramienta X11 basada, `arandr` Creará entonces un archivo de
   configuración compatible con Hyprland en `~/.config/hypr/monitors.conf`
 
-<img align="center" width="90%" src="https://gitlab.com/Zaney/zaneyos/-/raw/main/img/nwg-displays.png" />
+<img align="center" width="90%" src="https://gitlab.com/Zaney/mayankos/-/raw/main/img/nwg-displays.png" />
 
 Después de configurar los monitores como deseas, presiona `Apply` para guardar
 los cambios en `~/.config/hypr/monitors.conf`\
@@ -448,16 +448,16 @@ Más información sobre configurar monitores está disponible en el
 </details>
 
 <details>
-<summary>**¿Cómo agrego aplicaciones a ZaneyOS? **</summary>
+<summary>**¿Cómo agrego aplicaciones a MayankOS? **</summary>
 
 ### Hay dos opciones. Una para todos los hosts que tienes, otra para un host específico.
 
 1. Para aplicaciones que se incluirán en todos los hosts definidos edita el
-   archivo `~/zaneyos/modules/core/packages.nix` file.
+   archivo `~/mayankos/modules/core/packages.nix` file.
 
 Hay una sección que comienza con: `environment.systemPackages = with pkgs;`
 
-Seguida de una lista de paquetes. Estos son requeridos para ZaneyOS.
+Seguida de una lista de paquetes. Estos son requeridos para MayankOS.
 
 Te sugerimos agregar un comentario al final de los nombres de paquetes. Luego
 agrega tus paquetes.
@@ -492,7 +492,7 @@ agrega tus paquetes.
 2. Para aplicaciones que serán solo en hosts específicos.
 
 Edita el `host-packages.nix` asociado con ese host.
-`~/zaneyos/hosts/<HOSTNAME>/host-packages.nix`
+`~/mayankos/hosts/<HOSTNAME>/host-packages.nix`
 
 La parte del archivo que necesitas editar se ve como esto:
 
@@ -516,7 +516,7 @@ Puedes agregar paquetes adicionales, o por ejemplo cambiar `discord` a
 
 <summary>** Agregué los nombres de paquetes, ahora ¿cómo los instalo ? **</summary>
 
-- Usa la utilidad `zcli`. `zcli rebuild`
+- Usa la utilidad `mcli`. `mcli rebuild`
 - El alias legacy `fr`, Flake Rebuild está depreciado pero aún disponible
 
 Si el rebuild se completa exitosamente, se creará una nueva generación con tus
@@ -527,19 +527,19 @@ paquetes agregados.
 <details>
 <summary>** ¿Cómo actualizo los paquetes que ya instalé? **</summary>
 
-- Usa la utilidad `zcli`. `zcli update`
+- Usa la utilidad `mcli`. `mcli update`
 - El `fu`, Flake Update alias está depreciado pero aún disponible
 - Cualquiera de estos verificará paquetes actualizados, descargará e instalará.
 
 </details>
 
 <details>
-<summary>** Hice un cambio a mi configuración de ZaneyOS, ¿cómo lo activo? **</summary>
+<summary>** Hice un cambio a mi configuración de MayankOS, ¿cómo lo activo? **</summary>
 
-- Usa la utilidad `zcli`. `zcli rebuild`
+- Usa la utilidad `mcli`. `mcli rebuild`
 - El alias legacy `fr`, Flake Rebuild está depreciado pero aún disponible **
   NOTA: Si **creaste un nuevo archivo\*\*
-- necesitarás ejecutar un comando `git add .` en la carpeta `zaneyos`
+- necesitarás ejecutar un comando `git add .` en la carpeta `mayankos`
 - Si es exitoso se generará una nueva generación con tus cambios
 - Un logout o reboot podría ser requerido dependiendo de qué cambiaste
 
@@ -549,7 +549,7 @@ paquetes agregados.
 <summary>** ¿Cómo puedo configurar un kernel diferente en un host específico? **</summary>
 
 1. Tienes que editar el archivo `hardware.nix` para ese host en
-   `~/zaneyos/hosts/HOSTNAME/hardware.nix` y override el default.
+   `~/mayankos/hosts/HOSTNAME/hardware.nix` y override el default.
 2. Cerca del top encontrarás esta sección del archivo `hardware.nix`.
 
 ```nix
@@ -573,7 +573,7 @@ boot.kernelModules = ["kvm-intel"];
 boot.extraModulePackages = [];
 ```
 
-5. Usa el comando `zcli rebuild` o alias `fr` para crear una nueva generación y
+5. Usa el comando `mcli rebuild` o alias `fr` para crear una nueva generación y
    reboot para que tome efecto.
 
 </details>
@@ -640,23 +640,23 @@ cambio efectivo.
 1. Copia el directorio del host que quieres renombrar a un directorio con el
    nuevo nombre.
 
-- `cp -rpv ~/zaneyos/hosts/OLD-HOSTNAME ~/zaneyos/hosts/NEW-HOSTNAME`
+- `cp -rpv ~/mayankos/hosts/OLD-HOSTNAME ~/mayankos/hosts/NEW-HOSTNAME`
 
-2. Edita el archivo `~/zaneyos/flake.nix`. Cambia la línea:
+2. Edita el archivo `~/mayankos/flake.nix`. Cambia la línea:
 
 - `host = "NEW-HOSTNAME"`
 
-3. En el directorio `~/zaneyos` ejecuta `git add .` _El rebuild fallará con un
+3. En el directorio `~/mayankos` ejecuta `git add .` _El rebuild fallará con un
    error 'file not found' si olvidas este paso._
 
-4. Usa el comando `zcli rebuild` o `fr` alias para crear una nueva generación
+4. Usa el comando `mcli rebuild` o `fr` alias para crear una nueva generación
    con el nuevo hostname. Debes reboot para hacer el cambio efectivo.
 
 </details>
 <details>
 <summary>** ¿Cómo deshabilito el copo de nieve giratorio al inicio? **</summary>
 
-1. Edita el archivo `~/zaneyos/modules/core/boot.nix` file.
+1. Edita el archivo `~/mayankos/modules/core/boot.nix` file.
 2. Busca:
 
 ```nix
@@ -666,7 +666,7 @@ cambio efectivo.
 ```
 
 3. Cámbialo a `false`
-4. Ejecuta el comando `zcli rebuild` o alias `fr` para crear una nueva
+4. Ejecuta el comando `mcli rebuild` o alias `fr` para crear una nueva
    generación.
 
 </details>
@@ -674,11 +674,11 @@ cambio efectivo.
 <details>
   <summary>** ¿Cómo configuro mi laptop híbrida con GPUs Intel/NVIDIA?  **</summary>
 
-1. Ejecuta el script `install-zaneyos.sh` y selecciona el template
+1. Ejecuta el script `install-mayankos.sh` y selecciona el template
    `nvidia-laptop` o si configurando manualmente, establece el template en el
    `flake.nix` a `nvidia-prime`
 
-2. En el archivo `~/zaneyos/hosts/HYBRID-HOST/variables.nix` necesitarás
+2. En el archivo `~/mayankos/hosts/HYBRID-HOST/variables.nix` necesitarás
    establecer los PCI IDs para las GPUs Intel y NVIDIA. Refiérete a
    [esta página](https://nixos.wiki/wiki/Nvidia) para ayudar a determinar esos
    valores.
@@ -686,7 +686,7 @@ cambio efectivo.
 3. Una vez que todo esté configurado apropiadamente, usa el alias Flake Rebuild
    `fr` para crear una nueva generación.
 
-4. En el archivo `~/zaneyos/modules/home/hyprland/config.nix` hay un ENV
+4. En el archivo `~/mayankos/modules/home/hyprland/config.nix` hay un ENV
    setting`"AQ_DRM_DEVICES,/dev/dri/card0:/dev/dri/card1:/dev/dri/card2"` Esto
    establece la GPU primaria y secundaria. Usando la info del weblink arriba
    podrías tener que cambiar el orden de estos valores.
@@ -707,7 +707,7 @@ cambio efectivo.
 
 - Para Habilitar:
 
-1. Edita el archivo `~/zaneyos/modules/core/stylix.nix` file.
+1. Edita el archivo `~/mayankos/modules/core/stylix.nix` file.
 2. Comenta desde `base16Scheme` hasta el `};` después de `base0F`
 
 ```nix
@@ -716,7 +716,7 @@ cambio efectivo.
     enable = true;
     image = ../../wallpapers/Anime-girl-sitting-night-sky_1952x1120.jpg;
     #image = ../../wallpapers/Rainnight.jpg;
-    #image = ../../wallpapers/zaney-wallpaper.jpg;
+    #image = ../../wallpapers/mayankos-wallpaper.jpg;
     #  base16Scheme = {
     #  base00 = "282936";
     #  base01 = "3a3c4e";
@@ -745,12 +745,12 @@ cambio efectivo.
 ```
 
 3. Selecciona la imagen que quieres que `stylix` use para la paleta de colores.
-4. Ejecuta el comando `zcli rebuild` o `fr` alias para crear una nueva
+4. Ejecuta el comando `mcli rebuild` o `fr` alias para crear una nueva
    generación con este esquema de colores.
 
 - Para deshabilitar descomenta
 
-1. Edita el archivo `~/zaneyos/modules/core/stylix.nix` file.
+1. Edita el archivo `~/mayankos/modules/core/stylix.nix` file.
 2. Descomenta desde `base16Scheme` hasta el `};` después de `base0F`
 
 ```nix
@@ -774,7 +774,7 @@ cambio efectivo.
 };
 ```
 
-3. Ejecuta el comando `zcli rebuild` o `fr` alias para construir una nueva
+3. Ejecuta el comando `mcli rebuild` o `fr` alias para construir una nueva
    generación con el dracula default o establece tus propios colores custom
 
 </details>
@@ -782,9 +782,9 @@ cambio efectivo.
 <details>
   <summary>¿Cómo cambio la imagen que Stylix usa para tematizar?</summary>
 
-1. Edita el archivo `~/zaneyos/hosts/HOSTNAME/varibles.nix`
+1. Edita el archivo `~/mayankos/hosts/HOSTNAME/varibles.nix`
 2. Cambia el `stylixImage =` al nombre del archivo que quieres usar. Los
-   wallpapers están en `~/zaneyos/wallpapers`
+   wallpapers están en `~/mayankos/wallpapers`
 
 ```nix
 # Establecer Imagen Stylix
@@ -805,10 +805,10 @@ stylixImage = ../../wallpapers/AnimeGirlNightSky.jpg;
 <details>
 <summary>**  ¿Cómo agrego más wallpapers? **</summary>
 
-- Los wallpapers se almacenan en el directorio `~/zaneyos/wallpapers`.
+- Los wallpapers se almacenan en el directorio `~/mayankos/wallpapers`.
 - Simplemente copia los nuevos a ese directorio.
 - Debes hacer un rebuild después de agregar nuevos wallpapers.
-- Ejecuta el comando `zcli rebuild` o alias `fr` en la CLI.
+- Ejecuta el comando `mcli rebuild` o alias `fr` en la CLI.
 
 </details>
 
@@ -824,7 +824,7 @@ stylixImage = ../../wallpapers/AnimeGirlNightSky.jpg;
 
 <summary>**  ¿Cómo puedo establecer un temporizador para cambiar el wallpaper automáticamente?  **</summary>
 
-1. Edita el archivo `~/zaneyos/modules/home/hyprland/config.nix` file.
+1. Edita el archivo `~/mayankos/modules/home/hyprland/config.nix` file.
 2. Comenta la línea `sleep 1.5 && awww img ...`
 3. Agrega nueva línea después de eso con `sleep 1 && wallsetter`
 
@@ -839,12 +839,12 @@ settings = {
         "nm-applet --indicator"
         "lxqt-policykit-agent"
         "pypr &"
-        #"sleep 1.5 && awww img /home/${username}/Pictures/Wallpapers/zaney-wallpaper.jpg"
+        #"sleep 1.5 && awww img /home/${username}/Pictures/Wallpapers/mayankos-wallpaper.jpg"
         "sleep 1 && wallsetter"
       ];
 ```
 
-4. Ejecuta el comando `zcli rebuild` o alias `fr` para crear una nueva
+4. Ejecuta el comando `mcli rebuild` o alias `fr` para crear una nueva
    generación.
 5. Necesitarás logout o reboot para que el cambio sea efectivo.
 
@@ -854,9 +854,9 @@ settings = {
 
 <summary>**¿Cómo cambio el intervalo en que cambia el wallpaper?  **</summary>
 
-1. Edita el archivo `~/zaneyos/modules/home/scripts/wallsetter`
+1. Edita el archivo `~/mayankos/modules/home/scripts/wallsetter`
 2. Cambia el valor `TIMEOUT =` . Está en segundos.
-3. Ejecuta el comando `zcli rebuild` o alias `fr`, para crear una nueva
+3. Ejecuta el comando `mcli rebuild` o alias `fr`, para crear una nueva
    generación.
 4. Necesitarás logout o reboot para que el cambio sea efectivo.
 
@@ -867,32 +867,32 @@ settings = {
 </details>
 
 <details>
-<summary>**⬆ ¿Cómo actualizo ZaneyOS?  **</summary>
+<summary>**⬆ ¿Cómo actualizo MayankOS?  **</summary>
 
 <div style="margin-left: 20px;">
 
 <details>
 <summary> Para versión v2.3 </summary>
 
-Altamente recomendado: Lee `ZaneyOS-Upgrade.md` antes de proceder. Detalla el
+Altamente recomendado: Lee `MayankOS-Upgrade.md` antes de proceder. Detalla el
 upgrade automatizado seguro, respaldo, y proceso de revert.
 
-Usa el upgrade automatizado v2.3 → v2.4. Ve `ZaneyOS-Upgrade.md` y
+Usa el upgrade automatizado v2.3 → v2.4. Ve `MayankOS-Upgrade.md` y
 `UPGRADE-2.3-to-2.4.md`. Para evitar sobrescribir tu config antes de crear un
 respaldo, fetch solo el script sin modificar tu working tree:
 
 - Git (recomendado):
 
 ```bash
-git -C ~/zaneyos fetch origin
-git -C ~/zaneyos show origin/main:upgrade-2.3-to-2.4.sh > ~/upgrade-2.3-to-2.4.sh
+git -C ~/mayankos fetch origin
+git -C ~/mayankos show origin/main:upgrade-2.3-to-2.4.sh > ~/upgrade-2.3-to-2.4.sh
 chmod +x ~/upgrade-2.3-to-2.4.sh
 ```
 
 - Curl:
 
 ```bash
-curl -fsSL https://gitlab.com/zaney/zaneyos/-/raw/main/upgrade-2.3-to-2.4.sh -o ~/upgrade-2.3-to-2.4.sh
+curl -fsSL https://gitlab.com/zaney/mayankos/-/raw/main/upgrade-2.3-to-2.4.sh -o ~/upgrade-2.3-to-2.4.sh
 chmod +x ~/upgrade-2.3-to-2.4.sh
 ```
 
@@ -911,13 +911,13 @@ antes de cambiar branches y migrará tus hosts de forma segura desde el respaldo
 <details>
   <summary> Para versiones v2.0->2.2 </summary>
 
-1. Primero respaldo tu directorio `zaneyos` existente. ej.
-   `cp -r ~/zaneyos ~/zaneyos-backup`
+1. Primero respaldo tu directorio `mayankos` existente. ej.
+   `cp -r ~/mayankos ~/mayankos-backup`
 
 2. No hay update directo. Cuando clones la nueva config los archivos de config y
    layout han cambiado.
 
-3. Necesitas instalar zaneyos como una nueva install. `./install-zaneyos.sh`
+3. Necesitas instalar mayankos como una nueva install. `./install-mayankos.sh`
 
 4. Una vez que el build se complete y hayas rebooted puedes revisar el nuevo
    layout y decidir si algún cambio que hiciste en la versión anterior puede ser
@@ -931,15 +931,15 @@ antes de cambiar branches y migrará tus hosts de forma segura desde el respaldo
 1. El layout y configuración son completamente diferentes. Virtualmente nada de
    1.x es aplicable a v2.3.
 
-2. Respalda tu directorio `zaneyos` ej. `cp -r ~/zaneyos ~/zaneyos-backup`
+2. Respalda tu directorio `mayankos` ej. `cp -r ~/mayankos ~/mayankos-backup`
 
-3. Ejecuta el script `./install-zaneyos.sh` y sigue las nuevas instrucciones de
+3. Ejecuta el script `./install-mayankos.sh` y sigue las nuevas instrucciones de
    install.
 
 </details>
 
 <details>
-<summary> ¿Cómo sé cuándo se lanza una nueva versión de ZaneyOS? </summary>
+<summary> ¿Cómo sé cuándo se lanza una nueva versión de MayankOS? </summary>
 
 Será anunciado en el servidor Discord de Zaney
 [Discord](https://discord.gg/W7efsSDS).
@@ -952,14 +952,14 @@ Será anunciado en el servidor Discord de Zaney
 
 </div>
 
-<details><summary>**📂 Layout de ZaneyOS v2.3**</summary>
+<details><summary>**📂 Layout de MayankOS v2.3**</summary>
 
 <div style="margin-left: 25px;">
 
-** 📂 ~/zaneyos **
+** 📂 ~/mayankos **
 
 ```text
-~/zaneyos/
+~/mayankos/
     ├── hosts/                      # Carpeta donde se guardan configs de host
     │   ├── default                 # Template de host default
     │   └── nixstation              # Host de Zaney
@@ -987,10 +987,10 @@ Será anunciado en el servidor Discord de Zaney
     ├── CONTRIBUTING.md             # Cómo puedes ayudar
     ├── FAQ.md                      # Preguntas Frecuentes
     ├── flake.lock                  # Guarda info de versión de todos los paquetes instalados
-    ├── flake.nix                   # flake que controla config ZaneyOS
-    ├── install-zaneyos.sh          # Script de install para ZaneyOS
-    ├── LICENSE                     # Licencia MIT que usa ZaneyOS
-    └── README.md                   # Documento introductorio para ZaneyOS
+    ├── flake.nix                   # flake que controla config MayankOS
+    ├── install-mayankos.sh          # Script de install para MayankOS
+    ├── LICENSE                     # Licencia MIT que usa MayankOS
+    └── README.md                   # Documento introductorio para MayankOS
 ```
 
 </div>
@@ -1009,10 +1009,10 @@ Será anunciado en el servidor Discord de Zaney
 **Update**
 <br>
 
-- Usando el comando `zcli rebuild` o `zcli upgrade` buscará este archivo
+- Usando el comando `mcli rebuild` o `mcli upgrade` buscará este archivo
   causando fallos de rebuild
 - Si encuentras otros archivos que causan esto puedes agregarlos en el
-  `zaneyos/modules/home/scripts/default.nix`
+  `mayankos/modules/home/scripts/default.nix`
   <br>
 
 ```text
@@ -1035,7 +1035,7 @@ May 08 18:33:57 explorer systemd[1]: Failed to start Home Manager environment fo
 - Si obtienes este msg pero `hm-find` no reporta ninguno tendrás que buscar
   manualmente ej `journalctl | grep hm-activate`
 - Puedes entonces redo tu rebuild
-- Usa el comando `zcli rebuild` o `fr` para `flake rebuild`
+- Usa el comando `mcli rebuild` o `fr` para `flake rebuild`
 - El flake ya ha sido actualizado
 
 </div>
@@ -1087,11 +1087,11 @@ Para verificar cuál layout está activo actualmente, usa el comando `hyprctl`:
 <div style="margin-left: 20px;"> <br>
 
 El archivo de configuración de Yazi está localizado en
-`~/zaneyos/modules/home/yazi.nix`
+`~/mayankos/modules/home/yazi.nix`
 
 Yazi está configurado como VIM y motions VIM
 
-El keymap está en el archivo `~/zaneyos/modules/home/yazi/keymap.toml` file
+El keymap está en el archivo `~/mayankos/modules/home/yazi/keymap.toml` file
 
 </div>
 </details>
@@ -1214,11 +1214,11 @@ El keymap está en el archivo `~/zaneyos/modules/home/yazi/keymap.toml` file
 <summary>Mi cursor en Kitty es "janky" y salta alrededor. ¿Cómo lo arreglo?</summary>
 
 - Esa característica se llama "cursor_trail" en el archivo
-  `~/zaneyos/modules/home/kitty.nix`.
+  `~/mayankos/modules/home/kitty.nix`.
 
 1. Edita ese archivo y cambia el `cursor_trail 1` a `cursor_trail 0` o comenta
    esa línea.
-2. Usa el alias `zcli rebuild` o `fr` para crear una nueva generación con el
+2. Usa el alias `mcli rebuild` o `fr` para crear una nueva generación con el
    cambio.
 
 </details>
@@ -1226,7 +1226,7 @@ El keymap está en el archivo `~/zaneyos/modules/home/yazi/keymap.toml` file
 <details>
   <summary>¿Cuáles son los keybindings de Kitty y cómo puedo cambiarlos?</summary>
 
-Los bindings de kitty están configurados en `~/zaneyos/modules/home/kitty.nix`
+Los bindings de kitty están configurados en `~/mayankos/modules/home/kitty.nix`
 
 Los defaults son:
 
@@ -1296,9 +1296,9 @@ Los defaults son:
 
 <summary>¿Cómo habilito WezTerm?</summary>
 
-Edita el `/zaneyos/modules/home/wezterm.nix` Cambia `enable = false` a
+Edita el `/mayankos/modules/home/wezterm.nix` Cambia `enable = false` a
 `enable = true;`\
-Guarda el archivo y rebuild zaneyos con el comando `zcli rebild` o el alias `fr`
+Guarda el archivo y rebuild mayankos con el comando `mcli rebild` o el alias `fr`
 
 ```
 {pkgs, ...}: {
@@ -1313,7 +1313,7 @@ Guarda el archivo y rebuild zaneyos con el comando `zcli rebild` o el alias `fr`
 <details>
   <summary>¿Cuáles son los keybindings de WezTerm y cómo puedo cambiarlos?</summary>
 
-Los bindings de kitty están configurados en `~/zaneyos/modules/home/wezterm.nix`
+Los bindings de kitty están configurados en `~/mayankos/modules/home/wezterm.nix`
 
 Los defaults son:
 
@@ -1347,7 +1347,7 @@ ALT + Up Arrow          Mover a pane -- Arriba
 <details>
 <summary> ¿Cómo habilito el terminal ghostty? </summary>
 
-1. Edita el archivo `~/zaneyos/modules/home/ghostty.nix` file.
+1. Edita el archivo `~/mayankos/modules/home/ghostty.nix` file.
 2. Cambia `enable = true;`
 3. Ejecuta el alias `fr` para crear una nueva generación.
 
@@ -1357,7 +1357,7 @@ ALT + Up Arrow          Mover a pane -- Arriba
 
 <summary> ¿Cómo cambio el tema de ghostty?   </summary>
 
-1. Edita el archivo `~/zaneyos/modules/home/ghostty.nix` file.
+1. Edita el archivo `~/mayankos/modules/home/ghostty.nix` file.
 2. Hay varios temas de ejemplo incluidos pero comentados.
 
 ```text

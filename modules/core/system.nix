@@ -1,4 +1,8 @@
-{host, ...}: let
+{
+  host,
+  username,
+  ...
+}: let
   vars = import ../../hosts/${host}/variables.nix;
   consoleKeyMap = vars.consoleKeyMap or "us";
 in {
@@ -25,6 +29,17 @@ in {
     };
   };
 
+  system.autoUpgrade = {
+    enable = true;
+    dates = "Mon 04:00";
+    flake = "/home/${username}/mayankos";
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "--commit-lock-file"
+    ];
+  };
+
   environment.shellInit = ''
     # This covers everything for your VLSI tools in Distrobox
     [ -n "$DISPLAY" ] && xhost +si:localuser:$USER || true
@@ -33,8 +48,8 @@ in {
 
   environment.variables = {
     NIXOS_OZONE_WL = "1";
-    ZANEYOS_VERSION = "2.6.1";
-    ZANEYOS = "true";
+    MAYANKOS_VERSION = "2.6.1";
+    MAYANKOS = "true";
   };
   console.keyMap = "${consoleKeyMap}";
   system.stateVersion = "23.11"; # Do not change!

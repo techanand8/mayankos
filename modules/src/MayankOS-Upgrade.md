@@ -1,6 +1,6 @@
-[English](ZaneyOS-Upgrade.md) | [Español](ZaneyOS-Upgrade.es.md)
+[English](MayankOS-Upgrade.md) | [Español](MayankOS-Upgrade.es.md)
 
-# 🚀 ZaneyOS Upgrade Procedure
+# 🚀 MayankOS Upgrade Procedure
 
 ## ⚠️ DEPRECATED - Use New Automated Upgrade System
 
@@ -28,8 +28,8 @@ The new upgrade system provides:
 ### Quick Start:
 ```bash
 # Safely obtain the script without modifying your repo
-git -C ~/zaneyos fetch origin && \
-  git -C ~/zaneyos show origin/main:upgrade-2.3-to-2.4.sh > ~/upgrade-2.3-to-2.4.sh && \
+git -C ~/mayankos fetch origin && \
+  git -C ~/mayankos show origin/main:upgrade-2.3-to-2.4.sh > ~/upgrade-2.3-to-2.4.sh && \
   chmod +x ~/upgrade-2.3-to-2.4.sh
 
 # Run the script (it will create a full backup before changing branches)
@@ -38,7 +38,7 @@ git -C ~/zaneyos fetch origin && \
 
 Alternative (curl):
 ```bash
-curl -fsSL https://gitlab.com/zaney/zaneyos/-/raw/main/upgrade-2.3-to-2.4.sh -o ~/upgrade-2.3-to-2.4.sh
+curl -fsSL https://gitlab.com/zaney/mayankos/-/raw/main/upgrade-2.3-to-2.4.sh -o ~/upgrade-2.3-to-2.4.sh
 chmod +x ~/upgrade-2.3-to-2.4.sh
 ~/upgrade-2.3-to-2.4.sh
 ```
@@ -58,7 +58,7 @@ The manual process below is **incomplete and risky** because:
 - ❌ No terminal dependency handling
 - ❌ No revert option if things go wrong
 - ❌ Missing critical variables like `doomEmacsEnable`, monitor settings, theme configuration
-- ❌ References outdated commands (`fr`, `fu` instead of `zcli`)
+- ❌ References outdated commands (`fr`, `fu` instead of `mcli`)
 
 ---
 
@@ -71,10 +71,10 @@ The manual process below is **incomplete and risky** because:
 
 ### 1. 📝 Prepare for Upgrade
 
-1. **Ensure your current ZaneyOS is up-to-date:**
-   - Navigate to your ZaneyOS directory:
+1. **Ensure your current MayankOS is up-to-date:**
+   - Navigate to your MayankOS directory:
      ```bash
-     cd ~/zaneyos
+     cd ~/mayankos
      ```
    - If you have any uncommitted changes, commit and push them.
    - Fetch the latest changes:
@@ -84,26 +84,26 @@ The manual process below is **incomplete and risky** because:
    - Verify that your current host and GPU in `flake.nix` match your system.
      - You can edit `flake.nix` manually.
      - Depending on your current build, you might be able to run
-       `zcli update-host`.
+       `mcli update-host`.
    - If there are any changes, perform a rebuild and reboot:
-     - Use `fr` or `zcli rebuild`.
+     - Use `fr` or `mcli rebuild`.
 
-2. **Backup your current ZaneyOS directory:**
+2. **Backup your current MayankOS directory:**
    ```bash
-   mv ~/zaneyos ~/zaneyos-backup
+   mv ~/mayankos ~/mayankos-backup
    ```
 
 3. **Clone the v2.4 branch:**
    ```bash
-   git clone https://gitlab.com/zaney/zaneyos.git -b Stable-2.4 --depth=1
-   cd ~/zaneyos
+   git clone https://gitlab.com/zaney/mayankos.git -b Stable-2.4 --depth=1
+   cd ~/mayankos
    ```
 
 ---
 
 ### 2. 🔄 Converting v2.3 Hosts to v2.4
 
-ZaneyOS v2.4 introduces new features in the host configuration, giving you more
+MayankOS v2.4 introduces new features in the host configuration, giving you more
 control. This requires a manual update to your host files.
 
 - **New options in `hosts/hostname/variables.nix`:**
@@ -128,25 +128,25 @@ control. This requires a manual update to your host files.
      host:
      ```bash
      # Replace YOURHOSTNAME with your actual hostname
-     cp -r ~/zaneyos/hosts/default ~/zaneyos/hosts/YOURHOSTNAME
+     cp -r ~/mayankos/hosts/default ~/mayankos/hosts/YOURHOSTNAME
      ```
      _Example:_ If your hostname is `nixos`:
      ```bash
-     cp -r ~/zaneyos/hosts/default ~/zaneyos/hosts/nixos
+     cp -r ~/mayankos/hosts/default ~/mayankos/hosts/nixos
      ```
 
   2. **Copy the hardware configuration** from your backup:
      ```bash
      # Replace nixos with your hostname if different
-     cp ~/zaneyos-backup/hosts/nixos/hardware.nix ~/zaneyos/hosts/nixos/hardware.nix
+     cp ~/mayankos-backup/hosts/nixos/hardware.nix ~/mayankos/hosts/nixos/hardware.nix
      ```
 
-  3. ❗ **IMPORTANT:** In the `zaneyos` directory, stage your changes:
+  3. ❗ **IMPORTANT:** In the `mayankos` directory, stage your changes:
      ```bash
      git add .
      ```
 
-  4. **Manually edit your new host files** (`~/zaneyos/hosts/YOURHOSTNAME`) to
+  4. **Manually edit your new host files** (`~/mayankos/hosts/YOURHOSTNAME`) to
      include any personal customizations (e.g., monitor settings, extra
      packages).
      > ⚠️ **Warning:** Do **NOT** copy/restore your old host files directly! You
@@ -158,9 +158,9 @@ control. This requires a manual update to your host files.
 
 1. **Verify `flake.nix`:** Ensure your hostname and GPU type are set correctly.
    - If you are unsure and your version has it available, run:
-     `zcli update-host`
+     `mcli update-host`
 
-2. **Run a configuration check** from the `zaneyos` directory:
+2. **Run a configuration check** from the `mayankos` directory:
    ```bash
    nix flake check
    ```
@@ -172,11 +172,11 @@ control. This requires a manual update to your host files.
 
 > ⚠️ **CRITICAL WARNING:**
 >
-> - Do **NOT** use `fr`, `fu`, or `zcli` for this final upgrade step.
+> - Do **NOT** use `fr`, `fu`, or `mcli` for this final upgrade step.
 > - Doing so will cause Hyprland to crash when the display manager (greetd or
 >   SDDM) restarts during the switch.
 
-1. **Execute the rebuild command** from the `zaneyos` directory:
+1. **Execute the rebuild command** from the `mayankos` directory:
    ```bash
    # Replace PROFILE with your GPU (e.g., amd, intel, nvidia, vm)
    sudo nixos-rebuild boot --flake .#PROFILE
@@ -186,4 +186,4 @@ control. This requires a manual update to your host files.
 
 ---
 
-### 🎉 Enjoy! Welcome to ZaneyOS v2.4!
+### 🎉 Enjoy! Welcome to MayankOS v2.4!

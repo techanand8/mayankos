@@ -1,6 +1,6 @@
 English | [Español](./tmux.cheatsheet.es.md)
 
-# Tmux on ZaneyOS — Summary & Cheatsheet
+# Tmux on MayankOS — Summary & Cheatsheet
 ## 🚀 Summary of modules/home/terminals/tmux.nix
 
 ### ⌨️ What is the Tmux Prefix?
@@ -69,18 +69,18 @@ Popups (display-popup)
 - Prefix C-n — prompt for session name; create and switch
 - Prefix C-j — switch session via fzf
 - Prefix C-r — yazi (90%x90% at cwd)
-- Prefix C-z — nvim ~/ZaneyOS/flake.nix (90%x90%)
+- Prefix C-z — nvim ~/MayankOS/flake.nix (90%x90%)
 - Prefix C-t — zsh (75%x75% at cwd)
 
 Menu (display-menu)
 - Prefix d — Dotfiles menu with quick-open entries:
-  - f: flake.nix (ZaneyOS)
-  - c: core packages (ZaneyOS)
-  - g: global packages (ZaneyOS)
+  - f: flake.nix (MayankOS)
+  - c: core packages (MayankOS)
+  - g: global packages (MayankOS)
   - k: keybinds (Hyprland)
   - w: window rules (Hyprland)
-  - z: ZaneyOS flake.nix
-  - p: ZaneyOS packages
+  - z: MayankOS flake.nix
+  - p: MayankOS packages
   - q: Exit
 
 Notes

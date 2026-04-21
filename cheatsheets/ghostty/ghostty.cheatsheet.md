@@ -1,6 +1,6 @@
 English | [Español](./ghostty.cheatsheet.es.md)
 
-# Ghostty on ZaneyOS — Summary & Cheatsheet
+# Ghostty on MayankOS — Summary & Cheatsheet
 ## 🚀 Summary of modules/home/terminals/ghostty.nix
 
 - Program
@@ -9,7 +9,7 @@ English | [Español](./ghostty.cheatsheet.es.md)
   - clearDefaultKeybinds = true (all bindings are explicitly defined below)
 
 - Appearance
-  - Title: ZaneyOS-GhosTTY
+  - Title: MayankOS-GhosTTY
   - TERM: xterm-256color
   - Theme: dark: catppuccin-mocha; light: catppuccin-mocha
   - Window theme: dark

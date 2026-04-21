@@ -1,5 +1,5 @@
 {
-  description = "ZaneyOS";
+  description = "MayankOS";
 
   inputs = {
     home-manager = {
@@ -13,6 +13,16 @@
 
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    caelestia = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -53,6 +63,9 @@
     nix-flatpak,
     alejandra,
     yt-x,
+    noctalia,
+    caelestia,
+    dms,
     ...
   } @ inputs: let
     system = "x86_64-linux";

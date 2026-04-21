@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ##########################################
-# ZaneyOS Configuration Comparison Tool
+# MayankOS Configuration Comparison Tool
 # Author: Don Williams
 # Date: $(date +"%B %d, %Y")
 ##########################################
@@ -16,13 +16,13 @@ PURPLE='\033[0;35m'
 NC='\033[0m' # No Color
 
 # Define directories
-ZANEYOS_DIR="$HOME/zaneyos"
-TEMP_DIR="/tmp/zaneyos-comparison-$$"
+MAYANKOS_DIR="$HOME/mayankos"
+TEMP_DIR="/tmp/mayankos-comparison-$$"
 TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
-REPORT_FILE="$HOME/zaneyos-config-comparison-$TIMESTAMP.txt"
+REPORT_FILE="$HOME/mayankos-config-comparison-$TIMESTAMP.txt"
 
 # Default comparison targets
-DEFAULT_REPO="https://gitlab.com/zaney/zaneyos.git"
+DEFAULT_REPO="https://gitlab.com/zaney/mayankos.git"
 DEFAULT_BRANCH="main"
 
 # Function to print a section header
@@ -54,20 +54,20 @@ print_info() {
 
 # Function to show usage
 show_usage() {
-  echo -e "${CYAN}ZaneyOS Configuration Comparison Tool${NC}"
+  echo -e "${CYAN}MayankOS Configuration Comparison Tool${NC}"
   echo ""
   echo "Usage: $0 [OPTIONS]"
   echo ""
   echo "Options:"
   echo "  -r, --repo URL          Remote repository URL to compare against"
-  echo "                          (default: https://gitlab.com/zaney/zaneyos.git)"
+  echo "                          (default: https://gitlab.com/zaney/mayankos.git)"
   echo "  -b, --branch NAME       Branch to compare against (default: main)"
   echo "  -o, --output FILE       Output report file path"
   echo "  -h, --help              Show this help message"
   echo ""
   echo "Examples:"
   echo "  $0                                    # Compare against official main branch"
-  echo "  $0 -r https://github.com/user/zaneyos.git -b dev"
+  echo "  $0 -r https://github.com/user/mayankos.git -b dev"
   echo "  $0 --branch stable-2.4               # Compare against specific branch"
   echo "  $0 --output my-comparison.txt        # Custom output file"
   echo ""
@@ -113,7 +113,7 @@ trap cleanup EXIT
 
 # Main comparison function
 perform_comparison() {
-  print_header "ZaneyOS Configuration Comparison Tool"
+  print_header "MayankOS Configuration Comparison Tool"
   
   echo -e "${CYAN}🔍 Comparing your configuration against:${NC}"
   echo -e "   Repository: ${YELLOW}$REPO_URL${NC}"
@@ -121,18 +121,18 @@ perform_comparison() {
   echo -e "   Report: ${YELLOW}$REPORT_FILE${NC}"
   echo ""
   
-  # Check if we're in a zaneyos directory
-  if [ ! -d "$ZANEYOS_DIR" ]; then
-    print_error "ZaneyOS directory not found at $ZANEYOS_DIR"
+  # Check if we're in a mayankos directory
+  if [ ! -d "$MAYANKOS_DIR" ]; then
+    print_error "MayankOS directory not found at $MAYANKOS_DIR"
     exit 1
   fi
   
-  cd "$ZANEYOS_DIR" || exit 1
+  cd "$MAYANKOS_DIR" || exit 1
   
   # Check if current directory is a git repository
   if [ ! -d ".git" ]; then
-    print_warning "Current ZaneyOS directory is not a git repository"
-    print_info "This tool works best when your ZaneyOS is version controlled"
+    print_warning "Current MayankOS directory is not a git repository"
+    print_info "This tool works best when your MayankOS is version controlled"
   fi
   
   # Clone the comparison repository
@@ -149,9 +149,9 @@ perform_comparison() {
   # Generate comparison report
   {
     echo "============================================"
-    echo "  ZaneyOS Configuration Comparison Report"
+    echo "  MayankOS Configuration Comparison Report"
     echo "  Generated: $(date)"
-    echo "  Local: $ZANEYOS_DIR"
+    echo "  Local: $MAYANKOS_DIR"
     echo "  Remote: $REPO_URL (branch: $BRANCH)"
     echo "============================================"
     echo ""
@@ -363,7 +363,7 @@ perform_comparison() {
       echo "💡 Consider initializing git for better version control:"
       echo "   git init"
       echo "   git add ."
-      echo "   git commit -m 'Initial ZaneyOS configuration'"
+      echo "   git commit -m 'Initial MayankOS configuration'"
     fi
     echo ""
     
@@ -415,7 +415,7 @@ perform_comparison() {
     fi
     echo ""
     
-    echo "🔄 FOR UPGRADING TO ZANEYOS 2.4:"
+    echo "🔄 FOR UPGRADING TO MAYANKOS 2.4:"
     echo "1. Run the upgrade analysis: ./upgrade-2.3-to-2.4.sh"
     echo "2. Review the pre-upgrade analysis report"
     echo "3. Use this comparison report to understand your customizations"
