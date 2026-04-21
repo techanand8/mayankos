@@ -36,6 +36,12 @@ in {
     flags = [
       "--update-input"
       "nixpkgs"
+      "--update-input"
+      "noctalia"
+      "--update-input"
+      "caelestia"
+      "--update-input"
+      "dms"
       "--commit-lock-file"
     ];
   };
