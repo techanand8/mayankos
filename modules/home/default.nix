@@ -12,6 +12,7 @@
     helixEnable
     doomEmacsEnable
     antigravityEnable
+    niriEnable
     ;
   # Select bar module based on barChoice
   barModule =
@@ -66,6 +67,11 @@ in {
       ./zoxide.nix
       ./zsh
     ]
+    ++ (
+      if niriEnable
+      then [./niri]
+      else []
+    )
     ++ (
       if helixEnable
       then [./editors/evil-helix.nix]

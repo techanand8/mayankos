@@ -10,7 +10,8 @@
   displayManager = "sddm";
 
   # Emable/disable bundled applications
-  tmuxEnable = true;
+  niriEnable = true;
+  tmuxEnable = false;
   alacrittyEnable = true;
   weztermEnable = false;
   ghosttyEnable = true;

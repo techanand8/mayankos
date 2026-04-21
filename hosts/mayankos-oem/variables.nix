@@ -10,7 +10,8 @@
   displayManager = "sddm";
 
   # Emable/disable bundled applications
-  tmuxEnable = true;
+  niriEnable = true;
+  tmuxEnable = false;
   alacrittyEnable = true;
   weztermEnable = true;
   ghosttyEnable = true;
@@ -54,7 +55,7 @@
   #   "text/plain"      = ["nvim.desktop"];        # or code.desktop
   # };
 
-  terminal = "kitty"; # Set Default System Terminal
+  terminal = "ghostty"; # Set Default System Terminal
   keyboardLayout = "us";
   keyboardVariant = "";
   consoleKeyMap = "us";
