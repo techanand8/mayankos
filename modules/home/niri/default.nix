@@ -25,7 +25,6 @@ in {
         { command = [ "systemctl" "--user" "start" "hyprpolkitagent" ]; }
         
         # Desktop Components
-        { command = [ "swaync" ]; }
         { command = [ "waypaper" "--restore" ]; }
         
         # Shell / Bar Integration
