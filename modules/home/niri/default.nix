@@ -8,6 +8,9 @@
   vars = import ../../../hosts/${host}/variables.nix;
   inherit (vars) terminal browser barChoice;
 in {
+  imports = [
+    inputs.niri.homeModules.niri
+  ];
   # Niri can be configured via programs.niri.settings (Nix-style) 
   # which home-manager converts to KDL automatically.
   programs.niri = {

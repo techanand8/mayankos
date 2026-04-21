@@ -54,6 +54,7 @@
       url = "github:Benexl/yt-x";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri.url = "github:YaLTeR/niri";
   };
 
   outputs = {
@@ -66,6 +67,7 @@
     noctalia,
     caelestia,
     dms,
+    niri,
     ...
   } @ inputs: let
     system = "x86_64-linux";
