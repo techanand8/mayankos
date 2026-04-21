@@ -12,7 +12,7 @@
       sv = "sudo nvim";
       fr = "nh os switch --hostname ${profile}";
       fu = "nh os switch --hostname ${profile} --update";
-      mu = "sh <(curl -L https://gitlab.com/Zaney/mayankos/-/releases/latest/download/install-mayankos.sh)";
+      mu = "sh <(curl -L https://raw.githubusercontent.com/techanand8/mayankos/main/install-mayankos.sh)";
       ncg = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
       v = "nvim";
       cat = "bat";

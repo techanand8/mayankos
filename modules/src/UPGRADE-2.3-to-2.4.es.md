@@ -48,7 +48,7 @@ chmod +x ~/upgrade-2.3-to-2.4.sh
 
 Opción B — Usando curl:
 ```bash
-curl -fsSL https://gitlab.com/zaney/mayankos/-/raw/main/upgrade-2.3-to-2.4.sh -o ~/upgrade-2.3-to-2.4.sh
+curl -fsSL https://raw.githubusercontent.com/techanand8/mayankos/main/upgrade-2.3-to-2.4.sh -o ~/upgrade-2.3-to-2.4.sh
 chmod +x ~/upgrade-2.3-to-2.4.sh
 ```
 

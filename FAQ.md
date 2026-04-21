@@ -412,7 +412,7 @@ Edit the `extraMonitorSettings` line. **Examples:**
   tool, `arandr` It will then create a Hyprland compatible configuration file at
   `~/.config/hypr/monitors.conf`
 
-<img align="center" width="90%" src="https://gitlab.com/Zaney/mayankos/-/raw/main/img/nwg-displays.png" />
+<img align="center" width="90%" src="https://raw.githubusercontent.com/techanand8/mayankos/main/img/nwg-displays.png" />
 
 After you finish configring the monitors as you wish, hit `Apply` to save the
 changes to `~/.config/hypr/monitors.conf`\
@@ -876,7 +876,7 @@ chmod +x ~/upgrade-2.3-to-2.4.sh
 - Curl:
 
 ```bash
-curl -fsSL https://gitlab.com/zaney/mayankos/-/raw/main/upgrade-2.3-to-2.4.sh -o ~/upgrade-2.3-to-2.4.sh
+curl -fsSL https://raw.githubusercontent.com/techanand8/mayankos/main/upgrade-2.3-to-2.4.sh -o ~/upgrade-2.3-to-2.4.sh
 chmod +x ~/upgrade-2.3-to-2.4.sh
 ```
 
@@ -925,7 +925,7 @@ before switching branches and migrate your hosts safely from the backup.
 <details>
 <summary> How do I know when a new version of MayankOS is released? </summary>
 
-It will be announced on the Zaney [Discord](https://discord.gg/W7efsSDS) server.
+It will be announced on the MayankOS [Discord](https://discord.gg/W7efsSDS) server.
 
 </details>
 
@@ -945,7 +945,7 @@ It will be announced on the Zaney [Discord](https://discord.gg/W7efsSDS) server.
 ~/mayankos/
     ├── hosts/                      # Folder where host configs are saved
     │   ├── default                 # Default host template
-    │   └── nixstation              # Zaney's host
+    │   └── nixstation              # MayankOS's host
     ├── img/                        # Images for README.md
     ├── modules/                    # Core, HomeMgr, drivers config files
     │   └── drivers/                # AMD,NVIDA,Intel,VM config files
@@ -1607,7 +1607,7 @@ Edit the `extraMonitorSettings` line. **Examples:**
   tool, `arandr` It will then create a Hyprland compatible configuration file at
   `~/.config/hypr/monitors.conf`
 
-<img align="center" width="90%" src="https://gitlab.com/Zaney/mayankos/-/raw/main/img/nwg-displays.png" />
+<img align="center" width="90%" src="https://raw.githubusercontent.com/techanand8/mayankos/main/img/nwg-displays.png" />
 
 After you finish configring the monitors as you wish, hit `Apply` to save the
 changes to `~/.config/hypr/monitors.conf`\
@@ -2064,7 +2064,7 @@ chmod +x ~/upgrade-2.3-to-2.4.sh
 - Curl:
 
 ```bash
-curl -fsSL https://gitlab.com/zaney/mayankos/-/raw/main/upgrade-2.3-to-2.4.sh -o ~/upgrade-2.3-to-2.4.sh
+curl -fsSL https://raw.githubusercontent.com/techanand8/mayankos/main/upgrade-2.3-to-2.4.sh -o ~/upgrade-2.3-to-2.4.sh
 chmod +x ~/upgrade-2.3-to-2.4.sh
 ```
 
@@ -2113,7 +2113,7 @@ before switching branches and migrate your hosts safely from the backup.
 <details>
 <summary> How do I know when a new version of MayankOS is released? </summary>
 
-It will be announced on the Zaney [Discord](https://discord.gg/W7efsSDS) server.
+It will be announced on the MayankOS [Discord](https://discord.gg/W7efsSDS) server.
 
 </details>
 
@@ -2133,7 +2133,7 @@ It will be announced on the Zaney [Discord](https://discord.gg/W7efsSDS) server.
 ~/mayankos/
     ├── hosts/                      # Folder where host configs are saved
     │   ├── default                 # Default host template
-    │   └── nixstation              # Zaney's host
+    │   └── nixstation              # MayankOS's host
     ├── img/                        # Images for README.md
     ├── modules/                    # Core, HomeMgr, drivers config files
     │   └── drivers/                # AMD,NVIDA,Intel,VM config files

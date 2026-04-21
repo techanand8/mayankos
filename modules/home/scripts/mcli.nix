@@ -88,7 +88,7 @@ in
     # ==================================
     #
     #    Purpose: NixOS system management utility for MayankOS distribution
-    #     Author: Don Williams (ddubs) & Zaney
+    #     Author: MayankOS Team (Original: Don Williams & Zaney)
     #  Re-envisioned & Customized by: Mayank Anand
     # Start Date: June 7th, 2025
     #    Version: 1.0.2

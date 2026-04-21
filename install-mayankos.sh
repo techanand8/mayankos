@@ -2,7 +2,7 @@
 
 ######################################
 # Install script for mayankos
-# Author:  Don Williams
+# Author: MayankOS Team (Original: Don Williams)
 # Date: June 27, 2005
 #######################################
 

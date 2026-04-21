@@ -224,7 +224,7 @@ Luego:
 ![Comando del script de instalación de MayankOS](img/install-script.jpg)
 
 ```
-sh <(curl -L https://gitlab.com/Zaney/mayankos/-/raw/main/install-mayankos.sh)
+sh <(curl -L https://raw.githubusercontent.com/techanand8/mayankos/main/install-mayankos.sh)
 ```
 
 #### El proceso de instalación se verá así:
@@ -255,7 +255,7 @@ nix-shell -p git vim
 2. Clona este repo y entra:
 
 ```
-cd && git clone https://gitlab.com/zaney/mayankos.git -b main --depth=1 ~/mayankos
+cd && git clone https://github.com/techanand8/mayankos.git -b main --depth=1 ~/mayankos
 cd mayankos
 
 También puedes ejecutar el script `install.sh` si quieres.
