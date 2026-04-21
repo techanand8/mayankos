@@ -54,7 +54,7 @@
       url = "github:Benexl/yt-x";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri.url = "github:YaLTeR/niri";
+    niri.url = "github:sodiboo/niri-flake";
   };
 
   outputs = {
