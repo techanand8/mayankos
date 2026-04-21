@@ -3,6 +3,7 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }: let
   vars = import ../../../hosts/${host}/variables.nix;
