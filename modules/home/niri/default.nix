@@ -233,10 +233,16 @@ in {
         "XF86MonBrightnessUp" = { action.spawn = [ "noctalia-shell" "ipc" "call" "brightness" "increase" ]; allow-when-locked = true; };
         "XF86MonBrightnessDown" = { action.spawn = [ "noctalia-shell" "ipc" "call" "brightness" "decrease" ]; allow-when-locked = true; };
 
-        # Screenshots
+        # Screenshots (Hyprshot - Saves to Pictures)
         "Print".action.spawn = [ "hyprshot" "-m" "output" "-o" "$HOME/Pictures/Screenshots" ];
         "Mod+Print".action.spawn = [ "hyprshot" "-m" "region" "-o" "$HOME/Pictures/Screenshots" ];
         "Ctrl+Print".action.spawn = [ "hyprshot" "-m" "window" "-o" "$HOME/Pictures/Screenshots" ];
+
+        # Native Niri Screenshots (Built-in)
+        "Ctrl+Shift+S".action.screenshot = { };
+        "Ctrl+Shift+1".action.screenshot-screen = { };
+        "Ctrl+Shift+2".action.screenshot-screen = { }; # Monitor
+        "Ctrl+Shift+3".action.screenshot-window = { };
 
         # Emergency & Misc
         "Mod+Shift+Escape".action.show-hotkey-overlay = { };
