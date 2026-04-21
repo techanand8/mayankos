@@ -95,8 +95,8 @@ in {
       # --- ANIMATIONS ---
       animations = {
         workspace-switch.spring = { damping-ratio = 1.0; stiffness = 1000; epsilon = 0.0001; };
-        window-open = { duration-ms = 200; curve = "ease-out-quad"; };
-        window-close = { duration-ms = 200; curve = "ease-out-cubic"; };
+        window-open = { duration-ms = 200; };
+        window-close = { duration-ms = 200; };
         horizontal-view-movement.spring = { damping-ratio = 1.0; stiffness = 900; epsilon = 0.0001; };
         window-movement.spring = { damping-ratio = 1.0; stiffness = 800; epsilon = 0.0001; };
         window-resize.spring = { damping-ratio = 1.0; stiffness = 1000; epsilon = 0.0001; };
