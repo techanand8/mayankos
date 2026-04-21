@@ -135,7 +135,7 @@ in {
         "Mod+S".action.spawn = [ "screenshootin" ];
         "Mod+Y".action.spawn = [ "${terminal}" "-e" "yazi" ];
         "Mod+T".action.spawn = [ "thunar" ];
-        "Mod+K".action.spawn = [ "qs-keybinds" ];
+        "Mod+Alt+K".action.spawn = [ "qs-keybinds" ];
         "Mod+Ctrl+C".action.spawn = [ "qs-cheatsheets" ];
         "Mod+Shift+W".action.spawn = [ "qs-wallpapers-apply" ];
         "Mod+E".action.spawn = [ "emopicker9000" ];
