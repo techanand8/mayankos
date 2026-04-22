@@ -35,55 +35,55 @@ Elige tu experiencia de escritorio preferida configurando `barChoice` en `variab
 
 ## 🤝 Relación con ZaneyOS
 
-MayankOS es un orgulloso descendiente del legendario proyecto [ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). Si bien comparte el mismo espíritu de hacer que NixOS sea accesible y hermoso, MayankOS ha evolucionado hacia una distribución distinta con su propio enfoque:
+Este proyecto es un orgulloso descendiente del legendario proyecto [ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). Si bien comparte el mismo espíritu de hacer que NixOS sea accesible y hermoso, esta distribución ha evolucionado hacia una distribución distinta con su propio enfoque:
 
-### 🌟 ¿Qué hace que MayankOS sea diferente?
-- **Enfoque en Hardware Moderno**: A diferencia del enfoque más general de ZaneyOS, MayankOS incluye optimizaciones profundas para la última **serie AMD Ryzen 7000** y **portátiles MSI** (incluyendo la gestión de la salud de la batería).
+### 🌟 ¿Qué lo hace diferente?
+- **Enfoque en Hardware Moderno**: A diferencia del enfoque más general de ZaneyOS, este sistema incluye optimizaciones profundas para la última **serie AMD Ryzen 7000** y **portátiles MSI** (incluyendo la gestión de la salud de la batería).
 - **Ecosistema de Shell Ampliado**: Hemos ido más allá de Waybar para incluir soporte completo para **Noctalia**, **Caelestia** y **DMS**, brindándole más opciones para su flujo de trabajo de escritorio.
 - **Estrategia del Último Kernel**: Priorizamos `linuxPackages_latest` (7.x+) para garantizar que las funciones de hardware más nuevas funcionen de inmediato.
 - **Opciones de Compositor Expandidas**: Hemos integrado soporte completo para el **compositor de mosaico desplazable Niri**, proporcionando una alternativa moderna a Hyprland para los usuarios que prefieren un flujo de trabajo de mosaico desplazable.
 - **Internacionalización Mejorada**: Soporte para más de 13 idiomas para llevar la experiencia NixOS a una audiencia global.
 
-Si está buscando la inspiración original, visite el [GitLab Oficial de ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). MayankOS toma esa base increíble y la lleva más allá para los usuarios que necesitan soporte de hardware de vanguardia y una gama más diversa de shells de escritorio.
+Si está buscando la inspiración original, visite el [GitLab Oficial de ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). Este entorno toma esa base increíble y la lleva más allá para los usuarios que necesitan soporte de hardware de vanguardia y una gama más diversa de shells de escritorio.
 
 ## 🏗️ Instalación: Automática vs. Manual
 
-MayankOS ofrece dos formas principales de comenzar:
+Se ofrecen dos formas principales de comenzar:
 1. **Script automático (recomendado para nuevos usuarios)**: Una instalación rápida de un solo comando que se encarga de todo por ti. Esta es la forma más rápida de obtener un escritorio funcional.
 2. **Instalación manual**: Para usuarios que desean un control total sobre cada aspecto de su sistema. La instalación manual es mejor si deseas personalizar tus herramientas *antes* de tu primera reconstrucción.
 
 ## ⚡ Estación de trabajo profesional de ingeniería de hardware y VLSI
 
-MayankOS está diseñado específicamente para ser una estación de trabajo profesional de alto rendimiento para **VLSI e ingeniería de hardware**.
+Este sistema está diseñado específicamente para ser una estación de trabajo profesional de alto rendimiento para **VLSI e ingeniería de hardware**.
 
 - **Por qué es perfecto**: Viene preconfigurado con una suite completa de herramientas para:
   - **Simulación HDL**: `ghdl`, `nvc`, `iverilog`, `verilator`, `gtkwave`, `surfer`, `fusesoc`, `surelog`.
   - **Síntesis y diseño físico**: `yosys`, `magic-vlsi`, `netgen`, `klayout`, `openroad`, `xschem`, `gdsfactory`. (Listo para OpenLane)
   - **Desarrollo de FPGA y embebidos**: `nextpnr`, `icestorm`, `openfpgaloader`, `dfu-util`, `qemu`.
   - **LSPs y Herramientas**: `sv-lang`, `vhdl-ls`, `verible`, `veridian`, `svls`, `pyverilog`, `verilogae`, `volare`.
-  - **PDKs**: Soporte completo para **SkyWater 130** y **GF180MCU** a través de `volare`.
+  - **PDKs**: Soporte completo para **SkyWater 130** and **GF180MCU** a través de `volare`.
   - **Diseño de PCB y esquemas**: `kicad`, `ngspice`, `xyce`, `doxygen`.
 - **Cómo personalizar**: Si NO necesitas estas herramientas, simplemente puedes comentar o eliminar el bloque `# --- VLSI & Hardware Engineering ---` en `modules/core/packages.nix` antes de ejecutar tu `nixos-rebuild`.
 - **EDA Avanzado**: Para herramientas como **OpenLane** o suites de DFT avanzadas que aún no están en Nixpkgs estándar, recomendamos usar el overlay [nix-eda](https://github.com/nix-eda/nix-eda) o contenedores Docker para garantizar la compatibilidad con PDK.
-- **Listo para el futuro**: Esto es solo el comienzo; se planean más herramientas especializadas de VLSI y EDA (incluyendo soporte integrado para OpenLane v2) para futuras actualizaciones para hacer de MayankOS la plataforma definitiva para los diseñadores de hardware.
+- **Listo para el futuro**: Esto es solo el comienzo; se planean más herramientas especializadas de VLSI y EDA (incluyendo soporte integrado para OpenLane v2) para futuras actualizaciones para hacer de esta la plataforma definitiva para los diseñadores de hardware.
 
 ## 🌐 Elección y personalización del navegador web
 
 ### ¿Por qué Microsoft Edge?
 
-Por defecto, MayankOS ahora utiliza **Microsoft Edge**. Reconocemos que la comunidad de Linux tiene fuertes preferencias por navegadores como Firefox, Zen o Brave. Sin embargo, Edge fue seleccionado para esta estación de trabajo porque:
+Por defecto, el sistema ahora utiliza **Microsoft Edge**. Reconocemos que la comunidad de Linux tiene fuertes preferencias por navegadores como Firefox, Zen o Brave. Sin embargo, Edge fue seleccionado para esta estación de trabajo porque:
 - **Compatibilidad**: Ofrece una excelente estabilidad con portales de documentación de hardware profesional y herramientas EDA basadas en la web.
 - **Rendimiento**: Proporciona un manejo eficiente de PDF y gestión de memoria para investigaciones técnicas intensivas.
 - **Flujo de trabajo**: Se alinea con las necesidades de ingeniería específicas de esta estación de trabajo VLSI.
 
 ### Cómo cambiar su navegador predeterminado
 
-Si prefiere un navegador diferente, MayankOS facilita el cambio:
-1. **Cambie la variable**: Abra el archivo `variables.nix` de su host (por ejemplo, `hosts/msi-modern14c7m/variables.nix`) y cambie la línea `browser` por su elección (por ejemplo, `browser = "firefox";`).
+Si prefiere un navegador diferente, la configuración facilita el cambio:
+1. **Cambie la variable**: Abra el archivo `variables.nix` de su host (por ejemplo, `hosts/msi-modern14c7m/variables.nix`) and cambie la línea `browser` por su elección (por ejemplo, `browser = "firefox";`).
 2. **Verifique la instalación**: Asegúrese de que su navegador preferido esté en la lista de `modules/core/packages.nix`. Si no está allí, simplemente agregue el nombre de su paquete (por ejemplo, `librewolf`) a la lista.
 3. **Reconstruir**: Ejecute `mcli rebuild` o su comando de reconstrucción específico (por ejemplo, `sudo nixos-rebuild switch --flake .#amd`) para aplicar el cambio.
 
-¡Creemos en la elección y la libertad. MayankOS está diseñado para ser su estación de trabajo personal; ¡siéntase libre de hacerla suya!
+¡Creemos en la elección y la libertad. Este entorno está diseñado para ser su estación de trabajo personal; ¡siéntase libre de hacerla suya!
 
 ## 🛠️ Guía de Configuración de Hardware Personalizado y Host
 
@@ -173,9 +173,9 @@ Si prefiere un navegador diferente, MayankOS facilita el cambio:
 
 #### 👼 Una comunidad increíble centrada en el soporte
 
-- La idea de MayankOS es hacer de NixOS un espacio accesible.
+- La idea de este proyecto es hacer de NixOS un espacio accesible.
 - NixOS es una gran comunidad de la que querrás formar parte.
-- Muchas personas pacientes y con ganas de ayudar te apoyan usando MayankOS.
+- Muchas personas pacientes y con ganas de ayudar te apoyan usando esta configuración.
 - No dudes en pasar por el Discord para pedir ayuda.
 
 #### 📦 ¿Cómo instalo paquetes?

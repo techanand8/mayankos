@@ -35,10 +35,10 @@ Choisissez votre expérience de bureau préférée en réglant `barChoice` dans 
 
 ## 🤝 Relation avec ZaneyOS
 
-MayankOS est un fier descendant du légendaire projet [ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). Bien qu'il partage le même esprit de rendre NixOS accessible et beau, MayankOS a évolué vers une distribution distincte avec son propre objectif :
+Ce projet est un fier descendant du légendaire projet [ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). Bien qu'il partage le même esprit de rendre NixOS accessible et beau, il a évolué vers une distribution distincte avec son propre objectif :
 
-### 🌟 Qu'est-ce qui rend MayankOS différent ?
-- **Focus sur le matériel moderne** : Contrairement à l'approche plus générale de ZaneyOS, MayankOS inclut des optimisations approfondies pour les derniers **AMD Ryzen série 7000** et les **ordinateurs portables MSI** (y compris la gestion de la santé de la batterie).
+### 🌟 Qu'est-ce qui le rend différent ?
+- **Focus sur le matériel moderne** : Contrairement à l'approche plus générale de ZaneyOS, ce système inclut des optimisations approfondies pour les derniers **AMD Ryzen série 7000** et les **ordinateurs portables MSI** (y compris la gestion de la santé de la batterie).
 - **Écosystème de shells étendu** : Nous sommes allés au-delà de Waybar pour inclure un support complet pour **Noctalia**, **Caelestia** et **DMS**, vous offrant plus de choix pour votre flux de travail de bureau.
 - **Stratégie du dernier noyau** : Nous priorisons `linuxPackages_latest` (7.x+) pour garantir que les dernières fonctionnalités matérielles fonctionnent immédiatement.
 - **Options de compositeur étendues** : Nous avons intégré un support complet pour le **compositeur de tuilage défilant Niri**, offrant une alternative moderne à Hyprland pour les utilisateurs qui préfèrent un flux de travail de tuilage défilant.
@@ -54,7 +54,7 @@ MayankOS propose deux façons principales de commencer :
 
 ## ⚡ Station de travail professionnelle pour l'ingénierie VLSI et matérielle
 
-MayankOS est spécifiquement conçu pour être une station de travail professionnelle haute performance pour **le VLSI et l'ingénierie matérielle**.
+Ce système est spécifiquement conçu pour être une station de travail professionnelle haute performance pour **le VLSI et l'ingénierie matérielle**.
 
 - **Pourquoi c'est parfait** : Il est pré-configuré avec une suite complète d'outils pour :
   - **Simulation HDL** : `ghdl`, `nvc`, `iverilog`, `verilator`, `gtkwave`, `surfer`, `fusesoc`, `surelog`.
@@ -78,12 +78,12 @@ Par défaut, MayankOS utilise désormais **Microsoft Edge**. Nous reconnaissons 
 
 ### Comment changer votre navigateur par défaut
 
-Si vous préférez un autre navigateur, MayankOS facilite le changement :
+Si vous préférez un autre navigateur, la configuration facilite le changement :
 1. **Modifier la variable** : Ouvrez le fichier `variables.nix` de votre hôte (ex: `hosts/msi-modern14c7m/variables.nix`) et remplacez la ligne `browser` par votre choix (ex: `browser = "firefox";`).
 2. **Vérifier l'installation** : Assurez-vous que votre navigateur préféré est listé dans `modules/core/packages.nix`. S'il n'y est pas, ajoutez simplement le nom de son paquet (ex: `librewolf`) à la liste.
 3. **Reconstruire** : Lancez `mcli rebuild` ou votre commande de reconstruction spécifique (ex: `sudo nixos-rebuild switch --flake .#amd`) pour appliquer le changement.
 
-Nous croyons au choix et à la liberté. MayankOS est conçu pour être votre station de travail personnelle — n'hésitez pas à vous l'approprier !
+Nous croyons au choix et à la liberté. Cet environnement est conçu pour être votre station de travail personnelle — n'hésitez pas à vous l'approprier !
 
  ## 🛠️ Guide de configuration du matériel personnalisé et de l'hôte
 
@@ -184,7 +184,7 @@ Nous croyons au choix et à la liberté. MayankOS est conçu pour être votre st
 
 - L'idée même de MayankOS est de faire de NixOS un espace accessible.
 - NixOS est une communauté formidable dont vous voudrez faire partie.
-- De nombreuses personnes patientes et heureuses d'aider sur leur temps libre utilisent MayankOS.
+- De nombreuses personnes patientes et heureuses d'aider sur leur temps libre utilisent cette configuration.
 - N'hésitez pas à nous contacter sur Discord pour toute aide.
 
 #### 📦 Comment installer des paquets ?

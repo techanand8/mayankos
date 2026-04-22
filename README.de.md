@@ -35,26 +35,26 @@ Wählen Sie Ihr bevorzugtes Desktop-Erlebnis durch Einstellen von `barChoice` in
 
 ## 🤝 Beziehung zu ZaneyOS
 
-MayankOS ist ein stolzer Nachfahre des legendären [ZaneyOS](https://gitlab.com/Zaney/zaneyos.git)-Projekts. Obwohl es den gleichen Geist teilt, NixOS zugänglich und schön zu machen, hat sich MayankOS zu einer eigenständigen Distribution mit eigenem Fokus entwickelt:
+Dieses Projekt ist ein stolzer Nachfahre des legendären [ZaneyOS](https://gitlab.com/Zaney/zaneyos.git)-Projekts. Obwohl es den gleichen Geist teilt, NixOS zugänglich und schön zu machen, hat sich MayankOS zu einer eigenständigen Distribution mit eigenem Fokus entwickelt:
 
-### 🌟 Was macht MayankOS anders?
+### 🌟 Was macht es anders?
 - **Fokus auf moderne Hardware**: Im Gegensatz zum allgemeineren Ansatz von ZaneyOS enthält MayankOS tiefgreifende Optimierungen für die neueste **AMD Ryzen 7000 Serie** und **MSI-Laptops** (einschließlich Akku-Gesundheitsmanagement).
 - **Erweitertes Shell-Ökosystem**: Wir sind über Waybar hinausgegangen und bieten volle Unterstützung für **Noctalia**, **Caelestia** und **DMS**, was Ihnen mehr Auswahlmöglichkeiten für Ihren Desktop-Workflow bietet.
 - **Neueste Kernel-Strategie**: Wir priorisieren `linuxPackages_latest` (7.x+), um sicherzustellen, dass die neuesten Hardware-Features sofort funktionieren.
 - **Erweiterte Compositor-Optionen**: Wir haben die volle Unterstützung für den **Niri scrollable-tiling compositor** integriert und bieten damit eine moderne Alternative zu Hyprland für Benutzer, die einen scrollbaren Tiling-Workflow bevorzugen.
 - **Verbesserte Internationalisierung**: Unterstützung für über 13 Sprachen, um das NixOS-Erlebnis einem globalen Publikum zugänglich zu machen.
 
-Wenn Sie nach der ursprünglichen Inspiration suchen, besuchen Sie bitte das [Offizielle ZaneyOS GitLab](https://gitlab.com/Zaney/zaneyos.git). MayankOS nimmt dieses unglaubliche Fundament und entwickelt es weiter für Benutzer, die modernste Hardware-Unterstützung und eine vielfältigere Auswahl an Desktop-Shells benötigen.
+Wenn Sie nach der ursprünglichen Inspiration suchen, besuchen Sie bitte das [Offizielle ZaneyOS GitLab](https://gitlab.com/Zaney/zaneyos.git). Diese Umgebung nimmt dieses unglaubliche Fundament und entwickelt es weiter für Benutzer, die modernste Hardware-Unterstützung und eine vielfältigere Auswahl an Desktop-Shells benötigen.
 
 ## 🏗️ Installation: Automatisch vs. Manuell
 
-MayankOS bietet zwei primäre Wege für den Einstieg:
+Es werden zwei primäre Wege angeboten für den Einstieg:
 1. **Automatisches Skript (empfohlen für neue Benutzer)**: Eine schnelle Ein-Befehl-Installation, die alles für Sie erledigt. Dies ist der schnellste Weg zu einem funktionierenden Desktop.
 2. **Manuelle Installation**: Für Benutzer, die die vollständige Kontrolle über jeden Aspekt ihres Systems haben möchten. Die manuelle Installation ist besser, wenn Sie Ihre Werkzeuge *vor* Ihrem ersten Rebuild anpassen möchten.
 
 ## ⚡ Professionelle VLSI- & Hardware-Engineering-Workstation
 
-MayankOS wurde speziell als leistungsstarke, professionelle Workstation für **VLSI- und Hardware-Engineering** entwickelt.
+Dieses System wurde speziell als leistungsstarke, professionelle Workstation für **VLSI- und Hardware-Engineering** entwickelt.
 
 - **Warum es perfekt ist**: Es ist vorkonfiguriert mit einer umfassenden Suite von Werkzeugen für:
   - **HDL-Simulation**: `ghdl`, `nvc`, `iverilog`, `verilator`, `gtkwave`, `surfer`, `fusesoc`, `surelog`.
@@ -65,7 +65,7 @@ MayankOS wurde speziell als leistungsstarke, professionelle Workstation für **V
   - **PCB- & Schaltplan-Design**: `kicad`, `ngspice`, `xyce`, `doxygen`.
 - **Anpassung**: Wenn Sie diese Werkzeuge NICHT benötigen, können Sie einfach den Block `# --- VLSI & Hardware Engineering ---` in `modules/core/packages.nix` auskommentieren oder entfernen, bevor Sie Ihr `nixos-rebuild` ausführen.
 - **Advanced EDA**: For tools like **OpenLane** or advanced DFT suites not yet in standard Nixpkgs, we recommend using the [nix-eda](https://github.com/nix-eda/nix-eda) overlay or Docker containers to ensure PDK compatibility.
-- **Zukunftssicher**: Dies ist erst der Anfang; weitere spezialisierte VLSI- und EDA-Werkzeuge (including built-in OpenLane v2 support) sind für zukünftige Updates geplant, um MayankOS zur ultimativen Plattform für Hardware-Designer zu machen.
+- **Zukunftssicher**: Dies ist erst der Anfang; weitere spezialisierte VLSI- und EDA-Werkzeuge (including built-in OpenLane v2 support) sind für zukünftige Updates geplant, um dies zur ultimativen Plattform für Hardware-Designer zu machen.
 
 ## 🌐 Webbrowser-Wahl & Anpassung
 
@@ -78,12 +78,12 @@ Standardmäßig verwendet MayankOS jetzt **Microsoft Edge**. Wir wissen, dass di
 
 ### So ändern Sie Ihren Standard-Browser
 
-Wenn Sie einen anderen Browser bevorzugen, macht MayankOS den Wechsel einfach:
+Wenn Sie einen anderen Browser bevorzugen, macht die Konfiguration den Wechsel einfach:
 1. **Variable ändern**: Öffnen Sie die Datei `variables.nix` Ihres Hosts (z. B. `hosts/msi-modern14c7m/variables.nix`) und ändern Sie die Zeile `browser` nach Ihrer Wahl (z. B. `browser = "firefox";`).
 2. **Installation prüfen**: Stellen Sie sicher, dass Ihr bevorzugter Browser in `modules/core/packages.nix` aufgeführt ist. Wenn er nicht vorhanden ist, fügen Sie einfach seinen Paketnamen (z. B. `librewolf`) zur Liste hinzu.
 3. **Neu erstellen**: Führen Sie `mcli rebuild` oder Ihren spezifischen Rebuild-Befehl aus (z. B. `sudo nixos-rebuild switch --flake .#amd`), um die Änderung anzuwenden.
 
-Wir glauben an Auswahl und Freiheit. MayankOS ist so konzipiert, dass es Ihre persönliche Workstation ist – fühlen Sie sich frei, sie zu Ihrer eigenen zu machen!
+Wir glauben an Auswahl und Freiheit. Diese Umgebung ist so konzipiert, dass sie Ihre persönliche Workstation ist – fühlen Sie sich frei, sie zu Ihrer eigenen zu machen!
 
 ## 🛠️ Leitfaden für benutzerdefinierte Hardware- & Host-Einrichtung
 
@@ -181,9 +181,9 @@ Wir glauben an Auswahl und Freiheit. MayankOS ist so konzipiert, dass es Ihre pe
 
 #### 👼 Eine großartige Community mit Fokus auf Support
 
-- Die gesamte Idee hinter MayankOS ist es, NixOS zugänglicher zu machen.
+- Die gesamte Idee hinter diesem Projekt ist es, NixOS zugänglicher zu machen.
 - NixOS hat eine großartige Community, von der Sie ein Teil sein möchten.
-- Viele geduldige Menschen, die gerne ihre Freizeit opfern, um Ihnen zu helfen, nutzen MayankOS.
+- Viele geduldige Menschen, die gerne ihre Freizeit opfern, um Ihnen zu helfen, nutzen diese Konfiguration.
 - Kontaktieren Sie uns gerne auf Discord für Hilfe jeglicher Art.
 
 #### 📦 Wie installiert man Pakete?
@@ -193,7 +193,7 @@ Wir glauben an Auswahl und Freiheit. MayankOS ist so konzipiert, dass es Ihre pe
 
 #### 🐧 Desktop-Umgebungen wechseln
 
-MayankOS unterstützt mehrere Umgebungen:
+Es werden mehrere Umgebungen unterstützt:
 - **Hyprland**: Standardmäßig aktiviert.
 - **Niri**: Aktivieren Sie es, indem Sie `niriEnable = true;` in der `variables.nix` Ihres Hosts setzen.
 - **KDE Plasma**: Um KDE Plasma zu aktivieren, gehen Sie zu `modules/core/xserver.nix` und entfernen Sie die Kommentierung der Zeile `services.desktopManager.plasma6.enable = true;` sowie des zugehörigen `environment.systemPackages`-Blocks.

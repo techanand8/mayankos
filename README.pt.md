@@ -35,20 +35,20 @@ Escolha sua experiência de desktop preferida configurando `barChoice` em `varia
 
 ## 🤝 Relacionamento com ZaneyOS
 
-O MayankOS é um orgulhoso descendente do lendário projeto [ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). Embora compartilhe o mesmo espírito de tornar o NixOS acessível e bonito, o MayankOS evoluiu para uma distribuição distinta com o seu próprio foco:
+O Este projeto é um orgulhoso descendente do lendário projeto [ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). Embora compartilhe o mesmo espírito de tornar o NixOS acessível e bonito, o ele evoluiu para uma distribuição distinta com o seu próprio foco:
 
-### 🌟 O que torna o MayankOS diferente?
+### 🌟 O que o torna diferente?
 - **Foco em Hardware Moderno**: Ao contrário da abordagem mais geral do ZaneyOS, o MayankOS inclui otimizações profundas para a série **AMD Ryzen 7000** mais recente e **portáteis MSI** (incluindo gestão de saúde da bateria).
 - **Ecossistema de Shell Expandido**: Fomos além do Waybar para incluir suporte total para **Noctalia**, **Caelestia e DMS**, oferecendo mais escolhas para o seu fluxo de trabalho de desktop.
 - **Estratégia do Kernel Mais Recente**: Priorizamos o `linuxPackages_latest` (7.x+) para garantir que os recursos de hardware mais recentes funcionem imediatamente.
 - **Opções de Compositor Expandidas**: Integramos suporte total para o **compositor de mosaico rolável Niri**, fornecendo uma alternativa moderna ao Hyprland para utilizadores que preferem um fluxo de trabalho de mosaico rolável.
 - **Internacionalização Aprimorada**: Suporte para mais de 13 idiomas para levar a experiência NixOS a um público global.
 
-Se está à procura da inspiração original, visite le [GitLab Oficial do ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). O MayankOS pega nessa base incrível e leva-a mais longe para utilizadores que precisam de suporte de hardware de ponta e de uma gama mais diversificada de shells de desktop.
+Se está à procura da inspiração original, visite le [GitLab Oficial do ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). O Este ambiente pega nessa base incrível e leva-a mais longe para utilizadores que precisam de suporte de hardware de ponta e de uma gama mais diversificada de shells de desktop.
 
 ## 🏗️ Instalação: Automática vs. Manual
 
-MayankOS oferece duas formas principais de começar:
+São oferecidas duas formas principais de começar:
 1. **Script Automático (Recomendado para Novos Usuários)**: Uma instalação rápida de um comando que cuida de tudo para você. Esta é a maneira mais rápida de obter uma área de trabalho funcional.
 2. **Instalação Manual**: Para usuários que desejam controle total sobre cada aspecto de seu sistema. A instalação manual é melhor se você deseja personalizar suas ferramentas *antes* da sua primeira reconstrução.
 
@@ -64,7 +64,7 @@ MayankOS foi projetado especificamente para ser uma estação de trabalho profis
   - **PDKs**: Suporte total para **SkyWater 130** e **GF180MCU** via `volare`.
   - **Design de PCB e Esquemáticos**: `kicad`, `ngspice`, `xyce`, `doxygen`.
 - **Como personalizar**: Se você NÃO precisar dessas ferramentas, pode simplesmente comentar ou remover o bloco `# --- VLSI & Hardware Engineering ---` em `modules/core/packages.nix` antes de executar o seu `nixos-rebuild`.
-- **Pronto para o futuro**: Este é apenas o começo; mais ferramentas especializadas de VLSI e EDA estão planejadas para atualizações futuras para tornar o MayankOS a plataforma definitiva para designers de hardware.
+- **Pronto para o futuro**: Este é apenas o começo; mais ferramentas especializadas de VLSI e EDA estão planejadas para atualizações futuras para tornar esta a plataforma definitiva para designers de hardware.
 
 ## 🌐 Escolha e Personalização do Navegador Web
 
