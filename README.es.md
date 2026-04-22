@@ -63,6 +63,24 @@ MayankOS está diseñado específicamente para ser una estación de trabajo prof
 - **Cómo personalizar**: Si NO necesitas estas herramientas, simplemente puedes comentar o eliminar el bloque `# --- VLSI & Hardware Engineering ---` en `modules/core/packages.nix` antes de ejecutar tu `nixos-rebuild`.
 - **Listo para el futuro**: Esto es solo el comienzo; se planean más herramientas especializadas de VLSI y EDA para futuras actualizaciones para hacer de MayankOS la plataforma definitiva para los diseñadores de hardware.
 
+## 🌐 Elección y personalización del navegador web
+
+### ¿Por qué Microsoft Edge?
+
+Por defecto, MayankOS ahora utiliza **Microsoft Edge**. Reconocemos que la comunidad de Linux tiene fuertes preferencias por navegadores como Firefox, Zen o Brave. Sin embargo, Edge fue seleccionado para esta estación de trabajo porque:
+- **Compatibilidad**: Ofrece una excelente estabilidad con portales de documentación de hardware profesional y herramientas EDA basadas en la web.
+- **Rendimiento**: Proporciona un manejo eficiente de PDF y gestión de memoria para investigaciones técnicas intensivas.
+- **Flujo de trabajo**: Se alinea con las necesidades de ingeniería específicas de esta estación de trabajo VLSI.
+
+### Cómo cambiar su navegador predeterminado
+
+Si prefiere un navegador diferente, MayankOS facilita el cambio:
+1. **Cambie la variable**: Abra el archivo `variables.nix` de su host (por ejemplo, `hosts/msi-modern14c7m/variables.nix`) y cambie la línea `browser` por su elección (por ejemplo, `browser = "firefox";`).
+2. **Verifique la instalación**: Asegúrese de que su navegador preferido esté en la lista de `modules/core/packages.nix`. Si no está allí, simplemente agregue el nombre de su paquete (por ejemplo, `librewolf`) a la lista.
+3. **Reconstruir**: Ejecute `mcli rebuild` o su comando de reconstrucción específico (por ejemplo, `sudo nixos-rebuild switch --flake .#amd`) para aplicar el cambio.
+
+¡Creemos en la elección y la libertad. MayankOS está diseñado para ser su estación de trabajo personal; ¡siéntase libre de hacerla suya!
+
 ## 🛠️ Guía de Configuración de Hardware Personalizado y Host
 
 1. **Creación de un Nuevo Host**:

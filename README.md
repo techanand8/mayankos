@@ -63,6 +63,24 @@ MayankOS is specifically designed to be a high-performance, professional worksta
 - **How to customize**: If you do NOT need these tools, you can simply comment out or remove the `# --- VLSI & Hardware Engineering ---` block in `modules/core/packages.nix` before running your `nixos-rebuild`.
 - **Future Ready**: This is just the beginning; more specialized VLSI and EDA tools are planned for future updates to make MayankOS the ultimate platform for hardware designers.
 
+## 🌐 Web Browser Choice & Customization
+
+### Why Microsoft Edge?
+
+By default, MayankOS now uses **Microsoft Edge**. We recognize that the Linux community has strong preferences for browsers like Firefox, Zen, or Brave. However, Edge was selected for this workstation because:
+- **Compatibility**: It offers excellent stability with professional hardware documentation portals and web-based EDA tools.
+- **Performance**: It provides efficient PDF handling and memory management for heavy technical research.
+- **Workflow**: It aligns with the specific engineering needs of this VLSI workstation.
+
+### How to Change Your Default Browser
+
+If you prefer a different browser, MayankOS makes it easy to switch:
+1. **Change the Variable**: Open your host's `variables.nix` file (e.g., `hosts/msi-modern14c7m/variables.nix`) and change the `browser` line to your choice (e.g., `browser = "firefox";`).
+2. **Check for Installation**: Ensure your preferred browser is listed in `modules/core/packages.nix`. If it is not there, simply add its package name (e.g., `librewolf`) to the list.
+3. **Rebuild**: Run `mcli rebuild` or your specific rebuild command (e.g., `sudo nixos-rebuild switch --flake .#amd`) to apply the change.
+
+We believe in choice and freedom. MayankOS is designed to be your personal workstation—feel free to make it your own!
+
 ## 🛠️ Custom Hardware & Host Setup Guide
 
 1. **Creating a New Host**:

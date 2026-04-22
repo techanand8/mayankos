@@ -63,6 +63,24 @@ MayankOS wurde speziell als leistungsstarke, professionelle Workstation für **V
 - **Anpassung**: Wenn Sie diese Werkzeuge NICHT benötigen, können Sie einfach den Block `# --- VLSI & Hardware Engineering ---` in `modules/core/packages.nix` auskommentieren oder entfernen, bevor Sie Ihr `nixos-rebuild` ausführen.
 - **Zukunftssicher**: Dies ist erst der Anfang; weitere spezialisierte VLSI- und EDA-Werkzeuge sind für zukünftige Updates geplant, um MayankOS zur ultimativen Plattform für Hardware-Designer zu machen.
 
+## 🌐 Webbrowser-Wahl & Anpassung
+
+### Warum Microsoft Edge?
+
+Standardmäßig verwendet MayankOS jetzt **Microsoft Edge**. Wir wissen, dass die Linux-Community starke Präferenzen für Browser wie Firefox, Zen oder Brave hat. Edge wurde jedoch für diese Workstation ausgewählt, weil:
+- **Kompatibilität**: Er bietet hervorragende Stabilität mit professionellen Hardware-Dokumentationsportalen und webbasierten EDA-Tools.
+- **Leistung**: Er bietet effizientes PDF-Handling und Speichermanagement für intensive technische Forschung.
+- **Workflow**: Er passt zu den spezifischen technischen Anforderungen dieser VLSI-Workstation.
+
+### So ändern Sie Ihren Standard-Browser
+
+Wenn Sie einen anderen Browser bevorzugen, macht MayankOS den Wechsel einfach:
+1. **Variable ändern**: Öffnen Sie die Datei `variables.nix` Ihres Hosts (z. B. `hosts/msi-modern14c7m/variables.nix`) und ändern Sie die Zeile `browser` nach Ihrer Wahl (z. B. `browser = "firefox";`).
+2. **Installation prüfen**: Stellen Sie sicher, dass Ihr bevorzugter Browser in `modules/core/packages.nix` aufgeführt ist. Wenn er nicht vorhanden ist, fügen Sie einfach seinen Paketnamen (z. B. `librewolf`) zur Liste hinzu.
+3. **Neu erstellen**: Führen Sie `mcli rebuild` oder Ihren spezifischen Rebuild-Befehl aus (z. B. `sudo nixos-rebuild switch --flake .#amd`), um die Änderung anzuwenden.
+
+Wir glauben an Auswahl und Freiheit. MayankOS ist so konzipiert, dass es Ihre persönliche Workstation ist – fühlen Sie sich frei, sie zu Ihrer eigenen zu machen!
+
 ## 🛠️ Leitfaden für benutzerdefinierte Hardware- & Host-Einrichtung
 
 1. **Erstellen eines neuen Hosts**:

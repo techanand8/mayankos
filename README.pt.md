@@ -63,9 +63,28 @@ MayankOS foi projetado especificamente para ser uma estação de trabalho profis
 - **Como personalizar**: Se você NÃO precisar dessas ferramentas, pode simplesmente comentar ou remover o bloco `# --- VLSI & Hardware Engineering ---` em `modules/core/packages.nix` antes de executar o seu `nixos-rebuild`.
 - **Pronto para o futuro**: Este é apenas o começo; mais ferramentas especializadas de VLSI e EDA estão planejadas para atualizações futuras para tornar o MayankOS a plataforma definitiva para designers de hardware.
 
-## 🛠️ Guia de Configuração de Hardware Personalizado e Host
++## 🌐 Escolha e Personalização do Navegador Web
++
++### Por que o Microsoft Edge?
++
++Por padrão, o MayankOS agora usa o **Microsoft Edge**. Reconhecemos que a comunidade Linux tem fortes preferências por navegadores como Firefox, Zen ou Brave. No entanto, o Edge foi selecionado para esta estação de trabalho porque:
++- **Compatibilidade**: Oferece excelente estabilidade com portais de documentação de hardware profissional e ferramentas EDA baseadas na web.
++- **Desempenho**: Fornece manuseio eficiente de PDF e gerenciamento de memória para pesquisas técnicas pesadas.
++- **Fluxo de Trabalho**: Alinha-se às necessidades específicas de engenharia desta estação de trabalho VLSI.
++
++### Como Alterar seu Navegador Padrão
++
++Se você preferir um navegador diferente, o MayankOS facilita a troca:
++1. **Altere a Variável**: Abra o arquivo `variables.nix` do seu host (ex: `hosts/msi-modern14c7m/variables.nix`) e altere a linha `browser` para sua escolha (ex: `browser = "firefox";`).
++2. **Verifique a Instalação**: Certifique-se de que seu navegador preferido esteja listado em `modules/core/packages.nix`. Se não estiver lá, basta adicionar o nome do pacote (ex: `librewolf`) à lista.
++3. **Reconstruir**: Execute `mcli rebuild` ou seu comando de reconstrução específico (ex: `sudo nixos-rebuild switch --flake .#amd`) para aplicar a alteração.
++
++Acreditamos na escolha e na liberdade. O MayankOS foi projetado para ser sua estação de trabalho pessoal — sinta-se à vontade para torná-lo seu!
++
+ ## 🛠️ Guia de Configuração de Hardware Personalizado e Host
 
-1. **Criando um Novo Host**:
+ 1. **Criando um Novo Host**:
+
    - Copie a pasta `hosts/default` para uma nova pasta com o nome do seu computador (ex: `cp -r hosts/default hosts/meu-laptop`).
 2. **Gerando sua Configuração de Hardware**:
    - Execute `nixos-generate-config --show-hardware-config > hosts/seu-hostname/hardware.nix` para detectar automaticamente seu hardware específico (discos, CPU, etc.).

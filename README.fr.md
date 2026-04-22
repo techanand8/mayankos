@@ -63,9 +63,28 @@ MayankOS est spécifiquement conçu pour être une station de travail profession
 - **Comment personnaliser** : Si vous n'avez PAS besoin de ces outils, vous pouvez simplement commenter ou supprimer le bloc `# --- VLSI & Hardware Engineering ---` dans `modules/core/packages.nix` avant de lancer votre `nixos-rebuild`.
 - **Prêt pour l'avenir** : Ce n'est que le début ; d'autres outils VLSI et EDA plus spécialisés sont prévus pour les prochaines mises à jour afin de faire de MayankOS la plateforme ultime pour les concepteurs de matériel.
 
-## 🛠️ Guide de configuration du matériel personnalisé et de l'hôte
++## 🌐 Choix et personnalisation du navigateur Web
++
++### Pourquoi Microsoft Edge ?
++
++Par défaut, MayankOS utilise désormais **Microsoft Edge**. Nous reconnaissons que la communauté Linux a de fortes préférences pour des navigateurs comme Firefox, Zen ou Brave. Cependant, Edge a été sélectionné pour cette station de travail car :
++- **Compatibilité** : Il offre une excellente stabilité avec les portails de documentation matérielle professionnelle et les outils EDA en ligne.
++- **Performance** : Il permet une gestion efficace des PDF et de la mémoire pour les recherches techniques intensives.
++- **Flux de travail** : Il s'aligne sur les besoins d'ingénierie spécifiques de cette station de travail VLSI.
++
++### Comment changer votre navigateur par défaut
++
++Si vous préférez un autre navigateur, MayankOS facilite le changement :
++1. **Modifier la variable** : Ouvrez le fichier `variables.nix` de votre hôte (ex: `hosts/msi-modern14c7m/variables.nix`) et remplacez la ligne `browser` par votre choix (ex: `browser = "firefox";`).
++2. **Vérifier l'installation** : Assurez-vous que votre navigateur préféré est listé dans `modules/core/packages.nix`. S'il n'y est pas, ajoutez simplement le nom de son paquet (ex: `librewolf`) à la liste.
++3. **Reconstruire** : Lancez `mcli rebuild` ou votre commande de reconstruction spécifique (ex: `sudo nixos-rebuild switch --flake .#amd`) pour appliquer le changement.
++
++Nous croyons au choix et à la liberté. MayankOS est conçu pour être votre station de travail personnelle — n'hésitez pas à vous l'approprier !
++
+ ## 🛠️ Guide de configuration du matériel personnalisé et de l'hôte
 
-1. **Création d'un nouvel hôte** :
+ 1. **Création d'un nouvel hôte** :
+
    - Copiez le dossier `hosts/default` dans un nouveau dossier nommé d'après votre ordinateur (par exemple, `cp -r hosts/default hosts/mon-ordinateur`).
 2. **Génération de votre configuration matérielle** :
    - Exécutez `nixos-generate-config --show-hardware-config > hosts/votre-nom-d-hote/hardware.nix` pour détecter automatiquement votre matériel spécifique (disques, processeur, etc.).
