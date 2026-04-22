@@ -1,5 +1,7 @@
 [English](README.md) | [Español](README.es.md) | [हिन्दी](README.hi.md) | [ಕನ್ನಡ](README.kn.md) | [தமிழ்](README.ta.md) | [తెలుగు](README.te.md) | [संस्कृतम्](README.sa.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Русский](README.ru.md) | [বাংলা](README.bn.md) | [Français](README.fr.md) | [Português](README.pt.md)
 
+**గమనిక: ఈ అనువాదంలో ఏవైనా భాషా పరమైన తప్పులు ఉంటే దయచేసి క్షమించండి; మీరు డాక్యుమెంటేషన్ మరియు ప్రాజెక్ట్‌ను బాగా అర్థం చేసుకోవడానికి నేను దీనిని మీ భాషలో అందించాను. సాంకేతిక ఖచ్చితత్వం కోసం, దయచేసి ఇంగ్లీష్ లేదా స్పానిష్ వెర్షన్‌లను చూడండి.**
+
 <div align="center">
 
 ## MayankOS 🟰 ఉత్తమ ❄️ NixOS కాన్ఫిగరేషన్‌లు

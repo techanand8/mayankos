@@ -1,5 +1,7 @@
 [English](README.md) | [Español](README.es.md) | [हिन्दी](README.hi.md) | [ಕನ್ನಡ](README.kn.md) | [தமிழ்](README.ta.md) | [తెలుగు](README.te.md) | [संस्कृतम्](README.sa.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Русский](README.ru.md) | [বাংলা](README.bn.md) | [Français](README.fr.md) | [Português](README.pt.md)
 
+**注：この翻訳に言語的な誤りがある場合はご容赦ください。ドキュメントとプロジェクトをよりよく理解していただくために、あなたの言語で提供しました。技術的な正確さについては、英語またはスペイン語版を参照してください。**
+
 <div align="center">
 
 ## MayankOS 🟰 最高の ❄️ NixOS 設定

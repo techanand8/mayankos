@@ -1,5 +1,7 @@
 [English](README.md) | [Español](README.es.md) | [हिन्दी](README.hi.md) | [ಕನ್ನಡ](README.kn.md) | [தமிழ்](README.ta.md) | [తెలుగు](README.te.md) | [संस्कृतम्](README.sa.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Русский](README.ru.md) | [বাংলা](README.bn.md) | [Français](README.fr.md) | [Português](README.pt.md)
 
+**सूचना: अस्मिन् अनुवादे कापि भाषात्रुटिः अस्ति चेत् क्षम्यताम्; मया एतत् भवतां भाषायां प्रदत्तं येन भवन्तः प्रलेखनं परियोजनां च सम्यक् अवगन्तुं शक्नुवन्ति। तांत्रिकशुद्धतायै कृपया आङ्ग्लभाषायाः अथवा स्पेनीभाषायाः संस्करणं पश्यन्तु।**
+
 <div align="center">
 
 ## मयङ्क-ओएस् (MayankOS) 🟰 सर्वोत्तमाः ❄️ NixOS विन्यासाः
