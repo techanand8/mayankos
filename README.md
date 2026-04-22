@@ -70,7 +70,7 @@ MayankOS is specifically designed to be a high-performance, professional worksta
 
 MayankOS is pre-configured with a world-class, industrial-grade EDA (Electronic Design Automation) stack. From RTL synthesis with **Yosys** to physical layout in **KLayout**, everything is ready for silicon-proven designs.
 
-| **Vivado-Style Schematics** | **Aesthetic & Functional File Management** |
+| **yazi** | **Aesthetic & Functional File Management** |
 |:---:|:---:|
 | <img src="img/vlsi-alu-schematic.png" width="400"> | <img src="img/mayankos-file-manager.png" width="400"> |
 | *Professional Gate-Level Schematics via `netlistsvg`* | *Fast, terminal-based file exploration with `yazi`* |
