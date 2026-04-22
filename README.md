@@ -66,6 +66,20 @@ MayankOS is specifically designed to be a high-performance, professional worksta
 - **Advanced EDA**: For tools like **OpenLane** or advanced DFT suites not yet in standard Nixpkgs, we recommend using the [nix-eda](https://github.com/nix-eda/nix-eda) overlay or Docker containers to ensure PDK compatibility.
 - **Future Ready**: This is just the beginning; more specialized VLSI and EDA tools (including built-in OpenLane v2 support) are planned for future updates to make MayankOS the ultimate platform for hardware designers.
 
+### 📸 Hardware Engineering & VLSI Showcase
+
+MayankOS is pre-configured with a world-class, industrial-grade EDA (Electronic Design Automation) stack. From RTL synthesis with **Yosys** to physical layout in **KLayout**, everything is ready for silicon-proven designs.
+
+| **Vivado-Style Schematics** | **Aesthetic & Functional File Management** |
+|:---:|:---:|
+| <img src="img/vlsi-alu-schematic.png" width="400"> | <img src="img/mayankos-file-manager.png" width="400"> |
+| *Professional Gate-Level Schematics via `netlistsvg`* | *Fast, terminal-based file exploration with `yazi`* |
+
+| **Modern Workflow Demo** | **Clean Aesthetic** |
+|:---:|:---:|
+| <img src="img/vlsi-workflow-demo.png" width="400"> | <img src="img/mayankos-aesthetic.png" width="400"> |
+| *Synthesizing 4-bit ALU logic in seconds* | *The perfect balance of form and function* |
+
 ## 🌐 Web Browser Choice & Customization
 
 ### Why Microsoft Edge?
