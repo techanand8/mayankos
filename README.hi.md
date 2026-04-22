@@ -1,0 +1,310 @@
+[English](README.md) | [Español](README.es.md) | [हिन्दी](README.hi.md) | [ಕನ್ನಡ](README.kn.md) | [தமிழ்](README.ta.md) | [తెలుగు](README.te.md) | [संस्कृतम्](README.sa.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Русский](README.ru.md) | [বাংলা](README.bn.md) | [Français](README.fr.md) | [Português](README.pt.md)
+
+<div align="center">
+
+## MayankOS 🟰 सर्वश्रेष्ठ ❄️ NixOS कॉन्फ़िगरेशन
+
+\*\* अपडेट किया गया: 22 अप्रैल, 2026
+
+MayankOS किसी भी सिस्टम पर मेरे NixOS कॉन्फ़िगरेशन को पुनरुत्पादित करने का एक शक्तिशाली और सुंदर तरीका है। **ZaneyOS** प्रोजेक्ट के लचीलेपन और प्रेरणा के साथ निर्मित, यह वॉलपेपर, स्क्रिप्ट, एप्लिकेशन और अनुकूलित हार्डवेयर सपोर्ट सहित एक अत्यधिक अनुकूलित वातावरण प्रदान करता है।
+
+## 🚀 नई विशेषताएं और हार्डवेयर सपोर्ट (v2.6.1)
+
+यह संस्करण आधुनिक हार्डवेयर के लिए महत्वपूर्ण अनुकूलन और सपोर्ट लाता है:
+
+### 💻 MSI Modern 14 C7M और AMD 7000 सीरीज
+- **अनुकूलित AMD 7530U प्रदर्शन**: शक्ति और बैटरी जीवन के बीच पूर्ण संतुलन के लिए `amd-pstate-epp` और `auto-cpufreq` का पूरी तरह से उपयोग करता है।
+- **बैटरी स्वास्थ्य प्रबंधन**: `msi-ec` के माध्यम से **MSI बैटरी थ्रेशोल्ड** के लिए मूल सपोर्ट, प्लग इन होने पर चार्जिंग को 80% तक सीमित करके आपकी बैटरी की सुरक्षा करता है।
+- **उन्नत पावर स्केलिंग**: पावर स्थिति के आधार पर `performance` और `powersave` मोड के बीच स्वचालित स्विचिंग।
+- **अगली पीढ़ी के ग्राफिक्स**: VA-API हार्डवेयर त्वरण, ROCm और Vulkan टूल के साथ पूर्ण `amdgpu` सपोर्ट पूर्व-कॉन्फ़िगर किया गया है।
+
+### 🎨 विविध शैल अनुभव
+`variables.nix` में `barChoice` सेट करके अपना पसंदीदा डेस्कटॉप अनुभव चुनें:
+- **Noctalia**: एकीकृत सिस्टम नियंत्रण के साथ एक आधुनिक, फीचर-समृद्ध शेल।
+- **Caelestia**: एक सुंदर और हल्का विकल्प।
+- **DMS (DankMaterialShell)**: एक आकर्षक, आधुनिक लुक के लिए मटेरियल-डिज़ाइन से प्रेरित शेल।
+- **Waybar**: क्लासिक, अत्यधिक अनुकूलन योग्य स्टेटस बार।
+
+### 🔧 सिस्टम संवर्द्धन
+- **नवीनतम लिनक्स कर्नेल**: सर्वोत्तम हार्डवेयर संगतता के लिए अब **7.x कर्नेल** लाइन पर चल रहा है।
+- **बेहतर Niri सपोर्ट**: Niri स्क्रॉल करने योग्य-टाइलिंग कंपोजिटर के लिए पूर्ण एकीकरण।
+- **बेहतर वर्चुअलाइजेशन**: VMware और अन्य वर्चुअलाइजेशन प्लेटफॉर्म के लिए अनुकूलित सपोर्ट।
+
+## Noctalia पर महत्वपूर्ण नोट
+
+> जब आप पहली बार लॉगिन करेंगे, तो स्क्रीन खाली होगी, बाहर निकलने के लिए SUPER + SHIFT + C दबाएं।
+> लॉगिन करें, उसके बाद Noctalia शुरू हो जाएगा।
+
+<img align="center" width="80%" src="img/MayankOS-Floating.png" />
+
+</div>
+
+<details>
+<summary><strong>📸 अधिक स्क्रीनशॉट</strong></summary>
+
+### Waybar थीम
+
+<img align="center" width="80%" src="img/demo-img2.png" />
+
+<img align="center" width="80%" src="img/demo-img3.png" />
+
+### Noctalia शेल एकीकरण
+
+<img align="center" width="80%" src="img/MayankOS-noctalia-panel.png" />
+
+<img align="center" width="80%" src="img/MayankOS-noctalia-app.png" />
+
+<img align="center" width="80%" src="img/MayankOS-noctalia-settings.png" />
+
+<img align="center" width="80%" src="img/MayankOS-noctalia-weather.png" />
+
+### अतिरिक्त विशेषताएं
+
+<img align="center" width="80%" src="img/MayankOS-keybind-search.png" />
+
+<img align="center" width="80%" src="img/MayankOS-nivim-emacs.png" />
+
+### हार्डवेयर सपोर्ट (MSI Modern 14 C7M)
+
+<img align="center" width="80%" src="img/MayankOS-MSI-Modern14.png" />
+
+</details>
+
+<div align="center">
+
+### चीटशीट्स और गाइड्स
+
+- Nix शुरुआती गाइड: [English](cheatsheets/nix-beginner-guide.md) |
+  [Español](cheatsheets/nix-beginner-guide.es.md)
+- Hyprland अनुकूलन गाइड:
+  [English](cheatsheets/hyprland-customization-guide.md) |
+  [Español](cheatsheets/hyprland-customization-guide.es.md)
+
+#### 🍖 आवश्यकताएं
+
+- आपको NixOS, संस्करण 24.05+ पर होना चाहिए।
+- `mayankos` फ़ोल्डर (यह रेपो) आपके होम डायरेक्टरी में होने की उम्मीद है।
+- आपने **UEFI** के साथ बूट करते हुए **GPT** विभाजन का उपयोग करके NixOS स्थापित किया होगा।
+- ** कम से कम 500MB /boot विभाजन आवश्यक है। **
+- Systemd-boot समर्थित है।
+- GRUB के लिए आपको इंटरनेट पर जानकारी ढूंढनी होगी। ☺️
+- आपके होस्ट विशिष्ट फ़ाइलों को मैन्युअल रूप से संपादित करना।
+- होस्ट वह विशिष्ट कंप्यूटर है जिस पर आप इंस्टॉल कर रहे हैं।
+
+#### 🎹 पाइपवायर और अधिसूचना मेनू नियंत्रण
+
+- हम लिनक्स के लिए नवीनतम और महानतम ऑडियो समाधान का उपयोग कर रहे हैं। साथ ही आपके पास शीर्ष बार में उपलब्ध अधिसूचना केंद्र में मीडिया और वॉल्यूम नियंत्रण होंगे।
+
+#### 🏇 अनुकूलित वर्कफ़्लो और उन्नत विंडो प्रबंधन
+
+- **Hyprland सपोर्ट**: बेहतर सुंदरता और दक्षता के लिए डिफ़ॉल्ट टाइलिंग विंडो मैनेजर।
+- **Niri सपोर्ट**: अब Niri के लिए पूर्ण सपोर्ट शामिल है, जो एक स्क्रॉल करने योग्य-टाइलिंग वेयलैंड कंपोजिटर है। इसे अपने `variables.nix` में `niriEnable` के माध्यम से टॉगल करें।
+- **KDE Plasma (वैकल्पिक)**: KDE Plasma 6 के लिए सपोर्ट उपलब्ध है लेकिन डिफ़ॉल्ट रूप से अक्षम है।
+- यहां कोई बड़ा NeoVIM प्रोजेक्ट नहीं है, एक अविश्वसनीय NeoVIM सेटअप के लिए `nixvim` का उपयोग किया जा रहा है। भाषा सपोर्ट पहले से ही जोड़ा गया है।
+
+#### 🖥️ मल्टी होस्ट और उपयोगकर्ता कॉन्फ़िगरेशन
+
+- आप विभिन्न होस्ट मशीनों और उपयोगकर्ताओं के लिए अलग-अलग सेटिंग्स परिभाषित कर सकते हैं।
+- `modules/core/user.nix` फ़ाइल में अपने उपयोगकर्ताओं के लिए आसानी से अतिरिक्त पैकेज निर्दिष्ट करें।
+- समझने में आसान फ़ाइल संरचना और सरल लेकिन व्यापक कॉन्फ़िगरेशन।
+
+#### 👼 सपोर्ट पर केंद्रित एक अविश्वसनीय समुदाय
+
+- MayankOS का पूरा विचार NixOS को एक सुलभ स्थान बनाना है।
+- NixOS वास्तव में एक महान समुदाय है जिसका आप हिस्सा बनना चाहेंगे।
+- कई लोग जो धैर्यवान हैं और आपकी मदद करने के लिए अपना खाली समय बिताने में खुश हैं, वे MayankOS चला रहे हैं।
+- किसी भी चीज़ में मदद के लिए बेझिझक डिस्कॉर्ड पर संपर्क करें।
+
+#### 📦 पैकेज कैसे इंस्टॉल करें?
+
+- आप [Nix Packages](https://search.nixos.org/packages?) और [Options](https://search.nixos.org/options?) पेजों पर खोज सकते हैं कि पैकेज का नाम क्या हो सकता है या यदि इसमें विकल्प उपलब्ध हैं जो कॉन्फ़िगरेशन बाधाओं को दूर करते हैं।
+- पैकेज जोड़ने के लिए `modules/core/packages.nix` और `modules/core/user.nix` में अनुभाग हैं। एक सिस्टम-व्यापी उपलब्ध प्रोग्रामों के लिए है और दूसरा केवल आपके उपयोगकर्ता वातावरण के लिए है।
+
+#### 🐧 डेस्कटॉप वातावरण बदलना
+
+MayankOS कई वातावरणों का समर्थन करता है:
+- **Hyprland**: डिफ़ॉल्ट रूप से सक्षम।
+- **Niri**: इसे अपने होस्ट के `variables.nix` में `niriEnable = true;` सेट करके सक्षम करें।
+- **KDE Plasma**: KDE Plasma को सक्षम करने के लिए, `modules/core/xserver.nix` पर जाएं और `services.desktopManager.plasma6.enable = true;` लाइन और संबंधित `environment.systemPackages` ब्लॉक को अनकमेंट करें।
+
+#### 🙋 समस्याएं / प्रश्न हैं?
+
+- कृपया रेपो पर बेझिझक अपनी समस्या उठाएं, कृपया शीर्षक की शुरुआत में [feature request] के साथ एक फीचर अनुरोध लेबल करें, धन्यवाद!
+- संभावित तेज़ प्रतिक्रिया के लिए हमसे [Discord](https://discord.gg/XhZmNTnhtp) पर भी संपर्क करें।
+
+# Hyprland कीबाइंडिंग
+
+नीचे Hyprland के लिए कीबाइंडिंग दी गई हैं, जिन्हें आसान संदर्भ के लिए प्रारूपित किया गया है। दायां कॉलम उन कीबाइंडिंग को दिखाता है जो **Noctalia शेल** के लिए विशिष्ट हैं (केवल तभी उपलब्ध जब `barChoice = "noctalia"`)।
+
+<table>
+<tr>
+<td width="50%">
+
+## मानक कीबाइंडिंग
+
+### एप्लिकेशन लॉन्च करना
+
+- `$modifier + Return` → `terminal` लॉन्च करें
+- `$modifier + Tab` → `Quickshell Overview` टॉगल करें (लाइव पूर्वावलोकन के साथ वर्कस्पेस अवलोकन)
+- `$modifier + K` → कीबाइंड सूचीबद्ध करें
+- `$modifier + Shift + W` → `web-search` खोलें
+- `$modifier + Alt + W` → `wallsetter` खोलें
+- `$modifier + Shift + N` → `swaync-client -rs` चलाएं
+- `$modifier + W` → `Web Browser` लॉन्च करें
+- `$modifier + Y` → `yazi` के साथ `kitty` खोलें
+- `$modifier + E` → `emopicker9000` खोलें
+- `$modifier + S` → स्क्रीनशॉट लें
+- `$modifier + Shift + D` → `Discord` खोलें
+- `$modifier + O` → `OBS Studio` लॉन्च करें
+- `$modifier + Alt + C` → कलर पिकर
+- `$modifier + G` → `GIMP` खोलें
+- `$modifier + T` → `pypr` के साथ टर्मिनल टॉगल करें
+- `$modifier + Alt + M` → `pavucontrol` खोलें
+
+### विंडो प्रबंधन
+
+- `$modifier + Q` → सक्रिय विंडो बंद करें
+- `$modifier + P` → स्यूडो टाइलिंग टॉगल करें
+- `$modifier + Shift + I` → स्प्लिट मोड टॉगल करें
+- `$modifier + F` → फुलस्क्रीन टॉगल करें
+- `$modifier + Shift + F` → फ्लोटिंग मोड टॉगल करें
+- `$modifier + Alt + F` → सभी विंडो को फ्लोट करें
+- `$modifier + Shift + C` → Hyprland से बाहर निकलें
+
+### विंडो मूवमेंट
+
+- `$modifier + Shift + ← / → / ↑ / ↓` → बाएं/दाएं/ऊपर/नीचे ले जाएं
+- `$modifier + Shift + H / L / K / J` → बाएं/दाएं/ऊपर/नीचे ले जाएं
+- `$modifier + Alt + ← / → / ↑ / ↓` → बाएं/दाएं/ऊपर/नीचे बदलें
+
+### फोकस मूवमेंट
+
+- `$modifier + ← / → / ↑ / ↓` → फोकस बाएं/दाएं/ऊपर/नीचे ले जाएं
+- `$modifier + H / L / K / J` → फोकस बाएं/दाएं/ऊपर/नीचे ले जाएं
+
+### वर्कस्पेस
+
+- `$modifier + 1-10` → वर्कस्पेस 1-10 पर स्विच करें
+- `$modifier + Shift + Space` → विंडो को विशेष वर्कस्पेस में ले जाएं
+- `$modifier + Space` → विशेष वर्कस्पेस टॉगल करें
+- `$modifier + Shift + 1-10` → विंडो को वर्कस्पेस 1-10 में ले जाएं
+- `$modifier + Control + → / ←` → वर्कस्पेस आगे/पीछे स्विच करें
+
+### विंडो साइकिलिंग
+
+- `Alt + Tab` → अगली विंडो पर जाएं / सक्रिय को ऊपर लाएं
+
+</td>
+<td width="50%">
+
+## 🎨 Noctalia शेल कीबाइंडिंग
+
+_`variables.nix` में `barChoice = "noctalia"` होने पर उपलब्ध_
+
+- `$modifier + D` → लॉन्चर टॉगल
+- `$modifier + Shift + Return` → लॉन्चर टॉगल
+- `$modifier + M` → नोटिफिकेशन मेनू
+- `$modifier + V` → क्लिपबोर्ड मैनेजर
+- `$modifier + Alt + P` → सेटिंग्स पैनल
+- `$modifier + Shift + ,` → सेटिंग्स पैनल
+- `$modifier + Alt + L` → लॉक स्क्रीन
+- `$modifier + Shift + Y` → वॉलपेपर मैनेजर
+- `$modifier + X` → पावर मेनू
+- `$modifier + C` → कंट्रोल सेंटर
+- `$modifier + Ctrl + R` → स्क्रीन रिकॉर्डर
+
+### Rofi लॉन्चर (Waybar मोड)
+
+_`variables.nix` में `barChoice = "waybar"` होने पर उपलब्ध_
+
+- `$modifier + D` → Rofi लॉन्चर लॉन्च करें
+- `$modifier + Shift + Return` → Rofi लॉन्चर लॉन्च करें
+
+### अन्य विशेषताएं
+
+- `$modifier + Shift + Return` (Waybar) → एप्लिकेशन लॉन्चर
+- `$modifier + V` (Waybar) → `cliphist` के माध्यम से क्लिपबोर्ड इतिहास
+
+</td>
+</tr>
+</table>
+
+## इंस्टालेशन:
+
+> **⚠️ महत्वपूर्ण:** ये इंस्टालेशन विधियां केवल **नए इंस्टालेशन** के लिए हैं। यदि आपने पहले से ही MayankOS इंस्टॉल कर रखा है और v2.4 में अपग्रेड करना चाहते हैं, तो नीचे [अपग्रेड निर्देश](#mayankos-23-से-24-में-अपग्रेड-करना) देखें। नोट: अपग्रेड स्क्रिप्ट के साथ एक समस्या है। ठीक होने तक इसे हटा दिया गया है।
+
+<details>
+<summary><strong> ⬇️ स्क्रिप्ट के साथ इंस्टॉल करें (केवल नए इंस्टालेशन)</strong></summary>
+
+### 📜 स्क्रिप्ट:
+
+यह **नए इंस्टालेशन** के लिए शुरू करने का सबसे आसान और अनुशंसित तरीका है। स्क्रिप्ट का मतलब आपको फ़्लेक में हर विकल्प को बदलने या अतिरिक्त पैकेज स्थापित करने में मदद करना नहीं है। यह केवल इसलिए है ताकि आप कम से कम टूट-फूट की संभावनाओं के साथ मेरा कॉन्फ़िगरेशन इंस्टॉल कर सकें और फिर अपनी इच्छानुसार बदलाव कर सकें!
+
+> **⚠️ चेतावनी:** यह स्क्रिप्ट किसी भी मौजूदा ~/mayankos डायरेक्टरी को पूरी तरह से बदल देगी। यदि आपके पास पहले से ही MayankOS स्थापित और कॉन्फ़िगर है तो इसका उपयोग न करें।
+
+बस इसे कॉपी करें और चलाएं:
+
+```bash
+nix-shell -p git curl pciutils
+```
+
+फिर:
+
+```bash
+sh <(curl -L https://raw.githubusercontent.com/techanand8/mayankos/main/install-mayankos.sh)
+```
+
+#### इंस्टालेशन पूरा होने के बाद आपका वातावरण शायद टूटा हुआ दिखेगा। बस रीबूट करें और आपको लॉगिन स्क्रीन दिखाई देगी।
+
+</details>
+
+<details>
+<summary><strong> 🦽 मैन्युअल इंस्टालेशन प्रक्रिया:  </strong></summary>
+
+1. यह सुनिश्चित करने के लिए कि Git और Vim इंस्टॉल हैं, यह कमांड चलाएं:
+
+```bash
+nix-shell -p git vim
+```
+
+2. इस रेपो को क्लोन करें और इसमें प्रवेश करें:
+
+```bash
+cd && git clone https://github.com/techanand8/mayankos.git ~/mayankos
+cd ~/mayankos
+```
+
+3. अपनी मशीन(ओं) के लिए होस्ट फ़ोल्डर इस तरह बनाएं:
+
+```bash
+cp -r hosts/default hosts/<your-desired-hostname>
+```
+
+4. अपना हार्डवेयर कॉन्फ़िगरेशन जेनरेट करें:
+
+```bash
+nixos-generate-config --show-hardware-config > hosts/<your-desired-hostname>/hardware.nix
+```
+
+5. अपने होस्टनाम और प्रोफाइल से मेल खाने के लिए `hosts/<your-desired-hostname>/variables.nix` और `flake.nix` को संपादित करें।
+
+6. फ़्लेक स्थापित करें (`profile` को `intel`, `nvidia`, `nvidia-laptop`, `amd`, `amd-nvidia-hybrid`, या `vm` से बदलें):
+
+```bash
+sudo nixos-rebuild switch --flake .#profile
+```
+
+अब जब आप कॉन्फ़िगरेशन को रीबिल्ड करना चाहते हैं तो आप `mcli rebuild` कमांड या `fr` उपनाम (alias) का उपयोग कर सकते हैं।
+
+</details>
+
+### विशेष मान्यताएं:
+
+आपकी सभी सहायता के लिए धन्यवाद
+
+- KoolDots https://github.com/LinuxBeginnings
+- JakKoolit https://github.com/Jakoolit
+- Justaguylinux https://codeberg.org/Justaguylinux
+- Jerry Starke https://github.com/JerrySM64
+
+## आशा है आप आनंद लेंगे!

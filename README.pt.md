@@ -1,0 +1,310 @@
+[English](README.md) | [Español](README.es.md) | [हिन्दी](README.hi.md) | [ಕನ್ನಡ](README.kn.md) | [தமிழ்](README.ta.md) | [తెలుగు](README.te.md) | [संस्कृतम्](README.sa.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Русский](README.ru.md) | [বাংলা](README.bn.md) | [Français](README.fr.md) | [Português](README.pt.md)
+
+<div align="center">
+
+## MayankOS 🟰 Melhores Configurações ❄️ NixOS
+
+\*\* Atualizado: 22 de abril de 2026
+
+O MayankOS é uma maneira poderosa e elegante de reproduzir minha configuração do NixOS em qualquer sistema. Construído com a flexibilidade e inspiração do projeto **ZaneyOS**, ele fornece um ambiente altamente personalizado, incluindo papéis de parede, scripts, aplicativos e suporte a hardware otimizado.
+
+## 🚀 Novos Recursos e Suporte a Hardware (v2.6.1)
+
+Esta versão traz otimizações significativas e suporte para hardware moderno:
+
+### 💻 MSI Modern 14 C7M e Série AMD 7000
+- **Desempenho Otimizado AMD 7530U**: Utiliza totalmente `amd-pstate-epp` e `auto-cpufreq` para um equilíbrio perfeito entre potência e vida útil da bateria.
+- **Gerenciamento de Saúde da Bateria**: Suporte nativo para **Limites de Bateria MSI** via `msi-ec`, protegendo sua bateria ao limitar o carregamento a 80% quando conectado.
+- **Escalonamento de Energia Avançado**: Troca automática entre os modos `performance` e `powersave` com base no estado de energia.
+- **Gráficos de Próxima Geração**: Suporte completo a `amdgpu` com aceleração de hardware VA-API, ROCm e ferramentas Vulkan pré-configuradas.
+
+### 🎨 Diversas Experiências de Shell
+Escolha sua experiência de desktop preferida configurando `barChoice` em `variables.nix`:
+- **Noctalia**: Um shell moderno e rico em recursos com controles de sistema integrados.
+- **Caelestia**: Uma alternativa elegante e leve.
+- **DMS (DankMaterialShell)**: Um shell inspirado no Material Design para um visual moderno e elegante.
+- **Waybar**: A barra de status clássica e altamente personalizável.
+
+### 🔧 Melhorias no Sistema
+- **Último Kernel Linux**: Agora rodando na linha do **kernel 7.x** para a melhor compatibilidade de hardware.
+- **Suporte Niri Aprimorado**: Integração total para o compositor de tiling rolável Niri.
+- **Virtualização Melhorada**: Suporte otimizado para VMware e outras plataformas de virtualização.
+
+## Nota Importante sobre o Noctalia
+
+> Na primeira vez que você fizer login, a tela ficará em branco. SUPER + SHIFT + C para sair.
+> Faça o login, o Noctalia iniciará a partir de então.
+
+<img align="center" width="80%" src="img/MayankOS-Floating.png" />
+
+</div>
+
+<details>
+<summary><strong>📸 Mais Capturas de Tela</strong></summary>
+
+### Temas Waybar
+
+<img align="center" width="80%" src="img/demo-img2.png" />
+
+<img align="center" width="80%" src="img/demo-img3.png" />
+
+### Integração Noctalia Shell
+
+<img align="center" width="80%" src="img/MayankOS-noctalia-panel.png" />
+
+<img align="center" width="80%" src="img/MayankOS-noctalia-app.png" />
+
+<img align="center" width="80%" src="img/MayankOS-noctalia-settings.png" />
+
+<img align="center" width="80%" src="img/MayankOS-noctalia-weather.png" />
+
+### Recursos Adicionais
+
+<img align="center" width="80%" src="img/MayankOS-keybind-search.png" />
+
+<img align="center" width="80%" src="img/MayankOS-nivim-emacs.png" />
+
+### Suporte a Hardware (MSI Modern 14 C7M)
+
+<img align="center" width="80%" src="img/MayankOS-MSI-Modern14.png" />
+
+</details>
+
+<div align="center">
+
+### Guias e Folhas de Atalhos
+
+- Guia do Iniciante Nix: [English](cheatsheets/nix-beginner-guide.md) |
+  [Español](cheatsheets/nix-beginner-guide.es.md)
+- Guia de Personalização do Hyprland:
+  [English](cheatsheets/hyprland-customization-guide.md) |
+  [Español](cheatsheets/hyprland-customization-guide.es.md)
+
+#### 🍖 Requisitos
+
+- Você deve estar rodando o NixOS, versão 24.05+.
+- A pasta `mayankos` (este repositório) deve estar no seu diretório pessoal.
+- Você deve ter instalado o NixOS usando partição **GPT** com boot via **UEFI**.
+- ** Necessário partição /boot com no mínimo 500MB. **
+- O systemd-boot é o que é suportado.
+- Para o GRUB, você terá que pesquisar na internet por um passo-a-passo. ☺️
+- Edição manual dos seus arquivos específicos de host.
+- O host é o computador específico onde você está instalando.
+
+#### 🎹 Pipewire e Controles do Menu de Notificações
+
+- Estamos usando a mais nova e melhor solução de áudio para Linux. Sem mencionar que você terá controles de mídia e volume no centro de notificações disponível na barra superior.
+
+#### 🏇 Fluxo de Trabalho Otimizado e Gerenciamento Avançado de Janelas
+
+- **Suporte ao Hyprland**: Gerenciador de janelas tiling padrão para maior elegância e eficiência.
+- **Suporte ao Niri**: Agora inclui suporte total para o Niri, um compositor Wayland de tiling rolável. Ative-o via `niriEnable` em seu `variables.nix`.
+- **KDE Plasma (Opcional)**: Suporte para KDE Plasma 6 está disponível, mas desativado por padrão.
+- Nada de projeto NeoVIM massivo aqui, usando `nixvim` para uma configuração incrível do NeoVIM com suporte a linguagens já adicionado.
+
+#### 🖥️ Multi Host e Configuração de Usuário
+
+- Você pode definir configurações separadas para diferentes máquinas host e usuários.
+- Especifique facilmente pacotes extras para seus usuários no arquivo `modules/core/user.nix`.
+- Estrutura de arquivos fácil de entender e configuração simples, mas abrangente.
+
+#### 👼 Uma Comunidade Incrível Focada em Suporte
+
+- A ideia central do MayankOS é tornar o NixOS um espaço acessível.
+- O NixOS é, na verdade, uma ótima comunidade da qual você vai querer fazer parte.
+- Muitas pessoas pacientes e felizes em gastar seu tempo livre ajudando você estão usando o MayankOS.
+- Sinta-se à vontade para entrar em contato no Discord para qualquer ajuda.
+
+#### 📦 Como Instalar Pacotes?
+
+- Você pode pesquisar nas páginas do [Nix Packages](https://search.nixos.org/packages?) e [Options](https://search.nixos.org/options?) pelo nome de um pacote ou se ele possui opções que cuidam dos obstáculos de configuração que você possa enfrentar.
+- Para adicionar um pacote, existem seções para isso em `modules/core/packages.nix` e `modules/core/user.nix`. Uma é para programas disponíveis em todo o sistema e a outra apenas para o ambiente do seu usuário.
+
+#### 🐧 Trocando Ambientes de Desktop
+
+O MayankOS suporta múltiplos ambientes:
+- **Hyprland**: Ativado por padrão.
+- **Niri**: Ative configurando `niriEnable = true;` no `variables.nix` do seu host.
+- **KDE Plasma**: Para ativar o KDE Plasma, vá em `modules/core/xserver.nix` e remova o comentário da linha `services.desktopManager.plasma6.enable = true;` e do bloco `environment.systemPackages` associado.
+
+#### 🙋 Tendo Problemas / Dúvidas?
+
+- Sinta-se à vontade para abrir um problema (issue) no repositório. Por favor, identifique solicitações de recursos com o título começando com [feature request], obrigado!
+- Entre em contato conosco no [Discord](https://discord.gg/XhZmNTnhtp) também, para uma resposta potencialmente mais rápida.
+
+# Atalhos do Hyprland
+
+Abaixo estão os atalhos para o Hyprland, formatados para fácil referência. A coluna da direita mostra atalhos específicos para o **Noctalia Shell** (disponíveis apenas quando `barChoice = "noctalia"`).
+
+<table>
+<tr>
+<td width="50%">
+
+## Atalhos Padrão
+
+### Lançamento de Aplicativos
+
+- `$modifier + Return` → Iniciar `terminal`
+- `$modifier + Tab` → Alternar `Quickshell Overview` (visão geral dos espaços de trabalho com pré-visualizações ao vivo)
+- `$modifier + K` → Listar atalhos
+- `$modifier + Shift + W` → Abrir `web-search`
+- `$modifier + Alt + W` → Abrir `wallsetter`
+- `$modifier + Shift + N` → Executar `swaync-client -rs`
+- `$modifier + W` → Iniciar `Navegador Web`
+- `$modifier + Y` → Abrir `kitty` com `yazi`
+- `$modifier + E` → Abrir `emopicker9000`
+- `$modifier + S` → Tirar um print
+- `$modifier + Shift + D` → Abrir `Discord`
+- `$modifier + O` → Iniciar `OBS Studio`
+- `$modifier + Alt + C` → Seletor de Cores
+- `$modifier + G` → Abrir `GIMP`
+- `$modifier + T` → Alternar terminal com `pypr`
+- `$modifier + Alt + M` → Abrir `pavucontrol`
+
+### Gerenciamento de Janelas
+
+- `$modifier + Q` → Fechar janela ativa
+- `$modifier + P` → Alternar pseudo tiling
+- `$modifier + Shift + I` → Alternar modo split
+- `$modifier + F` → Alternar tela cheia
+- `$modifier + Shift + F` → Alternar modo flutuante
+- `$modifier + Alt + F` → Flutuar todas as janelas
+- `$modifier + Shift + C` → Sair do Hyprland
+
+### Movimento de Janelas
+
+- `$modifier + Shift + ← / → / ↑ / ↓` → Mover para esquerda/direita/cima/baixo
+- `$modifier + Shift + H / L / K / J` → Mover para esquerda/direita/cima/baixo
+- `$modifier + Alt + ← / → / ↑ / ↓` → Trocar esquerda/direita/cima/baixo
+
+### Movimento de Foco
+
+- `$modifier + ← / → / ↑ / ↓` → Mover foco para esquerda/direita/cima/baixo
+- `$modifier + H / L / K / J` → Mover foco para esquerda/direita/cima/baixo
+
+### Espaços de Trabalho (Workspaces)
+
+- `$modifier + 1-10` → Mudar para espaço de trabalho 1-10
+- `$modifier + Shift + Space` → Mover janela para espaço de trabalho especial
+- `$modifier + Space` → Alternar espaço de trabalho especial
+- `$modifier + Shift + 1-10` → Mover janela para espaço de trabalho 1-10
+- `$modifier + Control + → / ←` → Mudar espaço de trabalho para frente/trás
+
+### Ciclo de Janelas
+
+- `Alt + Tab` → Ciclar para a próxima janela / Trazer ativa para o topo
+
+</td>
+<td width="50%">
+
+## 🎨 Atalhos do Noctalia Shell
+
+_Disponível quando `barChoice = "noctalia"` em `variables.nix`_
+
+- `$modifier + D` → Alternar Lançador
+- `$modifier + Shift + Return` → Alternar Lançador
+- `$modifier + M` → Menu de Notificações
+- `$modifier + V` → Gerenciador de Área de Transferência
+- `$modifier + Alt + P` → Painel de Configurações
+- `$modifier + Shift + ,` → Painel de Configurações
+- `$modifier + Alt + L` → Bloquear Tela
+- `$modifier + Shift + Y` → Gerenciador de Papel de Parede
+- `$modifier + X` → Menu de Energia
+- `$modifier + C` → Centro de Controle
+- `$modifier + Ctrl + R` → Gravador de Tela
+
+### Lançador Rofi (Modo Waybar)
+
+_Disponível quando `barChoice = "waybar"` em `variables.nix`_
+
+- `$modifier + D` → Iniciar Lançador Rofi
+- `$modifier + Shift + Return` → Iniciar Lançador Rofi
+
+### Outros Recursos
+
+- `$modifier + Shift + Return` (Waybar) → Lançador de Aplicativos
+- `$modifier + V` (Waybar) → Histórico da área de transferência via `cliphist`
+
+</td>
+</tr>
+</table>
+
+## Instalação:
+
+> **⚠️ IMPORTANTE:** Estes métodos de instalação são para **APENAS NOVAS INSTALAÇÕES**. Se você já tem o MayankOS instalado e quer atualizar para a v2.4, veja as [Instruções de Atualização](#upgrading-from-mayankos-23-to-24) abaixo. Nota: Há um problema com o script de atualização. Ele foi removido até que seja corrigido.
+
+<details>
+<summary><strong> ⬇️ Instalar com script (APENAS NOVAS INSTALAÇÕES)</strong></summary>
+
+### 📜 Script:
+
+Esta é a maneira mais fácil e recomendada de começar para **novas instalações**. O script não se destina a permitir que você altere todas as opções no flake ou ajude a instalar pacotes extras. Ele está aqui apenas para que você possa instalar minha configuração com as mínimas chances de erros e então ajustar como desejar!
+
+> **⚠️ AVISO:** Este script substituirá completamente qualquer diretório ~/mayankos existente. NÃO use isso se você já tiver o MayankOS instalado e configurado.
+
+Basta copiar isso e rodar:
+
+```bash
+nix-shell -p git curl pciutils
+```
+
+Então:
+
+```bash
+sh <(curl -L https://raw.githubusercontent.com/techanand8/mayankos/main/install-mayankos.sh)
+```
+
+#### Após a conclusão da instalação, seu ambiente provavelmente parecerá quebrado. Apenas reinicie e você verá a tela de login.
+
+</details>
+
+<details>
+<summary><strong> 🦽 Processo de instalação manual:  </strong></summary>
+
+1. Rode este comando para garantir que Git e Vim estejam instalados:
+
+```bash
+nix-shell -p git vim
+```
+
+2. Clone este repo e entre nele:
+
+```bash
+cd && git clone https://github.com/techanand8/mayankos.git ~/mayankos
+cd ~/mayankos
+```
+
+3. Crie a pasta de host para sua(s) máquina(s) assim:
+
+```bash
+cp -r hosts/default hosts/<seu-hostname-desejado>
+```
+
+4. Gere sua configuração de hardware:
+
+```bash
+nixos-generate-config --show-hardware-config > hosts/<seu-hostname-desejado>/hardware.nix
+```
+
+5. Edite `hosts/<seu-hostname-desejado>/variables.nix` e `flake.nix` para corresponder ao seu hostname e perfil.
+
+6. Instale o flake (substitua `profile` por `intel`, `nvidia`, `nvidia-laptop`, `amd`, `amd-nvidia-hybrid`, ou `vm`):
+
+```bash
+sudo nixos-rebuild switch --flake .#profile
+```
+
+Agora, quando você quiser reconstruir a configuração, você pode usar o comando `mcli rebuild` ou o alias `fr`.
+
+</details>
+
+### Reconhecimentos Especiais:
+
+Obrigado por toda a sua ajuda
+
+- KoolDots https://github.com/LinuxBeginnings
+- JakKoolit https://github.com/Jakoolit
+- Justaguylinux https://codeberg.org/Justaguylinux
+- Jerry Starke https://github.com/JerrySM64
+
+## Espero que aproveite!
