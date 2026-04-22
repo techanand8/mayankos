@@ -45,6 +45,21 @@ O MayankOS é um orgulhoso descendente do lendário projeto [ZaneyOS](https://gi
 
 Se está à procura da inspiração original, visite o [GitLab Oficial do ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). O MayankOS pega nessa base incrível e leva-a mais longe para utilizadores que precisam de suporte de hardware de ponta e de uma gama mais diversificada de shells de desktop.
 
+## 🛠️ Guia de Configuração de Hardware Personalizado e Host
+
+1. **Criando um Novo Host**:
+   - Copie a pasta `hosts/default` para uma nova pasta com o nome do seu computador (ex: `cp -r hosts/default hosts/meu-laptop`).
+2. **Gerando sua Configuração de Hardware**:
+   - Execute `nixos-generate-config --show-hardware-config > hosts/seu-hostname/hardware.nix` para detectar automaticamente seu hardware específico (discos, CPU, etc.).
+3. **Selecionando seu Perfil**:
+   - Abra `flake.nix` e defina a variável `profile` para corresponder ao seu hardware (opções: `amd`, `intel`, `nvidia`, `nvidia-laptop`, `amd-nvidia-hybrid` ou `vm`).
+4. **Configurando Variáveis**:
+   - Edite `hosts/seu-hostname/variables.nix` para definir a resolução da sua tela, shell preferido (`barChoice`) e outras configurações pessoais.
+5. **Suporte para Outros Laptops**:
+   - Se você tem um laptop especializado como um MSI, pode olhar em `hosts/msi-modern14c7m/default.nix` para exemplos de como adicionar módulos do kernel como `msi-ec`.
+6. **Reconstrução Final**:
+   - Execute `sudo nixos-rebuild switch --flake .#seu-perfil` para aplicar tudo.
+
 ## Nota Importante sobre o Noctalia
 
 > Na primeira vez que você fizer login, a tela ficará em branco. SUPER + SHIFT + C para sair.

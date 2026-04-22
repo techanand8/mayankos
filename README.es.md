@@ -45,6 +45,21 @@ MayankOS es un orgulloso descendiente del legendario proyecto [ZaneyOS](https://
 
 Si está buscando la inspiración original, visite el [GitLab Oficial de ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). MayankOS toma esa base increíble y la lleva más allá para los usuarios que necesitan soporte de hardware de vanguardia y una gama más diversa de shells de escritorio.
 
+## 🛠️ Guía de Configuración de Hardware Personalizado y Host
+
+1. **Creación de un Nuevo Host**:
+   - Copie la carpeta `hosts/default` a una nueva carpeta con el nombre de su computadora (por ejemplo, `cp -r hosts/default hosts/mi-portatil`).
+2. **Generación de su Configuración de Hardware**:
+   - Ejecute `nixos-generate-config --show-hardware-config > hosts/su-hostname/hardware.nix` para detectar automáticamente su hardware específico (discos, CPU, etc.).
+3. **Selección de su Perfil**:
+   - Abra `flake.nix` y establezca la variable `profile` para que coincida con su hardware (opciones: `amd`, `intel`, `nvidia`, `nvidia-laptop`, `amd-nvidia-hybrid`, o `vm`).
+4. **Configuración de Variables**:
+   - Edite `hosts/su-hostname/variables.nix` para configurar la resolución de su pantalla, su shell preferido (`barChoice`) y otros ajustes personales.
+5. **Soporte para Otros Portátiles**:
+   - Si tiene un portátil especializado como un MSI, puede consultar `hosts/msi-modern14c7m/default.nix` para ver ejemplos de cómo añadir módulos del kernel como `msi-ec`.
+6. **Reconstrucción Final**:
+   - Ejecute `sudo nixos-rebuild switch --flake .#su-perfil` para aplicar todo.
+
 <img align="center" width="80%" src="img/MayankOS-Floating.png" />
 
 </div>
