@@ -117,6 +117,8 @@ in {
       gnumake
       jq
       llvm
+      man-pages
+      man-pages-posix
       nodejs_24
       python3
       (python3.withPackages (ps:
@@ -167,12 +169,14 @@ in {
       # Synthesis & Physical Design
       yosys # RTL Synthesis
       yosys-ghdl # Yosys with GHDL plugin for VHDL synthesis
+      netlistsvg # Draw beautiful SVGs from Yosys JSON output
       inputs.nix-eda.packages.${pkgs.stdenv.hostPlatform.system}.yosys-synlig-sv # Full SystemVerilog synthesis support for Yosys
       inputs.volare.packages.${pkgs.stdenv.hostPlatform.system}.volare # PDK manager (SkyWater 130, GF180, etc.)
       xschem # Schematic capture EDA tool
       magic-vlsi # VLSI Layout tool
       netgen # LVS (Layout vs Schematic) tool
       graphviz # Required by Yosys 'show' command
+      xdot # Visualizer for Yosys 'show' command
       imagemagick # To convert Yosys output
       ghostscript # Often required for Yosys
       doxygen # Documentation generator
@@ -233,12 +237,14 @@ in {
       dysk # Disk space util nice formattting
       eza # Beautiful ls Replacement
       fastfetch
+      fd # Simple, fast and user-friendly alternative to 'find'
       file-roller # Archive Manager
       fortune
       figlet
       gearlever # Manage / run Appimages
       htop # Simple Terminal Based System Monitor
       inxi # CLI System Information Tool
+      just # A handy runner for your tasks
       killall # For Killing All Instances Of Programs
       libnotify # For Notifications
       libusb1
@@ -259,6 +265,8 @@ in {
       ripgrep # Improved Grep
       socat # Needed For Screenshots
       starship
+      tealdeer # Fast implementation of tldr
+      tree # List contents of directories in a tree-like format
       usbutils # Good Tools For USB Devices
       upower # noctalia shell battery
       vulkan-tools # To verify Vulkan support
@@ -268,6 +276,7 @@ in {
       v4l-utils # Used For Things Like OBS Virtual Camera
       wget # Tool For Fetching Files With Links
       wl-clipboard
+      wtype # Wayland keyboard simulator
       xclip
 
       # Archives
@@ -288,10 +297,13 @@ in {
       docker-compose # Allows Controlling Docker From A Single File
       drawio # Creating logic diagrams
       eog # For Image Viewing
+      flameshot # Powerful screenshot tool
+      geeqie # Feature-rich image viewer with rotation and metadata
       gimp # Great Photo Editor
       gnome-software
       gnome-tweaks
       google-chrome
+      imv # Command-line image viewer (fast, supports rotation)
       microsoft-edge
       nwg-displays # configure monitor configs via GUI
       nwg-drawer # Application launcher for wayland
@@ -300,8 +312,11 @@ in {
       pandoc # format MD to HTML for cheatsheet parser
       rhythmbox # audio player
       seahorse
+      viewnior # Fast and simple image viewer with rotation
       vim-full
       waypaper # Change wallpaper
+      zathura # Modern document viewer (includes plugins)
+      zathuraPkgs.zathura_pdf_mupdf # Specific PDF support
       zed-editor
 
       # Media / Entertainment
