@@ -80,6 +80,11 @@ The environment is pre-configured with a world-class, industrial-grade EDA (Elec
 | <img src="img/vlsi-workflow-demo.png" width="400"> | <img src="img/mayankos-aesthetic.png" width="400"> |
 | *Synthesizing 4-bit ALU logic in seconds* | *The perfect balance of form and function* |
 
+| **Hardware Verification & Simulation** |
+|:---:|
+| <img src="img/vlsi-verification-terminal.png" width="820"> |
+| *Verifying logic with automated testbenches and terminal-based truth tables* |
+
 ## 🌐 Web Browser Choice & Customization
 
 ### Why Microsoft Edge?
