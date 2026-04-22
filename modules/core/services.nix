@@ -7,7 +7,22 @@
     fstrim.enable = true; # SSD Optimizer
     gvfs.enable = true; # For Mounting USB & More
     power-profiles-daemon.enable = false;
-    tlp.enable = false;
+    tlp = {
+      enable = true;
+      settings = {
+        # CPU settings are handled by auto-cpufreq
+        # TLP handles the rest of the hardware
+        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+
+        PLATFORM_PROFILE_ON_AC = "performance";
+        PLATFORM_PROFILE_ON_BAT = "low-power";
+
+        # Optional: Battery charge thresholds
+        # START_CHARGE_THRESH_BAT0 = 40;
+        # STOP_CHARGE_THRESH_BAT0 = 80;
+      };
+    };
     auto-cpufreq.enable = true;
     auto-cpufreq.settings = {
       battery = {
