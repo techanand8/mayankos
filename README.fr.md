@@ -32,6 +32,19 @@ Choisissez votre expérience de bureau préférée en réglant `barChoice` dans 
 - **Support Niri amélioré** : Intégration complète pour le compositeur de fenêtres à défilement Niri.
 - **Virtualisation améliorée** : Support optimisé pour VMware et d'autres plateformes de virtualisation.
 
+## 🤝 Relation avec ZaneyOS
+
+MayankOS est un fier descendant du légendaire projet [ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). Bien qu'il partage le même esprit de rendre NixOS accessible et beau, MayankOS a évolué vers une distribution distincte avec son propre objectif :
+
+### 🌟 Qu'est-ce qui rend MayankOS différent ?
+- **Focus sur le matériel moderne** : Contrairement à l'approche plus générale de ZaneyOS, MayankOS inclut des optimisations approfondies pour les derniers **AMD Ryzen série 7000** et les **ordinateurs portables MSI** (y compris la gestion de la santé de la batterie).
+- **Écosystème de shells étendu** : Nous sommes allés au-delà de Waybar pour inclure un support complet pour **Noctalia**, **Caelestia** et **DMS**, vous offrant plus de choix pour votre flux de travail de bureau.
+- **Stratégie du dernier noyau** : Nous priorisons `linuxPackages_latest` (7.x+) pour garantir que les dernières fonctionnalités matérielles fonctionnent immédiatement.
+- **Intégration de Niri** : Nous avons ajouté un support de premier ordre pour le **compositeur de tuilage défilant Niri**, un flux de travail unique qui ne se trouve pas dans le ZaneyOS original.
+- **Internationalisation améliorée** : Support de plus de 13 langues pour apporter l'expérience NixOS à un public mondial.
+
+Si vous recherchez l'inspiration originale, veuillez visiter le [GitLab officiel de ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). MayankOS s'appuie sur cette base incroyable et la pousse plus loin pour les utilisateurs qui ont besoin d'un support matériel de pointe et d'une gamme plus diversifiée de shells de bureau.
+
 ## Note importante sur Noctalia
 
 > Lors de votre première connexion, l'écran sera vide. Appuyez sur SUPER + SHIFT + C pour quitter.

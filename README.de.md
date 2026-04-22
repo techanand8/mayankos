@@ -32,6 +32,19 @@ Wählen Sie Ihr bevorzugtes Desktop-Erlebnis durch Einstellen von `barChoice` in
 - **Erweiterte Niri-Unterstützung**: Volle Integration für den scrollbaren Tiling-Compositor Niri.
 - **Verbesserte Virtualisierung**: Optimierte Unterstützung für VMware und andere Virtualisierungsplattformen.
 
+## 🤝 Beziehung zu ZaneyOS
+
+MayankOS ist ein stolzer Nachfahre des legendären [ZaneyOS](https://gitlab.com/Zaney/zaneyos.git)-Projekts. Obwohl es den gleichen Geist teilt, NixOS zugänglich und schön zu machen, hat sich MayankOS zu einer eigenständigen Distribution mit eigenem Fokus entwickelt:
+
+### 🌟 Was macht MayankOS anders?
+- **Fokus auf moderne Hardware**: Im Gegensatz zum allgemeineren Ansatz von ZaneyOS enthält MayankOS tiefgreifende Optimierungen für die neueste **AMD Ryzen 7000 Serie** und **MSI-Laptops** (einschließlich Akku-Gesundheitsmanagement).
+- **Erweitertes Shell-Ökosystem**: Wir sind über Waybar hinausgegangen und bieten volle Unterstützung für **Noctalia**, **Caelestia** und **DMS**, was Ihnen mehr Auswahlmöglichkeiten für Ihren Desktop-Workflow bietet.
+- **Neueste Kernel-Strategie**: Wir priorisieren `linuxPackages_latest` (7.x+), um sicherzustellen, dass die neuesten Hardware-Features sofort funktionieren.
+- **Niri-Integration**: Wir haben erstklassige Unterstützung für den **Niri scrollable-tiling compositor** hinzugefügt, einen einzigartigen Workflow, der im ursprünglichen ZaneyOS nicht zu finden ist.
+- **Verbesserte Internationalisierung**: Unterstützung für über 13 Sprachen, um das NixOS-Erlebnis einem globalen Publikum zugänglich zu machen.
+
+Wenn Sie nach der ursprünglichen Inspiration suchen, besuchen Sie bitte das [Offizielle ZaneyOS GitLab](https://gitlab.com/Zaney/zaneyos.git). MayankOS nimmt dieses unglaubliche Fundament und entwickelt es weiter für Benutzer, die modernste Hardware-Unterstützung und eine vielfältigere Auswahl an Desktop-Shells benötigen.
+
 ## Wichtiger Hinweis zu Noctalia
 
 > Beim ersten Login bleibt der Bildschirm leer. Drücken Sie SUPER + SHIFT + C zum Beenden.

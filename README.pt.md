@@ -32,6 +32,19 @@ Escolha sua experiência de desktop preferida configurando `barChoice` em `varia
 - **Suporte Niri Aprimorado**: Integração total para o compositor de tiling rolável Niri.
 - **Virtualização Melhorada**: Suporte otimizado para VMware e outras plataformas de virtualização.
 
+## 🤝 Relacionamento com ZaneyOS
+
+O MayankOS é um orgulhoso descendente do lendário projeto [ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). Embora compartilhe o mesmo espírito de tornar o NixOS acessível e bonito, o MayankOS evoluiu para uma distribuição distinta com o seu próprio foco:
+
+### 🌟 O que torna o MayankOS diferente?
+- **Foco em Hardware Moderno**: Ao contrário da abordagem mais geral do ZaneyOS, o MayankOS inclui otimizações profundas para a série **AMD Ryzen 7000** mais recente e **portáteis MSI** (incluindo gestão de saúde da bateria).
+- **Ecossistema de Shell Expandido**: Fomos além do Waybar para incluir suporte total para **Noctalia**, **Caelestia e DMS**, oferecendo mais escolhas para o seu fluxo de trabalho de desktop.
+- **Estratégia do Kernel Mais Recente**: Priorizamos o `linuxPackages_latest` (7.x+) para garantir que os recursos de hardware mais recentes funcionem imediatamente.
+- **Integração Niri**: Adicionámos suporte de primeira classe para o **compositor de mosaico rolável Niri**, um fluxo de trabalho único não encontrado no ZaneyOS original.
+- **Internacionalização Aprimorada**: Suporte para mais de 13 idiomas para levar a experiência NixOS a um público global.
+
+Se está à procura da inspiração original, visite o [GitLab Oficial do ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). O MayankOS pega nessa base incrível e leva-a mais longe para utilizadores que precisam de suporte de hardware de ponta e de uma gama mais diversificada de shells de desktop.
+
 ## Nota Importante sobre o Noctalia
 
 > Na primeira vez que você fizer login, a tela ficará em branco. SUPER + SHIFT + C para sair.

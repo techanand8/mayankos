@@ -32,6 +32,19 @@ Elige tu experiencia de escritorio preferida configurando `barChoice` en `variab
 - **Soporte mejorado para Niri**: Integración completa para el compositor de mosaico desplazable Niri.
 - **Virtualización mejorada**: Soporte optimizado para VMware y otras plataformas de virtualización.
 
+## 🤝 Relación con ZaneyOS
+
+MayankOS es un orgulloso descendiente del legendario proyecto [ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). Si bien comparte el mismo espíritu de hacer que NixOS sea accesible y hermoso, MayankOS ha evolucionado hacia una distribución distinta con su propio enfoque:
+
+### 🌟 ¿Qué hace que MayankOS sea diferente?
+- **Enfoque en Hardware Moderno**: A diferencia del enfoque más general de ZaneyOS, MayankOS incluye optimizaciones profundas para la última **serie AMD Ryzen 7000** y **portátiles MSI** (incluyendo la gestión de la salud de la batería).
+- **Ecosistema de Shell Ampliado**: Hemos ido más allá de Waybar para incluir soporte completo para **Noctalia**, **Caelestia** y **DMS**, brindándole más opciones para su flujo de trabajo de escritorio.
+- **Estrategia del Último Kernel**: Priorizamos `linuxPackages_latest` (7.x+) para garantizar que las funciones de hardware más nuevas funcionen de inmediato.
+- **Integración de Niri**: Hemos añadido soporte de primera clase para el **compositor de mosaico desplazable Niri**, un flujo de trabajo único que no se encuentra en el ZaneyOS original.
+- **Internacionalización Mejorada**: Soporte para más de 13 idiomas para llevar la experiencia NixOS a una audiencia global.
+
+Si está buscando la inspiración original, visite el [GitLab Oficial de ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). MayankOS toma esa base increíble y la lleva más allá para los usuarios que necesitan soporte de hardware de vanguardia y una gama más diversa de shells de escritorio.
+
 <img align="center" width="80%" src="img/MayankOS-Floating.png" />
 
 </div>
