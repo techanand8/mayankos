@@ -152,7 +152,7 @@ We believe in choice and freedom. This environment is designed to be your person
 
 <img align="center" width="80%" src="img/MayankOS-nivim-emacs.png" />
 
-### Hardware Support (MSI Modern 14 C7M)
+### Noctalia shell
 
 <img align="center" width="80%" src="img/MayankOS-MSI-Modern14.png" />
 
