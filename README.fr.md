@@ -40,7 +40,7 @@ MayankOS est un fier descendant du légendaire projet [ZaneyOS](https://gitlab.c
 - **Focus sur le matériel moderne** : Contrairement à l'approche plus générale de ZaneyOS, MayankOS inclut des optimisations approfondies pour les derniers **AMD Ryzen série 7000** et les **ordinateurs portables MSI** (y compris la gestion de la santé de la batterie).
 - **Écosystème de shells étendu** : Nous sommes allés au-delà de Waybar pour inclure un support complet pour **Noctalia**, **Caelestia** et **DMS**, vous offrant plus de choix pour votre flux de travail de bureau.
 - **Stratégie du dernier noyau** : Nous priorisons `linuxPackages_latest` (7.x+) pour garantir que les dernières fonctionnalités matérielles fonctionnent immédiatement.
-- **Intégration de Niri** : Nous avons ajouté un support de premier ordre pour le **compositeur de tuilage défilant Niri**, un flux de travail unique qui ne se trouve pas dans le ZaneyOS original.
+- **Options de compositeur étendues** : Nous avons intégré un support complet pour le **compositeur de tuilage défilant Niri**, offrant une alternative moderne à Hyprland pour les utilisateurs qui préfèrent un flux de travail de tuilage défilant.
 - **Internationalisation améliorée** : Support de plus de 13 langues pour apporter l'expérience NixOS à un public mondial.
 
 Si vous recherchez l'inspiration originale, veuillez visiter le [GitLab officiel de ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). MayankOS s'appuie sur cette base incroyable et la pousse plus loin pour les utilisateurs qui ont besoin d'un support matériel de pointe et d'une gamme plus diversifiée de shells de bureau.
