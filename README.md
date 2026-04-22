@@ -34,16 +34,16 @@ Choose your preferred desktop experience by setting `barChoice` in `variables.ni
 
 ## 🤝 Relationship with ZaneyOS
 
-MayankOS is a proud descendant of the legendary [ZaneyOS](https://gitlab.com/Zaney/zaneyos.git) project. While it shares the same spirit of making NixOS accessible and beautiful, MayankOS has evolved into a distinct distribution with its own focus:
+This project is a proud descendant of the legendary [ZaneyOS](https://gitlab.com/Zaney/zaneyos.git) project. While it shares the same spirit of making NixOS accessible and beautiful, it has evolved into a distinct distribution with its own focus:
 
-### 🌟 What makes MayankOS different?
-- **Modern Hardware Focus**: Unlike the more general approach of ZaneyOS, MayankOS includes deep optimizations for the latest **AMD Ryzen 7000 series** and **MSI laptops** (including battery health management).
+### 🌟 What makes it different?
+- **Modern Hardware Focus**: Unlike the more general approach of ZaneyOS, this system includes deep optimizations for the latest **AMD Ryzen 7000 series** and **MSI laptops** (including battery health management).
 - **Expanded Shell Ecosystem**: We have moved beyond just Waybar to include full support for **Noctalia**, **Caelestia**, and **DMS**, giving you more choices for your desktop workflow.
 - **Latest Kernel Strategy**: We prioritize the `linuxPackages_latest` (7.x+) to ensure the newest hardware features work immediately.
 - **Expanded Compositor Options**: We have integrated full support for the **Niri scrollable-tiling compositor**, providing a modern alternative to Hyprland for users who prefer a scrollable tiling workflow.
 - **Enhanced Internationalization**: Support for 13+ languages to bring the NixOS experience to a global audience.
 
-If you are looking for the original inspiration, please visit the [Official ZaneyOS GitLab](https://gitlab.com/Zaney/zaneyos.git). MayankOS takes that incredible foundation and pushes it further for users who need cutting-edge hardware support and a more diverse range of desktop shells.
+If you are looking for the original inspiration, please visit the [Official ZaneyOS GitLab](https://gitlab.com/Zaney/zaneyos.git). This environment takes that incredible foundation and pushes it further for users who need cutting-edge hardware support and a more diverse range of desktop shells.
 
 ## 🏗️ Installation: Automatic vs. Manual
 
@@ -53,7 +53,7 @@ MayankOS offers two primary ways to get started:
 
 ## ⚡ Professional VLSI & Hardware Engineering Workstation
 
-MayankOS is specifically designed to be a high-performance, professional workstation for **VLSI and Hardware Engineering**. 
+This system is specifically designed to be a high-performance, professional workstation for **VLSI and Hardware Engineering**. 
 
 - **Why it's perfect**: It comes pre-configured with a comprehensive suite of tools for:
   - **HDL Simulation**: `ghdl`, `nvc`, `iverilog`, `verilator`, `gtkwave`, `surfer`, `fusesoc`, `surelog`.
@@ -64,11 +64,11 @@ MayankOS is specifically designed to be a high-performance, professional worksta
   - **PCB & Schematic Design**: `kicad`, `ngspice`, `xyce`, `doxygen`.
 - **How to customize**: If you do NOT need these tools, you can simply comment out or remove the `# --- VLSI & Hardware Engineering ---` block in `modules/core/packages.nix` before running your `nixos-rebuild`.
 - **Advanced EDA**: For tools like **OpenLane** or advanced DFT suites not yet in standard Nixpkgs, we recommend using the [nix-eda](https://github.com/nix-eda/nix-eda) overlay or Docker containers to ensure PDK compatibility.
-- **Future Ready**: This is just the beginning; more specialized VLSI and EDA tools (including built-in OpenLane v2 support) are planned for future updates to make MayankOS the ultimate platform for hardware designers.
+- **Future Ready**: This is just the beginning; more specialized VLSI and EDA tools (including built-in OpenLane v2 support) are planned for future updates to make this the ultimate platform for hardware designers.
 
 ### 📸 Hardware Engineering & VLSI Showcase
 
-MayankOS is pre-configured with a world-class, industrial-grade EDA (Electronic Design Automation) stack. From RTL synthesis with **Yosys** to physical layout in **KLayout**, everything is ready for silicon-proven designs.
+The environment is pre-configured with a world-class, industrial-grade EDA (Electronic Design Automation) stack. From RTL synthesis with **Yosys** to physical layout in **KLayout**, everything is ready for silicon-proven designs.
 
 | **yazi** | **Aesthetic & Functional File Management** |
 |:---:|:---:|
@@ -84,19 +84,19 @@ MayankOS is pre-configured with a world-class, industrial-grade EDA (Electronic 
 
 ### Why Microsoft Edge?
 
-By default, MayankOS now uses **Microsoft Edge**. We recognize that the Linux community has strong preferences for browsers like Firefox, Zen, or Brave. However, Edge was selected for this workstation because:
+By default, the system now uses **Microsoft Edge**. We recognize that the Linux community has strong preferences for browsers like Firefox, Zen, or Brave. However, Edge was selected for this workstation because:
 - **Compatibility**: It offers excellent stability with professional hardware documentation portals and web-based EDA tools.
 - **Performance**: It provides efficient PDF handling and memory management for heavy technical research.
 - **Workflow**: It aligns with the specific engineering needs of this VLSI workstation.
 
 ### How to Change Your Default Browser
 
-If you prefer a different browser, MayankOS makes it easy to switch:
+If you prefer a different browser, the configuration makes it easy to switch:
 1. **Change the Variable**: Open your host's `variables.nix` file (e.g., `hosts/msi-modern14c7m/variables.nix`) and change the `browser` line to your choice (e.g., `browser = "firefox";`).
 2. **Check for Installation**: Ensure your preferred browser is listed in `modules/core/packages.nix`. If it is not there, simply add its package name (e.g., `librewolf`) to the list.
 3. **Rebuild**: Run `mcli rebuild` or your specific rebuild command (e.g., `sudo nixos-rebuild switch --flake .#amd`) to apply the change.
 
-We believe in choice and freedom. MayankOS is designed to be your personal workstation—feel free to make it your own!
+We believe in choice and freedom. This environment is designed to be your personal workstation—feel free to make it your own!
 
 ## 🛠️ Custom Hardware & Host Setup Guide
 
