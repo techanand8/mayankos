@@ -45,6 +45,24 @@ MayankOS is a proud descendant of the legendary [ZaneyOS](https://gitlab.com/Zan
 
 If you are looking for the original inspiration, please visit the [Official ZaneyOS GitLab](https://gitlab.com/Zaney/zaneyos.git). MayankOS takes that incredible foundation and pushes it further for users who need cutting-edge hardware support and a more diverse range of desktop shells.
 
+## 🏗️ Installation: Automatic vs. Manual
+
+MayankOS offers two primary ways to get started:
+1. **Automatic Script (Recommended for New Users)**: A fast, one-command install that handles everything for you. This is the quickest way to get a working desktop.
+2. **Manual Installation**: For users who want complete control over every aspect of their system. Manual installation is better if you want to customize your tools *before* your first rebuild.
+
+## ⚡ Professional VLSI & Hardware Engineering Workstation
+
+MayankOS is specifically designed to be a high-performance, professional workstation for **VLSI and Hardware Engineering**. 
+
+- **Why it's perfect**: It comes pre-configured with a comprehensive suite of tools for:
+  - **HDL Simulation**: `iverilog`, `verilator`, `gtkwave`.
+  - **Synthesis & Physical Design**: `yosys`, `magic-vlsi`, `klayout`, `openroad`.
+  - **FPGA & Embedded Development**: `nextpnr`, `icestorm`, `dfu-util`, `qemu`.
+  - **PCB & Schematic Design**: `kicad`, `ngspice`.
+- **How to customize**: If you do NOT need these tools, you can simply comment out or remove the `# --- VLSI & Hardware Engineering ---` block in `modules/core/packages.nix` before running your `nixos-rebuild`.
+- **Future Ready**: This is just the beginning; more specialized VLSI and EDA tools are planned for future updates to make MayankOS the ultimate platform for hardware designers.
+
 ## 🛠️ Custom Hardware & Host Setup Guide
 
 1. **Creating a New Host**:

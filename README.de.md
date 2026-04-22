@@ -45,6 +45,24 @@ MayankOS ist ein stolzer Nachfahre des legendären [ZaneyOS](https://gitlab.com/
 
 Wenn Sie nach der ursprünglichen Inspiration suchen, besuchen Sie bitte das [Offizielle ZaneyOS GitLab](https://gitlab.com/Zaney/zaneyos.git). MayankOS nimmt dieses unglaubliche Fundament und entwickelt es weiter für Benutzer, die modernste Hardware-Unterstützung und eine vielfältigere Auswahl an Desktop-Shells benötigen.
 
+## 🏗️ Installation: Automatisch vs. Manuell
+
+MayankOS bietet zwei primäre Wege für den Einstieg:
+1. **Automatisches Skript (empfohlen für neue Benutzer)**: Eine schnelle Ein-Befehl-Installation, die alles für Sie erledigt. Dies ist der schnellste Weg zu einem funktionierenden Desktop.
+2. **Manuelle Installation**: Für Benutzer, die die vollständige Kontrolle über jeden Aspekt ihres Systems haben möchten. Die manuelle Installation ist besser, wenn Sie Ihre Werkzeuge *vor* Ihrem ersten Rebuild anpassen möchten.
+
+## ⚡ Professionelle VLSI- & Hardware-Engineering-Workstation
+
+MayankOS wurde speziell als leistungsstarke, professionelle Workstation für **VLSI- und Hardware-Engineering** entwickelt.
+
+- **Warum es perfekt ist**: Es ist vorkonfiguriert mit einer umfassenden Suite von Werkzeugen für:
+  - **HDL-Simulation**: `iverilog`, `verilator`, `gtkwave`.
+  - **Synthese & Physical Design**: `yosys`, `magic-vlsi`, `klayout`, `openroad`.
+  - **FPGA- & Embedded-Entwicklung**: `nextpnr`, `icestorm`, `dfu-util`, `qemu`.
+  - **PCB- & Schaltplan-Design**: `kicad`, `ngspice`.
+- **Anpassung**: Wenn Sie diese Werkzeuge NICHT benötigen, können Sie einfach den Block `# --- VLSI & Hardware Engineering ---` in `modules/core/packages.nix` auskommentieren oder entfernen, bevor Sie Ihr `nixos-rebuild` ausführen.
+- **Zukunftssicher**: Dies ist erst der Anfang; weitere spezialisierte VLSI- und EDA-Werkzeuge sind für zukünftige Updates geplant, um MayankOS zur ultimativen Plattform für Hardware-Designer zu machen.
+
 ## 🛠️ Leitfaden für benutzerdefinierte Hardware- & Host-Einrichtung
 
 1. **Erstellen eines neuen Hosts**:

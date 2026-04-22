@@ -45,6 +45,24 @@ MayankOS est un fier descendant du légendaire projet [ZaneyOS](https://gitlab.c
 
 Si vous recherchez l'inspiration originale, veuillez visiter le [GitLab officiel de ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). MayankOS s'appuie sur cette base incroyable et la pousse plus loin pour les utilisateurs qui ont besoin d'un support matériel de pointe et d'une gamme plus diversifiée de shells de bureau.
 
+## 🏗️ Installation : Automatique vs Manuelle
+
+MayankOS propose deux façons principales de commencer :
+1. **Script automatique (recommandé pour les nouveaux utilisateurs)** : Une installation rapide en une seule commande qui gère tout pour vous. C'est le moyen le plus rapide d'obtenir un bureau fonctionnel.
+2. **Installation manuelle** : Pour les utilisateurs qui souhaitent un contrôle total sur chaque aspect de leur système. L'installation manuelle est préférable si vous souhaitez personnaliser vos outils *avant* votre première reconstruction.
+
+## ⚡ Station de travail professionnelle pour l'ingénierie VLSI et matérielle
+
+MayankOS est spécifiquement conçu pour être une station de travail professionnelle haute performance pour **le VLSI et l'ingénierie matérielle**.
+
+- **Pourquoi c'est parfait** : Il est pré-configuré avec une suite complète d'outils pour :
+  - **Simulation HDL** : `iverilog`, `verilator`, `gtkwave`.
+  - **Synthèse & Conception physique** : `yosys`, `magic-vlsi`, `klayout`, `openroad`.
+  - **Développement FPGA & embarqué** : `nextpnr`, `icestorm`, `dfu-util`, `qemu`.
+  - **Conception de PCB & schémas** : `kicad`, `ngspice`.
+- **Comment personnaliser** : Si vous n'avez PAS besoin de ces outils, vous pouvez simplement commenter ou supprimer le bloc `# --- VLSI & Hardware Engineering ---` dans `modules/core/packages.nix` avant de lancer votre `nixos-rebuild`.
+- **Prêt pour l'avenir** : Ce n'est que le début ; d'autres outils VLSI et EDA plus spécialisés sont prévus pour les prochaines mises à jour afin de faire de MayankOS la plateforme ultime pour les concepteurs de matériel.
+
 ## 🛠️ Guide de configuration du matériel personnalisé et de l'hôte
 
 1. **Création d'un nouvel hôte** :

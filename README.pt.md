@@ -43,7 +43,25 @@ O MayankOS é um orgulhoso descendente do lendário projeto [ZaneyOS](https://gi
 - **Integração Niri**: Adicionámos suporte de primeira classe para o **compositor de mosaico rolável Niri**, um fluxo de trabalho único não encontrado no ZaneyOS original.
 - **Internacionalização Aprimorada**: Suporte para mais de 13 idiomas para levar a experiência NixOS a um público global.
 
-Se está à procura da inspiração original, visite o [GitLab Oficial do ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). O MayankOS pega nessa base incrível e leva-a mais longe para utilizadores que precisam de suporte de hardware de ponta e de uma gama mais diversificada de shells de desktop.
+Se está à procura da inspiração original, visite le [GitLab Oficial do ZaneyOS](https://gitlab.com/Zaney/zaneyos.git). O MayankOS pega nessa base incrível e leva-a mais longe para utilizadores que precisam de suporte de hardware de ponta e de uma gama mais diversificada de shells de desktop.
+
+## 🏗️ Instalação: Automática vs. Manual
+
+MayankOS oferece duas formas principais de começar:
+1. **Script Automático (Recomendado para Novos Usuários)**: Uma instalação rápida de um comando que cuida de tudo para você. Esta é a maneira mais rápida de obter uma área de trabalho funcional.
+2. **Instalação Manual**: Para usuários que desejam controle total sobre cada aspecto de seu sistema. A instalação manual é melhor se você deseja personalizar suas ferramentas *antes* da sua primeira reconstrução.
+
+## ⚡ Estação de trabalho profissional de engenharia VLSI e hardware
+
+MayankOS foi projetado especificamente para ser uma estação de trabalho profissional de alto desempenho para **VLSI e Engenharia de Hardware**.
+
+- **Por que é perfeito**: Ele vem pré-configurado com um conjunto abrangente de ferramentas para:
+  - **Simulação HDL**: `iverilog`, `verilator`, `gtkwave`.
+  - **Síntese e Design Físico**: `yosys`, `magic-vlsi`, `klayout`, `openroad`.
+  - **Desenvolvimento de FPGA e Embarcados**: `nextpnr`, `icestorm`, `dfu-util`, `qemu`.
+  - **Design de PCB e Esquemáticos**: `kicad`, `ngspice`.
+- **Como personalizar**: Se você NÃO precisar dessas ferramentas, pode simplesmente comentar ou remover o bloco `# --- VLSI & Hardware Engineering ---` em `modules/core/packages.nix` antes de executar o seu `nixos-rebuild`.
+- **Pronto para o futuro**: Este é apenas o começo; mais ferramentas especializadas de VLSI e EDA estão planejadas para atualizações futuras para tornar o MayankOS a plataforma definitiva para designers de hardware.
 
 ## 🛠️ Guia de Configuração de Hardware Personalizado e Host
 
