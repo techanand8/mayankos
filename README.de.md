@@ -1,4 +1,5 @@
-[English](README.md) | [Español](README.es.md) | [हिन्दी](README.hi.md) | [ಕನ್ನಡ](README.kn.md) | [தமிழ்](README.ta.md) | [తెలుగు](README.te.md) | [संस्कृतम्](README.sa.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Русский](README.ru.md) | [বাংলা](README.bn.md) | [Français](README.fr.md) | [Português](README.pt.md)
+[English](README.md) | [Español](README.es.md) | [हिन्दी](README.hi.md) | [भोजपुरी (बिहारी)](README.bh.md) | [ಕನ್ನಡ](README.kn.md) | [தமிழ்](README.ta.md) | [తెలుగు](README.te.md) | [संस्कृतम्](README.sa.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Русский](README.ru.md) | [বাংলা](README.bn.md) | [Français](README.fr.md) | [Português](README.pt.md) | [العربية (الكويت)](README.ar.md) | [繁體中文 (台灣)](README.zh_TW.md) | [Italiano (Svizzera)](README.it.md)
+n**Hinweis: Bitte entschuldigen Sie etwaige sprachliche Fehler in dieser Übersetzung; ich habe sie in Ihrer Sprache bereitgestellt, damit Sie die Dokumentation und das Projekt besser verstehen können. Für technische Präzision beziehen Sie sich bitte auf die englische oder spanische Version.**
 
 **Hinweis: Bitte entschuldigen Sie etwaige sprachliche Fehler in dieser Übersetzung; ich habe sie in Ihrer Sprache bereitgestellt, damit Sie die Dokumentation und das Projekt besser verstehen können. Für technische Präzision beziehen Sie sich bitte auf die englische oder spanische Version.**
 
@@ -56,12 +57,15 @@ MayankOS bietet zwei primäre Wege für den Einstieg:
 MayankOS wurde speziell als leistungsstarke, professionelle Workstation für **VLSI- und Hardware-Engineering** entwickelt.
 
 - **Warum es perfekt ist**: Es ist vorkonfiguriert mit einer umfassenden Suite von Werkzeugen für:
-  - **HDL-Simulation**: `iverilog`, `verilator`, `gtkwave`.
-  - **Synthese & Physical Design**: `yosys`, `magic-vlsi`, `klayout`, `openroad`.
-  - **FPGA- & Embedded-Entwicklung**: `nextpnr`, `icestorm`, `dfu-util`, `qemu`.
-  - **PCB- & Schaltplan-Design**: `kicad`, `ngspice`.
+  - **HDL-Simulation**: `ghdl`, `nvc`, `iverilog`, `verilator`, `gtkwave`, `surfer`, `fusesoc`, `surelog`.
+  - **Synthese & Physical Design**: `yosys`, `magic-vlsi`, `netgen`, `klayout`, `openroad`, `xschem`, `gdsfactory`. (OpenLane ready)
+  - **FPGA- & Embedded-Entwicklung**: `nextpnr`, `icestorm`, `openfpgaloader`, `dfu-util`, `qemu`.
+  - **LSPs & Toolkits**: `sv-lang`, `vhdl-ls`, `verible`, `veridian`, `svls`, `pyverilog`, `verilogae`, `volare`.
+  - **PDKs**: Volle Unterstützung für **SkyWater 130** und **GF180MCU** via `volare`.
+  - **PCB- & Schaltplan-Design**: `kicad`, `ngspice`, `xyce`, `doxygen`.
 - **Anpassung**: Wenn Sie diese Werkzeuge NICHT benötigen, können Sie einfach den Block `# --- VLSI & Hardware Engineering ---` in `modules/core/packages.nix` auskommentieren oder entfernen, bevor Sie Ihr `nixos-rebuild` ausführen.
-- **Zukunftssicher**: Dies ist erst der Anfang; weitere spezialisierte VLSI- und EDA-Werkzeuge sind für zukünftige Updates geplant, um MayankOS zur ultimativen Plattform für Hardware-Designer zu machen.
+- **Advanced EDA**: For tools like **OpenLane** or advanced DFT suites not yet in standard Nixpkgs, we recommend using the [nix-eda](https://github.com/nix-eda/nix-eda) overlay or Docker containers to ensure PDK compatibility.
+- **Zukunftssicher**: Dies ist erst der Anfang; weitere spezialisierte VLSI- und EDA-Werkzeuge (including built-in OpenLane v2 support) sind für zukünftige Updates geplant, um MayankOS zur ultimativen Plattform für Hardware-Designer zu machen.
 
 ## 🌐 Webbrowser-Wahl & Anpassung
 
@@ -142,9 +146,10 @@ Wir glauben an Auswahl und Freiheit. MayankOS ist so konzipiert, dass es Ihre pe
 
 - Nix Einsteiger-Leitfaden: [English](cheatsheets/nix-beginner-guide.md) |
   [Español](cheatsheets/nix-beginner-guide.es.md)
-- Hyprland Anpassungs-Leitfaden:
+- Hyprland-Anpassungsleitfaden:
   [English](cheatsheets/hyprland-customization-guide.md) |
   [Español](cheatsheets/hyprland-customization-guide.es.md)
+- VLSI- und Hardware-Engineering-Leitfaden: [English](cheatsheets/vlsi-guide.md) | [Español](cheatsheets/vlsi-guide.es.md)
 
 #### 🍖 Voraussetzungen
 

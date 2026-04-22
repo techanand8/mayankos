@@ -75,6 +75,7 @@ in {
             vscodevim.vim
             mads-hartmann.bash-ide-vscode
             tamasfe.even-better-toml
+            teros-technology.teroshdl
             zainchen.json
             shd101wyy.markdown-preview-enhanced
           ])

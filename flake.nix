@@ -55,6 +55,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri.url = "github:sodiboo/niri-flake";
+    openlane.url = "github:efabless/openlane2";
+    volare.url = "github:efabless/volare";
+    nix-eda.url = "github:efabless/nix-eda";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 

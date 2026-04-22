@@ -73,7 +73,22 @@
       telescope.enable = true;
 
       # Treesitter for syntax/TS features
-      treesitter.enable = true;
+      treesitter = {
+        enable = true;
+        settings = {
+          ensure_installed = [
+            "nix"
+            "lua"
+            "python"
+            "cpp"
+            "verilog"
+            "vhdl"
+            "bash"
+            "markdown"
+          ];
+          highlight.enable = true;
+        };
+      };
       treesitter-context.enable = false;
 
       # Project management
@@ -177,6 +192,22 @@
           html.enable = true;
           cssls.enable = true;
           clangd.enable = true;
+          vhdl_ls = {
+            enable = true;
+            package = null;
+          };
+          verible = {
+            enable = true;
+            package = null;
+          };
+          veridian = {
+            enable = true;
+            package = null;
+          };
+          svls = {
+            enable = true;
+            package = null;
+          };
           zls.enable = false;
           marksman.enable = false;
           hyprls.enable = true;

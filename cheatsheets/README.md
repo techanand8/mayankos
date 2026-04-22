@@ -1,66 +1,53 @@
 English | [Español](./README.es.md)
 
-# Cheatsheets Index (MayankOS)
-These documents cover both general usage and the specific configuration as defined in the NixOS configuration "MayankOS".
+# 📚 MayankOS Cheatsheets & Guides
 
-- General use: Practical, task-focused tips and top workflows.
-- MayankOS specifics: Notes reflecting how tools are configured in this repository (modules/home/*) so behavior matches your system.
+Welcome to the central library for MayankOS documentation. These guides are designed to help you master your new environment, from basic NixOS concepts to advanced VLSI engineering.
 
-## 🔗 Quick Links
-- Emacs
-  - [Getting Started Top 10](emacs/emacs.getting-started.top10.md)
-  - [File Explorer](emacs/emacs.file-explorer.cheatsheet.md)
-  - [Code Completion](emacs/emacs.code-completion.cheatsheet.md)
-  - [Magit (Git)](emacs/emacs.magit.cheatsheet.md)
-  - [Markdown](emacs/emacs.markdown.cheatsheet.md)
-- Ghostty
-  - [Ghostty Cheatsheet](ghostty/ghostty.cheatsheet.md)
-- Tmux
-  - [Tmux Cheatsheet](tmux/tmux.cheatsheet.md)
-- Alacritty
-  - [Alacritty Cheatsheet](alacritty/alacritty.cheatsheet.md)
-- Kitty
-  - [Kitty Cheatsheet](kitty/kitty.cheatsheet.md)
-- WezTerm
-  - [WezTerm Cheatsheet](wezterm/wezterm.cheatsheet.md)
-- Hyprland
-  - [Keybindings](hyprland/hyprland.binds.cheatsheet.md)
-  - [Window Rules](hyprland/hyprland.windowrules.cheatsheet.md)
-- Yazi
-  - [Keymap](yazi/yazi.keymap.cheatsheet.md)
+## 🚀 Core Guides
+- **[Nix Beginner Guide](./nix-beginner-guide.md)**: Start here if you are new to Nix/NixOS. Learn how to add packages and change basic settings.
+- **[Project Guide](./project-guide.md)**: Deep dive into the architecture of this repository.
+- **[Hyprland Customization](./hyprland-customization-guide.md)**: Learn how to tweak your desktop environment.
+- **[VLSI & Hardware Engineering](./vlsi-guide.md)**: A guide to the industrial-grade EDA tools included in MayankOS.
+- **[Add GNOME Desktop](./add-gnome.md)**: How to enable the GNOME desktop alongside Hyprland/Niri.
 
-## 📚 How to use
-- Browse the area you care about (e.g., Emacs, Ghostty).
-- Start with the “getting started” or “top tips” docs for quick wins.
-- Refer to tool-specific cheatsheets for day-to-day commands, then cross-check any MayankOS-specific settings.
+## 🛠️ Terminal & Tools
+- **[Ghostty](./ghostty/ghostty.cheatsheet.md)**: Modern terminal emulator with hardware acceleration.
+- **[Tmux](./tmux/tmux.cheatsheet.md)**: Terminal multiplexer for managing multiple sessions.
+- **[Yazi](./yazi/yazi.keymap.cheatsheet.md)**: Blazing fast terminal file manager.
+- **[Alacritty](./alacritty/alacritty.cheatsheet.md)** / **[Kitty](./kitty/kitty.cheatsheet.md)** / **[WezTerm](./wezterm/wezterm.cheatsheet.md)**: Alternative terminal emulators.
 
-## 📂 Directory Tree
+## ✍️ Editors
+- **Emacs**:
+  - [Getting Started Top 10](./emacs/emacs.getting-started.top10.md)
+  - [File Explorer](./emacs/emacs.file-explorer.cheatsheet.md)
+  - [Code Completion](./emacs/emacs.code-completion.cheatsheet.md)
+  - [Magit (Git)](./emacs/emacs.magit.cheatsheet.md)
+  - [Markdown](./emacs/emacs.markdown.cheatsheet.md)
+  - [Nix Support](./emacs/emacs.nix.cheatsheet.md)
+- **Neovim**:
+  - [Intro to Neovim on MayankOS](./nvim/Intro-to-Neovim-on-ddubsos.md)
 
+## 🖥️ Desktop & System
+- **Hyprland**:
+  - [Keybindings](./hyprland/hyprland.binds.cheatsheet.md)
+  - [Window Rules](./hyprland/hyprland.windowrules.cheatsheet.md)
+  - [Theming & Waybar](./hyprland/How-to-theme-or-add-waybars-in-ddubsos.md)
+- **NixOS**:
+  - [Intro to NixOS](./nixos/intro.nixos.cheatsheet.md)
+
+---
+
+## 📂 Directory Structure
 ```
 cheatsheets/
-├── emacs/
-│   ├── emacs.code-completion.cheatsheet.md
-│   ├── emacs.file-explorer.cheatsheet.md
-│   ├── emacs.getting-started.top10.md
-│   ├── emacs.magit.cheatsheet.md
-│   └── emacs.markdown.cheatsheet.md
-├── ghostty/
-│   └── ghostty.cheatsheet.md
-├── tmux/
-│   └── tmux.cheatsheet.md
-├── alacritty/
-│   └── alacritty.cheatsheet.md
-├── kitty/
-│   └── kitty.cheatsheet.md
-├── wezterm/
-│   └── wezterm.cheatsheet.md
-├── hyprland/
-│   ├── hyprland.binds.cheatsheet.md
-│   └── hyprland.windowrules.cheatsheet.md
-└── yazi/
-    └── yazi.keymap.cheatsheet.md
+├── nix-beginner-guide.md      # Best for new users
+├── project-guide.md           # Repository architecture
+├── vlsi-guide.md              # Hardware engineering tools
+├── hyprland-customization.md  # Desktop tweaks
+├── emacs/                     # In-depth Emacs guides
+├── hyprland/                  # Bindings and window rules
+└── ... (and many more)
 ```
 
-## 🛠️ Notes
-- Ghostty cheatsheet reflects bindings from modules/home/terminals/ghostty.nix (MayankOS).
-- Emacs docs follow the same markdown style for consistency and quick scanning.
+*Note: Most of these guides are also available in Spanish (`.es.md`).*

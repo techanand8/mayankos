@@ -1,4 +1,5 @@
-[English](README.md) | [Español](README.es.md) | [हिन्दी](README.hi.md) | [ಕನ್ನಡ](README.kn.md) | [தமிழ்](README.ta.md) | [తెలుగు](README.te.md) | [संस्कृतम्](README.sa.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Русский](README.ru.md) | [বাংলা](README.bn.md) | [Français](README.fr.md) | [Português](README.pt.md)
+[English](README.md) | [Español](README.es.md) | [हिन्दी](README.hi.md) | [भोजपुरी (बिहारी)](README.bh.md) | [ಕನ್ನಡ](README.kn.md) | [தமிழ்](README.ta.md) | [తెలుగు](README.te.md) | [संस्कृतम्](README.sa.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Русский](README.ru.md) | [বাংলা](README.bn.md) | [Français](README.fr.md) | [Português](README.pt.md) | [العربية (الكويت)](README.ar.md) | [繁體中文 (台灣)](README.zh_TW.md) | [Italiano (Svizzera)](README.it.md)
+n**Note : Veuillez pardonner toute erreur linguistique dans cette traduction ; je lai fournie dans votre langue afin que vous puissiez mieux comprendre la documentation et le projet. Pour la précision technique, veuillez vous référer aux versions anglaise ou espagnole.**
 
 **Remarque : Veuillez nous excuser pour toute erreur linguistique dans cette traduction ; je l'ai fournie dans votre langue afin que vous puissiez mieux comprendre la documentation et le projet. Pour plus de précision technique, veuillez vous référer aux versions anglaise ou espagnole.**
 
@@ -56,31 +57,34 @@ MayankOS propose deux façons principales de commencer :
 MayankOS est spécifiquement conçu pour être une station de travail professionnelle haute performance pour **le VLSI et l'ingénierie matérielle**.
 
 - **Pourquoi c'est parfait** : Il est pré-configuré avec une suite complète d'outils pour :
-  - **Simulation HDL** : `iverilog`, `verilator`, `gtkwave`.
-  - **Synthèse & Conception physique** : `yosys`, `magic-vlsi`, `klayout`, `openroad`.
-  - **Développement FPGA & embarqué** : `nextpnr`, `icestorm`, `dfu-util`, `qemu`.
-  - **Conception de PCB & schémas** : `kicad`, `ngspice`.
+  - **Simulation HDL** : `ghdl`, `nvc`, `iverilog`, `verilator`, `gtkwave`, `surfer`, `fusesoc`, `surelog`.
+  - **Synthèse & Conception physique** : `yosys`, `magic-vlsi`, `netgen`, `klayout`, `openroad`, `xschem`, `gdsfactory`. (OpenLane ready)
+  - **Développement FPGA & embarqué** : `nextpnr`, `icestorm`, `openfpgaloader`, `dfu-util`, `qemu`.
+  - **LSPs & Toolkits** : `sv-lang`, `vhdl-ls`, `verible`, `veridian`, `svls`, `pyverilog`, `verilogae`, `volare`.
+  - **PDKs** : Support complet pour **SkyWater 130** et **GF180MCU** via `volare`.
+  - **Conception de PCB & schémas** : `kicad`, `ngspice`, `xyce`, `doxygen`.
 - **Comment personnaliser** : Si vous n'avez PAS besoin de ces outils, vous pouvez simplement commenter ou supprimer le bloc `# --- VLSI & Hardware Engineering ---` dans `modules/core/packages.nix` avant de lancer votre `nixos-rebuild`.
-- **Prêt pour l'avenir** : Ce n'est que le début ; d'autres outils VLSI et EDA plus spécialisés sont prévus pour les prochaines mises à jour afin de faire de MayankOS la plateforme ultime pour les concepteurs de matériel.
+- **Advanced EDA**: For tools like **OpenLane** or advanced DFT suites not yet in standard Nixpkgs, we recommend using the [nix-eda](https://github.com/nix-eda/nix-eda) overlay or Docker containers to ensure PDK compatibility.
+- **Prêt pour l'avenir** : Ce n'est que le début ; d'autres outils VLSI et EDA plus spécialisés (including built-in OpenLane v2 support) sont prévus pour les prochaines mises à jour afin de faire de MayankOS la plateforme ultime pour les concepteurs de matériel.
 
-+## 🌐 Choix et personnalisation du navigateur Web
-+
-+### Pourquoi Microsoft Edge ?
-+
-+Par défaut, MayankOS utilise désormais **Microsoft Edge**. Nous reconnaissons que la communauté Linux a de fortes préférences pour des navigateurs comme Firefox, Zen ou Brave. Cependant, Edge a été sélectionné pour cette station de travail car :
-+- **Compatibilité** : Il offre une excellente stabilité avec les portails de documentation matérielle professionnelle et les outils EDA en ligne.
-+- **Performance** : Il permet une gestion efficace des PDF et de la mémoire pour les recherches techniques intensives.
-+- **Flux de travail** : Il s'aligne sur les besoins d'ingénierie spécifiques de cette station de travail VLSI.
-+
-+### Comment changer votre navigateur par défaut
-+
-+Si vous préférez un autre navigateur, MayankOS facilite le changement :
-+1. **Modifier la variable** : Ouvrez le fichier `variables.nix` de votre hôte (ex: `hosts/msi-modern14c7m/variables.nix`) et remplacez la ligne `browser` par votre choix (ex: `browser = "firefox";`).
-+2. **Vérifier l'installation** : Assurez-vous que votre navigateur préféré est listé dans `modules/core/packages.nix`. S'il n'y est pas, ajoutez simplement le nom de son paquet (ex: `librewolf`) à la liste.
-+3. **Reconstruire** : Lancez `mcli rebuild` ou votre commande de reconstruction spécifique (ex: `sudo nixos-rebuild switch --flake .#amd`) pour appliquer le changement.
-+
-+Nous croyons au choix et à la liberté. MayankOS est conçu pour être votre station de travail personnelle — n'hésitez pas à vous l'approprier !
-+
+## 🌐 Choix et personnalisation du navigateur Web
+
+### Pourquoi Microsoft Edge ?
+
+Par défaut, MayankOS utilise désormais **Microsoft Edge**. Nous reconnaissons que la communauté Linux a de fortes préférences pour des navigateurs comme Firefox, Zen ou Brave. Cependant, Edge a été sélectionné pour cette station de travail car :
+- **Compatibilité** : Il offre une excellente stabilité avec les portails de documentation matérielle professionnelle et les outils EDA en ligne.
+- **Performance** : Il permet une gestion efficace des PDF et de la mémoire pour les recherches techniques intensives.
+- **Flux de travail** : Il s'aligne sur les besoins d'ingénierie spécifiques de cette station de travail VLSI.
+
+### Comment changer votre navigateur par défaut
+
+Si vous préférez un autre navigateur, MayankOS facilite le changement :
+1. **Modifier la variable** : Ouvrez le fichier `variables.nix` de votre hôte (ex: `hosts/msi-modern14c7m/variables.nix`) et remplacez la ligne `browser` par votre choix (ex: `browser = "firefox";`).
+2. **Vérifier l'installation** : Assurez-vous que votre navigateur préféré est listé dans `modules/core/packages.nix`. S'il n'y est pas, ajoutez simplement le nom de son paquet (ex: `librewolf`) à la liste.
+3. **Reconstruire** : Lancez `mcli rebuild` ou votre commande de reconstruction spécifique (ex: `sudo nixos-rebuild switch --flake .#amd`) pour appliquer le changement.
+
+Nous croyons au choix et à la liberté. MayankOS est conçu pour être votre station de travail personnelle — n'hésitez pas à vous l'approprier !
+
  ## 🛠️ Guide de configuration du matériel personnalisé et de l'hôte
 
  1. **Création d'un nouvel hôte** :
@@ -143,9 +147,10 @@ MayankOS est spécifiquement conçu pour être une station de travail profession
 
 - Guide du débutant Nix : [English](cheatsheets/nix-beginner-guide.md) |
   [Español](cheatsheets/nix-beginner-guide.es.md)
-- Guide de personnalisation Hyprland :
+- Guide de personnalisation de Hyprland :
   [English](cheatsheets/hyprland-customization-guide.md) |
   [Español](cheatsheets/hyprland-customization-guide.es.md)
+- Guide d'ingénierie matérielle et VLSI : [English](cheatsheets/vlsi-guide.md) | [Español](cheatsheets/vlsi-guide.es.md)
 
 #### 🍖 Prérequis
 

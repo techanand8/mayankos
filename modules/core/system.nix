@@ -56,6 +56,8 @@ in {
     NIXOS_OZONE_WL = "1";
     MAYANKOS_VERSION = "2.6.1";
     MAYANKOS = "true";
+    PDK_ROOT = "$HOME/.volare"; # For Sky130/GF180 PDKs managed by volare
+    OPENLANE_ROOT = "/nix/store"; # Since tools are in the nix store
   };
   console.keyMap = "${consoleKeyMap}";
   system.stateVersion = "23.11"; # Do not change!

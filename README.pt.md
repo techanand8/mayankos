@@ -1,4 +1,5 @@
-[English](README.md) | [Español](README.es.md) | [हिन्दी](README.hi.md) | [ಕನ್ನಡ](README.kn.md) | [தமிழ்](README.ta.md) | [తెలుగు](README.te.md) | [संस्कृतम्](README.sa.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Русский](README.ru.md) | [বাংলা](README.bn.md) | [Français](README.fr.md) | [Português](README.pt.md)
+[English](README.md) | [Español](README.es.md) | [हिन्दी](README.hi.md) | [भोजपुरी (बिहारी)](README.bh.md) | [ಕನ್ನಡ](README.kn.md) | [தமிழ்](README.ta.md) | [తెలుగు](README.te.md) | [संस्कृतम्](README.sa.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Русский](README.ru.md) | [বাংলা](README.bn.md) | [Français](README.fr.md) | [Português](README.pt.md) | [العربية (الكويت)](README.ar.md) | [繁體中文 (台灣)](README.zh_TW.md) | [Italiano (Svizzera)](README.it.md)
+n**Nota: Por favor, desculpe qualquer erro linguístico nesta tradução; forneci-a no seu idioma para que possa compreender melhor a documentação e o projeto. Para precisão técnica, consulte as versões em inglês ou espanhol.**
 
 **Nota: Por favor, desculpe quaisquer erros linguísticos nesta tradução; forneci-a no seu idioma para que possa compreender melhor a documentação e o projeto. Para precisão técnica, consulte as versões em inglês ou espanhol.**
 
@@ -56,31 +57,33 @@ MayankOS oferece duas formas principais de começar:
 MayankOS foi projetado especificamente para ser uma estação de trabalho profissional de alto desempenho para **VLSI e Engenharia de Hardware**.
 
 - **Por que é perfeito**: Ele vem pré-configurado com um conjunto abrangente de ferramentas para:
-  - **Simulação HDL**: `iverilog`, `verilator`, `gtkwave`.
-  - **Síntese e Design Físico**: `yosys`, `magic-vlsi`, `klayout`, `openroad`.
-  - **Desenvolvimento de FPGA e Embarcados**: `nextpnr`, `icestorm`, `dfu-util`, `qemu`.
-  - **Design de PCB e Esquemáticos**: `kicad`, `ngspice`.
+  - **Simulação HDL**: `ghdl`, `nvc`, `iverilog`, `verilator`, `gtkwave`, `surfer`, `fusesoc`, `surelog`.
+  - **Síntese e Design Físico**: `yosys`, `magic-vlsi`, `netgen`, `klayout`, `openroad`, `xschem`, `gdsfactory`. (Pronto para OpenLane)
+  - **Desenvolvimento de FPGA e Embarcados**: `nextpnr`, `icestorm`, `openfpgaloader`, `dfu-util`, `qemu`.
+  - **LSPs e Toolkits**: `sv-lang`, `vhdl-ls`, `verible`, `veridian`, `svls`, `pyverilog`, `verilogae`, `volare`.
+  - **PDKs**: Suporte total para **SkyWater 130** e **GF180MCU** via `volare`.
+  - **Design de PCB e Esquemáticos**: `kicad`, `ngspice`, `xyce`, `doxygen`.
 - **Como personalizar**: Se você NÃO precisar dessas ferramentas, pode simplesmente comentar ou remover o bloco `# --- VLSI & Hardware Engineering ---` em `modules/core/packages.nix` antes de executar o seu `nixos-rebuild`.
 - **Pronto para o futuro**: Este é apenas o começo; mais ferramentas especializadas de VLSI e EDA estão planejadas para atualizações futuras para tornar o MayankOS a plataforma definitiva para designers de hardware.
 
-+## 🌐 Escolha e Personalização do Navegador Web
-+
-+### Por que o Microsoft Edge?
-+
-+Por padrão, o MayankOS agora usa o **Microsoft Edge**. Reconhecemos que a comunidade Linux tem fortes preferências por navegadores como Firefox, Zen ou Brave. No entanto, o Edge foi selecionado para esta estação de trabalho porque:
-+- **Compatibilidade**: Oferece excelente estabilidade com portais de documentação de hardware profissional e ferramentas EDA baseadas na web.
-+- **Desempenho**: Fornece manuseio eficiente de PDF e gerenciamento de memória para pesquisas técnicas pesadas.
-+- **Fluxo de Trabalho**: Alinha-se às necessidades específicas de engenharia desta estação de trabalho VLSI.
-+
-+### Como Alterar seu Navegador Padrão
-+
-+Se você preferir um navegador diferente, o MayankOS facilita a troca:
-+1. **Altere a Variável**: Abra o arquivo `variables.nix` do seu host (ex: `hosts/msi-modern14c7m/variables.nix`) e altere a linha `browser` para sua escolha (ex: `browser = "firefox";`).
-+2. **Verifique a Instalação**: Certifique-se de que seu navegador preferido esteja listado em `modules/core/packages.nix`. Se não estiver lá, basta adicionar o nome do pacote (ex: `librewolf`) à lista.
-+3. **Reconstruir**: Execute `mcli rebuild` ou seu comando de reconstrução específico (ex: `sudo nixos-rebuild switch --flake .#amd`) para aplicar a alteração.
-+
-+Acreditamos na escolha e na liberdade. O MayankOS foi projetado para ser sua estação de trabalho pessoal — sinta-se à vontade para torná-lo seu!
-+
+## 🌐 Escolha e Personalização do Navegador Web
+
+### Por que o Microsoft Edge?
+
+Por padrão, o MayankOS agora usa o **Microsoft Edge**. Reconhecemos que a comunidade Linux tem fortes preferências por navegadores como Firefox, Zen ou Brave. No entanto, o Edge foi selecionado para esta estação de trabalho porque:
+- **Compatibilidade**: Oferece excelente estabilidade com portais de documentação de hardware profissional e ferramentas EDA baseadas na web.
+- **Desempenho**: Fornece manuseio eficiente de PDF e gerenciamento de memória para pesquisas técnicas pesadas.
+- **Fluxo de Trabalho**: Alinha-se às necessidades específicas de engenharia desta estação de trabalho VLSI.
+
+### Como Alterar seu Navegador Padrão
+
+Se você preferir um navegador diferente, o MayankOS facilita a troca:
+1. **Altere a Variável**: Abra o arquivo `variables.nix` do seu host (ex: `hosts/msi-modern14c7m/variables.nix`) e altere a linha `browser` para sua escolha (ex: `browser = "firefox";`).
+2. **Verifique a Instalação**: Certifique-se de que seu navegador preferido esteja listado em `modules/core/packages.nix`. Se não estiver lá, basta adicionar o nome do pacote (ex: `librewolf`) à lista.
+3. **Reconstruir**: Execute `mcli rebuild` ou seu comando de reconstrução específico (ex: `sudo nixos-rebuild switch --flake .#amd`) para aplicar a alteração.
+
+Acreditamos na escolha e na liberdade. O MayankOS foi projetado para ser sua estação de trabalho pessoal — sinta-se à vontade para torná-lo seu!
+
  ## 🛠️ Guia de Configuração de Hardware Personalizado e Host
 
  1. **Criando um Novo Host**:
@@ -146,6 +149,7 @@ MayankOS foi projetado especificamente para ser uma estação de trabalho profis
 - Guia de Personalização do Hyprland:
   [English](cheatsheets/hyprland-customization-guide.md) |
   [Español](cheatsheets/hyprland-customization-guide.es.md)
+- Guia de Engenharia de Hardware e VLSI: [English](cheatsheets/vlsi-guide.md) | [Español](cheatsheets/vlsi-guide.es.md)
 
 #### 🍖 Requisitos
 

@@ -135,38 +135,72 @@ in {
       bash-language-server
       lua-language-server
       svls
+      sv-lang # SystemVerilog compiler and linter
+      surelog # SystemVerilog pre-processor, parser, elaborator
+      veridian # SystemVerilog Language Server
+      svlint # SystemVerilog linter
+      vhdl-ls # VHDL Language Server
       verible
       haskellPackages.sv2v
 
       # --- VLSI & Hardware Engineering ---
       # HDL Simulation & Verification
+      ghdl # VHDL simulator
+      nvc # nVHDL compiler/simulator
       iverilog # Verilog simulation
       verilator # Fast cycle-accurate Verilog simulator
       gtkwave # Waveform viewer
+      surfer # Modern waveform viewer
+      (gaw.overrideAttrs (o: {
+        NIX_CFLAGS_COMPILE = (o.NIX_CFLAGS_COMPILE or "") + " -std=gnu89 -Wno-error=incompatible-pointer-types -Wno-error=implicit-function-declaration -fpermissive";
+      })) # Fast spice waveform viewer
+      python3Packages.wavedrom # Digital timing diagrams
+      python3Packages.amaranth # Python-based hardware description
       python3Packages.cocotb
+      python3Packages.verilogae # Verilog-A tool
+      python3Packages.pyverilog # Python-based Verilog toolkit
+      fusesoc # Package manager and build system for HDL
+      python3Packages.edalize # Abstraction layer for EDA tools
+      haskellPackages.netlist-to-vhdl # Netlist to VHDL converter
+      onnxruntime # AI hardware verification
+      python3Packages.onnx # AI hardware verification
       # Synthesis & Physical Design
       yosys # RTL Synthesis
+      yosys-ghdl # Yosys with GHDL plugin for VHDL synthesis
+      inputs.nix-eda.packages.${pkgs.stdenv.hostPlatform.system}.yosys-synlig-sv # Full SystemVerilog synthesis support for Yosys
+      inputs.volare.packages.${pkgs.stdenv.hostPlatform.system}.volare # PDK manager (SkyWater 130, GF180, etc.)
+      xschem # Schematic capture EDA tool
       magic-vlsi # VLSI Layout tool
       netgen # LVS (Layout vs Schematic) tool
       graphviz # Required by Yosys 'show' command
       imagemagick # To convert Yosys output
       ghostscript # Often required for Yosys
+      doxygen # Documentation generator
+      doxygen_gui # GUI for Doxygen
       klayout # Layout viewer/editor
-      openroad # Physical design flow
-      surfer # Modern waveform viewer
+      inputs.nix-eda.packages.${pkgs.stdenv.hostPlatform.system}.gdsfactory # Advanced layout and PDM flow
+      openroad # Physical design flow (foundation of OpenLane)
+      inputs.openlane.packages.${pkgs.stdenv.hostPlatform.system}.default # OpenLane 2 (requires OpenLane Cachix)
+      inputs.openlane.packages.${pkgs.stdenv.hostPlatform.system}.opensta # Static Timing Analysis
+      chisel # Scala-based HDL
       # Formal Verification
-      #symbiyosys # Formal verification front-end renamed to sby
       sby
+      cvc4 # SMT Solver
+      bitwuzla # High-performance SMT solver
       z3 # SMT Solver
       yices # High-performance SMT solver
       # FPGA Implementation
       nextpnr # Universal place-and-route
       icestorm # Lattice iCE40 bitstream tools
       trellis # Lattice ECP5 bitstream tools
+      openfpgaloader # Universal FPGA programmer
       dfu-util # Flashing utility for many FPGA dev boards
+      pulseview # GUI for logic analyzers
+      sigrok-cli # CLI for logic analyzers
       # PCB & Schematic Design
       kicad # Professional PCB design suite
       ngspice # The standard general-purpose circuit simulator
+      (xyce.override { enableDocs = false; enableTests = false; }) # High-performance parallel SPICE simulator
       # Embedded & Hardware Core
       avrdude # Utility to burn code to AVR
       minicom # Serial communication

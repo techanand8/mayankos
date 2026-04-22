@@ -1,4 +1,5 @@
-[English](README.md) | [Español](README.es.md) | [हिन्दी](README.hi.md) | [ಕನ್ನಡ](README.kn.md) | [தமிழ்](README.ta.md) | [తెలుగు](README.te.md) | [संस्कृतम्](README.sa.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Русский](README.ru.md) | [বাংলা](README.bn.md) | [Français](README.fr.md) | [Português](README.pt.md)
+[English](README.md) | [Español](README.es.md) | [हिन्दी](README.hi.md) | [भोजपुरी (बिहारी)](README.bh.md) | [ಕನ್ನಡ](README.kn.md) | [தமிழ்](README.ta.md) | [తెలుగు](README.te.md) | [संस्कृतम्](README.sa.md) | [Deutsch](README.de.md) | [日本語](README.ja.md) | [Русский](README.ru.md) | [বাংলা](README.bn.md) | [Français](README.fr.md) | [Português](README.pt.md) | [العربية (الكويت)](README.ar.md) | [繁體中文 (台灣)](README.zh_TW.md) | [Italiano (Svizzera)](README.it.md)
+n**Nota: Por favor, perdone cualquier error lingüístico en esta traducción; la he proporcionado en su idioma para que pueda entender mejor la documentación y el proyecto. Para precisión técnica, por favor consulte las versiones en inglés.**
 
 **Nota: Por favor, disculpe cualquier error lingüístico en esta traducción; la he proporcionado en su idioma para que pueda entender mejor la documentación y el proyecto. Para mayor precisión técnica, consulte las versiones en inglés o español.**
 
@@ -56,12 +57,15 @@ MayankOS ofrece dos formas principales de comenzar:
 MayankOS está diseñado específicamente para ser una estación de trabajo profesional de alto rendimiento para **VLSI e ingeniería de hardware**.
 
 - **Por qué es perfecto**: Viene preconfigurado con una suite completa de herramientas para:
-  - **Simulación HDL**: `iverilog`, `verilator`, `gtkwave`.
-  - **Síntesis y diseño físico**: `yosys`, `magic-vlsi`, `klayout`, `openroad`.
-  - **Desarrollo de FPGA y embebidos**: `nextpnr`, `icestorm`, `dfu-util`, `qemu`.
-  - **Diseño de PCB y esquemas**: `kicad`, `ngspice`.
+  - **Simulación HDL**: `ghdl`, `nvc`, `iverilog`, `verilator`, `gtkwave`, `surfer`, `fusesoc`, `surelog`.
+  - **Síntesis y diseño físico**: `yosys`, `magic-vlsi`, `netgen`, `klayout`, `openroad`, `xschem`, `gdsfactory`. (Listo para OpenLane)
+  - **Desarrollo de FPGA y embebidos**: `nextpnr`, `icestorm`, `openfpgaloader`, `dfu-util`, `qemu`.
+  - **LSPs y Herramientas**: `sv-lang`, `vhdl-ls`, `verible`, `veridian`, `svls`, `pyverilog`, `verilogae`, `volare`.
+  - **PDKs**: Soporte completo para **SkyWater 130** y **GF180MCU** a través de `volare`.
+  - **Diseño de PCB y esquemas**: `kicad`, `ngspice`, `xyce`, `doxygen`.
 - **Cómo personalizar**: Si NO necesitas estas herramientas, simplemente puedes comentar o eliminar el bloque `# --- VLSI & Hardware Engineering ---` en `modules/core/packages.nix` antes de ejecutar tu `nixos-rebuild`.
-- **Listo para el futuro**: Esto es solo el comienzo; se planean más herramientas especializadas de VLSI y EDA para futuras actualizaciones para hacer de MayankOS la plataforma definitiva para los diseñadores de hardware.
+- **EDA Avanzado**: Para herramientas como **OpenLane** o suites de DFT avanzadas que aún no están en Nixpkgs estándar, recomendamos usar el overlay [nix-eda](https://github.com/nix-eda/nix-eda) o contenedores Docker para garantizar la compatibilidad con PDK.
+- **Listo para el futuro**: Esto es solo el comienzo; se planean más herramientas especializadas de VLSI y EDA (incluyendo soporte integrado para OpenLane v2) para futuras actualizaciones para hacer de MayankOS la plataforma definitiva para los diseñadores de hardware.
 
 ## 🌐 Elección y personalización del navegador web
 
@@ -137,6 +141,7 @@ Si prefiere un navegador diferente, MayankOS facilita el cambio:
 
 - Guía para Principiantes de Nix: [English](cheatsheets/nix-beginner-guide.md) | [Español](cheatsheets/nix-beginner-guide.es.md)
 - Guía de Personalización de Hyprland: [English](cheatsheets/hyprland-customization-guide.md) | [Español](cheatsheets/hyprland-customization-guide.es.md)
+- Guía de Ingeniería de Hardware y VLSI: [English](cheatsheets/vlsi-guide.md) | [Español](cheatsheets/vlsi-guide.es.md)
 
 #### 🍖 Requisitos
 
