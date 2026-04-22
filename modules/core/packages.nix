@@ -83,8 +83,13 @@ in {
       pkgs.xdg-desktop-portal-gtk
       pkgs.kdePackages.xdg-desktop-portal-kde
       pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gnome
     ];
-    config.common.default = "*";
+    config = {
+      common.default = "*";
+      niri.default = ["gnome" "gtk"];
+      hyprland.default = ["hyprland" "gtk"];
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -93,6 +98,7 @@ in {
     [
       inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
       inputs.yt-x.packages.${pkgs.stdenv.hostPlatform.system}.default
+      qt6.qtmultimedia
     ]
     ++ barPkgs
     ++ [
@@ -221,6 +227,9 @@ in {
       starship
       usbutils # Good Tools For USB Devices
       upower # noctalia shell battery
+      vulkan-tools # To verify Vulkan support
+      libva-utils # To verify video acceleration
+      clinfo # To verify OpenCL support
       uwsm # Universal Wayland Session Manager (optional must be enabled)
       v4l-utils # Used For Things Like OBS Virtual Camera
       wget # Tool For Fetching Files With Links

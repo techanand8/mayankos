@@ -5,29 +5,35 @@
     barChoice
     stylixImage
     ;
-  # Noctalia-specific startup commands
-  noctaliaExec =
+  # Shell-specific startup commands
+  shellExec =
     if barChoice == "noctalia"
     then [
-      "killall -q waybar"
-      "pkill waybar"
-      "killall -q swaync"
-      "pkill swaync"
+      "killall -q waybar; pkill waybar"
+      "killall -q swaync; pkill swaync"
       "noctalia-shell &"
     ]
-    else [];
-  # Waybar-specific startup commands
-  waybarExec =
-    if barChoice != "noctalia"
+    else if barChoice == "caelestia"
     then [
+      "killall -q waybar; pkill waybar"
+      "killall -q swaync; pkill swaync"
+      "caelestia-shell &"
+    ]
+    else if barChoice == "dms"
+    then [
+      "killall -q waybar; pkill waybar"
+      "killall -q swaync; pkill swaync"
+      "dms-shell &"
+    ]
+    else [
+      # Waybar-specific startup commands
       "killall -q awww;sleep .5 && awww-daemon"
       "killall -q waybar;sleep .5 && waybar"
       "killall -q swaync;sleep .5 && swaync"
       "nm-applet --indicator"
       # Delayed-only restore so Stylix finishes first, then user's wallpaper wins with a single change
       "sh -lc 'sleep 2 && (qs-wallpapers-restore || waypaper --wallpaper ${stylixImage} --backend awww) >/dev/null 2>&1 || true'"
-    ]
-    else [];
+    ];
 in {
   wayland.windowManager.hyprland.settings = {
     exec-once =
@@ -40,6 +46,6 @@ in {
         "qs -c overview" # Start quickshell-overview daemon
         "hyprland-change-layout init"
       ]
-      ++ noctaliaExec ++ waybarExec;
+      ++ shellExec;
   };
 }

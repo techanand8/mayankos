@@ -41,12 +41,21 @@
       "$modifier,V, Clipboard History, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
     ]
     else [];
+  # SwayNC notification bindings (only included when NOT using a shell that handles its own)
+  swayncBind =
+    if ! (barChoice == "noctalia" || barChoice == "caelestia" || barChoice == "dms")
+    then [
+      "$modifier,M, SwayNC Notifications, exec, swaync-client -t -sw"
+      "$modifier SHIFT,N, Notification Reset, exec, swaync-client -rs"
+    ]
+    else [];
 in {
   wayland.windowManager.hyprland.settings = {
     bindd =
       noctaliaBind
       ++ rofiBind
       ++ rofiClipboardBind
+      ++ swayncBind
       ++ [
         # ============= WORKSPACE OVERVIEW =============
         "$modifier CTRL,D, Toggle Dock, exec, dock"
@@ -60,7 +69,7 @@ in {
         "$modifier SHIFT,D, Discord, exec, discord"
         "$modifier ALT,W, Web Search, exec, web-search"
         "$modifier SHIFT,W, QS Wallpaper Setter, exec, qs-wallpapers-apply"
-        "$modifier SHIFT,N, Notification Reset, exec, swaync-client -rs"
+        # "$modifier SHIFT,N, Notification Reset, exec, swaync-client -rs"
         "$modifier,W, Web Browser, exec, ${browser}"
         "$modifier,Y, File Manager, exec, kitty -e yazi"
         "$modifier,E, Emoji Picker, exec, emopicker9000"

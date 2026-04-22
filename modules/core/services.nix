@@ -1,11 +1,24 @@
 {profile, ...}: {
+  zramSwap.enable = true;
   # Services to start
   services = {
     upower.enable = true; # noctalia shell battery
     libinput.enable = true; # Input Handling
     fstrim.enable = true; # SSD Optimizer
     gvfs.enable = true; # For Mounting USB & More
-    power-profiles-daemon.enable = true;
+    power-profiles-daemon.enable = false;
+    tlp.enable = false;
+    auto-cpufreq.enable = true;
+    auto-cpufreq.settings = {
+      battery = {
+        governor = "powersave";
+        turbo = "never";
+      };
+      charger = {
+        governor = "performance";
+        turbo = "auto";
+      };
+    };
     openssh = {
       enable = true; # Enable SSH
       settings = {

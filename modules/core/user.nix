@@ -12,7 +12,7 @@ in {
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = false;
-    backupFileExtension = "backup";
+    backupFileExtension = "backup_hardware_fix";
     extraSpecialArgs = {inherit inputs username host profile pkgs;};
     users.${username} = {
       imports = [./../home];

@@ -1,7 +1,16 @@
-{config, ...}: {
-  home.file."${config.xdg.configHome}/swaync/images/catppuccin-macchiato.png".source =
-    ./swaync/images/catppuccin-macchiato.png;
-  services.swaync = {
+{config, host, lib, ...}: 
+let
+  vars = import ../../hosts/${host}/variables.nix;
+  inherit (vars) barChoice;
+  enabled = ! (barChoice == "noctalia" || barChoice == "caelestia" || barChoice == "dms");
+in
+{
+  home.file = lib.mkIf enabled {
+    "${config.xdg.configHome}/swaync/images/catppuccin-macchiato.png".source =
+      ./swaync/images/catppuccin-macchiato.png;
+  };
+
+  services.swaync = lib.mkIf enabled {
     enable = true;
     settings = {
       positionX = "right";

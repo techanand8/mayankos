@@ -34,6 +34,10 @@ in {
         { command = [ "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" "QT_QPA_PLATFORMTHEME" ]; }
       ] ++ (if barChoice == "noctalia" then [
         { command = [ "noctalia-shell" ]; }
+      ] else if barChoice == "caelestia" then [
+        { command = [ "caelestia-shell" ]; }
+      ] else if barChoice == "dms" then [
+        { command = [ "dms-shell" ]; }
       ] else [
         { command = [ "waybar" ]; }
         { command = [ "swaync" ]; }
@@ -171,7 +175,7 @@ in {
           
           "XF86MonBrightnessUp" = { action.spawn = [ "noctalia-shell" "ipc" "call" "brightness" "increase" ]; allow-when-locked = true; };
           "XF86MonBrightnessDown" = { action.spawn = [ "noctalia-shell" "ipc" "call" "brightness" "decrease" ]; allow-when-locked = true; };
-        } else {
+        } else ({
           "Mod+Space".action.spawn = [ "rofi-launcher" ];
           "Mod+D".action.spawn = [ "rofi-launcher" ];
           "Mod+Shift+Q".action.spawn = [ "qs-wlogout" ];
@@ -179,7 +183,6 @@ in {
           "Mod+V".action.spawn = [ "sh" "-c" "cliphist list | rofi -dmenu | cliphist decode | wl-copy" ];
           "Mod+Y".action.spawn = [ "qs-wallpapers-apply" ];
           "Mod+Shift+Y".action.spawn = [ "qs-wallpapers-apply" ];
-          "Mod+M".action.spawn = [ "swaync-client" "-t" "-sw" ];
 
           "XF86AudioRaiseVolume" = { action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+" ]; allow-when-locked = true; };
           "XF86AudioLowerVolume" = { action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-" ]; allow-when-locked = true; };
@@ -188,7 +191,9 @@ in {
           
           "XF86MonBrightnessUp" = { action.spawn = [ "brightnessctl" "set" "+5%" ]; allow-when-locked = true; };
           "XF86MonBrightnessDown" = { action.spawn = [ "brightnessctl" "set" "5%-" ]; allow-when-locked = true; };
-        };
+        } // (if ! (barChoice == "noctalia" || barChoice == "caelestia" || barChoice == "dms") then {
+          "Mod+M".action.spawn = [ "swaync-client" "-t" "-sw" ];
+        } else {}));
       in noctaliaBinds // {
         # --- Applications ---
         "Mod+Return".action.spawn = [ "${terminal}" ];

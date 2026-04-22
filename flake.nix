@@ -55,6 +55,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri.url = "github:sodiboo/niri-flake";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = {
@@ -68,6 +69,7 @@
     caelestia,
     dms,
     niri,
+    nixos-hardware,
     ...
   } @ inputs: let
     system = "x86_64-linux";
