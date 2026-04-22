@@ -4,10 +4,31 @@
 
 ## MayankOS 🟰 Best ❄️ NixOS Configs
 
-\*\* Updated: January 16th, 2026
+\*\* Updated: April 22nd, 2026
 
-MayankOS is a simple way of reproducing my configuration on any NixOS system.
-This includes the wallpaper, scripts, applications, config files, and more.
+MayankOS is a powerful and elegant way of reproducing my NixOS configuration on any system. Built with the flexibility and inspiration of the **ZaneyOS** project, it provides a highly customized environment including wallpapers, scripts, applications, and optimized hardware support.
+
+## 🚀 New Features & Hardware Support (v2.6.1)
+
+This version brings significant optimizations and support for modern hardware:
+
+### 💻 MSI Modern 14 C7M & AMD 7000 Series
+- **Optimized AMD 7530U Performance**: Fully utilizes `amd-pstate-epp` and `auto-cpufreq` for a perfect balance between power and battery life.
+- **Battery Health Management**: Native support for **MSI Battery Thresholds** via `msi-ec`, protecting your battery by limiting charging to 80% when plugged in.
+- **Advanced Power Scaling**: Automatic switching between `performance` and `powersave` modes based on power state.
+- **Next-Gen Graphics**: Full `amdgpu` support with VA-API hardware acceleration, ROCm, and Vulkan tools pre-configured.
+
+### 🎨 Diverse Shell Experiences
+Choose your preferred desktop experience by setting `barChoice` in `variables.nix`:
+- **Noctalia**: A modern, feature-rich shell with integrated system controls.
+- **Caelestia**: An elegant and lightweight alternative.
+- **DMS (DankMaterialShell)**: A material-design inspired shell for a sleek, modern look.
+- **Waybar**: The classic, highly customizable status bar.
+
+### 🔧 System Enhancements
+- **Latest Linux Kernel**: Now running on the **7.x kernel** line for the best hardware compatibility.
+- **Enhanced Niri Support**: Full integration for the Niri scrollable-tiling compositor.
+- **Improved Virtualization**: Optimized support for VMware and other virtualization platforms.
 
 ## Important Note on Noctalia
 
@@ -42,6 +63,10 @@ This includes the wallpaper, scripts, applications, config files, and more.
 <img align="center" width="80%" src="img/MayankOS-keybind-search.png" />
 
 <img align="center" width="80%" src="img/MayankOS-nivim-emacs.png" />
+
+### Hardware Support (MSI Modern 14 C7M)
+
+<img align="center" width="80%" src="img/MayankOS-MSI-Modern14.png" />
 
 </details>
 

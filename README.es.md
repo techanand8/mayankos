@@ -4,10 +4,31 @@
 
 ## MayankOS 🟰 Mejores Configs ❄️ NixOS
 
-\*\* Actualizado: 16 de enero de 2026
+\*\* Actualizado: 22 de abril de 2026
 
-MayankOS es una forma sencilla de reproducir mi configuración en cualquier sistema NixOS.
-Incluye el fondo de pantalla, scripts, aplicaciones, archivos de configuración y más.
+MayankOS es una forma potente y elegante de reproducir mi configuración de NixOS en cualquier sistema. Construido con la flexibilidad e inspiración del proyecto **ZaneyOS**, proporciona un entorno altamente personalizado que incluye fondos de pantalla, scripts, aplicaciones y un soporte de hardware optimizado.
+
+## 🚀 Nuevas características y soporte de hardware (v2.6.1)
+
+Esta versión trae optimizaciones significativas y soporte para hardware moderno:
+
+### 💻 MSI Modern 14 C7M y serie AMD 7000
+- **Rendimiento optimizado para AMD 7530U**: Utiliza plenamente `amd-pstate-epp` y `auto-cpufreq` para un equilibrio perfecto entre potencia y duración de batería.
+- **Gestión de salud de la batería**: Soporte nativo para **umbrales de batería MSI** a través de `msi-ec`, protegiendo tu batería al limitar la carga al 80% cuando está enchufado.
+- **Escalado de energía avanzado**: Cambio automático entre los modos `performance` (rendimiento) y `powersave` (ahorro de energía) según el estado de la alimentación.
+- **Gráficos de nueva generación**: Soporte completo de `amdgpu` con aceleración por hardware VA-API, ROCm y herramientas Vulkan preconfiguradas.
+
+### 🎨 Experiencias de Shell diversas
+Elige tu experiencia de escritorio preferida configurando `barChoice` en `variables.nix`:
+- **Noctalia**: Un shell moderno y rico en funciones con controles de sistema integrados.
+- **Caelestia**: Una alternativa elegante y ligera.
+- **DMS (DankMaterialShell)**: Un shell inspirado en Material Design para un aspecto elegante y moderno.
+- **Waybar**: La clásica barra de estado altamente personalizable.
+
+### 🔧 Mejoras del sistema
+- **Último Kernel de Linux**: Ahora funcionando en la línea del **kernel 7.x** para la mejor compatibilidad de hardware.
+- **Soporte mejorado para Niri**: Integración completa para el compositor de mosaico desplazable Niri.
+- **Virtualización mejorada**: Soporte optimizado para VMware y otras plataformas de virtualización.
 
 <img align="center" width="80%" src="img/MayankOS-Floating.png" />
 
@@ -37,6 +58,10 @@ Incluye el fondo de pantalla, scripts, aplicaciones, archivos de configuración 
 <img align="center" width="80%" src="img/MayankOS-keybind-search.png" />
 
 <img align="center" width="80%" src="img/MayankOS-nivim-emacs.png" />
+
+### Soporte de Hardware (MSI Modern 14 C7M)
+
+<img align="center" width="80%" src="img/MayankOS-MSI-Modern14.png" />
 
 </details>
 
