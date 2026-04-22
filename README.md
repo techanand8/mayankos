@@ -32,6 +32,19 @@ Choose your preferred desktop experience by setting `barChoice` in `variables.ni
 - **Enhanced Niri Support**: Full integration for the Niri scrollable-tiling compositor.
 - **Improved Virtualization**: Optimized support for VMware and other virtualization platforms.
 
+## 🤝 Relationship with ZaneyOS
+
+MayankOS is a proud descendant of the legendary [ZaneyOS](https://gitlab.com/Zaney/zaneyos.git) project. While it shares the same spirit of making NixOS accessible and beautiful, MayankOS has evolved into a distinct distribution with its own focus:
+
+### 🌟 What makes MayankOS different?
+- **Modern Hardware Focus**: Unlike the more general approach of ZaneyOS, MayankOS includes deep optimizations for the latest **AMD Ryzen 7000 series** and **MSI laptops** (including battery health management).
+- **Expanded Shell Ecosystem**: We have moved beyond just Waybar to include full support for **Noctalia**, **Caelestia**, and **DMS**, giving you more choices for your desktop workflow.
+- **Latest Kernel Strategy**: We prioritize the `linuxPackages_latest` (7.x+) to ensure the newest hardware features work immediately.
+- **Niri Integration**: We have added first-class support for the **Niri scrollable-tiling compositor**, a unique workflow not found in the original ZaneyOS.
+- **Enhanced Internationalization**: Support for 13+ languages to bring the NixOS experience to a global audience.
+
+If you are looking for the original inspiration, please visit the [Official ZaneyOS GitLab](https://gitlab.com/Zaney/zaneyos.git). MayankOS takes that incredible foundation and pushes it further for users who need cutting-edge hardware support and a more diverse range of desktop shells.
+
 ## Important Note on Noctalia
 
 > The first time you login, screen will be blank SUPER + SHIFT + C to exit.
