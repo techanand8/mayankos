@@ -1,16 +1,16 @@
 {config, host, lib, ...}: 
 let
   vars = import ../../hosts/${host}/variables.nix;
-  inherit (vars) barChoice;
-  enabled = ! (barChoice == "noctalia" || barChoice == "caelestia" || barChoice == "dms");
+  barChoice = vars.barChoice or "waybar";
+  isNoctaliaLike = (barChoice == "noctalia" || barChoice == "caelestia" || barChoice == "dms");
 in
 {
-  home.file = lib.mkIf enabled {
+  home.file = lib.mkIf (!isNoctaliaLike) {
     "${config.xdg.configHome}/swaync/images/catppuccin-macchiato.png".source =
       ./swaync/images/catppuccin-macchiato.png;
   };
 
-  services.swaync = lib.mkIf enabled {
+  services.swaync = lib.mkIf (!isNoctaliaLike) {
     enable = true;
     settings = {
       positionX = "right";
