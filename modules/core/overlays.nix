@@ -10,7 +10,7 @@
         pname = "morty";
         version = "0.6.0";
         src = inputs.morty;
-        cargoHash = "sha256-6nNWNVwZ6hYiBtjJf5dU2dUn81kdzf+xeaLyJXbPeB0="; 
+        cargoHash = "sha256-cr6L0whgiSJtMi5UYN0QLHfMK3mYWPzCg5RqfmsIGDY="; 
         doCheck = false;
       };
     })
