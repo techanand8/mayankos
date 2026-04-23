@@ -62,6 +62,8 @@ MayankOS प्रसिद्ध [ZaneyOS](https://gitlab.com/Zaney/zaneyos.git
   - **LSPs और टूलकिट्स**: `sv-lang`, `vhdl-ls`, `verible`, `veridian`, `svls`, `pyverilog`, `verilogae`, `volare`|
   - **PDKs**: `volare` के माध्यम से **SkyWater 130** और **GF180MCU** के लिए पूर्ण समर्थन।
   - **PCB और योजनाबद्ध डिज़ाइन**: `kicad`, `ngspice`, `xyce`, `doxygen`|
+- **FPGA प्रोटोटाइपिंग:** `nextpnr` और `openfpgaloader` का उपयोग करके अपने डिज़ाइन को Lattice iCE40 या ECP5 जैसे हार्डवेयर पर फ्लैश करें।
+- **एम्बेडेड सॉफ़्टवेयर:** अंतर्निहित (built-in) RISC-V और ARM टूलचेन के साथ अपने कस्टम सिलिकॉन के लिए फ़र्मवेयर विकसित करें।
 - **कस्टमाइज़ कैसे करें**: यदि आपको इन टूल्स की आवश्यकता नहीं है, तो आप अपना `nixos-rebuild` चलाने से पहले `modules/core/packages.nix` में `# --- VLSI & Hardware Engineering ---` ब्लॉक को कमेंट आउट या हटा सकते हैं।
 - **उन्नत EDA (Advanced EDA)**: **OpenLane** या उन्नत DFT सुइट्स जैसे टूल के लिए जो अभी तक मानक Nixpkgs में नहीं हैं, हम PDK संगतता सुनिश्चित करने के लिए [nix-eda](https://github.com/nix-eda/nix-eda) ओवरले या डॉकर (Docker) कंटेनर का उपयोग करने की सलाह देते हैं।
 - **भविष्य के लिए तैयार**: यह तो बस शुरुआत है; इसे हार्डवेयर डिजाइनरों के लिए अंतिम मंच बनाने के लिए भविष्य के अपडेट के लिए और अधिक विशिष्ट VLSI और EDA टूल (जिसमें बिल्ट-इन OpenLane v2 सपोर्ट शामिल है) की योजना बनाई गई है।

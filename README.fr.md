@@ -63,6 +63,8 @@ Ce système est spécifiquement conçu pour être une station de travail profess
   - **LSPs & Toolkits** : `sv-lang`, `vhdl-ls`, `verible`, `veridian`, `svls`, `pyverilog`, `verilogae`, `volare`.
   - **PDKs** : Support complet pour **SkyWater 130** et **GF180MCU** via `volare`.
   - **Conception de PCB & schémas** : `kicad`, `ngspice`, `xyce`, `doxygen`.
+- **FPGA Prototyping:** Flash your designs to real hardware like Lattice iCE40 or ECP5 using `nextpnr` and `openfpgaloader`.
+- **Embedded Software:** Develop firmware for your custom silicon with built-in RISC-V and ARM toolchains (`gcc-arm-embedded`, `spike`, `qemu`).
 - **Comment personnaliser** : Si vous n'avez PAS besoin de ces outils, vous pouvez simplement commenter ou supprimer le bloc `# --- VLSI & Hardware Engineering ---` dans `modules/core/packages.nix` avant de lancer votre `nixos-rebuild`.
 - **Advanced EDA**: For tools like **OpenLane** or advanced DFT suites not yet in standard Nixpkgs, we recommend using the [nix-eda](https://github.com/nix-eda/nix-eda) overlay or Docker containers to ensure PDK compatibility.
 - **Prêt pour l'avenir** : Ce n'est que le début ; d'autres outils VLSI et EDA plus spécialisés (including built-in OpenLane v2 support) sont prévus pour les prochaines mises à jour afin de faire de MayankOS la plateforme ultime pour les concepteurs de matériel.
@@ -398,7 +400,7 @@ This environment is built to be a powerhouse for hardware engineering. You don't
 
 ### 🛠️ Advanced EDA & nix-eda
 We have already integrated **nix-eda** and specialized flakes (like **LibreLane**) directly into the system. This means you have access to tools that are usually hard to install on standard Linux.
-- To explore more OSD (Open Source Design) tools, you can use the `nix-shell -p` command with `inputs.nix-eda.packages.${pkgs.system}.<package-name>` or simply check our pre-configured `packages.nix`.
+- To explore more OSD (Open Source Design) tools, you can use the `nix-shell -p` command with `inputs.nix-eda.packages.${pkgs.stdenv.hostPlatform.system}.<package-name>` or simply check our pre-configured `packages.nix`.
 
 ### ⌨️ Keybindings & Desktop Management
 MayankOS offers three world-class environments. Use **Mod (Super/Windows key)** for most shortcuts:

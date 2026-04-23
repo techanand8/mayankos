@@ -438,7 +438,7 @@ This environment is built to be a powerhouse for hardware engineering. You don't
 
 ### 🛠️ Advanced EDA & nix-eda
 We have already integrated **nix-eda** and specialized flakes (like **LibreLane**) directly into the system. This means you have access to tools that are usually hard to install on standard Linux.
-- To explore more OSD (Open Source Design) tools, you can use the `nix-shell -p` command with `inputs.nix-eda.packages.${pkgs.system}.<package-name>` or simply check our pre-configured `packages.nix`.
+- To explore more OSD (Open Source Design) tools, you can use the `nix-shell -p` command with `inputs.nix-eda.packages.${pkgs.stdenv.hostPlatform.system}.<package-name>` or simply check our pre-configured `packages.nix`.
 
 ### ⌨️ Keybindings & Desktop Management
 MayankOS offers three world-class environments. Use **Mod (Super/Windows key)** for most shortcuts:

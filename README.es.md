@@ -64,6 +64,8 @@ Este sistema está diseñado específicamente para ser una estación de trabajo 
   - **PDKs**: Soporte completo para **SkyWater 130** and **GF180MCU** a través de `volare`.
   - **DV y Co-simulación**: `renode`, `cocotb`, `PyVSC`, `VUnit`.
   - **Diseño de PCB y esquemas**: `kicad`, `ngspice`, `xyce`, `doxygen`.
+- **Prototipado FPGA:** Flashee sus diseños en hardware real como Lattice iCE40 o ECP5 usando `nextpnr` y `openfpgaloader`.
+- **Software Embebido:** Desarrolle firmware para su silicio personalizado con cadenas de herramientas RISC-V y ARM integradas.
 - **Cómo personalizar**: Si NO necesitas estas herramientas, simplemente puedes comentar o eliminar el bloque `# --- VLSI & Hardware Engineering ---` en `modules/core/packages.nix` antes de ejecutar tu `nixos-rebuild`.
 - **EDA Avanzado**: Para herramientas como **LibreLane** (sucesor de OpenLane) o suites de DFT avanzadas que aún no están en Nixpkgs estándar, recomendamos usar sus respectivos flakes o el overlay [nix-eda](https://github.com/nix-eda/nix-eda).
 - **Listo para el futuro**: Esto es solo el comienzo; se planean más herramientas especializadas de VLSI y EDA (incluyendo soporte integrado para LibreLane) para futuras actualizaciones para hacer de esta la plataforma definitiva para los diseñadores de hardware.
