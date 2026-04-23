@@ -138,6 +138,7 @@ in {
       lua-language-server
       svls
       sv-lang # SystemVerilog compiler and linter
+      slang # SV compiler/frontend
       surelog # SystemVerilog pre-processor, parser, elaborator
       veridian # SystemVerilog Language Server
       svlint # SystemVerilog linter
@@ -151,6 +152,7 @@ in {
       nvc # nVHDL compiler/simulator
       iverilog # Verilog simulation
       verilator # Fast cycle-accurate Verilog simulator
+      morty # SystemVerilog pickler
       aiger # AIGER utility library for formal verification
       gtkwave # Waveform viewer
       surfer # Modern waveform viewer

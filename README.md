@@ -56,7 +56,7 @@ MayankOS offers two primary ways to get started:
 This system is specifically designed to be a high-performance, professional workstation for **VLSI and Hardware Engineering**. 
 
 - **Why it's perfect**: It comes pre-configured with a comprehensive suite of tools for:
-  - **HDL Simulation**: `ghdl`, `nvc`, `iverilog`, `verilator`, `gtkwave`, `surfer`, `fusesoc`, `surelog`.
+  - **HDL Simulation**: `ghdl`, `nvc`, `iverilog`, `verilator`, `slang`, `morty`, `gtkwave`, `surfer`, `fusesoc`, `surelog`.
   - **Synthesis & Physical Design**: `yosys`, `magic-vlsi`, `netgen`, `klayout`, `openroad`, `xschem`, `gdsfactory`. (LibreLane/OpenLane ready)
   - **FPGA & Embedded Development**: `nextpnr`, `icestorm`, `openfpgaloader`, `openocd`, `flashrom`, `dfu-util`, `qemu`.
   - **LSPs & Toolkits**: `sv-lang`, `vhdl-ls`, `verible`, `veridian`, `svls`, `pyverilog`, `verilogae`, `volare`.

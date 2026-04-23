@@ -55,6 +55,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri.url = "github:sodiboo/niri-flake";
+    morty = {
+      url = "github:pulp-platform/morty";
+      flake = false;
+    };
     librelane.url = "github:librelane/librelane";
     openlane.url = "github:efabless/openlane2";
     volare.url = "github:efabless/volare";

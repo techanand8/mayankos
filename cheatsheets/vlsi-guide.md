@@ -18,6 +18,8 @@ openlane --smoke-test
     *   `iverilog`: Fast, standard Verilog simulator.
     *   `verilator`: High-performance, cycle-accurate.
     *   `ghdl` / `nvc`: Professional VHDL simulators.
+    *   `slang` / `sv-lang`: World-class SystemVerilog compilers and linters (Slang is exceptionally strict and ideal for "Deep Work").
+    *   `morty`: SystemVerilog "pickler" that flattens huge multi-file designs for verification.
 *   **Verification & Formal**:
     *   `cocotb`: Modern Python-based testbenches.
     *   `sby` (SymbiYosys): Front-end for formal verification.

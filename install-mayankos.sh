@@ -404,7 +404,7 @@ echo "  profile: $profile"
 # Create backup first, before any changes
 cp ./flake.nix ./flake.nix.bak
 # Use sed for hostname (more reliable)
-sed -i 's|^[[:space:]]*host[[:space:]]*=[[:space:]]*"[^"]*"|    host = "'$hostName'"|' ./flake.nix.bak
+sed -i 's|^[[:space:]]*host[[:space:]]*=[[:space:]]*"[^"]*";|    host = "'$hostName'";|' ./flake.nix.bak
 # Use sed for profile (handles variable indentation)
 sed -i 's|^[[:space:]]*profile[[:space:]]*=[[:space:]]*"[^"]*";|    profile = "'$profile'";|' ./flake.nix.bak
 # Use sed for username (handles variable indentation)
@@ -414,10 +414,10 @@ grep -E "(host|profile|username) =" ./flake.nix.bak
 cp ./flake.nix.bak ./flake.nix
 rm ./flake.nix.bak
 
-# Update timezone in system.nix
-cp ./modules/core/system.nix ./modules/core/system.nix.bak
-awk -v newtz="$timezone" '/^  time\.timeZone = / { sub(/"[^"]*"/, "\"" newtz "\""); } { print }' ./modules/core/system.nix.bak >./modules/core/system.nix
-rm ./modules/core/system.nix.bak
+# Update timezone in network.nix
+cp ./modules/core/network.nix ./modules/core/network.nix.bak
+awk -v newtz="$timezone" '/^  time\.timeZone = / { sub(/"[^"]*"/, "\"" newtz "\""); } { print }' ./modules/core/network.nix.bak >./modules/core/network.nix
+rm ./modules/core/network.nix.bak
 
 # Update variables in host file (do all keys in one pass to avoid quoting issues)
 cp ./hosts/$hostName/variables.nix ./hosts/$hostName/variables.nix.bak
