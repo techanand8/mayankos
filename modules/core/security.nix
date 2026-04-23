@@ -6,8 +6,9 @@
     auditd.enable = true;
     audit.enable = true;
 
-    # Sudo Hardening
-    sudo = {
+    # Sudo Hardening (Rust implementation - sudo-rs)
+    sudo.enable = false;
+    sudo-rs = {
       enable = true;
       wheelNeedsPassword = true; # CRITICAL: Require password for root access
       execWheelOnly = true;      # Only users in wheel can use sudo
