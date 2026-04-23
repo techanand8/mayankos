@@ -421,8 +421,23 @@ By default, **KDE Plasma**, **Hyprland**, and **Niri** are all enabled for your 
 - **Hyprland:** In `modules/core/packages.nix`, set `programs.hyprland.enable = false;`.
 - **Niri:** In `hosts/<your-host>/variables.nix`, set `niriEnable = false;`.
 
-### 📘 Humble Installation & Learning
-*We sincerely apologize for any previous mistakes or repetitive language. We respect the community and aim only to provide a helpful tool.*
+### 📘 Humble Installation & Apprentissage
+*Nous nous excusons sincèrement pour toutes les erreurs précédentes ou le langage répétitif. Nous respectons la communauté et visons uniquement à fournir un outil utile.*
 
-1. **Install:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos` then `./install-mayankos.sh`.
-2. **Rebuild:** Any time you change a setting, run `mcli rebuild` or `sudo nixos-rebuild boot --flake ~/mayankos/#<profile>`.
+1. **Installer :** `git clone https://github.com/techanand8/mayankos.git ~/mayankos` puis `./install-mayankos.sh`.
+
+⚠️ Une chose importante à retenir :
+Lorsque vous exécutez le script pour la première fois sur une nouvelle installation NixOS, vous devez vous assurer que git et pciutils sont disponibles. S'ils ne le sont pas, le script vous le dira, mais vous pouvez les obtenir rapidement en exécutant :
+
+```bash
+nix-shell -p git pciutils
+```
+Exécutez ensuite l'installateur :
+
+```bash
+sh ./install-mayankos.sh
+```
+
+Verdict : Le script est solide. Il correspond exactement à la structure de votre dépôt et gère automatiquement les "parties difficiles" (comme la mise à jour de flake.nix et variables.nix). Vous êtes en sécurité ! 🚀
+
+2. **Reconstruire :** Chaque fois que vous modifiez un paramètre, exécutez `mcli rebuild` ou `sudo nixos-rebuild boot --flake ~/mayankos/#<profile>`.

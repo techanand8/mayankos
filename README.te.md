@@ -347,6 +347,20 @@ cd && git clone https://github.com/techanand8/mayankos.git ~/mayankos
 cd ~/mayankos
 ```
 
+⚠️ గుర్తుంచుకోవలసిన ఒక ముఖ్యమైన విషయం:
+కొత్త NixOS ఇన్‌స్టాలేషన్‌లో మీరు మొదటిసారి స్క్రిప్ట్‌ను రన్ చేసినప్పుడు, git మరియు pciutils అందుబాటులో ఉన్నాయని నిర్ధారించుకోవాలి. అవి లేకపోతే, స్క్రిప్ట్ మీకు చెబుతుంది, కానీ దీన్ని రన్ చేయడం ద్వారా మీరు వాటిని త్వరగా పొందవచ్చు:
+
+```bash
+nix-shell -p git pciutils
+```
+తర్వాత ఇన్‌స్టాలర్‌ను రన్ చేయండి:
+
+```bash
+sh ./install-mayankos.sh
+```
+
+తీర్పు: స్క్రిప్ట్ చాలా పటిష్టంగా ఉంది. ఇది మీ రిపోజిటరీ యొక్క ఖచ్చితమైన నిర్మాణంతో సరిపోలుతుంది మరియు "కష్టమైన పనులను" (flake.nix మరియు variables.nix అప్‌డేట్ చేయడం వంటివి) ఆటోమేటిక్‌గా చేస్తుంది. మీరు నిశ్చింతగా ముందుకు వెళ్లవచ్చు! 🚀
+
 3. మీ మెషీన్(ల) కోసం హోస్ట్ ఫోల్డర్‌ను ఇలా సృష్టించండి:
 
 ```bash
@@ -423,5 +437,19 @@ By default, **KDE Plasma**, **Hyprland**, and **Niri** are all enabled for your 
 ### 📘 Humble Installation & Learning
 *We sincerely apologize for any previous mistakes or repetitive language. We respect the community and aim only to provide a helpful tool.*
 
-1. **Install:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos` then `./install-mayankos.sh`.
+1. **Install:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos`
+
+⚠️ గుర్తుంచుకోవలసిన ఒక ముఖ్యమైన విషయం:
+కొత్త NixOS ఇన్‌స్టాలేషన్‌లో మీరు మొదటిసారి స్క్రిప్ట్‌ను రన్ చేసినప్పుడు, git మరియు pciutils అందుబాటులో ఉన్నాయని నిర్ధారించుకోవాలి. అవి లేకపోతే, స్క్రిప్ట్ మీకు చెబుతుంది, కానీ దీన్ని రన్ చేయడం ద్వారా మీరు వాటిని త్వరగా పొందవచ్చు:
+
+```bash
+nix-shell -p git pciutils
+```
+తర్వాత ఇన్‌స్టాలర్‌ను రన్ చేయండి:
+
+```bash
+sh ./install-mayankos.sh
+```
+
+తీర్పు: స్క్రిప్ట్ చాలా పటిష్టంగా ఉంది. ఇది మీ రిపోజిటరీ యొక్క ఖచ్చితమైన నిర్మాణంతో సరిపోలుతుంది మరియు "కష్టమైన పనులను" (flake.nix మరియు variables.nix అప్‌డేట్ చేయడం వంటివి) ఆటోమేటిక్‌గా చేస్తుంది. మీరు నిశ్చింతగా ముందుకు వెళ్లవచ్చు! 🚀
 2. **Rebuild:** Any time you change a setting, run `mcli rebuild` or `sudo nixos-rebuild boot --flake ~/mayankos/#<profile>`.

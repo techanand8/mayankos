@@ -347,6 +347,20 @@ cd && git clone https://github.com/techanand8/mayankos.git ~/mayankos
 cd ~/mayankos
 ```
 
+⚠️ एकं महत्त्वपूर्णं तथ्यं स्मर्तव्यम्:
+यदा भवान् नूतने NixOS संस्थापने प्रथमवारं एतां लिपिं (script) चालयति, तदा git तथा pciutils उपलभ्येते इति सुनिश्चितं करणीयम्। यदि ते न सन्ति, तर्हि लिपिः भवन्तं कथयिष्यति, किन्तु भवान् एतस्य चालनेन शीघ्रं प्राप्तुं शक्नोति:
+
+```bash
+nix-shell -p git pciutils
+```
+ततः संस्थापनं (installer) चालयतु:
+
+```bash
+sh ./install-mayankos.sh
+```
+
+निर्णयः: एषा लिपिः सुदृढा अस्ति। एषा भवतः कोशस्य (repository) सटीक-संरचनया सह मिलति तथा च "कठिन-भागान्" (यथा flake.nix तथा variables.nix अद्यतनीकरणम्) स्वयमेव करोति। भवान् सुरक्षितः अस्ति! 🚀
+
 ३. स्वयन्त्रस्य कृते होस्ट-पुटं (host folder) एवं निर्मार्तु:
 
 ```bash
@@ -423,5 +437,19 @@ By default, **KDE Plasma**, **Hyprland**, and **Niri** are all enabled for your 
 ### 📘 Humble Installation & Learning
 *We sincerely apologize for any previous mistakes or repetitive language. We respect the community and aim only to provide a helpful tool.*
 
-1. **Install:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos` then `./install-mayankos.sh`.
+1. **Install:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos`
+
+⚠️ एकं महत्त्वपूर्णं तथ्यं स्मर्तव्यम्:
+यदा भवान् नूतने NixOS संस्थापने प्रथमवारं एतां लिपिं (script) चालयति, तदा git तथा pciutils उपलभ्येते इति सुनिश्चितं करणीयम्। यदि ते न सन्ति, तर्हि लिपिः भवन्तं कथयिष्यति, किन्तु भवान् एतस्य चालनेन शीघ्रं प्राप्तुं शक्नोति:
+
+```bash
+nix-shell -p git pciutils
+```
+ततः संस्थापनं (installer) चालयतु:
+
+```bash
+sh ./install-mayankos.sh
+```
+
+निर्णयः: एषा लिपिः सुदृढा अस्ति। एषा भवतः कोशस्य (repository) सटीक-संरचनया सह मिलति तथा च "कठिन-भागान्" (यथा flake.nix तथा variables.nix अद्यतनीकरणम्) स्वयमेव करोति। भवान् सुरक्षितः अस्ति! 🚀
 2. **Rebuild:** Any time you change a setting, run `mcli rebuild` or `sudo nixos-rebuild boot --flake ~/mayankos/#<profile>`.

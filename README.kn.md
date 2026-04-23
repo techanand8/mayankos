@@ -347,6 +347,20 @@ cd && git clone https://github.com/techanand8/mayankos.git ~/mayankos
 cd ~/mayankos
 ```
 
+⚠️ ನೆನಪಿಟ್ಟುಕೊಳ್ಳಬೇಕಾದ ಒಂದು ಪ್ರಮುಖ ವಿಷಯ:
+ಹೊಸ NixOS ಸ್ಥಾಪನೆಯಲ್ಲಿ ನೀವು ಮೊದಲ ಬಾರಿಗೆ ಸ್ಕ್ರಿಪ್ಟ್ ಅನ್ನು ಚಾಲನೆ ಮಾಡಿದಾಗ, git ಮತ್ತು pciutils ಲಭ್ಯವಿರುವುದನ್ನು ನೀವು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಬೇಕು. ಅವು ಇಲ್ಲದಿದ್ದರೆ, ಸ್ಕ್ರಿಪ್ಟ್ ನಿಮಗೆ ತಿಳಿಸುತ್ತದೆ, ಆದರೆ ಇದನ್ನು ಚಾಲನೆ ಮಾಡುವ ಮೂಲಕ ನೀವು ಅವುಗಳನ್ನು ತ್ವరిತವಾಗಿ ಪಡೆಯಬಹುದು:
+
+```bash
+nix-shell -p git pciutils
+```
+ನಂತರ ಇನ್‌ಸ್ಟಾಲರ್ ಅನ್ನು ರನ್ ಮಾಡಿ:
+
+```bash
+sh ./install-mayankos.sh
+```
+
+ತೀರ್ಪು: ಸ್ಕ್ರಿಪ್ಟ್ ದೃಢವಾಗಿದೆ. ಇದು ನಿಮ್ಮ ರೆಪೊಸಿಟರಿಯ ನಿಖರವಾದ ರಚನೆಗೆ ಹೊಂದಿಕೆಯಾಗುತ್ತದೆ ಮತ್ತು "ಕಷ್ಟದ ಭಾಗಗಳನ್ನು" (flake.nix ಮತ್ತು variables.nix ನವೀಕರಿಸುವಂತೆ) ಸ್ವయంచಾಲಿತವಾಗಿ ನಿರ್ವಹಿಸುತ್ತದೆ. ನೀವು ಸುರಕ್ಷಿತವಾಗಿ ಮುಂದುವರಿಯಬಹುದು! 🚀
+
 3. ನಿಮ್ಮ ಯಂತ್ರ(ಗಳ) ಗಾಗಿ ಹೋಸ್ಟ್ ಫೋಲ್ಡರ್ ಅನ್ನು ಈ ರೀತಿ ರಚಿಸಿ:
 
 ```bash
@@ -423,5 +437,19 @@ By default, **KDE Plasma**, **Hyprland**, and **Niri** are all enabled for your 
 ### 📘 Humble Installation & Learning
 *We sincerely apologize for any previous mistakes or repetitive language. We respect the community and aim only to provide a helpful tool.*
 
-1. **Install:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos` then `./install-mayankos.sh`.
+1. **Install:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos`
+
+⚠️ ನೆನಪಿಟ್ಟುಕೊಳ್ಳಬೇಕಾದ ಒಂದು ಪ್ರಮುಖ ವಿಷಯ:
+ಹೊಸ NixOS ಸ್ಥಾಪನೆಯಲ್ಲಿ ನೀವು ಮೊದಲ ಬಾರಿಗೆ ಸ್ಕ್ರಿಪ್ಟ್ ಅನ್ನು ಚಾಲನೆ ಮಾಡಿದಾಗ, git ಮತ್ತು pciutils ಲಭ್ಯವಿರುವುದನ್ನು ನೀವು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಬೇಕು. ಅವು ಇಲ್ಲದಿದ್ದರೆ, ಸ್ಕ್ರಿಪ್ಟ್ ನಿಮಗೆ ತಿಳಿಸುತ್ತದೆ, ಆದರೆ ಇದನ್ನು ಚಾಲನೆ ಮಾಡುವ ಮೂಲಕ ನೀವು ಅವುಗಳನ್ನು ತ್ವరిತವಾಗಿ ಪಡೆಯಬಹುದು:
+
+```bash
+nix-shell -p git pciutils
+```
+ನಂತರ ಇನ್‌ಸ್ಟಾಲರ್ ಅನ್ನು ರನ್ ಮಾಡಿ:
+
+```bash
+sh ./install-mayankos.sh
+```
+
+ತೀರ್ಪು: ಸ್ಕ್ರಿಪ್ಟ್ ದೃಢವಾಗಿದೆ. ಇದು ನಿಮ್ಮ ರೆಪೊಸಿಟರಿಯ ನಿಖರವಾದ ರಚನೆಗೆ ಹೊಂದಿಕೆಯಾಗುತ್ತದೆ ಮತ್ತು "ಕಷ್ಟದ ಭಾಗಗಳನ್ನು" (flake.nix ಮತ್ತು variables.nix ನವೀಕರಿಸುವಂತೆ) ಸ್ವಯంచಾಲಿತವಾಗಿ ನಿರ್ವಹಿಸುತ್ತದೆ. ನೀವು ಸುರಕ್ಷಿತವಾಗಿ ಮುಂದುವರಿಯಬಹುದು! 🚀
 2. **Rebuild:** Any time you change a setting, run `mcli rebuild` or `sudo nixos-rebuild boot --flake ~/mayankos/#<profile>`.

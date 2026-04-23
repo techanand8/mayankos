@@ -95,8 +95,23 @@ By default, **KDE Plasma**, **Hyprland**, and **Niri** are all enabled for your 
 - **Hyprland:** In `modules/core/packages.nix`, set `programs.hyprland.enable = false;`.
 - **Niri:** In `hosts/<your-host>/variables.nix`, set `niriEnable = false;`.
 
-### 📘 Humble Installation & Learning
-*We sincerely apologize for any previous mistakes or repetitive language. We respect the community and aim only to provide a helpful tool.*
+### 📘 التثبيت المتواضع والتعلم
+*نعتذر بصدق عن أي أخطاء سابقة أو لغة متكررة. نحن نحترم المجتمع ونهدف فقط إلى تقديم أداة مفيدة.*
 
-1. **Install:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos` then `./install-mayankos.sh`.
-2. **Rebuild:** Any time you change a setting, run `mcli rebuild` or `sudo nixos-rebuild boot --flake ~/mayankos/#<profile>`.
+1. **تثبيت:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos` ثم `./install-mayankos.sh`.
+
+⚠️ شيء واحد مهم يجب تذكره:
+عند تشغيل السكربت لأول مرة على تثبيت NixOS جديد، يجب عليك التأكد من توفر git و pciutils. إذا لم يكونوا متوفرين، فسيخبرك السكربت، ولكن يمكنك الحصول عليهم بسرعة عن طريق تشغيل:
+
+```bash
+nix-shell -p git pciutils
+```
+ثم قم بتشغيل برنامج التثبيت:
+
+```bash
+sh ./install-mayankos.sh
+```
+
+الحكم: السكربت متين. إنه يطابق الهيكل الدقيق لمستودعك ويتعامل مع "الأجزاء الصعبة" (مثل تحديث flake.nix و variables.nix) تلقائياً. أنت في أمان! 🚀
+
+2. **إعادة بناء:** في أي وقت تقوم فيه بتغيير إعداد ما، قم بتشغيل `mcli rebuild` أو `sudo nixos-rebuild boot --flake ~/mayankos/#<profile>`.

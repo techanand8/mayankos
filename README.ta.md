@@ -347,6 +347,20 @@ cd && git clone https://github.com/techanand8/mayankos.git ~/mayankos
 cd ~/mayankos
 ```
 
+⚠️ நினைவில் கொள்ள வேண்டிய ஒரு முக்கியமான விஷயம்:
+புதிய NixOS நிறுவலில் முதல்முறையாக ஸ்கிரிப்டை இயக்கும்போது, git மற்றும் pciutils கிடைப்பதை உறுதி செய்ய வேண்டும். அவை இல்லையென்றால், ஸ்கிரிப்ட் உங்களுக்குத் தெரிவிக்கும், ஆனால் இதைப் பயன்படுத்துவதன் மூலம் நீங்கள் அவற்றை விரைவாகப் பெறலாம்:
+
+```bash
+nix-shell -p git pciutils
+```
+பிறகு இன்ஸ்டாலரை இயக்கவும்:
+
+```bash
+sh ./install-mayankos.sh
+```
+
+தீர்ப்பு: ஸ்கிரிப்ட் உறுதியானது. இது உங்கள் களஞ்சியத்தின் (repository) சரியான அமைப்புடன் பொருந்துகிறது மற்றும் "கடினமான பகுதிகளை" (flake.nix மற்றும் variables.nix ஐப் புதுப்பிப்பது போன்றவை) தானாகவே கையாளுகிறது. நீங்கள் பாதுகாப்பாகத் தொடங்கலாம்! 🚀
+
 3. உங்கள் கணினிக்கான ஹோஸ்ட் கோப்புறையை இவ்வாறு உருவாக்கவும்:
 
 ```bash
@@ -423,5 +437,19 @@ By default, **KDE Plasma**, **Hyprland**, and **Niri** are all enabled for your 
 ### 📘 Humble Installation & Learning
 *We sincerely apologize for any previous mistakes or repetitive language. We respect the community and aim only to provide a helpful tool.*
 
-1. **Install:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos` then `./install-mayankos.sh`.
+1. **Install:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos`
+
+⚠️ நினைவில் கொள்ள வேண்டிய ஒரு முக்கியமான விஷயம்:
+புதிய NixOS நிறுவலில் முதல்முறையாக ஸ்கிரிப்டை இயக்கும்போது, git மற்றும் pciutils கிடைப்பதை உறுதி செய்ய வேண்டும். அவை இல்லையென்றால், ஸ்கிரிப்ட் உங்களுக்குத் தெரிவிக்கும், ஆனால் இதைப் பயன்படுத்துவதன் மூலம் நீங்கள் அவற்றை விரைவாகப் பெறலாம்:
+
+```bash
+nix-shell -p git pciutils
+```
+பிறகு இன்ஸ்டாலரை இயக்கவும்:
+
+```bash
+sh ./install-mayankos.sh
+```
+
+தீர்ப்பு: ஸ்கிரிப்ட் உறுதியானது. இது உங்கள் களஞ்சியத்தின் (repository) சரியான அமைப்புடன் பொருந்துகிறது மற்றும் "கடினமான பகுதிகளை" (flake.nix மற்றும் variables.nix ஐப் புதுப்பிப்பது போன்றவை) தானாகவே கையாளுகிறது. நீங்கள் பாதுகாப்பாகத் தொடங்கலாம்! 🚀
 2. **Rebuild:** Any time you change a setting, run `mcli rebuild` or `sudo nixos-rebuild boot --flake ~/mayankos/#<profile>`.

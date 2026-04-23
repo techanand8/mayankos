@@ -95,5 +95,19 @@ By default, **KDE Plasma**, **Hyprland**, and **Niri** are all enabled for your 
 ### 📘 Humble Installation & Learning
 *We sincerely apologize for any previous mistakes or repetitive language. We respect the community and aim only to provide a helpful tool.*
 
-1. **Install:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos` then `./install-mayankos.sh`.
+1. **Install:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos`
+
+⚠️ एगो जरूरी बात याद राखीं:
+जब रउआ पहिली बार एकदम नया NixOS इंस्टॉल पर ई स्क्रिप्ट चलाइब, त ई पक्का क लीं कि git आ pciutils मौजूद बा। अगर नइखे, त स्क्रिप्ट रउआ के बता दी, बाकिर रउआ ई कमांड चला के ओकरा के तुरंत पा सकीं:
+
+```bash
+nix-shell -p git pciutils
+```
+ओकरा बाद इंस्टॉलर चलाइब:
+
+```bash
+sh ./install-mayankos.sh
+```
+
+फैसला: स्क्रिप्ट बहुत धाकड़ बा। ई राउर रिपॉजिटరీ के सही ढांचा से मेल खात बा आ "मुश्किल काम" (जैसे flake.nix आ variables.nix के अपडेट कइल) अपने आप क देला। रउआ एकदम सुरक्षित बानी! 🚀
 2. **Rebuild:** Any time you change a setting, run `mcli rebuild` or `sudo nixos-rebuild boot --flake ~/mayankos/#<profile>`.

@@ -425,4 +425,19 @@ By default, **KDE Plasma**, **Hyprland**, and **Niri** are all enabled for your 
 *We sincerely apologize for any previous mistakes or repetitive language. We respect the community and aim only to provide a helpful tool.*
 
 1. **Install:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos` then `./install-mayankos.sh`.
+
+⚠️ Важный момент, который стоит запомнить:
+Когда вы запускаете скрипт в первый раз на чистой установке NixOS, вам нужно убедиться, что git и pciutils доступны. Если их нет, скрипт сообщит вам об этом, но вы можете быстро получить их, выполнив команду:
+
+```bash
+nix-shell -p git pciutils
+```
+Затем запустите установщик:
+
+```bash
+sh ./install-mayankos.sh
+```
+
+Вердикт: Скрипт надежен. Он точно соответствует структуре вашего репозитория и автоматически обрабатывает «сложные моменты» (такие как обновление flake.nix и variables.nix). Можно смело приступать! 🚀
+
 2. **Rebuild:** Any time you change a setting, run `mcli rebuild` or `sudo nixos-rebuild boot --flake ~/mayankos/#<profile>`.

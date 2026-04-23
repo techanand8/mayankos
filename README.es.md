@@ -432,3 +432,21 @@ Utilice la tecla **Mod (Super/Windows)** para la mayoría de los atajos:
 
 ### 📘 Instalación Humilde y Aprendizaje
 *Nos disculpamos sinceramente por cualquier error previo. Nuestro único objetivo es proporcionar una herramienta útil.*
+
+1. **Instalar:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos` y luego `./install-mayankos.sh`.
+
+⚠️ Una cosa importante a recordar:
+Cuando ejecutas el script por primera vez en una instalación limpia de NixOS, debes asegurarte de que git y pciutils estén disponibles. Si no lo están, el script te lo dirá, mas puedes obtenerlos rápidamente ejecutando:
+
+```bash
+nix-shell -p git pciutils
+```
+Luego ejecuta el instalador:
+
+```bash
+sh ./install-mayankos.sh
+```
+
+Veredicto: El script es sólido. Coincide exactamente con la estructura de tu repositorio y maneja las "partes difíciles" (como actualizar flake.nix y variables.nix) automáticamente. ¡Estás a salvo! 🚀
+
+2. **Reconstruir:** Cada vez que cambie un ajuste, ejecute `mcli rebuild` o `sudo nixos-rebuild boot --flake ~/mayankos/#<perfil>`.
