@@ -64,8 +64,6 @@ This system is specifically designed to be a high-performance, professional work
   - **DV & Co-Simulation**: `renode`, `cocotb`, `PyVSC`, `VUnit`.
   - **PCB & Schematic Design**: `kicad`, `ngspice`, `xyce`, `doxygen`.
 - **How to customize**: If you do NOT need these tools, you can simply comment out or remove the `# --- VLSI & Hardware Engineering ---` block in `modules/core/packages.nix` before running your `nixos-rebuild`.
-- **Advanced EDA**: For tools like **LibreLane** (successor to OpenLane) or advanced DFT suites not yet in standard Nixpkgs, we recommend using their respective flakes or the [nix-eda](https://github.com/nix-eda/nix-eda) overlay.
-- **Future Ready**: This is just the beginning; more specialized VLSI and EDA tools (including built-in LibreLane support) are planned for future updates to make this the ultimate platform for hardware designers.
 
 ### 📸 Hardware Engineering & VLSI Showcase
 
@@ -425,37 +423,44 @@ Thank you for all your assistance
 
 
 
-## 📘 How to Install, Use, and Learn
 
-*First and foremost, we sincerely apologize for any mistakes in this documentation or if anything felt repetitive or out of place. We respect all users and communities, and our only goal is to provide a humble, powerful environment for you to learn and build.*
 
-### 🛠️ Step-by-Step Installation
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/techanand8/mayankos.git ~/mayankos
-   cd ~/mayankos
-   ```
-2. **Run the Installer Script:**
-   ```bash
-   ./install-mayankos.sh
-   ```
-3. **Follow the Prompts:** The script will safely guide you to set your hostname, GPU profile, timezone, and keyboard layout. It automatically configures everything for you!
-4. **Reboot** once the `nixos-rebuild` finishes successfully.
+## ⚡ Professional VLSI & Hardware Capabilities
 
-### 🎓 What You Can Learn (Deep Work & DV)
-This environment is a goldmine for students and professionals:
-- **Advanced Design Verification (DV):** Master the art of testing and verifying complex chips using world-class tools like `slang`, `morty`, `cocotb`, and `Renode`.
-- **Silicon Design (RTL-to-GDSII):** Learn how physical chips are made by running complete flows using LibreLane and OpenROAD.
-- **NixOS Mastery:** Learn reproducible system administration and declarative configurations.
+This environment is built to be a powerhouse for hardware engineering. You don't just get tools; you get a complete, integrated workflow.
 
-### 🖥️ Managing Desktop Environments
-By default, **KDE Plasma**, **Hyprland**, and **Niri** are all enabled to give you choices. If you want to disable any of them to save space or resources:
-- **KDE Plasma:** Open `modules/core/xserver.nix` and change `services.desktopManager.plasma6.enable = true;` to `false`.
-- **Hyprland:** Open `modules/core/packages.nix` and change `programs.hyprland.enable = true;` to `false`.
-- **Niri:** Open `hosts/<your-host>/variables.nix` and change `niriEnable = true;` to `false` (and also in `packages.nix` if desired).
+### 🚀 What You Can Do
+- **SoC & CPU Design:** Design complex RISC-V or ARM-based SoCs from scratch.
+- **Advanced Verification (DV):** Use **slang**, **morty**, and **cocotb** to ensure your designs are bug-free with industrial-grade precision.
+- **Full RTL-to-GDSII:** Go from code to a physical chip layout using **LibreLane** and **OpenROAD** (already integrated via advanced flakes).
+- **Analog & Mixed-Signal:** Perform high-fidelity circuit simulations with **Ngspice** and **Xyce**, and design layouts with **Magic-VLSI**.
+- **PCB Engineering:** Create professional multi-layer PCBs with **KiCad**.
 
-After making changes, simply rebuild your system using:
-```bash
-sudo nixos-rebuild boot --flake ~/mayankos/#<your-profile>
-```
+### 🛠️ Advanced EDA & nix-eda
+We have already integrated **nix-eda** and specialized flakes (like **LibreLane**) directly into the system. This means you have access to tools that are usually hard to install on standard Linux.
+- To explore more OSD (Open Source Design) tools, you can use the `nix-shell -p` command with `inputs.nix-eda.packages.${pkgs.system}.<package-name>` or simply check our pre-configured `packages.nix`.
 
+### ⌨️ Keybindings & Desktop Management
+MayankOS offers three world-class environments. Use **Mod (Super/Windows key)** for most shortcuts:
+
+#### **Hyprland & Niri (Common Binds)**
+- **Mod + Return:** Open Terminal (Ghostty/Kitty)
+- **Mod + D / Space:** App Launcher
+- **Mod + Q:** Close Window
+- **Mod + E / T:** File Manager (Thunar)
+- **Mod + B / W:** Web Browser
+- **Mod + 1-9:** Switch Workspaces
+- **Mod + Shift + Q:** Session/Power Menu
+- **Mod + Alt + K:** Show All Keybinds (Searchable)
+
+#### **How to Toggle Environments**
+By default, **KDE Plasma**, **Hyprland**, and **Niri** are all enabled for your convenience. If you want to disable any to save resources:
+- **KDE Plasma:** In `modules/core/xserver.nix`, set `services.desktopManager.plasma6.enable = false;`.
+- **Hyprland:** In `modules/core/packages.nix`, set `programs.hyprland.enable = false;`.
+- **Niri:** In `hosts/<your-host>/variables.nix`, set `niriEnable = false;`.
+
+### 📘 Humble Installation & Learning
+*We sincerely apologize for any previous mistakes or repetitive language. We respect the community and aim only to provide a helpful tool.*
+
+1. **Install:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos` then `./install-mayankos.sh`.
+2. **Rebuild:** Any time you change a setting, run `mcli rebuild` or `sudo nixos-rebuild boot --flake ~/mayankos/#<profile>`.

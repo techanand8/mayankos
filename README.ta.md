@@ -382,36 +382,44 @@ sudo nixos-rebuild switch --flake .#profile
 
 
 
-## 📘 நிறுவுவது, பயன்படுத்துவது மற்றும் கற்றுக்கொள்வது எப்படி
 
-*முதலில், இந்த ஆவணத்தில் ஏதேனும் தவறுகள் இருந்தாலோ அல்லது மீண்டும் மீண்டும் வந்தாலோ நாங்கள் மனதார மன்னிப்பு கேட்டுக்கொள்கிறோம். நாங்கள் அனைவரையும் மதிக்கிறோம், உங்களுக்கு சிறந்த சூழலை வழங்குவதே எங்கள் குறிக்கோள்.*
 
-### 🛠️ படிப்படியான நிறுவல்
-1. **களஞ்சியத்தை குளோன் செய்யவும் (Clone the repository):**
-   ```bash
-   git clone https://github.com/techanand8/mayankos.git ~/mayankos
-   cd ~/mayankos
-   ```
-2. **நிறுவல் ஸ்கிரிப்டை இயக்கவும்:**
-   ```bash
-   ./install-mayankos.sh
-   ```
-3. **வழிமுறைகளைப் பின்பற்றவும்.**
-4. `nixos-rebuild` வெற்றிகரமாக முடிந்ததும் **மறுதொடக்கம் (Reboot)** செய்யவும்.
+## ⚡ Professional VLSI & Hardware Capabilities
 
-### 🎓 நீங்கள் என்ன கற்றுக்கொள்ளலாம் (Deep Work & DV)
-- **மேம்பட்ட வடிவமைப்பு சரிபார்ப்பு (DV):** `slang`, `morty`, `cocotb` மற்றும் `Renode` ஐப் பயன்படுத்தி சிக்கலான சிப்களை சோதிப்பது எப்படி என்பதை அறிக.
-- **சிலிக்கான் வடிவமைப்பு (RTL-to-GDSII):** LibreLane மற்றும் OpenROAD ஐப் பயன்படுத்தி சிப்கள் எவ்வாறு தயாரிக்கப்படுகின்றன என்பதை அறிக.
-- **NixOS மாஸ்டரி:** கணினி நிர்வாகத்தை அறிக.
+This environment is built to be a powerhouse for hardware engineering. You don't just get tools; you get a complete, integrated workflow.
 
-### 🖥️ டெஸ்க்டாப் சூழல்களை நிர்வகித்தல்
-முன்னிருப்பாக, **KDE Plasma**, **Hyprland** மற்றும் **Niri** செயல்படுத்தப்பட்டுள்ளன. எதையாவது முடக்க:
-- **KDE Plasma:** `modules/core/xserver.nix` ஐத் திறந்து `services.desktopManager.plasma6.enable = true;` என்பதை `false` என மாற்றவும்.
-- **Hyprland:** `modules/core/packages.nix` ஐத் திறந்து `programs.hyprland.enable = true;` என்பதை `false` என மாற்றவும்.
-- **Niri:** `hosts/<உங்கள்-host>/variables.nix` ஐத் திறந்து `niriEnable = true;` என்பதை `false` என மாற்றவும்.
+### 🚀 What You Can Do
+- **SoC & CPU Design:** Design complex RISC-V or ARM-based SoCs from scratch.
+- **Advanced Verification (DV):** Use **slang**, **morty**, and **cocotb** to ensure your designs are bug-free with industrial-grade precision.
+- **Full RTL-to-GDSII:** Go from code to a physical chip layout using **LibreLane** and **OpenROAD** (already integrated via advanced flakes).
+- **Analog & Mixed-Signal:** Perform high-fidelity circuit simulations with **Ngspice** and **Xyce**, and design layouts with **Magic-VLSI**.
+- **PCB Engineering:** Create professional multi-layer PCBs with **KiCad**.
 
-மாற்றங்களைச் செய்த பிறகு:
-```bash
-sudo nixos-rebuild boot --flake ~/mayankos/#<உங்கள்-profile>
-```
+### 🛠️ Advanced EDA & nix-eda
+We have already integrated **nix-eda** and specialized flakes (like **LibreLane**) directly into the system. This means you have access to tools that are usually hard to install on standard Linux.
+- To explore more OSD (Open Source Design) tools, you can use the `nix-shell -p` command with `inputs.nix-eda.packages.${pkgs.system}.<package-name>` or simply check our pre-configured `packages.nix`.
 
+### ⌨️ Keybindings & Desktop Management
+MayankOS offers three world-class environments. Use **Mod (Super/Windows key)** for most shortcuts:
+
+#### **Hyprland & Niri (Common Binds)**
+- **Mod + Return:** Open Terminal (Ghostty/Kitty)
+- **Mod + D / Space:** App Launcher
+- **Mod + Q:** Close Window
+- **Mod + E / T:** File Manager (Thunar)
+- **Mod + B / W:** Web Browser
+- **Mod + 1-9:** Switch Workspaces
+- **Mod + Shift + Q:** Session/Power Menu
+- **Mod + Alt + K:** Show All Keybinds (Searchable)
+
+#### **How to Toggle Environments**
+By default, **KDE Plasma**, **Hyprland**, and **Niri** are all enabled for your convenience. If you want to disable any to save resources:
+- **KDE Plasma:** In `modules/core/xserver.nix`, set `services.desktopManager.plasma6.enable = false;`.
+- **Hyprland:** In `modules/core/packages.nix`, set `programs.hyprland.enable = false;`.
+- **Niri:** In `hosts/<your-host>/variables.nix`, set `niriEnable = false;`.
+
+### 📘 Humble Installation & Learning
+*We sincerely apologize for any previous mistakes or repetitive language. We respect the community and aim only to provide a helpful tool.*
+
+1. **Install:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos` then `./install-mayankos.sh`.
+2. **Rebuild:** Any time you change a setting, run `mcli rebuild` or `sudo nixos-rebuild boot --flake ~/mayankos/#<profile>`.

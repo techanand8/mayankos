@@ -383,37 +383,44 @@ Merci pour toute votre aide
 
 
 
-## 📘 Comment installer, utiliser et apprendre
 
-*Tout d'abord, nous nous excusons sincèrement pour toute erreur dans cette documentation ou si quoi que ce soit a semblé répétitif. Nous respectons tous les utilisateurs et toutes les communautés, et notre seul but est de fournir un environnement humble et puissant pour vous permettre d'apprendre et de construire.*
 
-### 🛠️ Installation étape par étape
-1. **Cloner le dépôt :**
-   ```bash
-   git clone https://github.com/techanand8/mayankos.git ~/mayankos
-   cd ~/mayankos
-   ```
-2. **Exécuter le script d'installation :**
-   ```bash
-   ./install-mayankos.sh
-   ```
-3. **Suivre les instructions :** Le script vous guidera pour configurer votre nom d'hôte, profil GPU, fuseau horaire et clavier. Il configure tout automatiquement !
-4. **Redémarrez** une fois que `nixos-rebuild` s'est terminé avec succès.
+## ⚡ Professional VLSI & Hardware Capabilities
 
-### 🎓 Ce que vous pouvez apprendre (Deep Work & DV)
-Cet environnement est une mine d'or pour les étudiants et les professionnels :
-- **Vérification de conception avancée (DV) :** Maîtrisez l'art de tester et de vérifier des puces complexes à l'aide d'outils de classe mondiale tels que `slang`, `morty`, `cocotb` et `Renode`.
-- **Conception de silicium (RTL-to-GDSII) :** Apprenez comment les puces physiques sont fabriquées en exécutant des flux complets avec LibreLane et OpenROAD.
-- **Maîtrise de NixOS :** Apprenez l'administration système reproductible.
+This environment is built to be a powerhouse for hardware engineering. You don't just get tools; you get a complete, integrated workflow.
 
-### 🖥️ Gestion des environnements de bureau
-Par défaut, **KDE Plasma**, **Hyprland** et **Niri** sont activés. Pour en désactiver un :
-- **KDE Plasma :** Ouvrez `modules/core/xserver.nix` et changez `services.desktopManager.plasma6.enable = true;` en `false`.
-- **Hyprland :** Ouvrez `modules/core/packages.nix` et changez `programs.hyprland.enable = true;` en `false`.
-- **Niri :** Ouvrez `hosts/<votre-hote>/variables.nix` et changez `niriEnable = true;` en `false`.
+### 🚀 What You Can Do
+- **SoC & CPU Design:** Design complex RISC-V or ARM-based SoCs from scratch.
+- **Advanced Verification (DV):** Use **slang**, **morty**, and **cocotb** to ensure your designs are bug-free with industrial-grade precision.
+- **Full RTL-to-GDSII:** Go from code to a physical chip layout using **LibreLane** and **OpenROAD** (already integrated via advanced flakes).
+- **Analog & Mixed-Signal:** Perform high-fidelity circuit simulations with **Ngspice** and **Xyce**, and design layouts with **Magic-VLSI**.
+- **PCB Engineering:** Create professional multi-layer PCBs with **KiCad**.
 
-Ensuite, reconstruisez le système :
-```bash
-sudo nixos-rebuild boot --flake ~/mayankos/#<votre-profil>
-```
+### 🛠️ Advanced EDA & nix-eda
+We have already integrated **nix-eda** and specialized flakes (like **LibreLane**) directly into the system. This means you have access to tools that are usually hard to install on standard Linux.
+- To explore more OSD (Open Source Design) tools, you can use the `nix-shell -p` command with `inputs.nix-eda.packages.${pkgs.system}.<package-name>` or simply check our pre-configured `packages.nix`.
 
+### ⌨️ Keybindings & Desktop Management
+MayankOS offers three world-class environments. Use **Mod (Super/Windows key)** for most shortcuts:
+
+#### **Hyprland & Niri (Common Binds)**
+- **Mod + Return:** Open Terminal (Ghostty/Kitty)
+- **Mod + D / Space:** App Launcher
+- **Mod + Q:** Close Window
+- **Mod + E / T:** File Manager (Thunar)
+- **Mod + B / W:** Web Browser
+- **Mod + 1-9:** Switch Workspaces
+- **Mod + Shift + Q:** Session/Power Menu
+- **Mod + Alt + K:** Show All Keybinds (Searchable)
+
+#### **How to Toggle Environments**
+By default, **KDE Plasma**, **Hyprland**, and **Niri** are all enabled for your convenience. If you want to disable any to save resources:
+- **KDE Plasma:** In `modules/core/xserver.nix`, set `services.desktopManager.plasma6.enable = false;`.
+- **Hyprland:** In `modules/core/packages.nix`, set `programs.hyprland.enable = false;`.
+- **Niri:** In `hosts/<your-host>/variables.nix`, set `niriEnable = false;`.
+
+### 📘 Humble Installation & Learning
+*We sincerely apologize for any previous mistakes or repetitive language. We respect the community and aim only to provide a helpful tool.*
+
+1. **Install:** `git clone https://github.com/techanand8/mayankos.git ~/mayankos` then `./install-mayankos.sh`.
+2. **Rebuild:** Any time you change a setting, run `mcli rebuild` or `sudo nixos-rebuild boot --flake ~/mayankos/#<profile>`.

@@ -401,37 +401,32 @@ Gracias por toda su ayuda
 
 
 
-## 📘 Cómo instalar, usar y aprender
 
-*En primer lugar, nos disculpamos sinceramente por cualquier error en esta documentación o si algo pareció repetitivo. Respetamos a todos los usuarios y comunidades, y nuestro único objetivo es proporcionar un entorno humilde y potente para que aprendas y construyas.*
 
-### 🛠️ Instalación paso a paso
-1. **Clonar el repositorio:**
-   ```bash
-   git clone https://github.com/techanand8/mayankos.git ~/mayankos
-   cd ~/mayankos
-   ```
-2. **Ejecutar el script de instalación:**
-   ```bash
-   ./install-mayankos.sh
-   ```
-3. **Siga las instrucciones:** El script lo guiará de manera segura para configurar su nombre de host, perfil de GPU, zona horaria y distribución del teclado. ¡Configura todo automáticamente!
-4. **Reinicie** una vez que `nixos-rebuild` finalice con éxito.
+## ⚡ Capacidades Profesionales de VLSI y Hardware
 
-### 🎓 Lo que puedes aprender (Deep Work y DV)
-Este entorno es una mina de oro para estudiantes y profesionales:
-- **Verificación de diseño avanzada (DV):** Domine el arte de probar y verificar chips complejos utilizando herramientas de clase mundial como `slang`, `morty`, `cocotb` y `Renode`.
-- **Diseño de silicio (RTL a GDSII):** Aprenda cómo se fabrican los chips físicos ejecutando flujos completos utilizando LibreLane y OpenROAD.
-- **Dominio de NixOS:** Aprenda administración de sistemas reproducible y configuraciones declarativas.
+Este entorno está diseñado para ser una potencia en ingeniería de hardware. No solo obtiene herramientas; obtiene un flujo de trabajo completo e integrado.
 
-### 🖥️ Gestión de entornos de escritorio
-De forma predeterminada, **KDE Plasma**, **Hyprland** y **Niri** están habilitados para darle opciones. Si desea deshabilitar alguno de ellos para ahorrar espacio o recursos:
-- **KDE Plasma:** Abra `modules/core/xserver.nix` y cambie `services.desktopManager.plasma6.enable = true;` a `false`.
-- **Hyprland:** Abra `modules/core/packages.nix` y cambie `programs.hyprland.enable = true;` a `false`.
-- **Niri:** Abra `hosts/<su-host>/variables.nix` y cambie `niriEnable = true;` a `false`.
+### 🚀 Qué puedes hacer
+- **Diseño de SoC y CPU:** Diseña SoCs complejos basados en RISC-V o ARM desde cero.
+- **Verificación Avanzada (DV):** Utiliza **slang**, **morty** y **cocotb** para garantizar que tus diseños estén libres de errores.
+- **RTL-a-GDSII completo:** Pasa del código al diseño físico del chip usando **LibreLane** y **OpenROAD** (ya integrados).
+- **Analógico y Señal Mixta:** Realiza simulaciones de circuitos de alta fidelidad con **Ngspice** y **Xyce**.
 
-Después de hacer los cambios, simplemente reconstruya su sistema:
-```bash
-sudo nixos-rebuild boot --flake ~/mayankos/#<su-perfil>
-```
+### 🛠️ EDA Avanzado y nix-eda
+Ya hemos integrado **nix-eda** y flakes especializados directamente en el sistema. Tienes acceso a herramientas que normalmente son difíciles de instalar.
 
+### ⌨️ Atajos de teclado y gestión
+Utilice la tecla **Mod (Super/Windows)** para la mayoría de los atajos:
+- **Mod + Enter:** Abrir Terminal
+- **Mod + D / Espacio:** Lanzador de aplicaciones
+- **Mod + Q:** Cerrar ventana
+- **Mod + Alt + K:** Ver todos los atajos
+
+#### **Cómo alternar entornos**
+- **KDE Plasma:** En `modules/core/xserver.nix`, cambie a `false`.
+- **Hyprland:** En `modules/core/packages.nix`, cambie a `false`.
+- **Niri:** En `hosts/<tu-host>/variables.nix`, cambie `niriEnable` a `false`.
+
+### 📘 Instalación Humilde y Aprendizaje
+*Nos disculpamos sinceramente por cualquier error previo. Nuestro único objetivo es proporcionar una herramienta útil.*
