@@ -129,6 +129,7 @@ in {
           numpy
           matplotlib
         ]))
+      rustup
       screen
       uv
       zoxide
