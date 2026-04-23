@@ -378,3 +378,40 @@ sudo nixos-rebuild switch --flake .#profile
 - Jerry Starke https://github.com/JerrySM64
 
 ## आशा है आप आनंद लेंगे!
+
+
+
+## 📘 इंस्टॉल, उपयोग और सीखने का तरीका
+
+*सबसे पहले, हम इस दस्तावेज़ में किसी भी गलती के लिए या अगर कुछ भी दोहरावदार लगा हो, तो उसके लिए तहे दिल से माफी मांगते हैं। हम सभी उपयोगकर्ताओं और समुदायों का सम्मान करते हैं, और हमारा एकमात्र लक्ष्य आपको सीखने और निर्माण करने के लिए एक विनम्र, शक्तिशाली वातावरण प्रदान करना है।*
+
+### 🛠️ चरण-दर-चरण स्थापना (Installation)
+1. **रिपॉजिटरी क्लोन करें:**
+   ```bash
+   git clone https://github.com/techanand8/mayankos.git ~/mayankos
+   cd ~/mayankos
+   ```
+2. **इंस्टॉलर स्क्रिप्ट चलाएं:**
+   ```bash
+   ./install-mayankos.sh
+   ```
+3. **निर्देशों का पालन करें:** स्क्रिप्ट आपको सुरक्षित रूप से सेटअप करने में मदद करेगी।
+4. **रिबूट करें** जब `nixos-rebuild` सफलतापूर्वक समाप्त हो जाए।
+
+### 🎓 आप क्या सीख सकते हैं (Deep Work और DV)
+यह वातावरण छात्रों और पेशेवरों के लिए एक सोने की खान है:
+- **उन्नत डिज़ाइन सत्यापन (Advanced DV):** `slang`, `morty`, `cocotb` और `Renode` जैसे विश्व स्तरीय टूल का उपयोग करके जटिल चिप्स का परीक्षण और सत्यापन करने की कला में महारत हासिल करें।
+- **सिलिकॉन डिज़ाइन (RTL-to-GDSII):** जानें कि LibreLane और OpenROAD का उपयोग करके भौतिक चिप्स कैसे बनाए जाते हैं।
+- **NixOS मास्टरी:** प्रतिलिपि प्रस्तुत करने योग्य (reproducible) सिस्टम प्रशासन सीखें।
+
+### 🖥️ डेस्कटॉप वातावरण प्रबंधित करना
+डिफ़ॉल्ट रूप से, **KDE Plasma**, **Hyprland**, और **Niri** सभी सक्षम हैं। यदि आप किसी को अक्षम (disable) करना चाहते हैं:
+- **KDE Plasma:** `modules/core/xserver.nix` खोलें और `services.desktopManager.plasma6.enable = true;` को `false` में बदलें।
+- **Hyprland:** `modules/core/packages.nix` खोलें और `programs.hyprland.enable = true;` को `false` में बदलें।
+- **Niri:** `hosts/<your-host>/variables.nix` खोलें और `niriEnable = true;` को `false` में बदलें।
+
+बदलाव करने के बाद, बस अपना सिस्टम फिर से बनाएं:
+```bash
+sudo nixos-rebuild boot --flake ~/mayankos/#<your-profile>
+```
+

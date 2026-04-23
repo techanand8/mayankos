@@ -398,3 +398,40 @@ Gracias por toda su ayuda
 - Jerry Starke https://github.com/JerrySM64
 
 ## ¡Disfruta!
+
+
+
+## 📘 Cómo instalar, usar y aprender
+
+*En primer lugar, nos disculpamos sinceramente por cualquier error en esta documentación o si algo pareció repetitivo. Respetamos a todos los usuarios y comunidades, y nuestro único objetivo es proporcionar un entorno humilde y potente para que aprendas y construyas.*
+
+### 🛠️ Instalación paso a paso
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/techanand8/mayankos.git ~/mayankos
+   cd ~/mayankos
+   ```
+2. **Ejecutar el script de instalación:**
+   ```bash
+   ./install-mayankos.sh
+   ```
+3. **Siga las instrucciones:** El script lo guiará de manera segura para configurar su nombre de host, perfil de GPU, zona horaria y distribución del teclado. ¡Configura todo automáticamente!
+4. **Reinicie** una vez que `nixos-rebuild` finalice con éxito.
+
+### 🎓 Lo que puedes aprender (Deep Work y DV)
+Este entorno es una mina de oro para estudiantes y profesionales:
+- **Verificación de diseño avanzada (DV):** Domine el arte de probar y verificar chips complejos utilizando herramientas de clase mundial como `slang`, `morty`, `cocotb` y `Renode`.
+- **Diseño de silicio (RTL a GDSII):** Aprenda cómo se fabrican los chips físicos ejecutando flujos completos utilizando LibreLane y OpenROAD.
+- **Dominio de NixOS:** Aprenda administración de sistemas reproducible y configuraciones declarativas.
+
+### 🖥️ Gestión de entornos de escritorio
+De forma predeterminada, **KDE Plasma**, **Hyprland** y **Niri** están habilitados para darle opciones. Si desea deshabilitar alguno de ellos para ahorrar espacio o recursos:
+- **KDE Plasma:** Abra `modules/core/xserver.nix` y cambie `services.desktopManager.plasma6.enable = true;` a `false`.
+- **Hyprland:** Abra `modules/core/packages.nix` y cambie `programs.hyprland.enable = true;` a `false`.
+- **Niri:** Abra `hosts/<su-host>/variables.nix` y cambie `niriEnable = true;` a `false`.
+
+Después de hacer los cambios, simplemente reconstruya su sistema:
+```bash
+sudo nixos-rebuild boot --flake ~/mayankos/#<su-perfil>
+```
+

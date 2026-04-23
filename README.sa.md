@@ -379,3 +379,39 @@ sudo nixos-rebuild switch --flake .#profile
 - Jerry Starke https://github.com/JerrySM64
 
 ## आशासे भवान् आनन्दं प्राप्स्यति!
+
+
+
+## 📘 संस्थापनं, उपयोगः, शिक्षणं च कथम्
+
+*प्रथमं तावत्, अस्मिन् प्रलेखे कस्यापि दोषस्य कृते अथवा यदि किमपि पुनरावृत्तिः भवति तर्हि वयं निष्कपटं क्षमां प्रार्थयामहे। वयं सर्वेषां आदरं कुर्मः, अस्माकं लक्ष्यं केवलं भवद्भ्यः उत्तमं शिक्षणवातावरणं प्रदातुं अस्ति।*
+
+### 🛠️ क्रमशः संस्थापनम्
+1. **कोषं प्रतिलिपिं कुर्वन्तु:**
+   ```bash
+   git clone https://github.com/techanand8/mayankos.git ~/mayankos
+   cd ~/mayankos
+   ```
+2. **संस्थापक-लिपिं चालयन्तु:**
+   ```bash
+   ./install-mayankos.sh
+   ```
+3. **निर्देशान् पालयन्तु।**
+4. `nixos-rebuild` समाप्ते सति **पुनः आरम्भं कुर्वन्तु (Reboot)**।
+
+### 🎓 भवान् किं ज्ञातुं शक्नोति (Deep Work & DV)
+- **Advanced Design Verification (DV):** `slang`, `morty`, `cocotb` तथा `Renode` इत्येतेषाम् उपयोगेन चिप-परीक्षणं ज्ञातव्यम्।
+- **Silicon Design (RTL-to-GDSII):** LibreLane तथा OpenROAD इत्येतेषाम् उपयोगेन चिप-निर्माणं ज्ञातव्यम्।
+- **NixOS Mastery:** तन्त्रप्रबन्धनं ज्ञातव्यम्।
+
+### 🖥️ डेस्कटॉप-वातावरणं प्रबन्धनम्
+पूर्वनिर्धारितरूपेण, **KDE Plasma**, **Hyprland**, तथा **Niri** सक्षमाः सन्ति। यदि कश्चित् तान् अक्षमान् कर्तुम् इच्छति:
+- **KDE Plasma:** `modules/core/xserver.nix` उद्घाट्य `services.desktopManager.plasma6.enable = true;` इति `false` कुर्वन्तु।
+- **Hyprland:** `modules/core/packages.nix` उद्घाट्य `programs.hyprland.enable = true;` इति `false` कुर्वन्तु।
+- **Niri:** `hosts/<your-host>/variables.nix` उद्घाट्य `niriEnable = true;` इति `false` कुर्वन्तु।
+
+परिवर्तनान्तरम्:
+```bash
+sudo nixos-rebuild boot --flake ~/mayankos/#<your-profile>
+```
+

@@ -55,3 +55,40 @@ MayankOS 專為 **VLSI 和硬件工程** 設計，是一個高性能的專業工
 - VLSI 與硬件工程指南：[English](cheatsheets/vlsi-guide.md) | [Español](cheatsheets/vlsi-guide.es.md)
 
 </div>
+
+
+
+## 📘 如何安裝、使用和學習
+
+*首先，如果本文件中存在任何錯誤或內容顯得重複，我們深表歉意。我們尊重所有用戶和社群，我們的唯一目標是為您提供一個謙遜且強大的學習和開發環境。*
+
+### 🛠️ 逐步安裝
+1. **克隆存儲庫:**
+   ```bash
+   git clone https://github.com/techanand8/mayankos.git ~/mayankos
+   cd ~/mayankos
+   ```
+2. **執行安裝腳本:**
+   ```bash
+   ./install-mayankos.sh
+   ```
+3. **按照提示操作:** 該腳本將安全地引導您設置主機名、GPU 配置文件、時區和鍵盤佈局。它會為您自動配置一切！
+4. **重啟:** 在 `nixos-rebuild` 成功完成後。
+
+### 🎓 您能學到什麼 (Deep Work & DV)
+這個環境對於學生和專業人士來說是一座金礦：
+- **高級設計驗證 (DV):** 使用世界級的工具如 `slang`, `morty`, `cocotb` 和 `Renode` 掌握測試和驗證複雜晶片的藝術。
+- **矽設計 (RTL到GDSII):** 學習如何使用 LibreLane 和 OpenROAD 執行完整流程來製造物理晶片。
+- **NixOS 精通:** 學習可重複的系統管理和聲明式配置。
+
+### 🖥️ 管理桌面環境
+默認情況下，**KDE Plasma**, **Hyprland** 和 **Niri** 都已啟用以供您選擇。如果您想禁用其中任何一個：
+- **KDE Plasma:** 打開 `modules/core/xserver.nix` 並將 `services.desktopManager.plasma6.enable = true;` 改為 `false`。
+- **Hyprland:** 打開 `modules/core/packages.nix` 並將 `programs.hyprland.enable = true;` 改為 `false`。
+- **Niri:** 打開 `hosts/<您的主機>/variables.nix` 並將 `niriEnable = true;` 改為 `false`。
+
+進行更改後，只需使用以下命令重建您的系統：
+```bash
+sudo nixos-rebuild boot --flake ~/mayankos/#<您的配置文件>
+```
+

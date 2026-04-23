@@ -379,3 +379,40 @@ Vielen Dank für eure gesamte Unterstützung
 - Jerry Starke https://github.com/JerrySM64
 
 ## Viel Spaß damit!
+
+
+
+## 📘 Installation, Nutzung und Lernen
+
+*Zunächst möchten wir uns aufrichtig für eventuelle Fehler in dieser Dokumentation entschuldigen oder falls etwas repetitiv wirkte. Wir respektieren alle Nutzer und Gemeinschaften und unser einziges Ziel ist es, eine bescheidene, leistungsstarke Umgebung bereitzustellen.*
+
+### 🛠️ Schritt-für-Schritt-Installation
+1. **Repository klonen:**
+   ```bash
+   git clone https://github.com/techanand8/mayankos.git ~/mayankos
+   cd ~/mayankos
+   ```
+2. **Installationsskript ausführen:**
+   ```bash
+   ./install-mayankos.sh
+   ```
+3. **Den Anweisungen folgen:** Das Skript führt Sie sicher durch die Einrichtung von Hostname, GPU-Profil, Zeitzone und Tastaturlayout.
+4. **Neustarten**, sobald `nixos-rebuild` erfolgreich abgeschlossen ist.
+
+### 🎓 Was Sie lernen können (Deep Work & DV)
+Diese Umgebung ist eine Goldgrube für Studenten und Profis:
+- **Erweiterte Designverifikation (DV):** Meistern Sie die Kunst des Testens komplexer Chips mit Tools wie `slang`, `morty`, `cocotb` und `Renode`.
+- **Silizium-Design (RTL-to-GDSII):** Lernen Sie, wie physische Chips mit LibreLane und OpenROAD hergestellt werden.
+- **NixOS-Beherrschung:** Lernen Sie reproduzierbare Systemadministration.
+
+### 🖥️ Verwaltung der Desktop-Umgebungen
+Standardmäßig sind **KDE Plasma**, **Hyprland** und **Niri** aktiviert. Wenn Sie eine davon deaktivieren möchten:
+- **KDE Plasma:** Ändern Sie in `modules/core/xserver.nix` `services.desktopManager.plasma6.enable = true;` zu `false`.
+- **Hyprland:** Ändern Sie in `modules/core/packages.nix` `programs.hyprland.enable = true;` zu `false`.
+- **Niri:** Ändern Sie in `hosts/<Ihr-Host>/variables.nix` `niriEnable = true;` zu `false`.
+
+Danach das System neu erstellen:
+```bash
+sudo nixos-rebuild boot --flake ~/mayankos/#<Ihr-Profil>
+```
+

@@ -55,3 +55,40 @@ MayankOS è progettata specificamente per essere una workstation professionale a
 - Guida all'ingegneria VLSI e hardware: [English](cheatsheets/vlsi-guide.md) | [Español](cheatsheets/vlsi-guide.es.md)
 
 </div>
+
+
+
+## 📘 Come installare, usare e imparare
+
+*In primo luogo, ci scusiamo sinceramente per eventuali errori in questa documentazione o se qualcosa è sembrato ripetitivo. Rispettiamo tutti gli utenti e le comunità, e il nostro unico obiettivo è fornire un ambiente umile e potente per imparare e creare.*
+
+### 🛠️ Installazione passo dopo passo
+1. **Clonare la repository:**
+   ```bash
+   git clone https://github.com/techanand8/mayankos.git ~/mayankos
+   cd ~/mayankos
+   ```
+2. **Eseguire lo script di installazione:**
+   ```bash
+   ./install-mayankos.sh
+   ```
+3. **Seguire le istruzioni:** Lo script guiderà l'utente in modo sicuro.
+4. **Riavviare** una volta completato con successo `nixos-rebuild`.
+
+### 🎓 Cosa puoi imparare (Deep Work e DV)
+Questo ambiente è una miniera d'oro per studenti e professionisti:
+- **Design Verification (DV) Avanzata:** Padroneggia l'arte di testare e verificare chip complessi usando strumenti di livello mondiale come `slang`, `morty`, `cocotb` e `Renode`.
+- **Progettazione del silicio (RTL-to-GDSII):** Scopri come vengono realizzati i chip fisici eseguendo flussi completi utilizzando LibreLane e OpenROAD.
+- **Padronanza di NixOS:** Impara l'amministrazione di sistema riproducibile.
+
+### 🖥️ Gestione degli ambienti desktop
+Per impostazione predefinita, **KDE Plasma**, **Hyprland** e **Niri** sono tutti abilitati. Se desideri disabilitarne alcuno:
+- **KDE Plasma:** Apri `modules/core/xserver.nix` e cambia `services.desktopManager.plasma6.enable = true;` in `false`.
+- **Hyprland:** Apri `modules/core/packages.nix` e cambia `programs.hyprland.enable = true;` in `false`.
+- **Niri:** Apri `hosts/<tuo-host>/variables.nix` e cambia `niriEnable = true;` in `false`.
+
+Dopo aver apportato le modifiche, ricompila il tuo sistema:
+```bash
+sudo nixos-rebuild boot --flake ~/mayankos/#<tuo-profilo>
+```
+

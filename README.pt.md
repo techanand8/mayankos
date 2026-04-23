@@ -379,3 +379,40 @@ Obrigado por toda a sua ajuda
 - Jerry Starke https://github.com/JerrySM64
 
 ## Espero que aproveite!
+
+
+
+## 📘 Como Instalar, Usar e Aprender
+
+*Primeiramente, pedimos sinceras desculpas por quaisquer erros nesta documentação ou se algo pareceu repetitivo. Respeitamos todos os usuários e comunidades, e nosso único objetivo é fornecer um ambiente humilde e poderoso para você aprender e construir.*
+
+### 🛠️ Instalação Passo a Passo
+1. **Clonar o repositório:**
+   ```bash
+   git clone https://github.com/techanand8/mayankos.git ~/mayankos
+   cd ~/mayankos
+   ```
+2. **Executar o script de instalação:**
+   ```bash
+   ./install-mayankos.sh
+   ```
+3. **Siga as instruções:** O script irá guiá-lo com segurança para configurar seu hostname, perfil de GPU, fuso horário e layout de teclado.
+4. **Reinicie** assim que o `nixos-rebuild` terminar com sucesso.
+
+### 🎓 O Que Você Pode Aprender (Deep Work e DV)
+Este ambiente é uma mina de ouro para estudantes e profissionais:
+- **Verificação de Design Avançada (DV):** Domine a arte de testar e verificar chips complexos usando ferramentas de classe mundial como `slang`, `morty`, `cocotb` e `Renode`.
+- **Design de Silício (RTL para GDSII):** Aprenda como os chips físicos são feitos executando fluxos completos usando LibreLane e OpenROAD.
+- **Domínio do NixOS:** Aprenda administração de sistemas reprodutível e configurações declarativas.
+
+### 🖥️ Gerenciamento de Ambientes de Trabalho
+Por padrão, **KDE Plasma**, **Hyprland** e **Niri** estão todos habilitados. Se você quiser desabilitar qualquer um deles:
+- **KDE Plasma:** Abra `modules/core/xserver.nix` e mude `services.desktopManager.plasma6.enable = true;` para `false`.
+- **Hyprland:** Abra `modules/core/packages.nix` e mude `programs.hyprland.enable = true;` para `false`.
+- **Niri:** Abra `hosts/<seu-host>/variables.nix` e mude `niriEnable = true;` para `false`.
+
+Depois de fazer alterações, basta reconstruir seu sistema usando:
+```bash
+sudo nixos-rebuild boot --flake ~/mayankos/#<seu-perfil>
+```
+

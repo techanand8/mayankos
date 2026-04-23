@@ -422,3 +422,40 @@ Thank you for all your assistance
 - Jerry Starke https://github.com/JerrySM64
 
 ## Hope you enjoy!
+
+
+
+## 📘 How to Install, Use, and Learn
+
+*First and foremost, we sincerely apologize for any mistakes in this documentation or if anything felt repetitive or out of place. We respect all users and communities, and our only goal is to provide a humble, powerful environment for you to learn and build.*
+
+### 🛠️ Step-by-Step Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/techanand8/mayankos.git ~/mayankos
+   cd ~/mayankos
+   ```
+2. **Run the Installer Script:**
+   ```bash
+   ./install-mayankos.sh
+   ```
+3. **Follow the Prompts:** The script will safely guide you to set your hostname, GPU profile, timezone, and keyboard layout. It automatically configures everything for you!
+4. **Reboot** once the `nixos-rebuild` finishes successfully.
+
+### 🎓 What You Can Learn (Deep Work & DV)
+This environment is a goldmine for students and professionals:
+- **Advanced Design Verification (DV):** Master the art of testing and verifying complex chips using world-class tools like `slang`, `morty`, `cocotb`, and `Renode`.
+- **Silicon Design (RTL-to-GDSII):** Learn how physical chips are made by running complete flows using LibreLane and OpenROAD.
+- **NixOS Mastery:** Learn reproducible system administration and declarative configurations.
+
+### 🖥️ Managing Desktop Environments
+By default, **KDE Plasma**, **Hyprland**, and **Niri** are all enabled to give you choices. If you want to disable any of them to save space or resources:
+- **KDE Plasma:** Open `modules/core/xserver.nix` and change `services.desktopManager.plasma6.enable = true;` to `false`.
+- **Hyprland:** Open `modules/core/packages.nix` and change `programs.hyprland.enable = true;` to `false`.
+- **Niri:** Open `hosts/<your-host>/variables.nix` and change `niriEnable = true;` to `false` (and also in `packages.nix` if desired).
+
+After making changes, simply rebuild your system using:
+```bash
+sudo nixos-rebuild boot --flake ~/mayankos/#<your-profile>
+```
+

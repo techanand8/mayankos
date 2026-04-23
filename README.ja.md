@@ -378,3 +378,40 @@ sudo nixos-rebuild switch --flake .#profile
 - Jerry Starke https://github.com/JerrySM64
 
 ## 楽しんでいただければ幸いです！
+
+
+
+## 📘 インストール、使用、および学習方法
+
+*まず第一に、このドキュメントに間違いがあったり、内容が繰り返されていたりした場合は、心からお詫び申し上げます。私たちはすべてのユーザーとコミュニティを尊重し、あなたが学び、構築するための謙虚で強力な環境を提供することだけを目標としています。*
+
+### 🛠️ ステップバイステップのインストール
+1. **リポジトリのクローン:**
+   ```bash
+   git clone https://github.com/techanand8/mayankos.git ~/mayankos
+   cd ~/mayankos
+   ```
+2. **インストーラースクリプトの実行:**
+   ```bash
+   ./install-mayankos.sh
+   ```
+3. **プロンプトに従う:** スクリプトはすべてを自動的に構成します！
+4. **再起動:** `nixos-rebuild` が正常に終了したら再起動します。
+
+### 🎓 学べること (Deep Work & DV)
+この環境は学生や専門家にとって金脈です:
+- **高度な設計検証 (DV):** `slang`、`morty`、`cocotb`、`Renode` などの世界クラスのツールを使用して、複雑なチップをテストおよび検証する技術を習得します。
+- **シリコン設計 (RTL-to-GDSII):** LibreLane と OpenROAD を使用して完全なフローを実行することにより、物理的なチップがどのように作られるかを学びます。
+- **NixOS の習得:** 再現可能なシステム管理を学びます。
+
+### 🖥️ デスクトップ環境の管理
+デフォルトでは、**KDE Plasma**、**Hyprland**、**Niri** のすべてが有効になっています。いずれかを無効にする場合:
+- **KDE Plasma:** `modules/core/xserver.nix` を開き、`services.desktopManager.plasma6.enable = true;` を `false` に変更します。
+- **Hyprland:** `modules/core/packages.nix` を開き、`programs.hyprland.enable = true;` を `false` に変更します。
+- **Niri:** `hosts/<あなたのホスト>/variables.nix` を開き、`niriEnable = true;` を `false` に変更します。
+
+変更後、システムを再構築します:
+```bash
+sudo nixos-rebuild boot --flake ~/mayankos/#<あなたのプロファイル>
+```
+

@@ -379,3 +379,39 @@ sudo nixos-rebuild switch --flake .#profile
 - Jerry Starke https://github.com/JerrySM64
 
 ## நீங்கள் மகிழ்வீர்கள் என்று நம்புகிறேன்!
+
+
+
+## 📘 நிறுவுவது, பயன்படுத்துவது மற்றும் கற்றுக்கொள்வது எப்படி
+
+*முதலில், இந்த ஆவணத்தில் ஏதேனும் தவறுகள் இருந்தாலோ அல்லது மீண்டும் மீண்டும் வந்தாலோ நாங்கள் மனதார மன்னிப்பு கேட்டுக்கொள்கிறோம். நாங்கள் அனைவரையும் மதிக்கிறோம், உங்களுக்கு சிறந்த சூழலை வழங்குவதே எங்கள் குறிக்கோள்.*
+
+### 🛠️ படிப்படியான நிறுவல்
+1. **களஞ்சியத்தை குளோன் செய்யவும் (Clone the repository):**
+   ```bash
+   git clone https://github.com/techanand8/mayankos.git ~/mayankos
+   cd ~/mayankos
+   ```
+2. **நிறுவல் ஸ்கிரிப்டை இயக்கவும்:**
+   ```bash
+   ./install-mayankos.sh
+   ```
+3. **வழிமுறைகளைப் பின்பற்றவும்.**
+4. `nixos-rebuild` வெற்றிகரமாக முடிந்ததும் **மறுதொடக்கம் (Reboot)** செய்யவும்.
+
+### 🎓 நீங்கள் என்ன கற்றுக்கொள்ளலாம் (Deep Work & DV)
+- **மேம்பட்ட வடிவமைப்பு சரிபார்ப்பு (DV):** `slang`, `morty`, `cocotb` மற்றும் `Renode` ஐப் பயன்படுத்தி சிக்கலான சிப்களை சோதிப்பது எப்படி என்பதை அறிக.
+- **சிலிக்கான் வடிவமைப்பு (RTL-to-GDSII):** LibreLane மற்றும் OpenROAD ஐப் பயன்படுத்தி சிப்கள் எவ்வாறு தயாரிக்கப்படுகின்றன என்பதை அறிக.
+- **NixOS மாஸ்டரி:** கணினி நிர்வாகத்தை அறிக.
+
+### 🖥️ டெஸ்க்டாப் சூழல்களை நிர்வகித்தல்
+முன்னிருப்பாக, **KDE Plasma**, **Hyprland** மற்றும் **Niri** செயல்படுத்தப்பட்டுள்ளன. எதையாவது முடக்க:
+- **KDE Plasma:** `modules/core/xserver.nix` ஐத் திறந்து `services.desktopManager.plasma6.enable = true;` என்பதை `false` என மாற்றவும்.
+- **Hyprland:** `modules/core/packages.nix` ஐத் திறந்து `programs.hyprland.enable = true;` என்பதை `false` என மாற்றவும்.
+- **Niri:** `hosts/<உங்கள்-host>/variables.nix` ஐத் திறந்து `niriEnable = true;` என்பதை `false` என மாற்றவும்.
+
+மாற்றங்களைச் செய்த பிறகு:
+```bash
+sudo nixos-rebuild boot --flake ~/mayankos/#<உங்கள்-profile>
+```
+
