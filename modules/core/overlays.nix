@@ -10,7 +10,7 @@
         pname = "morty";
         version = "0.6.0";
         src = inputs.morty;
-        cargoHash = "sha256-07bqrxv2bwm2g6qzzk8xb7rjgmfrajbpzjfq0qi1dshrbhsmcwza"; # Placeholder hash, will fix after build
+        cargoHash = "sha256-6nNWNVwZ6hYiBtjJf5dU2dUn81kdzf+xeaLyJXbPeB0="; 
         doCheck = false;
       };
     })

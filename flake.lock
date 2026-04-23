@@ -649,6 +649,22 @@
         "type": "github"
       }
     },
+    "morty": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1702636359,
+        "narHash": "sha256-gKQNzBr97voVXRiNdLlQd6mbe6hKfK5lD4kGrwQz5YA=",
+        "owner": "pulp-platform",
+        "repo": "morty",
+        "rev": "8f578d8420c0279b7f47dba9c2d4821675ef2237",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pulp-platform",
+        "repo": "morty",
+        "type": "github"
+      }
+    },
     "ndg": {
       "inputs": {
         "nixpkgs": [
@@ -1166,6 +1182,7 @@
         "dms": "dms",
         "home-manager": "home-manager",
         "librelane": "librelane",
+        "morty": "morty",
         "niri": "niri",
         "nix-eda": "nix-eda_2",
         "nix-flatpak": "nix-flatpak",
