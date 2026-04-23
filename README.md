@@ -57,14 +57,15 @@ This system is specifically designed to be a high-performance, professional work
 
 - **Why it's perfect**: It comes pre-configured with a comprehensive suite of tools for:
   - **HDL Simulation**: `ghdl`, `nvc`, `iverilog`, `verilator`, `gtkwave`, `surfer`, `fusesoc`, `surelog`.
-  - **Synthesis & Physical Design**: `yosys`, `magic-vlsi`, `netgen`, `klayout`, `openroad`, `xschem`, `gdsfactory`. (OpenLane ready)
-  - **FPGA & Embedded Development**: `nextpnr`, `icestorm`, `openfpgaloader`, `dfu-util`, `qemu`.
+  - **Synthesis & Physical Design**: `yosys`, `magic-vlsi`, `netgen`, `klayout`, `openroad`, `xschem`, `gdsfactory`. (LibreLane/OpenLane ready)
+  - **FPGA & Embedded Development**: `nextpnr`, `icestorm`, `openfpgaloader`, `openocd`, `flashrom`, `dfu-util`, `qemu`.
   - **LSPs & Toolkits**: `sv-lang`, `vhdl-ls`, `verible`, `veridian`, `svls`, `pyverilog`, `verilogae`, `volare`.
   - **PDKs**: Full support for **SkyWater 130** and **GF180MCU** via `volare`.
+  - **DV & Co-Simulation**: `renode`, `cocotb`, `PyVSC`, `VUnit`.
   - **PCB & Schematic Design**: `kicad`, `ngspice`, `xyce`, `doxygen`.
 - **How to customize**: If you do NOT need these tools, you can simply comment out or remove the `# --- VLSI & Hardware Engineering ---` block in `modules/core/packages.nix` before running your `nixos-rebuild`.
-- **Advanced EDA**: For tools like **OpenLane** or advanced DFT suites not yet in standard Nixpkgs, we recommend using the [nix-eda](https://github.com/nix-eda/nix-eda) overlay or Docker containers to ensure PDK compatibility.
-- **Future Ready**: This is just the beginning; more specialized VLSI and EDA tools (including built-in OpenLane v2 support) are planned for future updates to make this the ultimate platform for hardware designers.
+- **Advanced EDA**: For tools like **LibreLane** (successor to OpenLane) or advanced DFT suites not yet in standard Nixpkgs, we recommend using their respective flakes or the [nix-eda](https://github.com/nix-eda/nix-eda) overlay.
+- **Future Ready**: This is just the beginning; more specialized VLSI and EDA tools (including built-in LibreLane support) are planned for future updates to make this the ultimate platform for hardware designers.
 
 ### 📸 Hardware Engineering & VLSI Showcase
 

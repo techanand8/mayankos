@@ -183,7 +183,9 @@ in {
       doxygen_gui # GUI for Doxygen
       klayout # Layout viewer/editor
       inputs.nix-eda.packages.${pkgs.stdenv.hostPlatform.system}.gdsfactory # Advanced layout and PDM flow
-      openroad # Physical design flow (foundation of OpenLane)
+      inputs.librelane.packages.${pkgs.stdenv.hostPlatform.system}.openroad # Optimized OpenROAD for LibreLane
+      inputs.librelane.packages.${pkgs.stdenv.hostPlatform.system}.default # LibreLane (Successor to OpenLane)
+      inputs.librelane.packages.${pkgs.stdenv.hostPlatform.system}.opensta # Optimized OpenSTA for LibreLane
       inputs.openlane.packages.${pkgs.stdenv.hostPlatform.system}.default # OpenLane 2 (requires OpenLane Cachix)
       inputs.openlane.packages.${pkgs.stdenv.hostPlatform.system}.opensta # Static Timing Analysis
       chisel # Scala-based HDL
@@ -206,6 +208,9 @@ in {
       ngspice # The standard general-purpose circuit simulator
       (xyce.override { enableDocs = false; enableTests = false; }) # High-performance parallel SPICE simulator
       # Embedded & Hardware Core
+      openocd # JTAG/SWD debugging
+      flashrom # BIOS/ROM/Flash programmer
+      i2c-tools # I2C debugging
       avrdude # Utility to burn code to AVR
       minicom # Serial communication
       binwalk # Analyze firmware
@@ -220,6 +225,9 @@ in {
       pkgsCross.riscv64-embedded.buildPackages.gdb
       gcc-arm-embedded
       pkgsCross.arm-embedded.buildPackages.gcc
+
+      # --- Design Verification (DV) & Co-Simulation ---
+      renode # Multi-node system simulator for HW/SW co-verification
 
       # --- Linux & Container Utilities ---
       distrobox

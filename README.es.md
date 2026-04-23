@@ -58,14 +58,15 @@ Este sistema está diseñado específicamente para ser una estación de trabajo 
 
 - **Por qué es perfecto**: Viene preconfigurado con una suite completa de herramientas para:
   - **Simulación HDL**: `ghdl`, `nvc`, `iverilog`, `verilator`, `gtkwave`, `surfer`, `fusesoc`, `surelog`.
-  - **Síntesis y diseño físico**: `yosys`, `magic-vlsi`, `netgen`, `klayout`, `openroad`, `xschem`, `gdsfactory`. (Listo para OpenLane)
-  - **Desarrollo de FPGA y embebidos**: `nextpnr`, `icestorm`, `openfpgaloader`, `dfu-util`, `qemu`.
+  - **Síntesis y diseño físico**: `yosys`, `magic-vlsi`, `netgen`, `klayout`, `openroad`, `xschem`, `gdsfactory`. (Listo para LibreLane/OpenLane)
+  - **Desarrollo de FPGA y embebidos**: `nextpnr`, `icestorm`, `openfpgaloader`, `openocd`, `flashrom`, `dfu-util`, `qemu`.
   - **LSPs y Herramientas**: `sv-lang`, `vhdl-ls`, `verible`, `veridian`, `svls`, `pyverilog`, `verilogae`, `volare`.
   - **PDKs**: Soporte completo para **SkyWater 130** and **GF180MCU** a través de `volare`.
+  - **DV y Co-simulación**: `renode`, `cocotb`, `PyVSC`, `VUnit`.
   - **Diseño de PCB y esquemas**: `kicad`, `ngspice`, `xyce`, `doxygen`.
 - **Cómo personalizar**: Si NO necesitas estas herramientas, simplemente puedes comentar o eliminar el bloque `# --- VLSI & Hardware Engineering ---` en `modules/core/packages.nix` antes de ejecutar tu `nixos-rebuild`.
-- **EDA Avanzado**: Para herramientas como **OpenLane** o suites de DFT avanzadas que aún no están en Nixpkgs estándar, recomendamos usar el overlay [nix-eda](https://github.com/nix-eda/nix-eda) o contenedores Docker para garantizar la compatibilidad con PDK.
-- **Listo para el futuro**: Esto es solo el comienzo; se planean más herramientas especializadas de VLSI y EDA (incluyendo soporte integrado para OpenLane v2) para futuras actualizaciones para hacer de esta la plataforma definitiva para los diseñadores de hardware.
+- **EDA Avanzado**: Para herramientas como **LibreLane** (sucesor de OpenLane) o suites de DFT avanzadas que aún no están en Nixpkgs estándar, recomendamos usar sus respectivos flakes o el overlay [nix-eda](https://github.com/nix-eda/nix-eda).
+- **Listo para el futuro**: Esto es solo el comienzo; se planean más herramientas especializadas de VLSI y EDA (incluyendo soporte integrado para LibreLane) para futuras actualizaciones para hacer de esta la plataforma definitiva para los diseñadores de hardware.
 
 ## 🌐 Elección y personalización del navegador web
 

@@ -43,6 +43,9 @@
     (import ./launch-nwg-menu.nix {inherit pkgs;})
     (import ./hyprland-dock.nix {inherit pkgs;})
     (import ./restart.noctalia.nix {inherit pkgs;})
+    (import ./install-sc.nix {inherit pkgs;})
+    (import ./install-hammer.nix {inherit pkgs;})
+    (import ./install-dv.nix {inherit pkgs;})
     (import ./mcli.nix {
       inherit pkgs profile;
       backupFiles = [

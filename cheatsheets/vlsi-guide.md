@@ -5,6 +5,8 @@ Welcome to your professional VLSI workstation! You have a complete, industrial-g
 ## 🚀 Quick Start: The "Smoke Test"
 To verify your installation and download all backend tools (OpenROAD, Magic, etc.) and the Sky130 PDK at once, run:
 ```bash
+librelane --smoke-test
+# OR
 openlane --smoke-test
 ```
 
@@ -25,8 +27,16 @@ openlane --smoke-test
     *   `chisel`: Scala-based hardware construction language.
 
 ### 2. Synthesis & Physical Design (RTL-to-GDSII)
-*   **OpenLane 2**: The automated flow.
-    *   Command: `openlane --design your_design`
+*   **LibreLane / OpenLane 2**: The automated physical design flows.
+    *   Command: `librelane --design your_design` or `openlane --design your_design`
+*   **SiliconCompiler**: The "Power User" choice for DV + PD side-by-side.
+    *   **Installation**: Run `install-sc` (once) to set up the Python environment.
+    *   **Usage**: Run `source ~/.local/share/siliconcompiler/venv/bin/activate` to enter the environment.
+    *   **DV Focus**: Use SC to run automated linting (Verilator) and simulation (Icarus/Verilator) before synthesis.
+*   **Hammer (UC Berkeley)**: Advanced Physical Design & SoC Generator framework.
+    *   **Installation**: Run `install-hammer` (once) to set up the Python environment.
+    *   **Usage**: Run `source ~/.local/share/hammer-vlsi/venv/bin/activate`.
+    *   **Best For**: Research and architectural studies that swap between multiple PDKs (Sky130, ASAP7).
 *   **Yosys**: RTL Synthesis. Supports SystemVerilog (via `synlig`) and VHDL (via `ghdl`).
 *   **OpenROAD**: Floorplanning, Placement, CTS, and Routing.
 *   **OpenSTA**: Static Timing Analysis (the most critical step before fabrication).
@@ -43,6 +53,15 @@ openlane --smoke-test
 *   **PulseView / sigrok**: GUI and CLI for logic analyzers (hardware debugging).
 *   **wavedrom**: Create beautiful digital timing diagrams using JSON/Python.
 *   **ONNX**: AI hardware verification and model exchange.
+
+### 5. Advanced Design Verification (DV)
+*   **Renode**: System-level simulator for HW/SW co-verification.
+    *   Connect your RTL (via Verilator) to a full CPU model to test drivers/firmware.
+*   **PyVSC (vsc)**: Constrained Random Verification (CRV) in Python.
+    *   The open-source equivalent to SystemVerilog's `rand` and `constraint` features.
+*   **Functional Coverage**: Track which parts of your design have been tested using `cocotb-coverage`.
+*   **VUnit / SVUnit**: Automation frameworks for running large test regressions.
+    *   **Installation**: Run `install-dv` to set up the professional verification stack.
 
 ## 🌐 Process Design Kits (PDKs)
 You have full support for:
