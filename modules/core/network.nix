@@ -14,6 +14,7 @@ in {
     
     firewall = {
       enable = true;
+      # 🛡️ Security Hardened: Only open essential ports.
       # Added 1714-1764 for KDE Connect (Sync your phone with MayankOS)
       allowedTCPPortRanges = [ 
         { from = 1714; to = 1764; } 
@@ -21,7 +22,9 @@ in {
       allowedUDPPortRanges = [ 
         { from = 1714; to = 1764; } 
       ];
-      allowedTCPPorts = [ 22 80 443 8080 59010 59011 ];
+      # Removed ports 22, 80, 443, 8080 from global list for security.
+      # Use per-service firewall settings instead.
+      allowedTCPPorts = [ 59010 59011 ];
       allowedUDPPorts = [ 59010 59011 ];
     };
   };

@@ -151,6 +151,7 @@ in {
       nvc # nVHDL compiler/simulator
       iverilog # Verilog simulation
       verilator # Fast cycle-accurate Verilog simulator
+      aiger # AIGER utility library for formal verification
       gtkwave # Waveform viewer
       surfer # Modern waveform viewer
       (gaw.overrideAttrs (o: {
@@ -191,6 +192,7 @@ in {
       chisel # Scala-based HDL
       # Formal Verification
       sby
+      btor2tools # Bit-vector tools for verification
       cvc4 # SMT Solver
       bitwuzla # High-performance SMT solver
       z3 # SMT Solver
@@ -236,6 +238,7 @@ in {
       # System Utilities
       amfora # Fancy Terminal Browser For Gemini Protocol
       appimage-run # Needed For AppImage Support
+      audit # Audit tools
       btop
       brightnessctl # For Screen Brightness Control
       cliphist # Clipboard manager using rofi menu
@@ -383,9 +386,5 @@ in {
       libXi
       libXtst
       libXft
-
-      # Tools for debugging hardware/connection
-      usbutils
-      pciutils
     ];
 }
