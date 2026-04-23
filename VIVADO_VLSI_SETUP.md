@@ -127,4 +127,23 @@ To ensure everything is working correctly, you can run:
 2. `librelane --smoke-test` - Verifies the open-source RTL-to-GDSII flow.
 3. `volare ls` - Checks your PDK installations (Sky130/GF180).
 
-**Keep this file safe! It is your blueprint for a professional VLSI environment.**
+---
+
+## 6. Profile Troubleshooting (Nvidia-Laptop)
+
+If you decide to use the **Nvidia-Laptop** profile instead of AMD, you might encounter an error during rebuild stating that `intelID` is missing. 
+
+### The Fix:
+Open your host's variables file (e.g., `hosts/msi-modern14c7m/variables.nix`) and ensure these lines exist:
+
+```nix
+  # GPU Bus IDs (Required for Nvidia-Laptop / Hybrid profiles)
+  # Use 'lspci | grep VGA' to find yours
+  intelID = "0000:00:02.0"; 
+  nvidiaID = "0000:01:00.0"; 
+```
+
+- **If you are installing as "AMD"**: You are 100% safe and do not need to do this.
+- **If you are installing as "Nvidia-Laptop"**: Just be ready to add your specific IDs if the build fails.
+
+**Everything is now ready for your professional VLSI workstation recovery! 🚀**
