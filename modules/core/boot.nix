@@ -22,5 +22,6 @@
       magicOrExtension = ''\x7fELF....AI\x02'';
     };
     plymouth.enable = true;
+    initrd.systemd.enable = true;
   };
 }
